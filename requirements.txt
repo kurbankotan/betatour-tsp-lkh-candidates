@@ -1,0 +1,6 @@
+# for the scripts in analysis/ (the notebooks install what they need on Google Colab)
+numpy>=2.1
+pandas>=2.2
+scipy>=1.13
+# only for loading the checkpoint with src/tsp_model.py
+torch>=2.4

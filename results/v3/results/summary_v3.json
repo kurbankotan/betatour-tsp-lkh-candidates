@@ -1,0 +1,5045 @@
+{
+ "env": {
+  "nproc": 12,
+  "ram_gb": 167.1,
+  "gpu": "NVIDIA A100-SXM4-80GB, 81920 MiB",
+  "numpy": "2.1.3"
+ },
+ "config": {
+  "scale": "L",
+  "n_small": 64,
+  "n_large": 8,
+  "tsplib_max_n": 20000,
+  "profile_sizes": [
+   1000,
+   2000,
+   5000,
+   10000,
+   20000
+  ],
+  "n_train": 30000,
+  "epochs": 12,
+  "any_small": 8,
+  "any_large": 2,
+  "tsplib_any_max_n": 3000,
+  "size_small": 1000,
+  "size_large": 10000,
+  "M_ens": 16,
+  "K": 16,
+  "k_tri": 12,
+  "ref_trials_cap": 1000,
+  "ref_max_candidates": 8,
+  "train_n": [
+   100,
+   500
+  ],
+  "shard_size": 1000,
+  "val_instances": 1000,
+  "max_nodes": 7500,
+  "lr": 0.0003,
+  "warmup": 300,
+  "model": {
+   "dn": 128,
+   "de": 64,
+   "dm": 32,
+   "dtri": 32,
+   "msa_layers": 2,
+   "pair_layers": 6
+  },
+  "budget_small": 30.0,
+  "budget_large": 300.0,
+  "budget_per_node": 0.02,
+  "budget_min": 10.0,
+  "fix_precision": 0.999,
+  "num_workers": 4,
+  "eval_part_size": 12,
+  "lkh_eval_part_size": 6,
+  "lkh_version": "3.0.14",
+  "fixed_edges_ok": true
+ },
+ "errors": {},
+ "stage_minutes": {
+  "1-lkh": 0.1,
+  "1-selftest": 0.0,
+  "3-eval_sets": 2.1,
+  "3-eval_ref": 0.4,
+  "4-train_data": 0.0,
+  "6-train_v2": 0.1,
+  "6-val": 0.0,
+  "7-coverage_v3": 1.0,
+  "8-lkh_eval_v3": 134.0
+ },
+ "selftest": {
+  "checks": {
+   "LKH geçerli bir tur üretti": true,
+   "tur uzunluğu LKH'nin bildirdiğiyle aynı": true,
+   "LKH iyileşme izi okundu": true,
+   "LKH ön-işleme süresi okundu": true,
+   "LKH aday (CANDIDATE_FILE) ve ceza (PI_FILE) dosyaları okundu": true,
+   "kendi yazdığımız aday/π dosyaları LKH'ye kabul edildi": true,
+   "tur topluluğu üretildi (POPMUSIC adaylar, ascent yok)": true,
+   "başlangıç turu + dışarıdan aday dosyasıyla LKH çalıştı": true
+  },
+  "warnings": {
+   "π birimi (PRECISION = 100) doğrulandı": true,
+   "sabit kenarlar (FIXED_EDGES_SECTION) LKH turunda korundu": true
+  },
+  "info": {
+   "lkh_output_head": [
+    "PARAMETER_FILE = /content/tourfold_local/work/lkh_reirrdf5/run.par",
+    "Reading PROBLEM_FILE: \"/content/tourfold_local/work/lkh_reirrdf5/p.tsp\" ... done",
+    "ALPHA = 0.00",
+    "ASCENT_CANDIDATES = 50",
+    "BACKBONE_TRIALS = 0",
+    "BACKTRACKING = NO",
+    "# BWTSP =",
+    "CANDIDATE_FILE = /content/tourfold_local/work/lkh_reirrdf5/out.cand",
+    "CANDIDATE_SET_TYPE = ALPHA",
+    "# DISTANCE =",
+    "# DEPOT =",
+    "# EDGE_FILE =",
+    "DRONES = 1",
+    "ENDURANCE = 0.0",
+    "EXCESS = 0.00333333"
+   ],
+   "fixed_edges_tested": 243,
+   "fixed_cost_shift": 9233480.0,
+   "fixed_len": 9233480.0
+  },
+  "pi_unit_rel": {
+   "100": 0.0,
+   "1": 131.77548010447268
+  },
+  "fixed_edges_supported": true
+ },
+ "training_v2": [
+  {
+   "epoch": 0,
+   "time_s": 521.7667763233185,
+   "oom_skipped": 0,
+   "train_ce": 0.9131725602936003,
+   "train_bce": 0.16965086526285209,
+   "train_pi_mse": 1.1595200858164274,
+   "train_loss": 2.2202298439681982,
+   "train_conf_bce": 0.3135588211207153,
+   "val_missing_per_1k_M8": 0.8077104673498822,
+   "val_missing_per_1k_M16": 0.4538456616992863,
+   "val_missing_per_1k_alpha": 4.5599573839596115
+  },
+  {
+   "epoch": 1,
+   "time_s": 521.6737217903137,
+   "oom_skipped": 0,
+   "train_ce": 0.8186044382447956,
+   "train_bce": 0.10209144305656938,
+   "train_pi_mse": 1.0113999192203795,
+   "train_loss": 1.9376629618035646,
+   "train_conf_bce": 0.2830644142477452,
+   "val_missing_per_1k_M8": 0.7509282158405653,
+   "val_missing_per_1k_M16": 0.3914178972875218,
+   "val_missing_per_1k_alpha": 4.5599573839596115
+  },
+  {
+   "epoch": 2,
+   "time_s": 521.625969171524,
+   "oom_skipped": 0,
+   "train_ce": 0.8185307806780359,
+   "train_bce": 0.10185755030134645,
+   "train_pi_mse": 0.9510760867044705,
+   "train_loss": 1.8765208883445803,
+   "train_conf_bce": 0.2799262377895227,
+   "val_missing_per_1k_M8": 0.6143221720172959,
+   "val_missing_per_1k_M16": 0.32875575300189774,
+   "val_missing_per_1k_alpha": 4.5599573839596115
+  },
+  {
+   "epoch": 3,
+   "time_s": 522.344509601593,
+   "oom_skipped": 0,
+   "train_ce": 0.8165320937527238,
+   "train_bce": 0.09960180967168912,
+   "train_pi_mse": 0.908674213606034,
+   "train_loss": 1.830268441176996,
+   "train_conf_bce": 0.2763061319533469,
+   "val_missing_per_1k_M8": 0.6158192586874865,
+   "val_missing_per_1k_M16": 0.3596852942679477,
+   "val_missing_per_1k_alpha": 4.5599573839596115
+  },
+  {
+   "epoch": 4,
+   "time_s": 523.3993692398071,
+   "oom_skipped": 0,
+   "train_ce": 0.8145342352412347,
+   "train_bce": 0.09801641311198848,
+   "train_pi_mse": 0.8722680341656014,
+   "train_loss": 1.790276689024108,
+   "train_conf_bce": 0.27233106720036476,
+   "val_missing_per_1k_M8": 0.5139549250026539,
+   "val_missing_per_1k_M16": 0.2801685190308216,
+   "val_missing_per_1k_alpha": 4.5599573839596115
+  },
+  {
+   "epoch": 5,
+   "time_s": 522.7157399654388,
+   "oom_skipped": 0,
+   "train_ce": 0.8152990907180209,
+   "train_bce": 0.09821218158893225,
+   "train_pi_mse": 0.8454104602962983,
+   "train_loss": 1.7643787685562582,
+   "train_conf_bce": 0.27281564052114965,
+   "val_missing_per_1k_M8": 0.5629643787551951,
+   "val_missing_per_1k_M16": 0.2899826111451843,
+   "val_missing_per_1k_alpha": 4.5599573839596115
+  },
+  {
+   "epoch": 6,
+   "time_s": 523.431205034256,
+   "oom_skipped": 0,
+   "train_ce": 0.8145444134203326,
+   "train_bce": 0.0974719236690958,
+   "train_pi_mse": 0.810599996957208,
+   "train_loss": 1.7282350797613129,
+   "train_conf_bce": 0.27177354215072985,
+   "val_missing_per_1k_M8": 0.525126063783379,
+   "val_missing_per_1k_M16": 0.2716540908671421,
+   "val_missing_per_1k_alpha": 4.5599573839596115
+  },
+  {
+   "epoch": 7,
+   "time_s": 522.2213418483734,
+   "oom_skipped": 0,
+   "train_ce": 0.8146313677523896,
+   "train_bce": 0.09762596737521351,
+   "train_pi_mse": 0.7819229213503652,
+   "train_loss": 1.699304624000851,
+   "train_conf_bce": 0.26968676261635166,
+   "val_missing_per_1k_M8": 0.46681708018519663,
+   "val_missing_per_1k_M16": 0.24179874572810323,
+   "val_missing_per_1k_alpha": 4.5599573839596115
+  },
+  {
+   "epoch": 8,
+   "time_s": 522.6120662689209,
+   "oom_skipped": 0,
+   "train_ce": 0.813933227721937,
+   "train_bce": 0.09700639344770634,
+   "train_pi_mse": 0.7441625471271518,
+   "train_loss": 1.6602725837288834,
+   "train_conf_bce": 0.26836806768825616,
+   "val_missing_per_1k_M8": 0.4647257936616968,
+   "val_missing_per_1k_M16": 0.24231175713311112,
+   "val_missing_per_1k_alpha": 4.5599573839596115
+  },
+  {
+   "epoch": 9,
+   "time_s": 522.585574388504,
+   "oom_skipped": 0,
+   "train_ce": 0.8140884123999497,
+   "train_bce": 0.09702327594950583,
+   "train_pi_mse": 0.7148711855129297,
+   "train_loss": 1.6310728448995329,
+   "train_conf_bce": 0.2680080436527278,
+   "val_missing_per_1k_M8": 0.4932090769029747,
+   "val_missing_per_1k_M16": 0.26638339843012676,
+   "val_missing_per_1k_alpha": 4.5599573839596115
+  },
+  {
+   "epoch": 10,
+   "time_s": 520.8420209884644,
+   "oom_skipped": 0,
+   "train_ce": 0.8140975354098472,
+   "train_bce": 0.09695641297001799,
+   "train_pi_mse": 0.6896584204765929,
+   "train_loss": 1.6055623353028499,
+   "train_conf_bce": 0.2666408709618224,
+   "val_missing_per_1k_M8": 0.4701210032808945,
+   "val_missing_per_1k_M16": 0.247756182047934,
+   "val_missing_per_1k_alpha": 4.5599573839596115
+  },
+  {
+   "epoch": 11,
+   "time_s": 522.0457541942596,
+   "oom_skipped": 0,
+   "train_ce": 0.8139581558584165,
+   "train_bce": 0.0967461902241246,
+   "train_pi_mse": 0.676556024894494,
+   "train_loss": 1.5923035098725007,
+   "train_conf_bce": 0.26708116267158205,
+   "val_missing_per_1k_M8": 0.4776443875387331,
+   "val_missing_per_1k_M16": 0.247756182047934,
+   "val_missing_per_1k_alpha": 4.5599573839596115
+  }
+ ],
+ "coverage_v3": {
+  "coverage": [
+   {
+    "group": "clu10k",
+    "method": "POPMUSIC",
+    "missing_per_1k": 6.175,
+    "cov2": 0.850975,
+    "cov3": 0.9461875,
+    "list_len": 4.8979125
+   },
+   {
+    "group": "clu10k",
+    "method": "TourFold-v2(4) 3+POPMUSIC 2",
+    "missing_per_1k": 2.1875,
+    "cov2": 0.9002375,
+    "cov3": 0.9868875,
+    "list_len": 5.0
+   },
+   {
+    "group": "clu10k",
+    "method": "TourFold-v2(4) ilk 5",
+    "missing_per_1k": 0.9375,
+    "cov2": 0.9002375,
+    "cov3": 0.9868875,
+    "list_len": 5.0
+   },
+   {
+    "group": "clu10k",
+    "method": "TourFold-v2(8) 3+POPMUSIC 2",
+    "missing_per_1k": 2.1374999999999997,
+    "cov2": 0.9152625,
+    "cov3": 0.98915,
+    "list_len": 5.0
+   },
+   {
+    "group": "clu10k",
+    "method": "TourFold-v2(8) 3+yakın 2",
+    "missing_per_1k": 3.6999999999999997,
+    "cov2": 0.9152625,
+    "cov3": 0.98915,
+    "list_len": 5.0
+   },
+   {
+    "group": "clu10k",
+    "method": "TourFold-v2(8) ilk 5",
+    "missing_per_1k": 0.525,
+    "cov2": 0.9152625,
+    "cov3": 0.98915,
+    "list_len": 5.0
+   },
+   {
+    "group": "clu10k",
+    "method": "TourFold-v2(8) ∪ POPMUSIC",
+    "missing_per_1k": 0.2875,
+    "cov2": 0.9152625,
+    "cov3": 0.98915,
+    "list_len": 5.759
+   },
+   {
+    "group": "clu10k",
+    "method": "en yakın 5 komşu",
+    "missing_per_1k": 18.225,
+    "cov2": 0.8293125,
+    "cov3": 0.9239,
+    "list_len": 5.0
+   },
+   {
+    "group": "clu10k",
+    "method": "sayım+ (8)",
+    "missing_per_1k": 2.6875,
+    "cov2": 0.92315,
+    "cov3": 0.9889,
+    "list_len": 5.0
+   },
+   {
+    "group": "clu10k",
+    "method": "α+ascent (LKH-3 varsayılan)",
+    "missing_per_1k": 2.4625,
+    "cov2": 0.8947625,
+    "cov3": 0.9769625,
+    "list_len": 4.9680375
+   },
+   {
+    "group": "clu1k",
+    "method": "POPMUSIC",
+    "missing_per_1k": 5.625,
+    "cov2": 0.84509375,
+    "cov3": 0.944265625,
+    "list_len": 4.739390625
+   },
+   {
+    "group": "clu1k",
+    "method": "TourFold-v2(4) 3+POPMUSIC 2",
+    "missing_per_1k": 1.625,
+    "cov2": 0.92521875,
+    "cov3": 0.99034375,
+    "list_len": 5.0
+   },
+   {
+    "group": "clu1k",
+    "method": "TourFold-v2(4) ilk 5",
+    "missing_per_1k": 1.265625,
+    "cov2": 0.92521875,
+    "cov3": 0.99034375,
+    "list_len": 5.0
+   },
+   {
+    "group": "clu1k",
+    "method": "TourFold-v2(8) 3+POPMUSIC 2",
+    "missing_per_1k": 1.1875,
+    "cov2": 0.93996875,
+    "cov3": 0.99325,
+    "list_len": 5.0
+   },
+   {
+    "group": "clu1k",
+    "method": "TourFold-v2(8) 3+yakın 2",
+    "missing_per_1k": 2.25,
+    "cov2": 0.93996875,
+    "cov3": 0.99325,
+    "list_len": 5.0
+   },
+   {
+    "group": "clu1k",
+    "method": "TourFold-v2(8) ilk 5",
+    "missing_per_1k": 0.609375,
+    "cov2": 0.93996875,
+    "cov3": 0.99325,
+    "list_len": 5.0
+   },
+   {
+    "group": "clu1k",
+    "method": "TourFold-v2(8) ∪ POPMUSIC",
+    "missing_per_1k": 0.3125,
+    "cov2": 0.93996875,
+    "cov3": 0.99325,
+    "list_len": 5.7264375
+   },
+   {
+    "group": "clu1k",
+    "method": "en yakın 5 komşu",
+    "missing_per_1k": 23.40625,
+    "cov2": 0.8241875,
+    "cov3": 0.916734375,
+    "list_len": 5.0
+   },
+   {
+    "group": "clu1k",
+    "method": "sayım+ (8)",
+    "missing_per_1k": 1.859375,
+    "cov2": 0.936890625,
+    "cov3": 0.991828125,
+    "list_len": 5.0
+   },
+   {
+    "group": "clu1k",
+    "method": "α+ascent (LKH-3 varsayılan)",
+    "missing_per_1k": 3.890625,
+    "cov2": 0.88453125,
+    "cov3": 0.972421875,
+    "list_len": 4.9711875
+   },
+   {
+    "group": "tsplib",
+    "method": "POPMUSIC",
+    "missing_per_1k": 7.250727614929208,
+    "cov2": 0.8627860697223823,
+    "cov3": 0.9542119112053273,
+    "list_len": 4.733534623044994
+   },
+   {
+    "group": "tsplib",
+    "method": "TourFold-v2(4) 3+POPMUSIC 2",
+    "missing_per_1k": 3.6407142155266503,
+    "cov2": 0.8992236918693477,
+    "cov3": 0.9771504625782345,
+    "list_len": 5.0
+   },
+   {
+    "group": "tsplib",
+    "method": "TourFold-v2(4) ilk 5",
+    "missing_per_1k": 2.9938948092335185,
+    "cov2": 0.8992236918693477,
+    "cov3": 0.9771504625782345,
+    "list_len": 5.0
+   },
+   {
+    "group": "tsplib",
+    "method": "TourFold-v2(8) 3+POPMUSIC 2",
+    "missing_per_1k": 3.2329973124469378,
+    "cov2": 0.9129436171025715,
+    "cov3": 0.9805247967790788,
+    "list_len": 5.0
+   },
+   {
+    "group": "tsplib",
+    "method": "TourFold-v2(8) 3+yakın 2",
+    "missing_per_1k": 4.643006452338677,
+    "cov2": 0.9129436171025715,
+    "cov3": 0.9805247967790788,
+    "list_len": 5.0
+   },
+   {
+    "group": "tsplib",
+    "method": "TourFold-v2(8) ilk 5",
+    "missing_per_1k": 2.5455870591474414,
+    "cov2": 0.9129436171025715,
+    "cov3": 0.9805247967790788,
+    "list_len": 5.0
+   },
+   {
+    "group": "tsplib",
+    "method": "TourFold-v2(8) ∪ POPMUSIC",
+    "missing_per_1k": 1.9486794152787628,
+    "cov2": 0.9129436171025715,
+    "cov3": 0.9805247967790788,
+    "list_len": 5.862701660038944
+   },
+   {
+    "group": "tsplib",
+    "method": "en yakın 5 komşu",
+    "missing_per_1k": 21.67769974362495,
+    "cov2": 0.8543709437014441,
+    "cov3": 0.9368595943218785,
+    "list_len": 5.0
+   },
+   {
+    "group": "tsplib",
+    "method": "sayım+ (8)",
+    "missing_per_1k": 3.92696260515408,
+    "cov2": 0.9161704027583051,
+    "cov3": 0.9807320530264901,
+    "list_len": 5.0
+   },
+   {
+    "group": "tsplib",
+    "method": "α+ascent (LKH-3 varsayılan)",
+    "missing_per_1k": 4.687966850013505,
+    "cov2": 0.9014881783232973,
+    "cov3": 0.9751278227238662,
+    "list_len": 4.977844425401134
+   },
+   {
+    "group": "uni10k",
+    "method": "POPMUSIC",
+    "missing_per_1k": 5.6,
+    "cov2": 0.8556,
+    "cov3": 0.9490125,
+    "list_len": 4.882825
+   },
+   {
+    "group": "uni10k",
+    "method": "TourFold-v2(4) 3+POPMUSIC 2",
+    "missing_per_1k": 1.9125,
+    "cov2": 0.91215,
+    "cov3": 0.989575,
+    "list_len": 5.0
+   },
+   {
+    "group": "uni10k",
+    "method": "TourFold-v2(4) ilk 5",
+    "missing_per_1k": 0.7375,
+    "cov2": 0.91215,
+    "cov3": 0.989575,
+    "list_len": 5.0
+   },
+   {
+    "group": "uni10k",
+    "method": "TourFold-v2(8) 3+POPMUSIC 2",
+    "missing_per_1k": 1.7375,
+    "cov2": 0.9274625,
+    "cov3": 0.991825,
+    "list_len": 5.0
+   },
+   {
+    "group": "uni10k",
+    "method": "TourFold-v2(8) 3+yakın 2",
+    "missing_per_1k": 2.85,
+    "cov2": 0.9274625,
+    "cov3": 0.991825,
+    "list_len": 5.0
+   },
+   {
+    "group": "uni10k",
+    "method": "TourFold-v2(8) ilk 5",
+    "missing_per_1k": 0.425,
+    "cov2": 0.9274625,
+    "cov3": 0.991825,
+    "list_len": 5.0
+   },
+   {
+    "group": "uni10k",
+    "method": "TourFold-v2(8) ∪ POPMUSIC",
+    "missing_per_1k": 0.2875,
+    "cov2": 0.9274625,
+    "cov3": 0.991825,
+    "list_len": 5.738725
+   },
+   {
+    "group": "uni10k",
+    "method": "en yakın 5 komşu",
+    "missing_per_1k": 17.5125,
+    "cov2": 0.827925,
+    "cov3": 0.9227,
+    "list_len": 5.0
+   },
+   {
+    "group": "uni10k",
+    "method": "sayım+ (8)",
+    "missing_per_1k": 2.075,
+    "cov2": 0.93385,
+    "cov3": 0.991175,
+    "list_len": 5.0
+   },
+   {
+    "group": "uni10k",
+    "method": "α+ascent (LKH-3 varsayılan)",
+    "missing_per_1k": 2.7875,
+    "cov2": 0.8964,
+    "cov3": 0.9767875,
+    "list_len": 4.9936
+   },
+   {
+    "group": "uni1k",
+    "method": "POPMUSIC",
+    "missing_per_1k": 5.234375,
+    "cov2": 0.853296875,
+    "cov3": 0.948703125,
+    "list_len": 4.76153125
+   },
+   {
+    "group": "uni1k",
+    "method": "TourFold-v2(4) 3+POPMUSIC 2",
+    "missing_per_1k": 1.484375,
+    "cov2": 0.924671875,
+    "cov3": 0.992109375,
+    "list_len": 5.0
+   },
+   {
+    "group": "uni1k",
+    "method": "TourFold-v2(4) ilk 5",
+    "missing_per_1k": 0.578125,
+    "cov2": 0.924671875,
+    "cov3": 0.992109375,
+    "list_len": 5.0
+   },
+   {
+    "group": "uni1k",
+    "method": "TourFold-v2(8) 3+POPMUSIC 2",
+    "missing_per_1k": 1.09375,
+    "cov2": 0.938921875,
+    "cov3": 0.994625,
+    "list_len": 5.0
+   },
+   {
+    "group": "uni1k",
+    "method": "TourFold-v2(8) 3+yakın 2",
+    "missing_per_1k": 1.90625,
+    "cov2": 0.938921875,
+    "cov3": 0.994625,
+    "list_len": 5.0
+   },
+   {
+    "group": "uni1k",
+    "method": "TourFold-v2(8) ilk 5",
+    "missing_per_1k": 0.3125,
+    "cov2": 0.938921875,
+    "cov3": 0.994625,
+    "list_len": 5.0
+   },
+   {
+    "group": "uni1k",
+    "method": "TourFold-v2(8) ∪ POPMUSIC",
+    "missing_per_1k": 0.15625,
+    "cov2": 0.938921875,
+    "cov3": 0.994625,
+    "list_len": 5.6918125
+   },
+   {
+    "group": "uni1k",
+    "method": "en yakın 5 komşu",
+    "missing_per_1k": 19.53125,
+    "cov2": 0.8255625,
+    "cov3": 0.91990625,
+    "list_len": 5.0
+   },
+   {
+    "group": "uni1k",
+    "method": "sayım+ (8)",
+    "missing_per_1k": 1.59375,
+    "cov2": 0.942609375,
+    "cov3": 0.99365625,
+    "list_len": 5.0
+   },
+   {
+    "group": "uni1k",
+    "method": "α+ascent (LKH-3 varsayılan)",
+    "missing_per_1k": 2.265625,
+    "cov2": 0.8932656250000001,
+    "cov3": 0.976984375,
+    "list_len": 4.989578125
+   },
+   {
+    "group": "val",
+    "method": "POPMUSIC",
+    "missing_per_1k": 3.949819171071584,
+    "cov2": 0.8500201550702411,
+    "cov3": 0.9518820365725869,
+    "list_len": 4.370622672289009
+   },
+   {
+    "group": "val",
+    "method": "TourFold-v2(4) 3+POPMUSIC 2",
+    "missing_per_1k": 0.8827781791655626,
+    "cov2": 0.9595263249500916,
+    "cov3": 0.9940893798266116,
+    "list_len": 5.0
+   },
+   {
+    "group": "val",
+    "method": "TourFold-v2(4) ilk 5",
+    "missing_per_1k": 0.8704025331587376,
+    "cov2": 0.9595263249500916,
+    "cov3": 0.9940893798266116,
+    "list_len": 5.0
+   },
+   {
+    "group": "val",
+    "method": "TourFold-v2(8) 3+POPMUSIC 2",
+    "missing_per_1k": 0.5930405552664533,
+    "cov2": 0.9649676367715477,
+    "cov3": 0.996610637562421,
+    "list_len": 5.0
+   },
+   {
+    "group": "val",
+    "method": "TourFold-v2(8) 3+yakın 2",
+    "missing_per_1k": 1.406594123218891,
+    "cov2": 0.9649676367715477,
+    "cov3": 0.996610637562421,
+    "list_len": 5.0
+   },
+   {
+    "group": "val",
+    "method": "TourFold-v2(8) ilk 5",
+    "missing_per_1k": 0.47550816157224546,
+    "cov2": 0.9649676367715477,
+    "cov3": 0.996610637562421,
+    "list_len": 5.0
+   },
+   {
+    "group": "val",
+    "method": "TourFold-v2(8) ∪ POPMUSIC",
+    "missing_per_1k": 0.20353165730724732,
+    "cov2": 0.9649676367715477,
+    "cov3": 0.996610637562421,
+    "list_len": 5.584119979848761
+   },
+   {
+    "group": "val",
+    "method": "en yakın 5 komşu",
+    "missing_per_1k": 30.515558534671932,
+    "cov2": 0.8154707445818827,
+    "cov3": 0.9092710547594204,
+    "list_len": 5.0
+   },
+   {
+    "group": "val",
+    "method": "sayım+ (8)",
+    "missing_per_1k": 1.3200664110033957,
+    "cov2": 0.9552454639218522,
+    "cov3": 0.995185210541584,
+    "list_len": 5.0
+   },
+   {
+    "group": "val",
+    "method": "α+ascent (LKH-3 varsayılan)",
+    "missing_per_1k": 4.5599573839596115,
+    "cov2": 0.886598681898204,
+    "cov3": 0.9715059091928742,
+    "list_len": 4.986365393910368
+   }
+  ],
+  "val_by_dist": [
+   {
+    "sub": "val-clustered",
+    "method": "POPMUSIC",
+    "missing_per_1k": 4.356988541565829
+   },
+   {
+    "sub": "val-clustered",
+    "method": "TourFold-v2(4) 3+POPMUSIC 2",
+    "missing_per_1k": 0.8700332682265901
+   },
+   {
+    "sub": "val-clustered",
+    "method": "TourFold-v2(4) ilk 5",
+    "missing_per_1k": 1.3819414252368578
+   },
+   {
+    "sub": "val-clustered",
+    "method": "TourFold-v2(8) 3+POPMUSIC 2",
+    "missing_per_1k": 0.6363819726102973
+   },
+   {
+    "sub": "val-clustered",
+    "method": "TourFold-v2(8) 3+yakın 2",
+    "missing_per_1k": 1.6440854248419914
+   },
+   {
+    "sub": "val-clustered",
+    "method": "TourFold-v2(8) ilk 5",
+    "missing_per_1k": 0.755878351554273
+   },
+   {
+    "sub": "val-clustered",
+    "method": "TourFold-v2(8) ∪ POPMUSIC",
+    "missing_per_1k": 0.28505203875764396
+   },
+   {
+    "sub": "val-clustered",
+    "method": "en yakın 5 komşu",
+    "missing_per_1k": 40.295561838398015
+   },
+   {
+    "sub": "val-clustered",
+    "method": "sayım+ (8)",
+    "missing_per_1k": 1.5562891597556447
+   },
+   {
+    "sub": "val-clustered",
+    "method": "α+ascent (LKH-3 varsayılan)",
+    "missing_per_1k": 6.494852032028271
+   },
+   {
+    "sub": "val-uniform",
+    "method": "POPMUSIC",
+    "missing_per_1k": 3.5458941780314768
+   },
+   {
+    "sub": "val-uniform",
+    "method": "TourFold-v2(4) 3+POPMUSIC 2",
+    "missing_per_1k": 0.8954215370293239
+   },
+   {
+    "sub": "val-uniform",
+    "method": "TourFold-v2(4) ilk 5",
+    "missing_per_1k": 0.36293964818880947
+   },
+   {
+    "sub": "val-uniform",
+    "method": "TourFold-v2(8) 3+POPMUSIC 2",
+    "missing_per_1k": 0.5500444878616039
+   },
+   {
+    "sub": "val-uniform",
+    "method": "TourFold-v2(8) 3+yakın 2",
+    "missing_per_1k": 1.1709951825648988
+   },
+   {
+    "sub": "val-uniform",
+    "method": "TourFold-v2(8) ilk 5",
+    "missing_per_1k": 0.19737199700840147
+   },
+   {
+    "sub": "val-uniform",
+    "method": "TourFold-v2(8) ∪ POPMUSIC",
+    "missing_per_1k": 0.12266084064928412
+   },
+   {
+    "sub": "val-uniform",
+    "method": "en yakın 5 komşu",
+    "missing_per_1k": 20.813483544122942
+   },
+   {
+    "sub": "val-uniform",
+    "method": "sayım+ (8)",
+    "missing_per_1k": 1.085725915229252
+   },
+   {
+    "sub": "val-uniform",
+    "method": "α+ascent (LKH-3 varsayılan)",
+    "missing_per_1k": 2.640480223126559
+   }
+  ],
+  "groups": [
+   "val",
+   "uni1k",
+   "clu1k",
+   "uni10k",
+   "clu10k",
+   "tsplib"
+  ]
+ },
+ "ens_time_ratio_v3_v2": 1.038490452663253,
+ "lkh_eval_v3": {
+  "gap": [
+   {
+    "set": "uni1k",
+    "config": "LKH-3 POPMUSIC",
+    "gap@10%B": 0.22409914852752974,
+    "gap@25%B": 0.03386371298128458,
+    "gap@50%B": 0.011593202923638628,
+    "gap@100%B": 0.009833055176362753,
+    "turlu@10%B": 7,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "uni1k",
+    "config": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "gap@10%B": 0.1800092972750651,
+    "gap@25%B": 0.026971984404545332,
+    "gap@50%B": 0.006017194656959065,
+    "gap@100%B": 0.005180925438755343,
+    "turlu@10%B": 3,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "uni1k",
+    "config": "sayım+ (8)",
+    "gap@10%B": 0.1800092972750651,
+    "gap@25%B": 0.041533000334920245,
+    "gap@50%B": 0.007899546042830403,
+    "gap@100%B": 0.0035708195677147444,
+    "turlu@10%B": 3,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "uni1k",
+    "config": "TourFold-v2(8) ilk 5",
+    "gap@10%B": 0.1800092972750651,
+    "gap@25%B": 0.040074192372508144,
+    "gap@50%B": 0.002180613039219227,
+    "gap@100%B": 0.001520486073715576,
+    "turlu@10%B": 3,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "uni1k",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "gap@10%B": 0.1800092972750651,
+    "gap@25%B": 0.036181087908079904,
+    "gap@50%B": 0.00983173053580363,
+    "gap@100%B": 0.003058944839154782,
+    "turlu@10%B": 3,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "uni1k",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "gap@10%B": 0.1800092972750651,
+    "gap@25%B": 0.04157048995970301,
+    "gap@50%B": 0.011495200239556224,
+    "gap@100%B": 0.003634471278183289,
+    "turlu@10%B": 3,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "uni1k",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "gap@10%B": 0.1800092972750651,
+    "gap@25%B": 0.05138544093053953,
+    "gap@50%B": 0.007807796565106513,
+    "gap@100%B": 0.0013202539310073018,
+    "turlu@10%B": 3,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "uni1k",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "gap@10%B": 0.1800092972750651,
+    "gap@25%B": 0.028085207939808152,
+    "gap@50%B": 0.009019431230599041,
+    "gap@100%B": 0.005841543156820077,
+    "turlu@10%B": 3,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "clu1k",
+    "config": "LKH-3 POPMUSIC",
+    "gap@10%B": NaN,
+    "gap@25%B": 0.12204688582727403,
+    "gap@50%B": 0.03099697829116709,
+    "gap@100%B": 0.014490973486138668,
+    "turlu@10%B": 0,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "clu1k",
+    "config": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "gap@10%B": NaN,
+    "gap@25%B": 0.175803616503546,
+    "gap@50%B": 0.0900591212858941,
+    "gap@100%B": 0.006723390305019692,
+    "turlu@10%B": 0,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "clu1k",
+    "config": "sayım+ (8)",
+    "gap@10%B": NaN,
+    "gap@25%B": 0.175803616503546,
+    "gap@50%B": 0.08855960230823426,
+    "gap@100%B": 0.03601020725852392,
+    "turlu@10%B": 0,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "clu1k",
+    "config": "TourFold-v2(8) ilk 5",
+    "gap@10%B": NaN,
+    "gap@25%B": 0.175803616503546,
+    "gap@50%B": 0.0866326995121447,
+    "gap@100%B": 0.004661686186624128,
+    "turlu@10%B": 0,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "clu1k",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "gap@10%B": NaN,
+    "gap@25%B": 0.175803616503546,
+    "gap@50%B": 0.10308319335713263,
+    "gap@100%B": 0.010311019842997576,
+    "turlu@10%B": 0,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "clu1k",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "gap@10%B": NaN,
+    "gap@25%B": 0.175803616503546,
+    "gap@50%B": 0.09415252495427,
+    "gap@100%B": 0.04679244512945306,
+    "turlu@10%B": 0,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "clu1k",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "gap@10%B": NaN,
+    "gap@25%B": 0.175803616503546,
+    "gap@50%B": 0.0981274789389611,
+    "gap@100%B": 0.02231316808289031,
+    "turlu@10%B": 0,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "clu1k",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "gap@10%B": NaN,
+    "gap@25%B": 0.175803616503546,
+    "gap@50%B": 0.039809398720009714,
+    "gap@100%B": 0.0027267508610792192,
+    "turlu@10%B": 0,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "tsplib",
+    "config": "LKH-3 POPMUSIC",
+    "gap@10%B": 0.15327011414895544,
+    "gap@25%B": 0.07869439858806199,
+    "gap@50%B": 0.05094344334980354,
+    "gap@100%B": 0.020918886693879,
+    "turlu@10%B": 11,
+    "turlu@25%B": 11,
+    "turlu@100%B": 11,
+    "örnek": 11
+   },
+   {
+    "set": "tsplib",
+    "config": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "gap@10%B": 0.2986863776294719,
+    "gap@25%B": 0.0809393366589313,
+    "gap@50%B": 0.060205051081324075,
+    "gap@100%B": 0.05080117541686604,
+    "turlu@10%B": 11,
+    "turlu@25%B": 11,
+    "turlu@100%B": 11,
+    "örnek": 11
+   },
+   {
+    "set": "tsplib",
+    "config": "sayım+ (8)",
+    "gap@10%B": 0.2877651029709459,
+    "gap@25%B": 0.07907689176058325,
+    "gap@50%B": 0.05122911645632895,
+    "gap@100%B": 0.02683077380476926,
+    "turlu@10%B": 11,
+    "turlu@25%B": 11,
+    "turlu@100%B": 11,
+    "örnek": 11
+   },
+   {
+    "set": "tsplib",
+    "config": "TourFold-v2(8) ilk 5",
+    "gap@10%B": 0.2747238379090491,
+    "gap@25%B": 0.07018062436617706,
+    "gap@50%B": 0.029658926647049146,
+    "gap@100%B": 0.023379838521734454,
+    "turlu@10%B": 11,
+    "turlu@25%B": 11,
+    "turlu@100%B": 11,
+    "örnek": 11
+   },
+   {
+    "set": "tsplib",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "gap@10%B": 0.2965343353082888,
+    "gap@25%B": 0.08087143406367957,
+    "gap@50%B": 0.03239999940364519,
+    "gap@100%B": 0.02471000034757094,
+    "turlu@10%B": 11,
+    "turlu@25%B": 11,
+    "turlu@100%B": 11,
+    "örnek": 11
+   },
+   {
+    "set": "tsplib",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "gap@10%B": 0.29241375228984073,
+    "gap@25%B": 0.08426416286322001,
+    "gap@50%B": 0.05761211105329302,
+    "gap@100%B": 0.047533892006273205,
+    "turlu@10%B": 11,
+    "turlu@25%B": 11,
+    "turlu@100%B": 11,
+    "örnek": 11
+   },
+   {
+    "set": "tsplib",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "gap@10%B": 0.29690094518584653,
+    "gap@25%B": 0.0806524884464371,
+    "gap@50%B": 0.04866246747271046,
+    "gap@100%B": 0.02217322332957418,
+    "turlu@10%B": 11,
+    "turlu@25%B": 11,
+    "turlu@100%B": 11,
+    "örnek": 11
+   },
+   {
+    "set": "tsplib",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "gap@10%B": 0.17537303410462507,
+    "gap@25%B": 0.06202560797535932,
+    "gap@50%B": 0.047987454932273674,
+    "gap@100%B": 0.037253407314636826,
+    "turlu@10%B": 11,
+    "turlu@25%B": 11,
+    "turlu@100%B": 11,
+    "örnek": 11
+   },
+   {
+    "set": "uni10k",
+    "config": "LKH-3 POPMUSIC",
+    "gap@10%B": 0.22348808574917234,
+    "gap@25%B": 0.06380185337273647,
+    "gap@50%B": 0.04413418316191615,
+    "gap@100%B": 0.02823246511585053,
+    "turlu@10%B": 8,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "uni10k",
+    "config": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "gap@10%B": 0.29841440084424037,
+    "gap@25%B": 0.17744227690600756,
+    "gap@50%B": 0.06022796009166315,
+    "gap@100%B": 0.03928572140026555,
+    "turlu@10%B": 8,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "uni10k",
+    "config": "sayım+ (8)",
+    "gap@10%B": 0.29841440084424037,
+    "gap@25%B": 0.12504138305616663,
+    "gap@50%B": 0.05225742593470731,
+    "gap@100%B": 0.030435233357402062,
+    "turlu@10%B": 8,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "uni10k",
+    "config": "TourFold-v2(8) ilk 5",
+    "gap@10%B": 0.29841440084424037,
+    "gap@25%B": 0.1479837023304381,
+    "gap@50%B": 0.07513142619803165,
+    "gap@100%B": 0.035638387543081615,
+    "turlu@10%B": 8,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "uni10k",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "gap@10%B": 0.29841440084424037,
+    "gap@25%B": 0.15093994478207312,
+    "gap@50%B": 0.05396729343312733,
+    "gap@100%B": 0.03109835752534848,
+    "turlu@10%B": 8,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "uni10k",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "gap@10%B": 0.29841440084424037,
+    "gap@25%B": 0.14745936032836898,
+    "gap@50%B": 0.05763677723931205,
+    "gap@100%B": 0.03253318262305008,
+    "turlu@10%B": 8,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "uni10k",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "gap@10%B": 0.29841440084424037,
+    "gap@25%B": 0.15503313923535902,
+    "gap@50%B": 0.06463339857747459,
+    "gap@100%B": 0.034874573305767195,
+    "turlu@10%B": 8,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "uni10k",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "gap@10%B": 0.29841440084424037,
+    "gap@25%B": 0.09560203888347155,
+    "gap@50%B": 0.04384833648585351,
+    "gap@100%B": 0.02657518837979652,
+    "turlu@10%B": 8,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "clu10k",
+    "config": "LKH-3 POPMUSIC",
+    "gap@10%B": 0.6135993672952277,
+    "gap@25%B": 0.08427150742150458,
+    "gap@50%B": 0.043769921591363996,
+    "gap@100%B": 0.024852886665324127,
+    "turlu@10%B": 6,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "clu10k",
+    "config": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "gap@10%B": 0.4056941460293413,
+    "gap@25%B": 0.3711127065315916,
+    "gap@50%B": 0.10842794559568401,
+    "gap@100%B": 0.024620480555069234,
+    "turlu@10%B": 2,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "clu10k",
+    "config": "sayım+ (8)",
+    "gap@10%B": 0.4056941460293413,
+    "gap@25%B": 0.3711127065315916,
+    "gap@50%B": 0.05819018362701453,
+    "gap@100%B": 0.021505544805227976,
+    "turlu@10%B": 2,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "clu10k",
+    "config": "TourFold-v2(8) ilk 5",
+    "gap@10%B": 0.4056941460293413,
+    "gap@25%B": 0.3711127065315916,
+    "gap@50%B": 0.0873278889218223,
+    "gap@100%B": 0.01973393604169888,
+    "turlu@10%B": 2,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "clu10k",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "gap@10%B": 0.4056941460293413,
+    "gap@25%B": 0.3711127065315916,
+    "gap@50%B": 0.0846651760324007,
+    "gap@100%B": 0.026426093743630218,
+    "turlu@10%B": 2,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "clu10k",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "gap@10%B": 0.4056941460293413,
+    "gap@25%B": 0.3711127065315916,
+    "gap@50%B": 0.07677503843548487,
+    "gap@100%B": 0.027769276872112912,
+    "turlu@10%B": 2,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "clu10k",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "gap@10%B": 0.4056941460293413,
+    "gap@25%B": 0.3711127065315916,
+    "gap@50%B": 0.10640201084321646,
+    "gap@100%B": 0.029795983204572905,
+    "turlu@10%B": 2,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "clu10k",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "gap@10%B": 0.4056941460293413,
+    "gap@25%B": 0.27021006430194805,
+    "gap@50%B": 0.051014181010080734,
+    "gap@100%B": 0.023793472595863764,
+    "turlu@10%B": 2,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "uni20k",
+    "config": "LKH-3 POPMUSIC",
+    "gap@10%B": 0.16784455817477464,
+    "gap@25%B": 0.07803611076994851,
+    "gap@50%B": 0.03515105756511947,
+    "gap@100%B": 0.014504890837188825,
+    "turlu@10%B": 4,
+    "turlu@25%B": 4,
+    "turlu@100%B": 4,
+    "örnek": 4
+   },
+   {
+    "set": "uni20k",
+    "config": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "gap@10%B": 0.23190110975504102,
+    "gap@25%B": 0.19565044194814946,
+    "gap@50%B": 0.09407252303721934,
+    "gap@100%B": 0.05499991890819527,
+    "turlu@10%B": 4,
+    "turlu@25%B": 4,
+    "turlu@100%B": 4,
+    "örnek": 4
+   },
+   {
+    "set": "uni20k",
+    "config": "sayım+ (8)",
+    "gap@10%B": 0.23190110975504102,
+    "gap@25%B": 0.19565044194814946,
+    "gap@50%B": 0.04180792683065883,
+    "gap@100%B": 0.014919658378798486,
+    "turlu@10%B": 4,
+    "turlu@25%B": 4,
+    "turlu@100%B": 4,
+    "örnek": 4
+   },
+   {
+    "set": "uni20k",
+    "config": "TourFold-v2(8) ilk 5",
+    "gap@10%B": 0.23190110975504102,
+    "gap@25%B": 0.19565044194814946,
+    "gap@50%B": 0.05722830103262877,
+    "gap@100%B": 0.028791774425433507,
+    "turlu@10%B": 4,
+    "turlu@25%B": 4,
+    "turlu@100%B": 4,
+    "örnek": 4
+   },
+   {
+    "set": "uni20k",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "gap@10%B": 0.23190110975504102,
+    "gap@25%B": 0.19565044194814946,
+    "gap@50%B": 0.07135819048776755,
+    "gap@100%B": 0.042212959830377886,
+    "turlu@10%B": 4,
+    "turlu@25%B": 4,
+    "turlu@100%B": 4,
+    "örnek": 4
+   },
+   {
+    "set": "uni20k",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "gap@10%B": 0.23190110975504102,
+    "gap@25%B": 0.19565044194814946,
+    "gap@50%B": 0.06200255274763534,
+    "gap@100%B": 0.006648670188628199,
+    "turlu@10%B": 4,
+    "turlu@25%B": 4,
+    "turlu@100%B": 4,
+    "örnek": 4
+   },
+   {
+    "set": "uni20k",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "gap@10%B": 0.23190110975504102,
+    "gap@25%B": 0.19565044194814946,
+    "gap@50%B": 0.06811256917156219,
+    "gap@100%B": 0.03873135698454843,
+    "turlu@10%B": 4,
+    "turlu@25%B": 4,
+    "turlu@100%B": 4,
+    "örnek": 4
+   },
+   {
+    "set": "uni20k",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "gap@10%B": 0.23190110975504102,
+    "gap@25%B": 0.10790770822262205,
+    "gap@50%B": 0.05266994168567591,
+    "gap@100%B": 0.021048012546168657,
+    "turlu@10%B": 4,
+    "turlu@25%B": 4,
+    "turlu@100%B": 4,
+    "örnek": 4
+   },
+   {
+    "set": "clu20k",
+    "config": "LKH-3 POPMUSIC",
+    "gap@10%B": 0.43890738463840406,
+    "gap@25%B": 0.09400835120708992,
+    "gap@50%B": 0.036434141983958654,
+    "gap@100%B": 0.007919346088301348,
+    "turlu@10%B": 4,
+    "turlu@25%B": 4,
+    "turlu@100%B": 4,
+    "örnek": 4
+   },
+   {
+    "set": "clu20k",
+    "config": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "gap@10%B": 0.41838366349772876,
+    "gap@25%B": 0.36690332520820546,
+    "gap@50%B": 0.09706319550318025,
+    "gap@100%B": 0.03072532082396889,
+    "turlu@10%B": 3,
+    "turlu@25%B": 4,
+    "turlu@100%B": 4,
+    "örnek": 4
+   },
+   {
+    "set": "clu20k",
+    "config": "sayım+ (8)",
+    "gap@10%B": 0.41838366349772876,
+    "gap@25%B": 0.36690332520820546,
+    "gap@50%B": 0.06620733143175123,
+    "gap@100%B": 0.019668231429901147,
+    "turlu@10%B": 3,
+    "turlu@25%B": 4,
+    "turlu@100%B": 4,
+    "örnek": 4
+   },
+   {
+    "set": "clu20k",
+    "config": "TourFold-v2(8) ilk 5",
+    "gap@10%B": 0.41838366349772876,
+    "gap@25%B": 0.36690332520820546,
+    "gap@50%B": 0.07958050216659551,
+    "gap@100%B": 0.01774377075874287,
+    "turlu@10%B": 3,
+    "turlu@25%B": 4,
+    "turlu@100%B": 4,
+    "örnek": 4
+   },
+   {
+    "set": "clu20k",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "gap@10%B": 0.41838366349772876,
+    "gap@25%B": 0.36690332520820546,
+    "gap@50%B": 0.09626785919156483,
+    "gap@100%B": 0.013724753534854516,
+    "turlu@10%B": 3,
+    "turlu@25%B": 4,
+    "turlu@100%B": 4,
+    "örnek": 4
+   },
+   {
+    "set": "clu20k",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "gap@10%B": 0.41838366349772876,
+    "gap@25%B": 0.36690332520820546,
+    "gap@50%B": 0.07460988876819807,
+    "gap@100%B": 0.012141097310364172,
+    "turlu@10%B": 3,
+    "turlu@25%B": 4,
+    "turlu@100%B": 4,
+    "örnek": 4
+   },
+   {
+    "set": "clu20k",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "gap@10%B": 0.41838366349772876,
+    "gap@25%B": 0.36690332520820546,
+    "gap@50%B": 0.12915552157013158,
+    "gap@100%B": 0.04292962871056143,
+    "turlu@10%B": 3,
+    "turlu@25%B": 4,
+    "turlu@100%B": 4,
+    "örnek": 4
+   },
+   {
+    "set": "clu20k",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "gap@10%B": 0.41838366349772876,
+    "gap@25%B": 0.25397975461357236,
+    "gap@50%B": 0.05702153590675611,
+    "gap@100%B": 0.00801782755540303,
+    "turlu@10%B": 3,
+    "turlu@25%B": 4,
+    "turlu@100%B": 4,
+    "örnek": 4
+   }
+  ],
+  "time_to_gap": [
+   {
+    "set": "uni1k",
+    "config": "LKH-3 POPMUSIC",
+    "time_to_1.0%": 0.485,
+    "time_to_0.5%": 0.485,
+    "time_to_0.2%": 0.52,
+    "time_to_0.1%": 0.565,
+    "time_to_0.05%": 0.8049999999999999
+   },
+   {
+    "set": "uni1k",
+    "config": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "time_to_1.0%": 0.5009733764999851,
+    "time_to_0.5%": 0.5009733764999851,
+    "time_to_0.2%": 0.5882635130000438,
+    "time_to_0.1%": 0.9364190359999555,
+    "time_to_0.05%": 1.122515455999968
+   },
+   {
+    "set": "uni1k",
+    "config": "sayım+ (8)",
+    "time_to_1.0%": 0.5009733764999851,
+    "time_to_0.5%": 0.5009733764999851,
+    "time_to_0.2%": 0.5882635130000438,
+    "time_to_0.1%": 0.9312537674999385,
+    "time_to_0.05%": 1.1690192709999518
+   },
+   {
+    "set": "uni1k",
+    "config": "TourFold-v2(8) ilk 5",
+    "time_to_1.0%": 0.5009733764999851,
+    "time_to_0.5%": 0.5009733764999851,
+    "time_to_0.2%": 0.5882635130000438,
+    "time_to_0.1%": 0.9659954130000301,
+    "time_to_0.05%": 1.1741189484999757
+   },
+   {
+    "set": "uni1k",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "time_to_1.0%": 0.5009733764999851,
+    "time_to_0.5%": 0.5009733764999851,
+    "time_to_0.2%": 0.5882635130000438,
+    "time_to_0.1%": 0.955608087499977,
+    "time_to_0.05%": 1.1810898715000508
+   },
+   {
+    "set": "uni1k",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "time_to_1.0%": 0.5009733764999851,
+    "time_to_0.5%": 0.5009733764999851,
+    "time_to_0.2%": 0.5882635130000438,
+    "time_to_0.1%": 0.9659954130000301,
+    "time_to_0.05%": 1.15886066699999
+   },
+   {
+    "set": "uni1k",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "time_to_1.0%": 0.5009733764999851,
+    "time_to_0.5%": 0.5009733764999851,
+    "time_to_0.2%": 0.5882635130000438,
+    "time_to_0.1%": 0.9659954130000301,
+    "time_to_0.05%": 1.2451686170000063
+   },
+   {
+    "set": "uni1k",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "time_to_1.0%": 0.5009733764999851,
+    "time_to_0.5%": 0.5009733764999851,
+    "time_to_0.2%": 0.5882635130000438,
+    "time_to_0.1%": 0.78571110650003,
+    "time_to_0.05%": 0.9827513800000224
+   },
+   {
+    "set": "clu1k",
+    "config": "LKH-3 POPMUSIC",
+    "time_to_1.0%": 0.6499999999999999,
+    "time_to_0.5%": 0.71,
+    "time_to_0.2%": 0.8200000000000001,
+    "time_to_0.1%": 1.08,
+    "time_to_0.05%": 1.225
+   },
+   {
+    "set": "clu1k",
+    "config": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "time_to_1.0%": 0.639278008500014,
+    "time_to_0.5%": 0.639278008500014,
+    "time_to_0.2%": 1.2908277254999803,
+    "time_to_0.1%": 1.6386640710000222,
+    "time_to_0.05%": 2.800768155500026
+   },
+   {
+    "set": "clu1k",
+    "config": "sayım+ (8)",
+    "time_to_1.0%": 0.639278008500014,
+    "time_to_0.5%": 0.639278008500014,
+    "time_to_0.2%": 1.2908277254999803,
+    "time_to_0.1%": 1.6386640710000222,
+    "time_to_0.05%": 2.6592692844999966
+   },
+   {
+    "set": "clu1k",
+    "config": "TourFold-v2(8) ilk 5",
+    "time_to_1.0%": 0.639278008500014,
+    "time_to_0.5%": 0.639278008500014,
+    "time_to_0.2%": 1.2908277254999803,
+    "time_to_0.1%": 1.6386640710000222,
+    "time_to_0.05%": 2.8899620460000075
+   },
+   {
+    "set": "clu1k",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "time_to_1.0%": 0.639278008500014,
+    "time_to_0.5%": 0.639278008500014,
+    "time_to_0.2%": 1.2908277254999803,
+    "time_to_0.1%": 1.6386640710000222,
+    "time_to_0.05%": 2.922916009500015
+   },
+   {
+    "set": "clu1k",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "time_to_1.0%": 0.639278008500014,
+    "time_to_0.5%": 0.639278008500014,
+    "time_to_0.2%": 1.2908277254999803,
+    "time_to_0.1%": 1.6386640710000222,
+    "time_to_0.05%": 2.779346812499962
+   },
+   {
+    "set": "clu1k",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "time_to_1.0%": 0.639278008500014,
+    "time_to_0.5%": 0.639278008500014,
+    "time_to_0.2%": 1.2908277254999803,
+    "time_to_0.1%": 1.6386640710000222,
+    "time_to_0.05%": 3.008197249000027
+   },
+   {
+    "set": "clu1k",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "time_to_1.0%": 0.639278008500014,
+    "time_to_0.5%": 0.639278008500014,
+    "time_to_0.2%": 1.3280447119999803,
+    "time_to_0.1%": 1.4076925455000275,
+    "time_to_0.05%": 1.9879668840000342
+   },
+   {
+    "set": "tsplib",
+    "config": "LKH-3 POPMUSIC",
+    "time_to_1.0%": 5.08,
+    "time_to_0.5%": 8.14,
+    "time_to_0.2%": 15.510000000000002,
+    "time_to_0.1%": 31.17,
+    "time_to_0.05%": 53.26
+   },
+   {
+    "set": "tsplib",
+    "config": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "time_to_1.0%": 8.256966139000008,
+    "time_to_0.5%": 8.256966139000008,
+    "time_to_0.2%": 14.963864771999884,
+    "time_to_0.1%": 75.01022968000021,
+    "time_to_0.05%": 225.84022968000022
+   },
+   {
+    "set": "tsplib",
+    "config": "sayım+ (8)",
+    "time_to_1.0%": 8.209739135000014,
+    "time_to_0.5%": 8.209739135000014,
+    "time_to_0.2%": 19.341267552000318,
+    "time_to_0.1%": 53.23863905000042,
+    "time_to_0.05%": 75.569739135
+   },
+   {
+    "set": "tsplib",
+    "config": "TourFold-v2(8) ilk 5",
+    "time_to_1.0%": 8.500315229999982,
+    "time_to_0.5%": 8.500315229999982,
+    "time_to_0.2%": 14.620315229999981,
+    "time_to_0.1%": 30.726672791000254,
+    "time_to_0.05%": 56.76667279100025
+   },
+   {
+    "set": "tsplib",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "time_to_1.0%": 8.558301564999981,
+    "time_to_0.5%": 8.558301564999981,
+    "time_to_0.2%": 14.529320887999802,
+    "time_to_0.1%": 33.791825329999895,
+    "time_to_0.05%": 48.42182532999989
+   },
+   {
+    "set": "tsplib",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "time_to_1.0%": 8.345927726,
+    "time_to_0.5%": 11.845927726,
+    "time_to_0.2%": 14.529320887999802,
+    "time_to_0.1%": 59.07712058799913,
+    "time_to_0.05%": 170.70806831000004
+   },
+   {
+    "set": "tsplib",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "time_to_1.0%": 9.633712623999973,
+    "time_to_0.5%": 9.633712623999973,
+    "time_to_0.2%": 16.424990036999787,
+    "time_to_0.1%": 55.61371262399997,
+    "time_to_0.05%": 74.86371262399997
+   },
+   {
+    "set": "tsplib",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "time_to_1.0%": 6.364761738999968,
+    "time_to_0.5%": 6.406670594999923,
+    "time_to_0.2%": 14.529320887999802,
+    "time_to_0.1%": 40.44865574699996,
+    "time_to_0.05%": 91.89865574699995
+   },
+   {
+    "set": "uni10k",
+    "config": "LKH-3 POPMUSIC",
+    "time_to_1.0%": 9.915,
+    "time_to_0.5%": 9.915,
+    "time_to_0.2%": 12.395,
+    "time_to_0.1%": 20.095000000000002,
+    "time_to_0.05%": 39.49
+   },
+   {
+    "set": "uni10k",
+    "config": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "time_to_1.0%": 10.880937251000034,
+    "time_to_0.5%": 10.880937251000034,
+    "time_to_0.2%": 29.060290276000032,
+    "time_to_0.1%": 37.72086566499995,
+    "time_to_0.05%": 77.45695684900002
+   },
+   {
+    "set": "uni10k",
+    "config": "sayım+ (8)",
+    "time_to_1.0%": 10.880937251000034,
+    "time_to_0.5%": 10.880937251000034,
+    "time_to_0.2%": 27.2859298395001,
+    "time_to_0.1%": 36.7859298395001,
+    "time_to_0.05%": 66.487619371
+   },
+   {
+    "set": "uni10k",
+    "config": "TourFold-v2(8) ilk 5",
+    "time_to_1.0%": 10.880937251000034,
+    "time_to_0.5%": 10.880937251000034,
+    "time_to_0.2%": 27.163277418500083,
+    "time_to_0.1%": 41.83931941099996,
+    "time_to_0.05%": 88.4012530065002
+   },
+   {
+    "set": "uni10k",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "time_to_1.0%": 10.880937251000034,
+    "time_to_0.5%": 10.880937251000034,
+    "time_to_0.2%": 27.541760936500282,
+    "time_to_0.1%": 35.9950370415002,
+    "time_to_0.05%": 69.33420611200006
+   },
+   {
+    "set": "uni10k",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "time_to_1.0%": 10.880937251000034,
+    "time_to_0.5%": 10.880937251000034,
+    "time_to_0.2%": 27.586944989999978,
+    "time_to_0.1%": 36.593400440000096,
+    "time_to_0.05%": 62.89360584100008
+   },
+   {
+    "set": "uni10k",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "time_to_1.0%": 10.880937251000034,
+    "time_to_0.5%": 10.880937251000034,
+    "time_to_0.2%": 27.32173724100004,
+    "time_to_0.1%": 40.545088931500004,
+    "time_to_0.05%": 66.57002553250013
+   },
+   {
+    "set": "uni10k",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "time_to_1.0%": 10.880937251000034,
+    "time_to_0.5%": 10.880937251000034,
+    "time_to_0.2%": 19.08625802199989,
+    "time_to_0.1%": 28.658974881500257,
+    "time_to_0.05%": 51.19077077349998
+   },
+   {
+    "set": "clu10k",
+    "config": "LKH-3 POPMUSIC",
+    "time_to_1.0%": 11.68,
+    "time_to_0.5%": 13.07,
+    "time_to_0.2%": 19.83,
+    "time_to_0.1%": 25.085,
+    "time_to_0.05%": 49.005
+   },
+   {
+    "set": "clu10k",
+    "config": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "time_to_1.0%": 12.825187484000026,
+    "time_to_0.5%": 13.120371897000041,
+    "time_to_0.2%": 48.30691500449994,
+    "time_to_0.1%": 59.59302135700015,
+    "time_to_0.05%": 74.69171415649996
+   },
+   {
+    "set": "clu10k",
+    "config": "sayım+ (8)",
+    "time_to_1.0%": 12.825187484000026,
+    "time_to_0.5%": 13.120371897000041,
+    "time_to_0.2%": 46.23828810249995,
+    "time_to_0.1%": 52.058509702999984,
+    "time_to_0.05%": 62.17344420899981
+   },
+   {
+    "set": "clu10k",
+    "config": "TourFold-v2(8) ilk 5",
+    "time_to_1.0%": 12.825187484000026,
+    "time_to_0.5%": 13.120371897000041,
+    "time_to_0.2%": 45.54746973300014,
+    "time_to_0.1%": 57.23751800650048,
+    "time_to_0.05%": 75.81246973300014
+   },
+   {
+    "set": "clu10k",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "time_to_1.0%": 12.825187484000026,
+    "time_to_0.5%": 13.120371897000041,
+    "time_to_0.2%": 45.85975054449997,
+    "time_to_0.1%": 58.85735750550026,
+    "time_to_0.05%": 68.72819183650006
+   },
+   {
+    "set": "clu10k",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "time_to_1.0%": 12.825187484000026,
+    "time_to_0.5%": 13.120371897000041,
+    "time_to_0.2%": 46.19429869549995,
+    "time_to_0.1%": 55.42540013749975,
+    "time_to_0.05%": 68.0502923879998
+   },
+   {
+    "set": "clu10k",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "time_to_1.0%": 12.825187484000026,
+    "time_to_0.5%": 13.120371897000041,
+    "time_to_0.2%": 46.65804337650003,
+    "time_to_0.1%": 59.21467639049976,
+    "time_to_0.05%": 75.53210868700008
+   },
+   {
+    "set": "clu10k",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "time_to_1.0%": 12.825187484000026,
+    "time_to_0.5%": 13.120371897000041,
+    "time_to_0.2%": 31.944951254499834,
+    "time_to_0.1%": 39.39593770050008,
+    "time_to_0.05%": 55.765675000499996
+   },
+   {
+    "set": "uni20k",
+    "config": "LKH-3 POPMUSIC",
+    "time_to_1.0%": 22.655,
+    "time_to_0.5%": 22.655,
+    "time_to_0.2%": 26.125,
+    "time_to_0.1%": 66.08500000000001,
+    "time_to_0.05%": 104.01499999999999
+   },
+   {
+    "set": "uni20k",
+    "config": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "time_to_1.0%": 26.82795414500015,
+    "time_to_0.5%": 26.82795414500015,
+    "time_to_0.2%": 71.2907137654993,
+    "time_to_0.1%": 125.2257652309991,
+    "time_to_0.05%": Infinity
+   },
+   {
+    "set": "uni20k",
+    "config": "sayım+ (8)",
+    "time_to_1.0%": 26.82795414500015,
+    "time_to_0.5%": 26.82795414500015,
+    "time_to_0.2%": 71.58081236149914,
+    "time_to_0.1%": 96.24713671549965,
+    "time_to_0.05%": 143.34982995999923
+   },
+   {
+    "set": "uni20k",
+    "config": "TourFold-v2(8) ilk 5",
+    "time_to_1.0%": 26.82795414500015,
+    "time_to_0.5%": 26.82795414500015,
+    "time_to_0.2%": 71.66329409849942,
+    "time_to_0.1%": 94.6746980644987,
+    "time_to_0.05%": 169.20483156149902
+   },
+   {
+    "set": "uni20k",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "time_to_1.0%": 26.82795414500015,
+    "time_to_0.5%": 26.82795414500015,
+    "time_to_0.2%": 71.67325330299926,
+    "time_to_0.1%": 109.15610219049924,
+    "time_to_0.05%": 185.89110219049925
+   },
+   {
+    "set": "uni20k",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "time_to_1.0%": 26.82795414500015,
+    "time_to_0.5%": 26.82795414500015,
+    "time_to_0.2%": 71.69936181349934,
+    "time_to_0.1%": 115.27168649299873,
+    "time_to_0.05%": 178.0174757799989
+   },
+   {
+    "set": "uni20k",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "time_to_1.0%": 26.82795414500015,
+    "time_to_0.5%": 26.82795414500015,
+    "time_to_0.2%": 71.8215325604994,
+    "time_to_0.1%": 102.79990820299963,
+    "time_to_0.05%": 224.92995987949962
+   },
+   {
+    "set": "uni20k",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "time_to_1.0%": 26.82795414500015,
+    "time_to_0.5%": 26.82795414500015,
+    "time_to_0.2%": 50.85279649400027,
+    "time_to_0.1%": 89.80779649400029,
+    "time_to_0.05%": 165.36097944749983
+   },
+   {
+    "set": "clu20k",
+    "config": "LKH-3 POPMUSIC",
+    "time_to_1.0%": 24.495,
+    "time_to_0.5%": 24.495,
+    "time_to_0.2%": 43.730000000000004,
+    "time_to_0.1%": 78.64,
+    "time_to_0.05%": 127.59
+   },
+   {
+    "set": "clu20k",
+    "config": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "time_to_1.0%": 28.620894394499828,
+    "time_to_0.5%": 33.447251462499935,
+    "time_to_0.2%": 113.3970569194995,
+    "time_to_0.1%": 139.7070569194995,
+    "time_to_0.05%": 215.3076918780011
+   },
+   {
+    "set": "clu20k",
+    "config": "sayım+ (8)",
+    "time_to_1.0%": 28.620894394499828,
+    "time_to_0.5%": 33.447251462499935,
+    "time_to_0.2%": 109.93545372050076,
+    "time_to_0.1%": 124.80045372050076,
+    "time_to_0.05%": 165.3912328104998
+   },
+   {
+    "set": "clu20k",
+    "config": "TourFold-v2(8) ilk 5",
+    "time_to_1.0%": 28.620894394499828,
+    "time_to_0.5%": 33.447251462499935,
+    "time_to_0.2%": 109.3939716540005,
+    "time_to_0.1%": 132.5889716540005,
+    "time_to_0.05%": 163.0939716540005
+   },
+   {
+    "set": "clu20k",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "time_to_1.0%": 28.620894394499828,
+    "time_to_0.5%": 33.447251462499935,
+    "time_to_0.2%": 111.75521920450048,
+    "time_to_0.1%": 125.61021920450048,
+    "time_to_0.05%": 170.27564905050025
+   },
+   {
+    "set": "clu20k",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "time_to_1.0%": 28.620894394499828,
+    "time_to_0.5%": 33.447251462499935,
+    "time_to_0.2%": 112.54531566599987,
+    "time_to_0.1%": 126.83102680149932,
+    "time_to_0.05%": 171.58835807050102
+   },
+   {
+    "set": "clu20k",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "time_to_1.0%": 28.620894394499828,
+    "time_to_0.5%": 33.447251462499935,
+    "time_to_0.2%": 112.06105622550021,
+    "time_to_0.1%": 156.94172447750032,
+    "time_to_0.05%": Infinity
+   },
+   {
+    "set": "clu20k",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "time_to_1.0%": 28.620894394499828,
+    "time_to_0.5%": 33.447251462499935,
+    "time_to_0.2%": 73.84766230849984,
+    "time_to_0.1%": 85.58766230849984,
+    "time_to_0.05%": 136.3094119244999
+   }
+  ],
+  "pooled": {
+   "gap@25%B": [
+    {
+     "yapılandırma": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+     "rakip": "LKH-3 POPMUSIC",
+     "1k": "6/1/9",
+     "10k": "0/0/16",
+     "TSPLIB": "4/0/7",
+     "20k": "0/0/8",
+     "tümü": "10/1/40",
+     "p (işaret testi)": 2.3861331676755526e-05
+    },
+    {
+     "yapılandırma": "sayım+ (8)",
+     "rakip": "LKH-3 POPMUSIC",
+     "1k": "6/0/10",
+     "10k": "0/0/16",
+     "TSPLIB": "4/0/7",
+     "20k": "0/0/8",
+     "tümü": "10/0/41",
+     "p (işaret testi)": 1.4737715885004832e-05
+    },
+    {
+     "yapılandırma": "TourFold-v2(8) ilk 5",
+     "rakip": "LKH-3 POPMUSIC",
+     "1k": "6/0/10",
+     "10k": "0/0/16",
+     "TSPLIB": "6/0/5",
+     "20k": "0/0/8",
+     "tümü": "12/0/39",
+     "p (işaret testi)": 0.0001980394513374506
+    },
+    {
+     "yapılandırma": "TourFold-v2(8) 3+POPMUSIC 2",
+     "rakip": "LKH-3 POPMUSIC",
+     "1k": "5/0/11",
+     "10k": "0/0/16",
+     "TSPLIB": "6/1/4",
+     "20k": "0/0/8",
+     "tümü": "11/1/39",
+     "p (işaret testi)": 9.021490107130603e-05
+    },
+    {
+     "yapılandırma": "TourFold-v2(8) 3+yakın 2",
+     "rakip": "LKH-3 POPMUSIC",
+     "1k": "5/1/10",
+     "10k": "0/0/16",
+     "TSPLIB": "5/0/6",
+     "20k": "0/0/8",
+     "tümü": "10/1/40",
+     "p (işaret testi)": 2.3861331676755526e-05
+    },
+    {
+     "yapılandırma": "TourFold-v2(8) ∪ POPMUSIC",
+     "rakip": "LKH-3 POPMUSIC",
+     "1k": "4/1/11",
+     "10k": "0/0/16",
+     "TSPLIB": "5/0/6",
+     "20k": "0/0/8",
+     "tümü": "9/1/41",
+     "p (işaret testi)": 5.614100093254137e-06
+    },
+    {
+     "yapılandırma": "TourFold-v2(4) 3+POPMUSIC 2",
+     "rakip": "LKH-3 POPMUSIC",
+     "1k": "6/2/8",
+     "10k": "0/0/16",
+     "TSPLIB": "8/0/3",
+     "20k": "1/0/7",
+     "tümü": "15/2/34",
+     "p (işaret testi)": 0.009399241523873059
+    },
+    {
+     "yapılandırma": "sayım+ (8)",
+     "rakip": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+     "1k": "1/10/5",
+     "10k": "7/8/1",
+     "TSPLIB": "8/0/3",
+     "20k": "0/8/0",
+     "tümü": "16/26/9",
+     "p (işaret testi)": 0.2295229434967041
+    },
+    {
+     "yapılandırma": "TourFold-v2(8) ilk 5",
+     "rakip": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+     "1k": "0/10/6",
+     "10k": "7/8/1",
+     "TSPLIB": "9/0/2",
+     "20k": "0/8/0",
+     "tümü": "16/26/9",
+     "p (işaret testi)": 0.2295229434967041
+    },
+    {
+     "yapılandırma": "TourFold-v2(8) 3+POPMUSIC 2",
+     "rakip": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+     "1k": "2/9/5",
+     "10k": "6/8/2",
+     "TSPLIB": "7/0/4",
+     "20k": "0/8/0",
+     "tümü": "15/25/11",
+     "p (işaret testi)": 0.557197093963623
+    },
+    {
+     "yapılandırma": "TourFold-v2(8) 3+yakın 2",
+     "rakip": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+     "1k": "1/8/7",
+     "10k": "6/8/2",
+     "TSPLIB": "6/0/5",
+     "20k": "0/8/0",
+     "tümü": "13/24/14",
+     "p (işaret testi)": 1.0
+    },
+    {
+     "yapılandırma": "TourFold-v2(8) ∪ POPMUSIC",
+     "rakip": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+     "1k": "0/10/6",
+     "10k": "5/8/3",
+     "TSPLIB": "7/0/4",
+     "20k": "0/8/0",
+     "tümü": "12/26/13",
+     "p (işaret testi)": 1.0
+    },
+    {
+     "yapılandırma": "TourFold-v2(4) 3+POPMUSIC 2",
+     "rakip": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+     "1k": "4/8/4",
+     "10k": "15/1/0",
+     "TSPLIB": "8/0/3",
+     "20k": "8/0/0",
+     "tümü": "35/9/7",
+     "p (işaret testi)": 1.5097200957825409e-05
+    },
+    {
+     "yapılandırma": "TourFold-v2(8) 3+POPMUSIC 2",
+     "rakip": "TourFold-v2(8) ilk 5",
+     "1k": "4/10/2",
+     "10k": "3/8/5",
+     "TSPLIB": "5/0/6",
+     "20k": "0/8/0",
+     "tümü": "12/26/13",
+     "p (işaret testi)": 1.0
+    },
+    {
+     "yapılandırma": "TourFold-v2(8) 3+yakın 2",
+     "rakip": "TourFold-v2(8) ilk 5",
+     "1k": "2/11/3",
+     "10k": "4/8/4",
+     "TSPLIB": "3/0/8",
+     "20k": "0/8/0",
+     "tümü": "9/27/15",
+     "p (işaret testi)": 0.30745625495910645
+    },
+    {
+     "yapılandırma": "TourFold-v2(8) ∪ POPMUSIC",
+     "rakip": "TourFold-v2(8) ilk 5",
+     "1k": "1/12/3",
+     "10k": "2/8/6",
+     "TSPLIB": "4/0/7",
+     "20k": "0/8/0",
+     "tümü": "7/28/16",
+     "p (işaret testi)": 0.0931396484375
+    },
+    {
+     "yapılandırma": "TourFold-v2(4) 3+POPMUSIC 2",
+     "rakip": "TourFold-v2(8) 3+POPMUSIC 2",
+     "1k": "4/8/4",
+     "10k": "15/1/0",
+     "TSPLIB": "7/1/3",
+     "20k": "8/0/0",
+     "tümü": "34/10/7",
+     "p (işaret testi)": 2.532080361561384e-05
+    }
+   ],
+   "gap@50%B": [
+    {
+     "yapılandırma": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+     "rakip": "LKH-3 POPMUSIC",
+     "1k": "5/4/7",
+     "10k": "3/0/13",
+     "TSPLIB": "5/0/6",
+     "20k": "0/0/8",
+     "tümü": "13/4/34",
+     "p (işaret testi)": 0.0030876764615186394
+    },
+    {
+     "yapılandırma": "sayım+ (8)",
+     "rakip": "LKH-3 POPMUSIC",
+     "1k": "4/5/7",
+     "10k": "6/0/10",
+     "TSPLIB": "5/0/6",
+     "20k": "1/0/7",
+     "tümü": "16/5/30",
+     "p (işaret testi)": 0.054076031858869555
+    },
+    {
+     "yapılandırma": "TourFold-v2(8) ilk 5",
+     "rakip": "LKH-3 POPMUSIC",
+     "1k": "6/4/6",
+     "10k": "2/0/14",
+     "TSPLIB": "7/0/4",
+     "20k": "0/0/8",
+     "tümü": "15/4/32",
+     "p (işaret testi)": 0.018623836615006432
+    },
+    {
+     "yapılandırma": "TourFold-v2(8) 3+POPMUSIC 2",
+     "rakip": "LKH-3 POPMUSIC",
+     "1k": "5/3/8",
+     "10k": "2/0/14",
+     "TSPLIB": "8/0/3",
+     "20k": "0/0/8",
+     "tümü": "15/3/33",
+     "p (işaret testi)": 0.01328328156224501
+    },
+    {
+     "yapılandırma": "TourFold-v2(8) 3+yakın 2",
+     "rakip": "LKH-3 POPMUSIC",
+     "1k": "3/5/8",
+     "10k": "1/0/15",
+     "TSPLIB": "5/0/6",
+     "20k": "0/0/8",
+     "tümü": "9/5/37",
+     "p (işaret testi)": 4.0560361327379724e-05
+    },
+    {
+     "yapılandırma": "TourFold-v2(8) ∪ POPMUSIC",
+     "rakip": "LKH-3 POPMUSIC",
+     "1k": "5/3/8",
+     "10k": "0/0/16",
+     "TSPLIB": "7/0/4",
+     "20k": "0/0/8",
+     "tümü": "12/3/36",
+     "p (işaret testi)": 0.0007172696733945829
+    },
+    {
+     "yapılandırma": "TourFold-v2(4) 3+POPMUSIC 2",
+     "rakip": "LKH-3 POPMUSIC",
+     "1k": "6/3/7",
+     "10k": "7/0/9",
+     "TSPLIB": "5/0/6",
+     "20k": "2/0/6",
+     "tümü": "20/3/28",
+     "p (işaret testi)": 0.31232680747326935
+    },
+    {
+     "yapılandırma": "sayım+ (8)",
+     "rakip": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+     "1k": "2/10/4",
+     "10k": "11/0/5",
+     "TSPLIB": "8/0/3",
+     "20k": "7/0/1",
+     "tümü": "28/10/13",
+     "p (işaret testi)": 0.027533155829587486
+    },
+    {
+     "yapılandırma": "TourFold-v2(8) ilk 5",
+     "rakip": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+     "1k": "4/10/2",
+     "10k": "8/0/8",
+     "TSPLIB": "9/1/1",
+     "20k": "6/0/2",
+     "tümü": "27/11/13",
+     "p (işaret testi)": 0.03847730828420026
+    },
+    {
+     "yapılandırma": "TourFold-v2(8) 3+POPMUSIC 2",
+     "rakip": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+     "1k": "3/9/4",
+     "10k": "10/0/6",
+     "TSPLIB": "8/1/2",
+     "20k": "5/0/3",
+     "tümü": "26/10/15",
+     "p (işaret testi)": 0.11727520595741225
+    },
+    {
+     "yapılandırma": "TourFold-v2(8) 3+yakın 2",
+     "rakip": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+     "1k": "4/8/4",
+     "10k": "11/0/5",
+     "TSPLIB": "6/0/5",
+     "20k": "5/0/3",
+     "tümü": "26/8/17",
+     "p (işaret testi)": 0.2220528201560228
+    },
+    {
+     "yapılandırma": "TourFold-v2(8) ∪ POPMUSIC",
+     "rakip": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+     "1k": "4/8/4",
+     "10k": "8/0/8",
+     "TSPLIB": "7/0/4",
+     "20k": "3/0/5",
+     "tümü": "22/8/21",
+     "p (işaret testi)": 1.0
+    },
+    {
+     "yapılandırma": "TourFold-v2(4) 3+POPMUSIC 2",
+     "rakip": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+     "1k": "8/4/4",
+     "10k": "13/0/3",
+     "TSPLIB": "8/0/3",
+     "20k": "8/0/0",
+     "tümü": "37/4/10",
+     "p (işaret testi)": 9.848878492846323e-05
+    },
+    {
+     "yapılandırma": "TourFold-v2(8) 3+POPMUSIC 2",
+     "rakip": "TourFold-v2(8) ilk 5",
+     "1k": "2/9/5",
+     "10k": "11/0/5",
+     "TSPLIB": "5/1/5",
+     "20k": "3/0/5",
+     "tümü": "21/10/20",
+     "p (işaret testi)": 1.0
+    },
+    {
+     "yapılandırma": "TourFold-v2(8) 3+yakın 2",
+     "rakip": "TourFold-v2(8) ilk 5",
+     "1k": "2/9/5",
+     "10k": "13/0/3",
+     "TSPLIB": "2/0/9",
+     "20k": "3/0/5",
+     "tümü": "20/9/22",
+     "p (işaret testi)": 0.8776143287523154
+    },
+    {
+     "yapılandırma": "TourFold-v2(8) ∪ POPMUSIC",
+     "rakip": "TourFold-v2(8) ilk 5",
+     "1k": "3/7/6",
+     "10k": "8/0/8",
+     "TSPLIB": "4/1/6",
+     "20k": "2/0/6",
+     "tümü": "17/8/26",
+     "p (işaret testi)": 0.2220528201560228
+    },
+    {
+     "yapılandırma": "TourFold-v2(4) 3+POPMUSIC 2",
+     "rakip": "TourFold-v2(8) 3+POPMUSIC 2",
+     "1k": "8/4/4",
+     "10k": "13/0/3",
+     "TSPLIB": "3/0/8",
+     "20k": "7/0/1",
+     "tümü": "31/4/16",
+     "p (işaret testi)": 0.03998605682605215
+    }
+   ],
+   "gap@100%B": [
+    {
+     "yapılandırma": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+     "rakip": "LKH-3 POPMUSIC",
+     "1k": "7/6/3",
+     "10k": "6/0/10",
+     "TSPLIB": "3/0/8",
+     "20k": "0/0/8",
+     "tümü": "16/6/29",
+     "p (işaret testi)": 0.07245426016254441
+    },
+    {
+     "yapılandırma": "sayım+ (8)",
+     "rakip": "LKH-3 POPMUSIC",
+     "1k": "7/6/3",
+     "10k": "8/0/8",
+     "TSPLIB": "3/0/8",
+     "20k": "3/0/5",
+     "tümü": "21/6/24",
+     "p (işaret testi)": 0.765991824244793
+    },
+    {
+     "yapılandırma": "TourFold-v2(8) ilk 5",
+     "rakip": "LKH-3 POPMUSIC",
+     "1k": "10/4/2",
+     "10k": "7/0/9",
+     "TSPLIB": "5/0/6",
+     "20k": "2/0/6",
+     "tümü": "24/4/23",
+     "p (işaret testi)": 1.0
+    },
+    {
+     "yapılandırma": "TourFold-v2(8) 3+POPMUSIC 2",
+     "rakip": "LKH-3 POPMUSIC",
+     "1k": "9/5/2",
+     "10k": "7/0/9",
+     "TSPLIB": "5/1/5",
+     "20k": "2/0/6",
+     "tümü": "23/6/22",
+     "p (işaret testi)": 1.0
+    },
+    {
+     "yapılandırma": "TourFold-v2(8) 3+yakın 2",
+     "rakip": "LKH-3 POPMUSIC",
+     "1k": "6/5/5",
+     "10k": "7/0/9",
+     "TSPLIB": "3/0/8",
+     "20k": "3/0/5",
+     "tümü": "19/5/27",
+     "p (işaret testi)": 0.3019956131896606
+    },
+    {
+     "yapılandırma": "TourFold-v2(8) ∪ POPMUSIC",
+     "rakip": "LKH-3 POPMUSIC",
+     "1k": "9/4/3",
+     "10k": "4/0/12",
+     "TSPLIB": "5/1/5",
+     "20k": "1/0/7",
+     "tümü": "19/5/27",
+     "p (işaret testi)": 0.3019956131896606
+    },
+    {
+     "yapılandırma": "TourFold-v2(4) 3+POPMUSIC 2",
+     "rakip": "LKH-3 POPMUSIC",
+     "1k": "10/4/2",
+     "10k": "8/0/8",
+     "TSPLIB": "3/1/7",
+     "20k": "3/0/5",
+     "tümü": "24/5/22",
+     "p (işaret testi)": 0.8829959121223965
+    },
+    {
+     "yapılandırma": "sayım+ (8)",
+     "rakip": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+     "1k": "5/6/5",
+     "10k": "10/0/6",
+     "TSPLIB": "8/0/3",
+     "20k": "5/0/3",
+     "tümü": "28/6/17",
+     "p (işaret testi)": 0.1351564508456704
+    },
+    {
+     "yapılandırma": "TourFold-v2(8) ilk 5",
+     "rakip": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+     "1k": "8/5/3",
+     "10k": "9/0/7",
+     "TSPLIB": "8/1/2",
+     "20k": "6/0/2",
+     "tümü": "31/6/14",
+     "p (işaret testi)": 0.016094360031274842
+    },
+    {
+     "yapılandırma": "TourFold-v2(8) 3+POPMUSIC 2",
+     "rakip": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+     "1k": "5/7/4",
+     "10k": "10/0/6",
+     "TSPLIB": "8/1/2",
+     "20k": "6/0/2",
+     "tümü": "29/8/14",
+     "p (işaret testi)": 0.03153949735315109
+    },
+    {
+     "yapılandırma": "TourFold-v2(8) 3+yakın 2",
+     "rakip": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+     "1k": "6/4/6",
+     "10k": "8/0/8",
+     "TSPLIB": "6/0/5",
+     "20k": "7/0/1",
+     "tümü": "27/4/20",
+     "p (işaret testi)": 0.38169339766321275
+    },
+    {
+     "yapılandırma": "TourFold-v2(8) ∪ POPMUSIC",
+     "rakip": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+     "1k": "6/6/4",
+     "10k": "8/0/8",
+     "TSPLIB": "9/0/2",
+     "20k": "4/0/4",
+     "tümü": "27/6/18",
+     "p (işaret testi)": 0.23269319190831084
+    },
+    {
+     "yapılandırma": "TourFold-v2(4) 3+POPMUSIC 2",
+     "rakip": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+     "1k": "7/6/3",
+     "10k": "12/0/4",
+     "TSPLIB": "9/0/2",
+     "20k": "8/0/0",
+     "tümü": "36/6/9",
+     "p (işaret testi)": 6.57466324582856e-05
+    },
+    {
+     "yapılandırma": "TourFold-v2(8) 3+POPMUSIC 2",
+     "rakip": "TourFold-v2(8) ilk 5",
+     "1k": "2/9/5",
+     "10k": "9/0/7",
+     "TSPLIB": "4/2/5",
+     "20k": "5/0/3",
+     "tümü": "20/11/20",
+     "p (işaret testi)": 1.0
+    },
+    {
+     "yapılandırma": "TourFold-v2(8) 3+yakın 2",
+     "rakip": "TourFold-v2(8) ilk 5",
+     "1k": "0/10/6",
+     "10k": "7/0/9",
+     "TSPLIB": "2/1/8",
+     "20k": "6/0/2",
+     "tümü": "15/11/25",
+     "p (işaret testi)": 0.1538599441628321
+    },
+    {
+     "yapılandırma": "TourFold-v2(8) ∪ POPMUSIC",
+     "rakip": "TourFold-v2(8) ilk 5",
+     "1k": "2/11/3",
+     "10k": "7/0/9",
+     "TSPLIB": "5/2/4",
+     "20k": "2/0/6",
+     "tümü": "16/13/22",
+     "p (işaret testi)": 0.417692190836533
+    },
+    {
+     "yapılandırma": "TourFold-v2(4) 3+POPMUSIC 2",
+     "rakip": "TourFold-v2(8) 3+POPMUSIC 2",
+     "1k": "4/9/3",
+     "10k": "11/0/5",
+     "TSPLIB": "3/0/8",
+     "20k": "7/0/1",
+     "tümü": "25/9/17",
+     "p (işaret testi)": 0.27995623852893914
+    }
+   ]
+  },
+  "wtl": [
+   {
+    "set": "uni1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 4,
+    "ties": 0,
+    "losses": 4
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 0,
+    "ties": 2,
+    "losses": 6
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "sayım+ (8)",
+    "wins": 2,
+    "ties": 4,
+    "losses": 2
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 3,
+    "ties": 0,
+    "losses": 5
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 2,
+    "ties": 1,
+    "losses": 5
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "sayım+ (8)",
+    "wins": 5,
+    "ties": 1,
+    "losses": 2
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 3,
+    "ties": 1,
+    "losses": 4
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 1,
+    "ties": 0,
+    "losses": 7
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "sayım+ (8)",
+    "wins": 4,
+    "ties": 2,
+    "losses": 2
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 2,
+    "ties": 1,
+    "losses": 5
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 0,
+    "ties": 2,
+    "losses": 6
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "sayım+ (8)",
+    "wins": 2,
+    "ties": 3,
+    "losses": 3
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 4,
+    "ties": 2,
+    "losses": 2
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 4,
+    "ties": 0,
+    "losses": 4
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "sayım+ (8)",
+    "wins": 5,
+    "ties": 2,
+    "losses": 1
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 4,
+    "ties": 3,
+    "losses": 1
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 3,
+    "ties": 4,
+    "losses": 1
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "sayım+ (8)",
+    "wins": 1,
+    "ties": 7,
+    "losses": 0
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 4,
+    "ties": 3,
+    "losses": 1
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 2,
+    "ties": 5,
+    "losses": 1
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "sayım+ (8)",
+    "wins": 2,
+    "ties": 5,
+    "losses": 1
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 3,
+    "ties": 4,
+    "losses": 1
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 3,
+    "ties": 3,
+    "losses": 2
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "sayım+ (8)",
+    "wins": 1,
+    "ties": 6,
+    "losses": 1
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 4,
+    "ties": 3,
+    "losses": 1
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 3,
+    "ties": 4,
+    "losses": 1
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "sayım+ (8)",
+    "wins": 1,
+    "ties": 7,
+    "losses": 0
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 4,
+    "ties": 2,
+    "losses": 2
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 2,
+    "ties": 4,
+    "losses": 2
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "sayım+ (8)",
+    "wins": 1,
+    "ties": 4,
+    "losses": 3
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 2,
+    "ties": 0,
+    "losses": 6
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 0,
+    "ties": 8,
+    "losses": 0
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "sayım+ (8)",
+    "wins": 0,
+    "ties": 8,
+    "losses": 0
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 2,
+    "ties": 0,
+    "losses": 6
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 0,
+    "ties": 8,
+    "losses": 0
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "sayım+ (8)",
+    "wins": 0,
+    "ties": 8,
+    "losses": 0
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 2,
+    "ties": 0,
+    "losses": 6
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 0,
+    "ties": 8,
+    "losses": 0
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "sayım+ (8)",
+    "wins": 0,
+    "ties": 8,
+    "losses": 0
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 2,
+    "ties": 0,
+    "losses": 6
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 0,
+    "ties": 8,
+    "losses": 0
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "sayım+ (8)",
+    "wins": 0,
+    "ties": 8,
+    "losses": 0
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 2,
+    "ties": 0,
+    "losses": 6
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 0,
+    "ties": 8,
+    "losses": 0
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "sayım+ (8)",
+    "wins": 0,
+    "ties": 8,
+    "losses": 0
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 6,
+    "ties": 1,
+    "losses": 1
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 5,
+    "ties": 1,
+    "losses": 2
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "sayım+ (8)",
+    "wins": 4,
+    "ties": 4,
+    "losses": 0
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 5,
+    "ties": 2,
+    "losses": 1
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 3,
+    "ties": 2,
+    "losses": 3
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "sayım+ (8)",
+    "wins": 1,
+    "ties": 6,
+    "losses": 1
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 3,
+    "ties": 1,
+    "losses": 4
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 3,
+    "ties": 1,
+    "losses": 4
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "sayım+ (8)",
+    "wins": 1,
+    "ties": 4,
+    "losses": 3
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 5,
+    "ties": 1,
+    "losses": 2
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 3,
+    "ties": 2,
+    "losses": 3
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "sayım+ (8)",
+    "wins": 2,
+    "ties": 3,
+    "losses": 3
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 6,
+    "ties": 2,
+    "losses": 0
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 5,
+    "ties": 2,
+    "losses": 1
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "sayım+ (8)",
+    "wins": 4,
+    "ties": 4,
+    "losses": 0
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 6,
+    "ties": 0,
+    "losses": 5
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 9,
+    "ties": 0,
+    "losses": 2
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "sayım+ (8)",
+    "wins": 8,
+    "ties": 0,
+    "losses": 3
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 6,
+    "ties": 1,
+    "losses": 4
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 7,
+    "ties": 0,
+    "losses": 4
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "sayım+ (8)",
+    "wins": 7,
+    "ties": 0,
+    "losses": 4
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 5,
+    "ties": 0,
+    "losses": 6
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 6,
+    "ties": 0,
+    "losses": 5
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "sayım+ (8)",
+    "wins": 4,
+    "ties": 1,
+    "losses": 6
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 5,
+    "ties": 0,
+    "losses": 6
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 7,
+    "ties": 0,
+    "losses": 4
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "sayım+ (8)",
+    "wins": 4,
+    "ties": 1,
+    "losses": 6
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 8,
+    "ties": 0,
+    "losses": 3
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 8,
+    "ties": 0,
+    "losses": 3
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "sayım+ (8)",
+    "wins": 9,
+    "ties": 0,
+    "losses": 2
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 5,
+    "ties": 0,
+    "losses": 6
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 8,
+    "ties": 1,
+    "losses": 2
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "sayım+ (8)",
+    "wins": 5,
+    "ties": 2,
+    "losses": 4
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 5,
+    "ties": 1,
+    "losses": 5
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 8,
+    "ties": 1,
+    "losses": 2
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "sayım+ (8)",
+    "wins": 6,
+    "ties": 1,
+    "losses": 4
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 3,
+    "ties": 0,
+    "losses": 8
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 6,
+    "ties": 0,
+    "losses": 5
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "sayım+ (8)",
+    "wins": 2,
+    "ties": 2,
+    "losses": 7
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 5,
+    "ties": 1,
+    "losses": 5
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 9,
+    "ties": 0,
+    "losses": 2
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "sayım+ (8)",
+    "wins": 6,
+    "ties": 2,
+    "losses": 3
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 3,
+    "ties": 1,
+    "losses": 7
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 9,
+    "ties": 0,
+    "losses": 2
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "sayım+ (8)",
+    "wins": 5,
+    "ties": 0,
+    "losses": 6
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 0,
+    "ties": 0,
+    "losses": 8
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 7,
+    "ties": 0,
+    "losses": 1
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "sayım+ (8)",
+    "wins": 2,
+    "ties": 0,
+    "losses": 6
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 0,
+    "ties": 0,
+    "losses": 8
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 6,
+    "ties": 0,
+    "losses": 2
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "sayım+ (8)",
+    "wins": 2,
+    "ties": 0,
+    "losses": 6
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 0,
+    "ties": 0,
+    "losses": 8
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 6,
+    "ties": 0,
+    "losses": 2
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "sayım+ (8)",
+    "wins": 2,
+    "ties": 0,
+    "losses": 6
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 0,
+    "ties": 0,
+    "losses": 8
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 5,
+    "ties": 0,
+    "losses": 3
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "sayım+ (8)",
+    "wins": 2,
+    "ties": 0,
+    "losses": 6
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 0,
+    "ties": 0,
+    "losses": 8
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 8,
+    "ties": 0,
+    "losses": 0
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "sayım+ (8)",
+    "wins": 7,
+    "ties": 0,
+    "losses": 1
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 2,
+    "ties": 0,
+    "losses": 6
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 4,
+    "ties": 0,
+    "losses": 4
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "sayım+ (8)",
+    "wins": 3,
+    "ties": 0,
+    "losses": 5
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 3,
+    "ties": 0,
+    "losses": 5
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 6,
+    "ties": 0,
+    "losses": 2
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "sayım+ (8)",
+    "wins": 4,
+    "ties": 0,
+    "losses": 4
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 4,
+    "ties": 0,
+    "losses": 4
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 5,
+    "ties": 0,
+    "losses": 3
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "sayım+ (8)",
+    "wins": 3,
+    "ties": 0,
+    "losses": 5
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 2,
+    "ties": 0,
+    "losses": 6
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 5,
+    "ties": 0,
+    "losses": 3
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "sayım+ (8)",
+    "wins": 3,
+    "ties": 0,
+    "losses": 5
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 3,
+    "ties": 0,
+    "losses": 5
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 7,
+    "ties": 0,
+    "losses": 1
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "sayım+ (8)",
+    "wins": 5,
+    "ties": 0,
+    "losses": 3
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 0,
+    "ties": 0,
+    "losses": 8
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 0,
+    "ties": 8,
+    "losses": 0
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "sayım+ (8)",
+    "wins": 0,
+    "ties": 8,
+    "losses": 0
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 0,
+    "ties": 0,
+    "losses": 8
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 0,
+    "ties": 8,
+    "losses": 0
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "sayım+ (8)",
+    "wins": 0,
+    "ties": 8,
+    "losses": 0
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 0,
+    "ties": 0,
+    "losses": 8
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 0,
+    "ties": 8,
+    "losses": 0
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "sayım+ (8)",
+    "wins": 0,
+    "ties": 8,
+    "losses": 0
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 0,
+    "ties": 0,
+    "losses": 8
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 0,
+    "ties": 8,
+    "losses": 0
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "sayım+ (8)",
+    "wins": 0,
+    "ties": 8,
+    "losses": 0
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 0,
+    "ties": 0,
+    "losses": 8
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 7,
+    "ties": 1,
+    "losses": 0
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "sayım+ (8)",
+    "wins": 7,
+    "ties": 1,
+    "losses": 0
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 5,
+    "ties": 0,
+    "losses": 3
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 5,
+    "ties": 0,
+    "losses": 3
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "sayım+ (8)",
+    "wins": 5,
+    "ties": 0,
+    "losses": 3
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 4,
+    "ties": 0,
+    "losses": 4
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 4,
+    "ties": 0,
+    "losses": 4
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "sayım+ (8)",
+    "wins": 3,
+    "ties": 0,
+    "losses": 5
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 3,
+    "ties": 0,
+    "losses": 5
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 3,
+    "ties": 0,
+    "losses": 5
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "sayım+ (8)",
+    "wins": 2,
+    "ties": 0,
+    "losses": 6
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 2,
+    "ties": 0,
+    "losses": 6
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 3,
+    "ties": 0,
+    "losses": 5
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "sayım+ (8)",
+    "wins": 2,
+    "ties": 0,
+    "losses": 6
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 5,
+    "ties": 0,
+    "losses": 3
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 5,
+    "ties": 0,
+    "losses": 3
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "sayım+ (8)",
+    "wins": 4,
+    "ties": 0,
+    "losses": 4
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 0,
+    "ties": 0,
+    "losses": 4
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 0,
+    "ties": 4,
+    "losses": 0
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "sayım+ (8)",
+    "wins": 0,
+    "ties": 4,
+    "losses": 0
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 0,
+    "ties": 0,
+    "losses": 4
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 0,
+    "ties": 4,
+    "losses": 0
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "sayım+ (8)",
+    "wins": 0,
+    "ties": 4,
+    "losses": 0
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 0,
+    "ties": 0,
+    "losses": 4
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 0,
+    "ties": 4,
+    "losses": 0
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "sayım+ (8)",
+    "wins": 0,
+    "ties": 4,
+    "losses": 0
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 0,
+    "ties": 0,
+    "losses": 4
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 0,
+    "ties": 4,
+    "losses": 0
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "sayım+ (8)",
+    "wins": 0,
+    "ties": 4,
+    "losses": 0
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 1,
+    "ties": 0,
+    "losses": 3
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 4,
+    "ties": 0,
+    "losses": 0
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "sayım+ (8)",
+    "wins": 4,
+    "ties": 0,
+    "losses": 0
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 1,
+    "ties": 0,
+    "losses": 3
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 3,
+    "ties": 0,
+    "losses": 1
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "sayım+ (8)",
+    "wins": 1,
+    "ties": 0,
+    "losses": 3
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 0,
+    "ties": 0,
+    "losses": 4
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 3,
+    "ties": 0,
+    "losses": 1
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "sayım+ (8)",
+    "wins": 1,
+    "ties": 0,
+    "losses": 3
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 2,
+    "ties": 0,
+    "losses": 2
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 4,
+    "ties": 0,
+    "losses": 0
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "sayım+ (8)",
+    "wins": 2,
+    "ties": 0,
+    "losses": 2
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 0,
+    "ties": 0,
+    "losses": 4
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 3,
+    "ties": 0,
+    "losses": 1
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "sayım+ (8)",
+    "wins": 0,
+    "ties": 0,
+    "losses": 4
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 1,
+    "ties": 0,
+    "losses": 3
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 4,
+    "ties": 0,
+    "losses": 0
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "sayım+ (8)",
+    "wins": 1,
+    "ties": 0,
+    "losses": 3
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 0,
+    "ties": 0,
+    "losses": 4
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 0,
+    "ties": 4,
+    "losses": 0
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "sayım+ (8)",
+    "wins": 0,
+    "ties": 4,
+    "losses": 0
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 0,
+    "ties": 0,
+    "losses": 4
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 0,
+    "ties": 4,
+    "losses": 0
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "sayım+ (8)",
+    "wins": 0,
+    "ties": 4,
+    "losses": 0
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 0,
+    "ties": 0,
+    "losses": 4
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 0,
+    "ties": 4,
+    "losses": 0
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "sayım+ (8)",
+    "wins": 0,
+    "ties": 4,
+    "losses": 0
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 0,
+    "ties": 0,
+    "losses": 4
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 0,
+    "ties": 4,
+    "losses": 0
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "sayım+ (8)",
+    "wins": 0,
+    "ties": 4,
+    "losses": 0
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 0,
+    "ties": 0,
+    "losses": 4
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 4,
+    "ties": 0,
+    "losses": 0
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "sayım+ (8)",
+    "wins": 4,
+    "ties": 0,
+    "losses": 0
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 1,
+    "ties": 0,
+    "losses": 3
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 3,
+    "ties": 0,
+    "losses": 1
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ilk 5",
+    "vs": "sayım+ (8)",
+    "wins": 2,
+    "ties": 0,
+    "losses": 2
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 2,
+    "ties": 0,
+    "losses": 2
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 3,
+    "ties": 0,
+    "losses": 1
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "vs": "sayım+ (8)",
+    "wins": 4,
+    "ties": 0,
+    "losses": 0
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 1,
+    "ties": 0,
+    "losses": 3
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 3,
+    "ties": 0,
+    "losses": 1
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "vs": "sayım+ (8)",
+    "wins": 1,
+    "ties": 0,
+    "losses": 3
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 1,
+    "ties": 0,
+    "losses": 3
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 1,
+    "ties": 0,
+    "losses": 3
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "vs": "sayım+ (8)",
+    "wins": 0,
+    "ties": 0,
+    "losses": 4
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "LKH-3 POPMUSIC",
+    "wins": 2,
+    "ties": 0,
+    "losses": 2
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "wins": 4,
+    "ties": 0,
+    "losses": 0
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "vs": "sayım+ (8)",
+    "wins": 4,
+    "ties": 0,
+    "losses": 0
+   }
+  ],
+  "repeat_v2": [
+   {
+    "set": "uni1k",
+    "yapılandırma (v3)": "LKH-3 POPMUSIC",
+    "v2 gap@25%B": 0.03386371298128458,
+    "v3 gap@25%B": 0.03386371298128458,
+    "v2 gap@100%B": 0.009833055176362753,
+    "v3 gap@100%B": 0.009833055176362753,
+    "örnek": 8
+   },
+   {
+    "set": "clu1k",
+    "yapılandırma (v3)": "LKH-3 POPMUSIC",
+    "v2 gap@25%B": 0.12042086503044087,
+    "v3 gap@25%B": 0.12204688582727403,
+    "v2 gap@100%B": 0.014490973486138668,
+    "v3 gap@100%B": 0.014490973486138668,
+    "örnek": 8
+   },
+   {
+    "set": "tsplib",
+    "yapılandırma (v3)": "LKH-3 POPMUSIC",
+    "v2 gap@25%B": 0.07757848522502174,
+    "v3 gap@25%B": 0.078694398588062,
+    "v2 gap@100%B": 0.02077581589269353,
+    "v3 gap@100%B": 0.020918886693878997,
+    "örnek": 11
+   },
+   {
+    "set": "uni10k",
+    "yapılandırma (v3)": "LKH-3 POPMUSIC",
+    "v2 gap@25%B": 0.061058680198767444,
+    "v3 gap@25%B": 0.06380185337273647,
+    "v2 gap@100%B": 0.027509444635908833,
+    "v3 gap@100%B": 0.02823246511585053,
+    "örnek": 8
+   },
+   {
+    "set": "clu10k",
+    "yapılandırma (v3)": "LKH-3 POPMUSIC",
+    "v2 gap@25%B": 0.07500673065318571,
+    "v3 gap@25%B": 0.08427150742150458,
+    "v2 gap@100%B": 0.024389697318841143,
+    "v3 gap@100%B": 0.024852886665324127,
+    "örnek": 8
+   },
+   {
+    "set": "uni20k",
+    "yapılandırma (v3)": "LKH-3 POPMUSIC",
+    "v2 gap@25%B": 0.07036254603316924,
+    "v3 gap@25%B": 0.0780361107699485,
+    "v2 gap@100%B": 0.012974949273180058,
+    "v3 gap@100%B": 0.014504890837188825,
+    "örnek": 4
+   },
+   {
+    "set": "clu20k",
+    "yapılandırma (v3)": "LKH-3 POPMUSIC",
+    "v2 gap@25%B": 0.08579320548041566,
+    "v3 gap@25%B": 0.09400835120708992,
+    "v2 gap@100%B": 0.0064657377167195405,
+    "v3 gap@100%B": 0.007919346088301348,
+    "örnek": 4
+   },
+   {
+    "set": "uni1k",
+    "yapılandırma (v3)": "sayım+ (8)",
+    "v2 gap@25%B": 0.04650019712763409,
+    "v3 gap@25%B": 0.041533000334920245,
+    "v2 gap@100%B": 0.0035708195677147444,
+    "v3 gap@100%B": 0.0035708195677147444,
+    "örnek": 8
+   },
+   {
+    "set": "clu1k",
+    "yapılandırma (v3)": "sayım+ (8)",
+    "v2 gap@25%B": 0.17580361650354598,
+    "v3 gap@25%B": 0.17580361650354598,
+    "v2 gap@100%B": 0.03601020725852392,
+    "v3 gap@100%B": 0.03601020725852392,
+    "örnek": 8
+   },
+   {
+    "set": "tsplib",
+    "yapılandırma (v3)": "sayım+ (8)",
+    "v2 gap@25%B": 0.07823011393316899,
+    "v3 gap@25%B": 0.07907689176058325,
+    "v2 gap@100%B": 0.026712781464989458,
+    "v3 gap@100%B": 0.02683077380476926,
+    "örnek": 11
+   },
+   {
+    "set": "uni10k",
+    "yapılandırma (v3)": "sayım+ (8)",
+    "v2 gap@25%B": 0.1078308532183831,
+    "v3 gap@25%B": 0.12504138305616663,
+    "v2 gap@100%B": 0.028924118104813476,
+    "v3 gap@100%B": 0.03043523335740206,
+    "örnek": 8
+   },
+   {
+    "set": "clu10k",
+    "yapılandırma (v3)": "sayım+ (8)",
+    "v2 gap@25%B": 0.37111270653159156,
+    "v3 gap@25%B": 0.37111270653159156,
+    "v2 gap@100%B": 0.020949788841727646,
+    "v3 gap@100%B": 0.02150554480522798,
+    "örnek": 8
+   },
+   {
+    "set": "uni20k",
+    "yapılandırma (v3)": "sayım+ (8)",
+    "v2 gap@25%B": 0.19565044194814943,
+    "v3 gap@25%B": 0.19565044194814943,
+    "v2 gap@100%B": 0.014166423667832178,
+    "v3 gap@100%B": 0.014919658378798486,
+    "örnek": 4
+   },
+   {
+    "set": "clu20k",
+    "yapılandırma (v3)": "sayım+ (8)",
+    "v2 gap@25%B": 0.3661373008627732,
+    "v3 gap@25%B": 0.36690332520820546,
+    "v2 gap@100%B": 0.017653502884406844,
+    "v3 gap@100%B": 0.019668231429901147,
+    "örnek": 4
+   },
+   {
+    "set": "uni1k",
+    "yapılandırma (v3)": "TourFold-v2(8) ilk 5",
+    "v2 gap@25%B": 0.02202726234931429,
+    "v3 gap@25%B": 0.040074192372508144,
+    "v2 gap@100%B": 0.0005694333778478973,
+    "v3 gap@100%B": 0.001520486073715576,
+    "örnek": 8
+   },
+   {
+    "set": "clu1k",
+    "yapılandırma (v3)": "TourFold-v2(8) ilk 5",
+    "v2 gap@25%B": 0.17580361650354598,
+    "v3 gap@25%B": 0.17580361650354598,
+    "v2 gap@100%B": 0.0063649207522429065,
+    "v3 gap@100%B": 0.004661686186624128,
+    "örnek": 8
+   },
+   {
+    "set": "tsplib",
+    "yapılandırma (v3)": "TourFold-v2(8) ilk 5",
+    "v2 gap@25%B": 0.0647391235307709,
+    "v3 gap@25%B": 0.07018062436617706,
+    "v2 gap@100%B": 0.036809940957856155,
+    "v3 gap@100%B": 0.02337983852173446,
+    "örnek": 11
+   },
+   {
+    "set": "uni10k",
+    "yapılandırma (v3)": "TourFold-v2(8) ilk 5",
+    "v2 gap@25%B": 0.12054998523761384,
+    "v3 gap@25%B": 0.1479837023304381,
+    "v2 gap@100%B": 0.023475115111639064,
+    "v3 gap@100%B": 0.035638387543081615,
+    "örnek": 8
+   },
+   {
+    "set": "clu10k",
+    "yapılandırma (v3)": "TourFold-v2(8) ilk 5",
+    "v2 gap@25%B": 0.37111270653159156,
+    "v3 gap@25%B": 0.37111270653159156,
+    "v2 gap@100%B": 0.02202963405970576,
+    "v3 gap@100%B": 0.01973393604169888,
+    "örnek": 8
+   },
+   {
+    "set": "uni20k",
+    "yapılandırma (v3)": "TourFold-v2(8) ilk 5",
+    "v2 gap@25%B": 0.19565044194814943,
+    "v3 gap@25%B": 0.19565044194814943,
+    "v2 gap@100%B": 0.03331751721706945,
+    "v3 gap@100%B": 0.028791774425433507,
+    "örnek": 4
+   },
+   {
+    "set": "clu20k",
+    "yapılandırma (v3)": "TourFold-v2(8) ilk 5",
+    "v2 gap@25%B": 0.3661373008627732,
+    "v3 gap@25%B": 0.36690332520820546,
+    "v2 gap@100%B": 0.017275989606512384,
+    "v3 gap@100%B": 0.01774377075874287,
+    "örnek": 4
+   }
+  ],
+  "offsets": [
+   {
+    "set": "uni1k",
+    "config": "LKH-3 POPMUSIC",
+    "toplam": 0.0,
+    "topluluk": 0.0,
+    "model": 0.0
+   },
+   {
+    "set": "uni1k",
+    "config": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "toplam": 1.005029989250005,
+    "topluluk": 1.005029989250005,
+    "model": 0.0
+   },
+   {
+    "set": "uni1k",
+    "config": "sayım+ (8)",
+    "toplam": 1.0148328791250023,
+    "topluluk": 1.005029989250005,
+    "model": 0.0
+   },
+   {
+    "set": "uni1k",
+    "config": "TourFold-v2(8) ilk 5",
+    "toplam": 1.071290304999998,
+    "topluluk": 1.005029989250005,
+    "model": 0.06625774824999553
+   },
+   {
+    "set": "uni1k",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "toplam": 1.0736994400000128,
+    "topluluk": 1.005029989250005,
+    "model": 0.06625774824999553
+   },
+   {
+    "set": "uni1k",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "toplam": 1.0760460168750114,
+    "topluluk": 1.005029989250005,
+    "model": 0.06625774824999553
+   },
+   {
+    "set": "uni1k",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "toplam": 1.0723433122500055,
+    "topluluk": 1.005029989250005,
+    "model": 0.06625774824999553
+   },
+   {
+    "set": "uni1k",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "toplam": 0.7770039181250041,
+    "topluluk": 0.7114456990000022,
+    "model": 0.0633571347500137
+   },
+   {
+    "set": "clu1k",
+    "config": "LKH-3 POPMUSIC",
+    "toplam": 0.0,
+    "topluluk": 0.0,
+    "model": 0.0
+   },
+   {
+    "set": "clu1k",
+    "config": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "toplam": 2.315010883625007,
+    "topluluk": 2.315010883625007,
+    "model": 0.0
+   },
+   {
+    "set": "clu1k",
+    "config": "sayım+ (8)",
+    "toplam": 2.3247771782499953,
+    "topluluk": 2.315010883625007,
+    "model": 0.0
+   },
+   {
+    "set": "clu1k",
+    "config": "TourFold-v2(8) ilk 5",
+    "toplam": 2.380389317125008,
+    "topluluk": 2.315010883625007,
+    "model": 0.0653757533749939
+   },
+   {
+    "set": "clu1k",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "toplam": 2.3827706127499937,
+    "topluluk": 2.315010883625007,
+    "model": 0.0653757533749939
+   },
+   {
+    "set": "clu1k",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "toplam": 2.385167944750002,
+    "topluluk": 2.315010883625007,
+    "model": 0.0653757533749939
+   },
+   {
+    "set": "clu1k",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "toplam": 2.38144370025001,
+    "topluluk": 2.315010883625007,
+    "model": 0.0653757533749939
+   },
+   {
+    "set": "clu1k",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "toplam": 1.4421407095000092,
+    "topluluk": 1.3786647658750084,
+    "model": 0.06125269812500278
+   },
+   {
+    "set": "tsplib",
+    "config": "LKH-3 POPMUSIC",
+    "toplam": 0.0,
+    "topluluk": 0.0,
+    "model": 0.0
+   },
+   {
+    "set": "tsplib",
+    "config": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "toplam": 27.97526362390913,
+    "topluluk": 27.97526362390913,
+    "model": 0.0
+   },
+   {
+    "set": "tsplib",
+    "config": "sayım+ (8)",
+    "toplam": 28.05840721663634,
+    "topluluk": 27.97526362390913,
+    "model": 0.0
+   },
+   {
+    "set": "tsplib",
+    "config": "TourFold-v2(8) ilk 5",
+    "toplam": 28.195797666727312,
+    "topluluk": 27.97526362390913,
+    "model": 0.22053083300000315
+   },
+   {
+    "set": "tsplib",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "toplam": 28.215068427000105,
+    "topluluk": 27.97526362390913,
+    "model": 0.22053083300000315
+   },
+   {
+    "set": "tsplib",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "toplam": 28.23635463236383,
+    "topluluk": 27.97526362390913,
+    "model": 0.22053083300000315
+   },
+   {
+    "set": "tsplib",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "toplam": 28.203641576090853,
+    "topluluk": 27.97526362390913,
+    "model": 0.22053083300000315
+   },
+   {
+    "set": "tsplib",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "toplam": 17.94273105363635,
+    "topluluk": 17.73899641027271,
+    "model": 0.18492888981816433
+   },
+   {
+    "set": "uni10k",
+    "config": "LKH-3 POPMUSIC",
+    "toplam": 0.0,
+    "topluluk": 0.0,
+    "model": 0.0
+   },
+   {
+    "set": "uni10k",
+    "config": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "toplam": 26.67894325337508,
+    "topluluk": 26.67894325337508,
+    "model": 0.0
+   },
+   {
+    "set": "uni10k",
+    "config": "sayım+ (8)",
+    "toplam": 26.767713642250087,
+    "topluluk": 26.67894325337508,
+    "model": 0.0
+   },
+   {
+    "set": "uni10k",
+    "config": "TourFold-v2(8) ilk 5",
+    "toplam": 26.909224896375108,
+    "topluluk": 26.67894325337508,
+    "model": 0.23027832275001003
+   },
+   {
+    "set": "uni10k",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "toplam": 26.929669899625125,
+    "topluluk": 26.67894325337508,
+    "model": 0.23027832275001003
+   },
+   {
+    "set": "uni10k",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "toplam": 26.952724340750052,
+    "topluluk": 26.67894325337508,
+    "model": 0.23027832275001003
+   },
+   {
+    "set": "uni10k",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "toplam": 26.917611764500123,
+    "topluluk": 26.67894325337508,
+    "model": 0.23027832275001003
+   },
+   {
+    "set": "uni10k",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "toplam": 17.928431544125033,
+    "topluluk": 17.718960159375,
+    "model": 0.18981605025000192
+   },
+   {
+    "set": "clu10k",
+    "config": "LKH-3 POPMUSIC",
+    "toplam": 0.0,
+    "topluluk": 0.0,
+    "model": 0.0
+   },
+   {
+    "set": "clu10k",
+    "config": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "toplam": 43.17938799862492,
+    "topluluk": 43.17938799862492,
+    "model": 0.0
+   },
+   {
+    "set": "clu10k",
+    "config": "sayım+ (8)",
+    "toplam": 43.26861786524995,
+    "topluluk": 43.17938799862492,
+    "model": 0.0
+   },
+   {
+    "set": "clu10k",
+    "config": "TourFold-v2(8) ilk 5",
+    "toplam": 43.413225269625,
+    "topluluk": 43.17938799862492,
+    "model": 0.23383366950011464
+   },
+   {
+    "set": "clu10k",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "toplam": 43.43350939225007,
+    "topluluk": 43.17938799862492,
+    "model": 0.23383366950011464
+   },
+   {
+    "set": "clu10k",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "toplam": 43.456771057874874,
+    "topluluk": 43.17938799862492,
+    "model": 0.23383366950011464
+   },
+   {
+    "set": "clu10k",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "toplam": 43.42167037762502,
+    "topluluk": 43.17938799862492,
+    "model": 0.23383366950011464
+   },
+   {
+    "set": "clu10k",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "toplam": 26.117742770374974,
+    "topluluk": 25.907430242500027,
+    "model": 0.1907257973749097
+   },
+   {
+    "set": "uni20k",
+    "config": "LKH-3 POPMUSIC",
+    "toplam": 0.0,
+    "topluluk": 0.0,
+    "model": 0.0
+   },
+   {
+    "set": "uni20k",
+    "config": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "toplam": 80.19599659849939,
+    "topluluk": 80.19599659849939,
+    "model": 0.0
+   },
+   {
+    "set": "uni20k",
+    "config": "sayım+ (8)",
+    "toplam": 80.38140801524935,
+    "topluluk": 80.19599659849939,
+    "model": 0.0
+   },
+   {
+    "set": "uni20k",
+    "config": "TourFold-v2(8) ilk 5",
+    "toplam": 80.65406276724912,
+    "topluluk": 80.19599659849939,
+    "model": 0.4580629942499854
+   },
+   {
+    "set": "uni20k",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "toplam": 80.69527448424935,
+    "topluluk": 80.19599659849939,
+    "model": 0.4580629942499854
+   },
+   {
+    "set": "uni20k",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "toplam": 80.74592726724904,
+    "topluluk": 80.19599659849939,
+    "model": 0.4580629942499854
+   },
+   {
+    "set": "uni20k",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "toplam": 80.67071608699962,
+    "topluluk": 80.19599659849939,
+    "model": 0.4580629942499854
+   },
+   {
+    "set": "uni20k",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "toplam": 50.7031025720006,
+    "topluluk": 50.290121573750184,
+    "model": 0.37037496925029245
+   },
+   {
+    "set": "clu20k",
+    "config": "LKH-3 POPMUSIC",
+    "toplam": 0.0,
+    "topluluk": 0.0,
+    "model": 0.0
+   },
+   {
+    "set": "clu20k",
+    "config": "Kontrol: POPMUSIC + topluluk(8) başlangıcı",
+    "toplam": 104.64487439875029,
+    "topluluk": 104.64487439875029,
+    "model": 0.0
+   },
+   {
+    "set": "clu20k",
+    "config": "sayım+ (8)",
+    "toplam": 104.83216516975062,
+    "topluluk": 104.64487439875029,
+    "model": 0.0
+   },
+   {
+    "set": "clu20k",
+    "config": "TourFold-v2(8) ilk 5",
+    "toplam": 105.10901209100075,
+    "topluluk": 104.64487439875029,
+    "model": 0.46413371675021153
+   },
+   {
+    "set": "clu20k",
+    "config": "TourFold-v2(8) 3+POPMUSIC 2",
+    "toplam": 105.14984894375061,
+    "topluluk": 104.64487439875029,
+    "model": 0.46413371675021153
+   },
+   {
+    "set": "clu20k",
+    "config": "TourFold-v2(8) 3+yakın 2",
+    "toplam": 105.20042188100047,
+    "topluluk": 104.64487439875029,
+    "model": 0.46413371675021153
+   },
+   {
+    "set": "clu20k",
+    "config": "TourFold-v2(8) ∪ POPMUSIC",
+    "toplam": 105.12586512850044,
+    "topluluk": 104.64487439875029,
+    "model": 0.46413371675021153
+   },
+   {
+    "set": "clu20k",
+    "config": "TourFold-v2(4) 3+POPMUSIC 2",
+    "toplam": 63.41455565900014,
+    "topluluk": 63.005387064500155,
+    "model": 0.36800511149999693
+   }
+  ]
+ }
+}

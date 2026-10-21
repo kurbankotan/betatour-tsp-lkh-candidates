@@ -1,0 +1,11 @@
+{
+ "m_big": 8,
+ "m_small": 4,
+ "k_tf": 3,
+ "k": 5,
+ "k_union": 8,
+ "k_near": 8,
+ "ens_seed": 777,
+ "lkh_seed": 101,
+ "part_size": 6
+}

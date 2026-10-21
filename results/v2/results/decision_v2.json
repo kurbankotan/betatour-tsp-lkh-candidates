@@ -1,0 +1,932 @@
+{
+ "coverage": [
+  {
+   "group": "clu10k",
+   "method": "POPMUSIC",
+   "missing_per_1k": 6.175,
+   "cov2": 0.850975,
+   "cov5": 0.993825
+  },
+  {
+   "group": "clu10k",
+   "method": "TourFold-v1 (M=16)",
+   "missing_per_1k": 0.8250000000000001,
+   "cov2": 0.92165,
+   "cov5": 0.999175
+  },
+  {
+   "group": "clu10k",
+   "method": "TourFold-v2 (M=16)",
+   "missing_per_1k": 0.2375,
+   "cov2": 0.9252375,
+   "cov5": 0.9997625
+  },
+  {
+   "group": "clu10k",
+   "method": "TourFold-v2 (M=8)",
+   "missing_per_1k": 0.5125,
+   "cov2": 0.9152125,
+   "cov5": 0.9994875000000001
+  },
+  {
+   "group": "clu10k",
+   "method": "alpha+ascent",
+   "missing_per_1k": 2.4625,
+   "cov2": 0.8947625,
+   "cov5": 0.9975375
+  },
+  {
+   "group": "clu10k",
+   "method": "sayım (kNN)",
+   "missing_per_1k": 1.8375,
+   "cov2": 0.9281375000000001,
+   "cov5": 0.9981625
+  },
+  {
+   "group": "clu10k",
+   "method": "sayım+ (M=16)",
+   "missing_per_1k": 1.4,
+   "cov2": 0.928125,
+   "cov5": 0.9985999999999999
+  },
+  {
+   "group": "clu10k",
+   "method": "sayım+ (M=8)",
+   "missing_per_1k": 2.6875,
+   "cov2": 0.92315,
+   "cov5": 0.9973125
+  },
+  {
+   "group": "clu10k",
+   "method": "tek-örnek",
+   "missing_per_1k": 0.8875,
+   "cov2": 0.9011875,
+   "cov5": 0.9991125
+  },
+  {
+   "group": "clu1k",
+   "method": "POPMUSIC",
+   "missing_per_1k": 5.625,
+   "cov2": 0.84509375,
+   "cov5": 0.994375
+  },
+  {
+   "group": "clu1k",
+   "method": "TourFold-v1 (M=16)",
+   "missing_per_1k": 4.5625,
+   "cov2": 0.9388125,
+   "cov5": 0.9954375
+  },
+  {
+   "group": "clu1k",
+   "method": "TourFold-v2 (M=16)",
+   "missing_per_1k": 0.375,
+   "cov2": 0.94253125,
+   "cov5": 0.999625
+  },
+  {
+   "group": "clu1k",
+   "method": "TourFold-v2 (M=8)",
+   "missing_per_1k": 0.59375,
+   "cov2": 0.93996875,
+   "cov5": 0.99940625
+  },
+  {
+   "group": "clu1k",
+   "method": "alpha+ascent",
+   "missing_per_1k": 3.890625,
+   "cov2": 0.88453125,
+   "cov5": 0.996109375
+  },
+  {
+   "group": "clu1k",
+   "method": "sayım (kNN)",
+   "missing_per_1k": 5.0,
+   "cov2": 0.9379375,
+   "cov5": 0.995
+  },
+  {
+   "group": "clu1k",
+   "method": "sayım+ (M=16)",
+   "missing_per_1k": 0.78125,
+   "cov2": 0.939328125,
+   "cov5": 0.99921875
+  },
+  {
+   "group": "clu1k",
+   "method": "sayım+ (M=8)",
+   "missing_per_1k": 1.859375,
+   "cov2": 0.936890625,
+   "cov5": 0.998140625
+  },
+  {
+   "group": "clu1k",
+   "method": "tek-örnek",
+   "missing_per_1k": 5.09375,
+   "cov2": 0.8876875,
+   "cov5": 0.99490625
+  },
+  {
+   "group": "tsplib",
+   "method": "POPMUSIC",
+   "missing_per_1k": 7.250727614929208,
+   "cov2": 0.8627860697223823,
+   "cov5": 0.9927492723850707
+  },
+  {
+   "group": "tsplib",
+   "method": "TourFold-v1 (M=16)",
+   "missing_per_1k": 4.098864520376291,
+   "cov2": 0.9172531600263049,
+   "cov5": 0.9959011354796237
+  },
+  {
+   "group": "tsplib",
+   "method": "TourFold-v2 (M=16)",
+   "missing_per_1k": 2.2181586158652147,
+   "cov2": 0.9195263997540626,
+   "cov5": 0.9977818413841348
+  },
+  {
+   "group": "tsplib",
+   "method": "TourFold-v2 (M=8)",
+   "missing_per_1k": 2.525472200340074,
+   "cov2": 0.9130609909172397,
+   "cov5": 0.99747452779966
+  },
+  {
+   "group": "tsplib",
+   "method": "alpha+ascent",
+   "missing_per_1k": 4.687966850013505,
+   "cov2": 0.9014881783232973,
+   "cov5": 0.9953120331499865
+  },
+  {
+   "group": "tsplib",
+   "method": "sayım (kNN)",
+   "missing_per_1k": 4.3927741814114745,
+   "cov2": 0.9178562323540095,
+   "cov5": 0.9956072258185885
+  },
+  {
+   "group": "tsplib",
+   "method": "sayım+ (M=16)",
+   "missing_per_1k": 2.5886802548947565,
+   "cov2": 0.917785849610831,
+   "cov5": 0.9974113197451052
+  },
+  {
+   "group": "tsplib",
+   "method": "sayım+ (M=8)",
+   "missing_per_1k": 3.92696260515408,
+   "cov2": 0.9161704027583051,
+   "cov5": 0.996073037394846
+  },
+  {
+   "group": "tsplib",
+   "method": "tek-örnek",
+   "missing_per_1k": 4.119657963621745,
+   "cov2": 0.8919210992725316,
+   "cov5": 0.9958803420363783
+  },
+  {
+   "group": "uni10k",
+   "method": "POPMUSIC",
+   "missing_per_1k": 5.6,
+   "cov2": 0.8556,
+   "cov5": 0.9944
+  },
+  {
+   "group": "uni10k",
+   "method": "TourFold-v1 (M=16)",
+   "missing_per_1k": 0.33749999999999997,
+   "cov2": 0.9339,
+   "cov5": 0.9996625
+  },
+  {
+   "group": "uni10k",
+   "method": "TourFold-v2 (M=16)",
+   "missing_per_1k": 0.225,
+   "cov2": 0.93615,
+   "cov5": 0.999775
+  },
+  {
+   "group": "uni10k",
+   "method": "TourFold-v2 (M=8)",
+   "missing_per_1k": 0.4375,
+   "cov2": 0.927475,
+   "cov5": 0.9995625
+  },
+  {
+   "group": "uni10k",
+   "method": "alpha+ascent",
+   "missing_per_1k": 2.7875,
+   "cov2": 0.8964,
+   "cov5": 0.9972125000000001
+  },
+  {
+   "group": "uni10k",
+   "method": "sayım (kNN)",
+   "missing_per_1k": 1.125,
+   "cov2": 0.9375875,
+   "cov5": 0.998875
+  },
+  {
+   "group": "uni10k",
+   "method": "sayım+ (M=16)",
+   "missing_per_1k": 1.1375,
+   "cov2": 0.9375249999999999,
+   "cov5": 0.9988625
+  },
+  {
+   "group": "uni10k",
+   "method": "sayım+ (M=8)",
+   "missing_per_1k": 2.075,
+   "cov2": 0.93385,
+   "cov5": 0.997925
+  },
+  {
+   "group": "uni10k",
+   "method": "tek-örnek",
+   "missing_per_1k": 0.4375,
+   "cov2": 0.9076,
+   "cov5": 0.9995625
+  },
+  {
+   "group": "uni1k",
+   "method": "POPMUSIC",
+   "missing_per_1k": 5.234375,
+   "cov2": 0.853296875,
+   "cov5": 0.994765625
+  },
+  {
+   "group": "uni1k",
+   "method": "TourFold-v1 (M=16)",
+   "missing_per_1k": 0.25,
+   "cov2": 0.946734375,
+   "cov5": 0.99975
+  },
+  {
+   "group": "uni1k",
+   "method": "TourFold-v2 (M=16)",
+   "missing_per_1k": 0.15625,
+   "cov2": 0.947703125,
+   "cov5": 0.99984375
+  },
+  {
+   "group": "uni1k",
+   "method": "TourFold-v2 (M=8)",
+   "missing_per_1k": 0.34375,
+   "cov2": 0.9389531249999999,
+   "cov5": 0.99965625
+  },
+  {
+   "group": "uni1k",
+   "method": "alpha+ascent",
+   "missing_per_1k": 2.265625,
+   "cov2": 0.8932656250000001,
+   "cov5": 0.997734375
+  },
+  {
+   "group": "uni1k",
+   "method": "sayım (kNN)",
+   "missing_per_1k": 0.71875,
+   "cov2": 0.9450625,
+   "cov5": 0.99928125
+  },
+  {
+   "group": "uni1k",
+   "method": "sayım+ (M=16)",
+   "missing_per_1k": 0.65625,
+   "cov2": 0.94503125,
+   "cov5": 0.99934375
+  },
+  {
+   "group": "uni1k",
+   "method": "sayım+ (M=8)",
+   "missing_per_1k": 1.59375,
+   "cov2": 0.942609375,
+   "cov5": 0.99840625
+  },
+  {
+   "group": "uni1k",
+   "method": "tek-örnek",
+   "missing_per_1k": 0.4375,
+   "cov2": 0.903484375,
+   "cov5": 0.9995625
+  },
+  {
+   "group": "val",
+   "method": "POPMUSIC",
+   "missing_per_1k": 3.949819171071584,
+   "cov2": 0.8500201550702411,
+   "cov5": 0.9960501808289284
+  },
+  {
+   "group": "val",
+   "method": "TourFold-v1 (M=16)",
+   "missing_per_1k": 7.234092554745155,
+   "cov2": 0.9624269173377136,
+   "cov5": 0.9927659074452548
+  },
+  {
+   "group": "val",
+   "method": "TourFold-v2 (M=16)",
+   "missing_per_1k": 0.24775618204793404,
+   "cov2": 0.9682056920774978,
+   "cov5": 0.999752243817952
+  },
+  {
+   "group": "val",
+   "method": "TourFold-v2 (M=8)",
+   "missing_per_1k": 0.4776443875387331,
+   "cov2": 0.9649642881012417,
+   "cov5": 0.9995223556124613
+  },
+  {
+   "group": "val",
+   "method": "alpha+ascent",
+   "missing_per_1k": 4.5599573839596115,
+   "cov2": 0.886598681898204,
+   "cov5": 0.9954400426160404
+  },
+  {
+   "group": "val",
+   "method": "sayım (kNN)",
+   "missing_per_1k": 7.595229322329363,
+   "cov2": 0.9517785422487818,
+   "cov5": 0.9924047706776706
+  },
+  {
+   "group": "val",
+   "method": "sayım+ (M=16)",
+   "missing_per_1k": 0.6589232698553903,
+   "cov2": 0.9563609217729618,
+   "cov5": 0.9993410767301447
+  },
+  {
+   "group": "val",
+   "method": "sayım+ (M=8)",
+   "missing_per_1k": 1.3200664110033957,
+   "cov2": 0.9552454639218522,
+   "cov5": 0.9986799335889966
+  },
+  {
+   "group": "val",
+   "method": "tek-örnek",
+   "missing_per_1k": 7.806559908563496,
+   "cov2": 0.8823253514033095,
+   "cov5": 0.9921934400914365
+  }
+ ],
+ "val_by_dist": [
+  {
+   "sub": "val-clustered",
+   "method": "POPMUSIC",
+   "missing_per_1k": 4.356988541565829
+  },
+  {
+   "sub": "val-clustered",
+   "method": "TourFold-v1 (M=16)",
+   "missing_per_1k": 14.410267665684103
+  },
+  {
+   "sub": "val-clustered",
+   "method": "TourFold-v2 (M=16)",
+   "missing_per_1k": 0.4074538565227055
+  },
+  {
+   "sub": "val-clustered",
+   "method": "TourFold-v2 (M=8)",
+   "missing_per_1k": 0.7547988920664092
+  },
+  {
+   "sub": "val-clustered",
+   "method": "alpha+ascent",
+   "missing_per_1k": 6.494852032028271
+  },
+  {
+   "sub": "val-clustered",
+   "method": "sayım (kNN)",
+   "missing_per_1k": 14.696940225826289
+  },
+  {
+   "sub": "val-clustered",
+   "method": "sayım+ (M=16)",
+   "missing_per_1k": 0.7837959362797842
+  },
+  {
+   "sub": "val-clustered",
+   "method": "sayım+ (M=8)",
+   "missing_per_1k": 1.5562891597556447
+  },
+  {
+   "sub": "val-clustered",
+   "method": "tek-örnek",
+   "missing_per_1k": 15.353275471716435
+  },
+  {
+   "sub": "val-uniform",
+   "method": "POPMUSIC",
+   "missing_per_1k": 3.5458941780314768
+  },
+  {
+   "sub": "val-uniform",
+   "method": "TourFold-v1 (M=16)",
+   "missing_per_1k": 0.11509812198102089
+  },
+  {
+   "sub": "val-uniform",
+   "method": "TourFold-v2 (M=16)",
+   "missing_per_1k": 0.08933099900324039
+  },
+  {
+   "sub": "val-uniform",
+   "method": "TourFold-v2 (M=8)",
+   "missing_per_1k": 0.20269828543757248
+  },
+  {
+   "sub": "val-uniform",
+   "method": "alpha+ascent",
+   "missing_per_1k": 2.640480223126559
+  },
+  {
+   "sub": "val-uniform",
+   "method": "sayım (kNN)",
+   "missing_per_1k": 0.5501057567089057
+  },
+  {
+   "sub": "val-uniform",
+   "method": "sayım+ (M=16)",
+   "missing_per_1k": 0.5350456047570874
+  },
+  {
+   "sub": "val-uniform",
+   "method": "sayım+ (M=8)",
+   "missing_per_1k": 1.085725915229252
+  },
+  {
+   "sub": "val-uniform",
+   "method": "tek-örnek",
+   "missing_per_1k": 0.3199775371488268
+  }
+ ],
+ "fixing": [
+  {
+   "group": "clu10k",
+   "method": "TourFold-v2 olasılığı (M=8)",
+   "precision": 1.0,
+   "recall": 0.0002875,
+   "fixed_frac": 0.0002875
+  },
+  {
+   "group": "clu10k",
+   "method": "omurga (M=16)",
+   "precision": 0.9966664005110188,
+   "recall": 0.6241125,
+   "fixed_frac": 0.6262
+  },
+  {
+   "group": "clu10k",
+   "method": "omurga (M=8)",
+   "precision": 0.9913874383521903,
+   "recall": 0.6834625,
+   "fixed_frac": 0.6894
+  },
+  {
+   "group": "clu10k",
+   "method": "omurga ∩ TourFold-v2 (M=8)",
+   "precision": 1.0,
+   "recall": 0.0002875,
+   "fixed_frac": 0.0002875
+  },
+  {
+   "group": "clu1k",
+   "method": "TourFold-v2 olasılığı (M=8)",
+   "precision": 0.9973905479849232,
+   "recall": 0.05375,
+   "fixed_frac": 0.053890625
+  },
+  {
+   "group": "clu1k",
+   "method": "omurga (M=16)",
+   "precision": 0.9971979223619464,
+   "recall": 0.683953125,
+   "fixed_frac": 0.685875
+  },
+  {
+   "group": "clu1k",
+   "method": "omurga (M=8)",
+   "precision": 0.9930438092016238,
+   "recall": 0.733859375,
+   "fixed_frac": 0.739
+  },
+  {
+   "group": "clu1k",
+   "method": "omurga ∩ TourFold-v2 (M=8)",
+   "precision": 0.997382960162838,
+   "recall": 0.05359375,
+   "fixed_frac": 0.053734375
+  },
+  {
+   "group": "tsplib",
+   "method": "TourFold-v2 olasılığı (M=8)",
+   "precision": 0.9968701095461658,
+   "recall": 0.14189926711367534,
+   "fixed_frac": 0.14234479071528813
+  },
+  {
+   "group": "tsplib",
+   "method": "omurga (M=16)",
+   "precision": 0.9971304931386389,
+   "recall": 0.6399055489964581,
+   "fixed_frac": 0.641747046549791
+  },
+  {
+   "group": "tsplib",
+   "method": "omurga (M=8)",
+   "precision": 0.9904478563459598,
+   "recall": 0.692165467465639,
+   "fixed_frac": 0.6988408960964707
+  },
+  {
+   "group": "tsplib",
+   "method": "omurga ∩ TourFold-v2 (M=8)",
+   "precision": 0.9983127702203944,
+   "recall": 0.14059239788227781,
+   "fixed_frac": 0.14083001046980465
+  },
+  {
+   "group": "uni10k",
+   "method": "TourFold-v2 olasılığı (M=8)",
+   "precision": 0.9984802431610942,
+   "recall": 0.016425,
+   "fixed_frac": 0.01645
+  },
+  {
+   "group": "uni10k",
+   "method": "omurga (M=16)",
+   "precision": 0.9976930831265509,
+   "recall": 0.6433125,
+   "fixed_frac": 0.6448
+  },
+  {
+   "group": "uni10k",
+   "method": "omurga (M=8)",
+   "precision": 0.9928015769650463,
+   "recall": 0.7051125,
+   "fixed_frac": 0.710225
+  },
+  {
+   "group": "uni10k",
+   "method": "omurga ∩ TourFold-v2 (M=8)",
+   "precision": 0.9984802431610942,
+   "recall": 0.016425,
+   "fixed_frac": 0.01645
+  },
+  {
+   "group": "uni1k",
+   "method": "TourFold-v2 olasılığı (M=8)",
+   "precision": 0.9978187919463087,
+   "recall": 0.092921875,
+   "fixed_frac": 0.093125
+  },
+  {
+   "group": "uni1k",
+   "method": "omurga (M=16)",
+   "precision": 0.998196429386786,
+   "recall": 0.683171875,
+   "fixed_frac": 0.68440625
+  },
+  {
+   "group": "uni1k",
+   "method": "omurga (M=8)",
+   "precision": 0.9941532811279735,
+   "recall": 0.7359375,
+   "fixed_frac": 0.740265625
+  },
+  {
+   "group": "uni1k",
+   "method": "omurga ∩ TourFold-v2 (M=8)",
+   "precision": 0.997979797979798,
+   "recall": 0.092625,
+   "fixed_frac": 0.0928125
+  },
+  {
+   "group": "val",
+   "method": "TourFold-v2 olasılığı (M=8)",
+   "precision": 0.9963763225384432,
+   "recall": 0.32322300103404955,
+   "fixed_frac": 0.3243985166273144
+  },
+  {
+   "group": "val",
+   "method": "omurga (M=16)",
+   "precision": 0.9981033851305394,
+   "recall": 0.7710607596727419,
+   "fixed_frac": 0.7725259438649201
+  },
+  {
+   "group": "val",
+   "method": "omurga (M=8)",
+   "precision": 0.9949418331594632,
+   "recall": 0.8063026497940321,
+   "fixed_frac": 0.8104017972926091
+  },
+  {
+   "group": "val",
+   "method": "omurga ∩ TourFold-v2 (M=8)",
+   "precision": 0.9970432813286362,
+   "recall": 0.32029936912873747,
+   "fixed_frac": 0.3212492126740117
+  }
+ ],
+ "tau_f": 0.98,
+ "tau_p": 0.98,
+ "verdict": {
+  "clu10k": {
+   "main": "TourFold-v2 (M=8)",
+   "TourFold-v2 (M=8)": 0.5125,
+   "TourFold-v2 (M=16)": 0.2375,
+   "wtl_vs_TourFold-v2 (M=16)": [
+    0,
+    0,
+    8
+   ],
+   "sayım+ (M=8)": 2.6875,
+   "wtl_vs_sayım+ (M=8)": [
+    8,
+    0,
+    0
+   ],
+   "sayım (kNN)": 1.8375,
+   "wtl_vs_sayım (kNN)": [
+    8,
+    0,
+    0
+   ],
+   "POPMUSIC": 6.175,
+   "wtl_vs_POPMUSIC": [
+    8,
+    0,
+    0
+   ],
+   "alpha+ascent": 2.4625,
+   "wtl_vs_alpha+ascent": [
+    8,
+    0,
+    0
+   ],
+   "TourFold-v1 (M=16)": 0.8250000000000001,
+   "wtl_vs_TourFold-v1 (M=16)": [
+    6,
+    1,
+    1
+   ],
+   "tek-örnek": 0.8875,
+   "wtl_vs_tek-örnek": [
+    7,
+    0,
+    1
+   ]
+  },
+  "clu1k": {
+   "main": "TourFold-v2 (M=8)",
+   "TourFold-v2 (M=8)": 0.59375,
+   "TourFold-v2 (M=16)": 0.375,
+   "wtl_vs_TourFold-v2 (M=16)": [
+    1,
+    52,
+    11
+   ],
+   "sayım+ (M=8)": 1.859375,
+   "wtl_vs_sayım+ (M=8)": [
+    35,
+    27,
+    2
+   ],
+   "sayım (kNN)": 5.0,
+   "wtl_vs_sayım (kNN)": [
+    58,
+    5,
+    1
+   ],
+   "POPMUSIC": 5.625,
+   "wtl_vs_POPMUSIC": [
+    63,
+    1,
+    0
+   ],
+   "alpha+ascent": 3.890625,
+   "wtl_vs_alpha+ascent": [
+    59,
+    4,
+    1
+   ],
+   "TourFold-v1 (M=16)": 4.5625,
+   "wtl_vs_TourFold-v1 (M=16)": [
+    57,
+    6,
+    1
+   ],
+   "tek-örnek": 5.09375,
+   "wtl_vs_tek-örnek": [
+    58,
+    5,
+    1
+   ]
+  },
+  "tsplib": {
+   "main": "TourFold-v2 (M=8)",
+   "TourFold-v2 (M=8)": 2.525472200340074,
+   "TourFold-v2 (M=16)": 2.2181586158652147,
+   "wtl_vs_TourFold-v2 (M=16)": [
+    2,
+    12,
+    17
+   ],
+   "sayım+ (M=8)": 3.92696260515408,
+   "wtl_vs_sayım+ (M=8)": [
+    26,
+    3,
+    2
+   ],
+   "sayım (kNN)": 4.3927741814114745,
+   "wtl_vs_sayım (kNN)": [
+    24,
+    5,
+    2
+   ],
+   "POPMUSIC": 7.250727614929208,
+   "wtl_vs_POPMUSIC": [
+    30,
+    1,
+    0
+   ],
+   "alpha+ascent": 4.687966850013505,
+   "wtl_vs_alpha+ascent": [
+    25,
+    1,
+    5
+   ],
+   "TourFold-v1 (M=16)": 4.098864520376291,
+   "wtl_vs_TourFold-v1 (M=16)": [
+    20,
+    6,
+    5
+   ],
+   "tek-örnek": 4.119657963621745,
+   "wtl_vs_tek-örnek": [
+    21,
+    5,
+    5
+   ]
+  },
+  "uni10k": {
+   "main": "TourFold-v2 (M=8)",
+   "TourFold-v2 (M=8)": 0.4375,
+   "TourFold-v2 (M=16)": 0.225,
+   "wtl_vs_TourFold-v2 (M=16)": [
+    0,
+    0,
+    8
+   ],
+   "sayım+ (M=8)": 2.075,
+   "wtl_vs_sayım+ (M=8)": [
+    8,
+    0,
+    0
+   ],
+   "sayım (kNN)": 1.125,
+   "wtl_vs_sayım (kNN)": [
+    7,
+    0,
+    1
+   ],
+   "POPMUSIC": 5.6,
+   "wtl_vs_POPMUSIC": [
+    8,
+    0,
+    0
+   ],
+   "alpha+ascent": 2.7875,
+   "wtl_vs_alpha+ascent": [
+    8,
+    0,
+    0
+   ],
+   "TourFold-v1 (M=16)": 0.33749999999999997,
+   "wtl_vs_TourFold-v1 (M=16)": [
+    2,
+    1,
+    5
+   ],
+   "tek-örnek": 0.4375,
+   "wtl_vs_tek-örnek": [
+    5,
+    2,
+    1
+   ]
+  },
+  "uni1k": {
+   "main": "TourFold-v2 (M=8)",
+   "TourFold-v2 (M=8)": 0.34375,
+   "TourFold-v2 (M=16)": 0.15625,
+   "wtl_vs_TourFold-v2 (M=16)": [
+    0,
+    53,
+    11
+   ],
+   "sayım+ (M=8)": 1.59375,
+   "wtl_vs_sayım+ (M=8)": [
+    39,
+    24,
+    1
+   ],
+   "sayım (kNN)": 0.71875,
+   "wtl_vs_sayım (kNN)": [
+    23,
+    35,
+    6
+   ],
+   "POPMUSIC": 5.234375,
+   "wtl_vs_POPMUSIC": [
+    63,
+    1,
+    0
+   ],
+   "alpha+ascent": 2.265625,
+   "wtl_vs_alpha+ascent": [
+    54,
+    8,
+    2
+   ],
+   "TourFold-v1 (M=16)": 0.25,
+   "wtl_vs_TourFold-v1 (M=16)": [
+    6,
+    47,
+    11
+   ],
+   "tek-örnek": 0.4375,
+   "wtl_vs_tek-örnek": [
+    17,
+    35,
+    12
+   ]
+  },
+  "val": {
+   "main": "TourFold-v2 (M=8)",
+   "TourFold-v2 (M=8)": 0.4776443875387331,
+   "TourFold-v2 (M=16)": 0.24775618204793404,
+   "wtl_vs_TourFold-v2 (M=16)": [
+    1,
+    944,
+    55
+   ],
+   "sayım+ (M=8)": 1.3200664110033957,
+   "wtl_vs_sayım+ (M=8)": [
+    164,
+    831,
+    5
+   ],
+   "sayım (kNN)": 7.595229322329363,
+   "wtl_vs_sayım (kNN)": [
+    490,
+    492,
+    18
+   ],
+   "POPMUSIC": 3.949819171071584,
+   "wtl_vs_POPMUSIC": [
+    642,
+    340,
+    18
+   ],
+   "alpha+ascent": 4.5599573839596115,
+   "wtl_vs_alpha+ascent": [
+    636,
+    338,
+    26
+   ],
+   "TourFold-v1 (M=16)": 7.234092554745155,
+   "wtl_vs_TourFold-v1 (M=16)": [
+    447,
+    527,
+    26
+   ],
+   "tek-örnek": 7.806559908563496,
+   "wtl_vs_tek-örnek": [
+    499,
+    475,
+    26
+   ]
+  }
+ },
+ "groups": [
+  "val",
+  "uni1k",
+  "clu1k",
+  "uni10k",
+  "clu10k",
+  "tsplib"
+ ]
+}

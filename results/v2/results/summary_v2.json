@@ -1,0 +1,4051 @@
+{
+ "env": {
+  "nproc": 12,
+  "ram_gb": 53.0,
+  "gpu": "NVIDIA L4, 23034 MiB",
+  "numpy": "2.1.3"
+ },
+ "config": {
+  "scale": "L",
+  "n_small": 64,
+  "n_large": 8,
+  "tsplib_max_n": 20000,
+  "profile_sizes": [
+   1000,
+   2000,
+   5000,
+   10000,
+   20000
+  ],
+  "n_train": 30000,
+  "epochs": 12,
+  "any_small": 8,
+  "any_large": 2,
+  "tsplib_any_max_n": 3000,
+  "size_small": 1000,
+  "size_large": 10000,
+  "M_ens": 16,
+  "K": 16,
+  "k_tri": 12,
+  "ref_trials_cap": 1000,
+  "ref_max_candidates": 8,
+  "train_n": [
+   100,
+   500
+  ],
+  "shard_size": 1000,
+  "val_instances": 1000,
+  "max_nodes": 7500,
+  "lr": 0.0003,
+  "warmup": 300,
+  "model": {
+   "dn": 128,
+   "de": 64,
+   "dm": 32,
+   "dtri": 32,
+   "msa_layers": 2,
+   "pair_layers": 6
+  },
+  "budget_small": 30.0,
+  "budget_large": 300.0,
+  "budget_per_node": 0.02,
+  "budget_min": 10.0,
+  "fix_precision": 0.999,
+  "num_workers": 4,
+  "eval_part_size": 12,
+  "lkh_eval_part_size": 6,
+  "lkh_version": "3.0.14",
+  "fixed_edges_ok": true
+ },
+ "errors": {},
+ "stage_minutes": {
+  "1-lkh": 0.1,
+  "1-selftest": 0.0,
+  "2-profile": 0.0,
+  "3-eval_sets": 2.1,
+  "3-eval_ref": 0.5,
+  "3-classic_coverage": 0.0,
+  "4-train_data": 0.0,
+  "5-v1_tourfold": 1.2,
+  "5-v1_single": 0.2,
+  "6-train_v2": 104.6,
+  "7-decision_v2": 2.4,
+  "8-lkh_eval_v2": 128.7
+ },
+ "selftest": {
+  "checks": {
+   "LKH geçerli bir tur üretti": true,
+   "tur uzunluğu LKH'nin bildirdiğiyle aynı": true,
+   "LKH iyileşme izi okundu": true,
+   "LKH ön-işleme süresi okundu": true,
+   "LKH aday (CANDIDATE_FILE) ve ceza (PI_FILE) dosyaları okundu": true,
+   "kendi yazdığımız aday/π dosyaları LKH'ye kabul edildi": true,
+   "tur topluluğu üretildi (POPMUSIC adaylar, ascent yok)": true,
+   "başlangıç turu + dışarıdan aday dosyasıyla LKH çalıştı": true
+  },
+  "warnings": {
+   "π birimi (PRECISION = 100) doğrulandı": true,
+   "sabit kenarlar (FIXED_EDGES_SECTION) LKH turunda korundu": true
+  },
+  "info": {
+   "lkh_output_head": [
+    "PARAMETER_FILE = /content/tourfold_local/work/lkh_el9lhfe2/run.par",
+    "Reading PROBLEM_FILE: \"/content/tourfold_local/work/lkh_el9lhfe2/p.tsp\" ... done",
+    "ALPHA = 0.00",
+    "ASCENT_CANDIDATES = 50",
+    "BACKBONE_TRIALS = 0",
+    "BACKTRACKING = NO",
+    "# BWTSP =",
+    "CANDIDATE_FILE = /content/tourfold_local/work/lkh_el9lhfe2/out.cand",
+    "CANDIDATE_SET_TYPE = ALPHA",
+    "# DISTANCE =",
+    "# DEPOT =",
+    "# EDGE_FILE =",
+    "DRONES = 1",
+    "ENDURANCE = 0.0",
+    "EXCESS = 0.00333333"
+   ],
+   "fixed_edges_tested": 243,
+   "fixed_cost_shift": 9233480.0,
+   "fixed_len": 9233480.0
+  },
+  "pi_unit_rel": {
+   "100": 0.0,
+   "1": 131.77548010447268
+  },
+  "fixed_edges_supported": true
+ },
+ "training": {
+  "TourFold": [
+   {
+    "epoch": 0,
+    "time_s": 538.7846739292145,
+    "oom_skipped": 0,
+    "train_ce": 0.8671377933796066,
+    "train_bce": 0.1445064162358479,
+    "train_pi_mse": 1.236639644934989,
+    "train_loss": 2.240684731581149,
+    "train_conf_bce": 0.3232704117256088,
+    "val_missing_per_1k": 7.399146926958197,
+    "val_missing_per_1k_alpha": 4.5599573839596115
+   },
+   {
+    "epoch": 1,
+    "time_s": 538.117155790329,
+    "oom_skipped": 0,
+    "train_ce": 0.7830631045156211,
+    "train_bce": 0.08317590203477716,
+    "train_pi_mse": 1.0895501863590502,
+    "train_loss": 1.9723660772442317,
+    "train_conf_bce": 0.29082416675991124,
+    "val_missing_per_1k": 7.376131798649505,
+    "val_missing_per_1k_alpha": 4.5599573839596115
+   },
+   {
+    "epoch": 2,
+    "time_s": 538.3061909675598,
+    "oom_skipped": 0,
+    "train_ce": 0.7821411202935612,
+    "train_bce": 0.08191175397266359,
+    "train_pi_mse": 1.02816153564373,
+    "train_loss": 1.9082026367427922,
+    "train_conf_bce": 0.2847205260095476,
+    "val_missing_per_1k": 7.350228763877845,
+    "val_missing_per_1k_alpha": 4.5599573839596115
+   },
+   {
+    "epoch": 3,
+    "time_s": 538.5470643043518,
+    "oom_skipped": 0,
+    "train_ce": 0.7816019722393581,
+    "train_bce": 0.08089586049631363,
+    "train_pi_mse": 0.990206614750273,
+    "train_loss": 1.8659147958795563,
+    "train_conf_bce": 0.26829139631585913,
+    "val_missing_per_1k": 7.309513268417659,
+    "val_missing_per_1k_alpha": 4.5599573839596115
+   },
+   {
+    "epoch": 4,
+    "time_s": 538.6367707252502,
+    "oom_skipped": 0,
+    "train_ce": 0.781311044781222,
+    "train_bce": 0.08043764866230566,
+    "train_pi_mse": 0.9493989690486576,
+    "train_loss": 1.8210960819101614,
+    "train_conf_bce": 0.25083622521868865,
+    "val_missing_per_1k": 7.297223767503868,
+    "val_missing_per_1k_alpha": 4.5599573839596115
+   },
+   {
+    "epoch": 5,
+    "time_s": 538.4414026737213,
+    "oom_skipped": 0,
+    "train_ce": 0.7809745591227748,
+    "train_bce": 0.07965346947312354,
+    "train_pi_mse": 0.9166081999154652,
+    "train_loss": 1.782790633460053,
+    "train_conf_bce": 0.22690568171879824,
+    "val_missing_per_1k": 7.278962356991054,
+    "val_missing_per_1k_alpha": 4.5599573839596115
+   },
+   {
+    "epoch": 6,
+    "time_s": 538.5682928562164,
+    "oom_skipped": 0,
+    "train_ce": 0.780619384161658,
+    "train_bce": 0.07916940380862222,
+    "train_pi_mse": 0.8832896155805724,
+    "train_loss": 1.7442157646504843,
+    "train_conf_bce": 0.20361031177692598,
+    "val_missing_per_1k": 7.2794350392590195,
+    "val_missing_per_1k_alpha": 4.5599573839596115
+   },
+   {
+    "epoch": 7,
+    "time_s": 538.4789974689484,
+    "oom_skipped": 0,
+    "train_ce": 0.7804523955874082,
+    "train_bce": 0.07865500240077992,
+    "train_pi_mse": 0.853527866091047,
+    "train_loss": 1.71181600374334,
+    "train_conf_bce": 0.19254121054746523,
+    "val_missing_per_1k": 7.255747856599173,
+    "val_missing_per_1k_alpha": 4.5599573839596115
+   },
+   {
+    "epoch": 8,
+    "time_s": 538.3059711456299,
+    "oom_skipped": 0,
+    "train_ce": 0.7802001795347999,
+    "train_bce": 0.07854354529946792,
+    "train_pi_mse": 0.8226563148388342,
+    "train_loss": 1.6799640088522134,
+    "train_conf_bce": 0.18917869365766268,
+    "val_missing_per_1k": 7.241820158710435,
+    "val_missing_per_1k_alpha": 4.5599573839596115
+   },
+   {
+    "epoch": 9,
+    "time_s": 538.6787791252136,
+    "oom_skipped": 0,
+    "train_ce": 0.7800156260058095,
+    "train_bce": 0.07829757871637333,
+    "train_pi_mse": 0.793704084362725,
+    "train_loss": 1.650231322989532,
+    "train_conf_bce": 0.18681412195211905,
+    "val_missing_per_1k": 7.279404178515306,
+    "val_missing_per_1k_alpha": 4.5599573839596115
+   },
+   {
+    "epoch": 10,
+    "time_s": 538.5975515842438,
+    "oom_skipped": 0,
+    "train_ce": 0.7799329100986606,
+    "train_bce": 0.07823804211375891,
+    "train_pi_mse": 0.7716717835456208,
+    "train_loss": 1.6279075072531544,
+    "train_conf_bce": 0.18591896006547673,
+    "val_missing_per_1k": 7.238923472619551,
+    "val_missing_per_1k_alpha": 4.5599573839596115
+   },
+   {
+    "epoch": 11,
+    "time_s": 538.7147834300995,
+    "oom_skipped": 0,
+    "train_ce": 0.7799121371838225,
+    "train_bce": 0.07822686298554685,
+    "train_pi_mse": 0.759205328115896,
+    "train_loss": 1.6153785882877703,
+    "train_conf_bce": 0.18573846349320491,
+    "val_missing_per_1k": 7.234092554745155,
+    "val_missing_per_1k_alpha": 4.5599573839596115
+   }
+  ],
+  "single-instance": [
+   {
+    "epoch": 0,
+    "time_s": 335.44285678863525,
+    "oom_skipped": 0,
+    "train_ce": 1.180726210576561,
+    "train_bce": 0.32850437483098904,
+    "train_pi_mse": 1.2566910706254037,
+    "train_loss": 2.726739432409368,
+    "train_conf_bce": 0.6253498329223454,
+    "val_missing_per_1k": 8.862325529579532,
+    "val_missing_per_1k_alpha": 4.5599573839596115
+   },
+   {
+    "epoch": 1,
+    "time_s": 335.2980103492737,
+    "oom_skipped": 0,
+    "train_ce": 1.0419107046921379,
+    "train_bce": 0.24090047307231027,
+    "train_pi_mse": 1.1925942665193139,
+    "train_loss": 2.4716779584138706,
+    "train_conf_bce": 0.5836137381795077,
+    "val_missing_per_1k": 8.40826859562789,
+    "val_missing_per_1k_alpha": 4.5599573839596115
+   },
+   {
+    "epoch": 2,
+    "time_s": 335.2257618904114,
+    "oom_skipped": 0,
+    "train_ce": 1.027417961990132,
+    "train_bce": 0.23199528088840116,
+    "train_pi_mse": 1.1664101327166838,
+    "train_loss": 2.4237828749568524,
+    "train_conf_bce": 0.569785671474553,
+    "val_missing_per_1k": 8.07590877433118,
+    "val_missing_per_1k_alpha": 4.5599573839596115
+   },
+   {
+    "epoch": 3,
+    "time_s": 335.104425907135,
+    "oom_skipped": 0,
+    "train_ce": 1.0198110913529115,
+    "train_bce": 0.22739685236656365,
+    "train_pi_mse": 1.1527721015971248,
+    "train_loss": 2.3963208783574466,
+    "train_conf_bce": 0.5501962958514189,
+    "val_missing_per_1k": 8.10285643523069,
+    "val_missing_per_1k_alpha": 4.5599573839596115
+   },
+   {
+    "epoch": 4,
+    "time_s": 335.4286000728607,
+    "oom_skipped": 0,
+    "train_ce": 1.0145431570990733,
+    "train_bce": 0.22402142683832058,
+    "train_pi_mse": 1.1389547464123686,
+    "train_loss": 2.3689230896024966,
+    "train_conf_bce": 0.517072366204354,
+    "val_missing_per_1k": 8.08153135200706,
+    "val_missing_per_1k_alpha": 4.5599573839596115
+   },
+   {
+    "epoch": 5,
+    "time_s": 335.3755946159363,
+    "oom_skipped": 0,
+    "train_ce": 1.0100802335418573,
+    "train_bce": 0.22123003149984263,
+    "train_pi_mse": 1.1272640090028778,
+    "train_loss": 2.348737164906093,
+    "train_conf_bce": 0.5038895340276366,
+    "val_missing_per_1k": 8.044777670923496,
+    "val_missing_per_1k_alpha": 4.5599573839596115
+   },
+   {
+    "epoch": 6,
+    "time_s": 335.56651854515076,
+    "oom_skipped": 0,
+    "train_ce": 1.0065700582740085,
+    "train_bce": 0.2189895948308972,
+    "train_pi_mse": 1.1144548466568538,
+    "train_loss": 2.3299199940278013,
+    "train_conf_bce": 0.4970014698621703,
+    "val_missing_per_1k": 7.818217273620612,
+    "val_missing_per_1k_alpha": 4.5599573839596115
+   },
+   {
+    "epoch": 7,
+    "time_s": 335.41025495529175,
+    "oom_skipped": 0,
+    "train_ce": 1.0036501752228295,
+    "train_bce": 0.21721511726118936,
+    "train_pi_mse": 1.1040765908961536,
+    "train_loss": 2.314816796479105,
+    "train_conf_bce": 0.49241234837960796,
+    "val_missing_per_1k": 7.833909159618175,
+    "val_missing_per_1k_alpha": 4.5599573839596115
+   },
+   {
+    "epoch": 8,
+    "time_s": 335.4096703529358,
+    "oom_skipped": 0,
+    "train_ce": 1.0011930261339461,
+    "train_bce": 0.21563969453593262,
+    "train_pi_mse": 1.0921437372179592,
+    "train_loss": 2.298965001306614,
+    "train_conf_bce": 0.4890419551805288,
+    "val_missing_per_1k": 7.846371149395723,
+    "val_missing_per_1k_alpha": 4.5599573839596115
+   },
+   {
+    "epoch": 9,
+    "time_s": 335.4037215709686,
+    "oom_skipped": 0,
+    "train_ce": 0.9996477234654311,
+    "train_bce": 0.21475365027296534,
+    "train_pi_mse": 1.0798069097421268,
+    "train_loss": 2.284231937763769,
+    "train_conf_bce": 0.4870023897107255,
+    "val_missing_per_1k": 7.8039585879054485,
+    "val_missing_per_1k_alpha": 4.5599573839596115
+   },
+   {
+    "epoch": 10,
+    "time_s": 335.3547101020813,
+    "oom_skipped": 0,
+    "train_ce": 0.9986395562667623,
+    "train_bce": 0.21409933399362058,
+    "train_pi_mse": 1.0698086729036649,
+    "train_loss": 2.272655877874517,
+    "train_conf_bce": 0.48578989350364626,
+    "val_missing_per_1k": 7.824071707154481,
+    "val_missing_per_1k_alpha": 4.5599573839596115
+   },
+   {
+    "epoch": 11,
+    "time_s": 335.40125489234924,
+    "oom_skipped": 0,
+    "train_ce": 0.9982142749954672,
+    "train_bce": 0.21376553465839193,
+    "train_pi_mse": 1.0630071870669597,
+    "train_loss": 2.2651871858524677,
+    "train_conf_bce": 0.48541477938660055,
+    "val_missing_per_1k": 7.806559908563495,
+    "val_missing_per_1k_alpha": 4.5599573839596115
+   }
+  ]
+ },
+ "training_v2": [
+  {
+   "epoch": 0,
+   "time_s": 521.7667763233185,
+   "oom_skipped": 0,
+   "train_ce": 0.9131725602936003,
+   "train_bce": 0.16965086526285209,
+   "train_pi_mse": 1.1595200858164274,
+   "train_loss": 2.2202298439681982,
+   "train_conf_bce": 0.3135588211207153,
+   "val_missing_per_1k_M8": 0.8077104673498822,
+   "val_missing_per_1k_M16": 0.4538456616992863,
+   "val_missing_per_1k_alpha": 4.5599573839596115
+  },
+  {
+   "epoch": 1,
+   "time_s": 521.6737217903137,
+   "oom_skipped": 0,
+   "train_ce": 0.8186044382447956,
+   "train_bce": 0.10209144305656938,
+   "train_pi_mse": 1.0113999192203795,
+   "train_loss": 1.9376629618035646,
+   "train_conf_bce": 0.2830644142477452,
+   "val_missing_per_1k_M8": 0.7509282158405653,
+   "val_missing_per_1k_M16": 0.3914178972875218,
+   "val_missing_per_1k_alpha": 4.5599573839596115
+  },
+  {
+   "epoch": 2,
+   "time_s": 521.625969171524,
+   "oom_skipped": 0,
+   "train_ce": 0.8185307806780359,
+   "train_bce": 0.10185755030134645,
+   "train_pi_mse": 0.9510760867044705,
+   "train_loss": 1.8765208883445803,
+   "train_conf_bce": 0.2799262377895227,
+   "val_missing_per_1k_M8": 0.6143221720172959,
+   "val_missing_per_1k_M16": 0.32875575300189774,
+   "val_missing_per_1k_alpha": 4.5599573839596115
+  },
+  {
+   "epoch": 3,
+   "time_s": 522.344509601593,
+   "oom_skipped": 0,
+   "train_ce": 0.8165320937527238,
+   "train_bce": 0.09960180967168912,
+   "train_pi_mse": 0.908674213606034,
+   "train_loss": 1.830268441176996,
+   "train_conf_bce": 0.2763061319533469,
+   "val_missing_per_1k_M8": 0.6158192586874865,
+   "val_missing_per_1k_M16": 0.3596852942679477,
+   "val_missing_per_1k_alpha": 4.5599573839596115
+  },
+  {
+   "epoch": 4,
+   "time_s": 523.3993692398071,
+   "oom_skipped": 0,
+   "train_ce": 0.8145342352412347,
+   "train_bce": 0.09801641311198848,
+   "train_pi_mse": 0.8722680341656014,
+   "train_loss": 1.790276689024108,
+   "train_conf_bce": 0.27233106720036476,
+   "val_missing_per_1k_M8": 0.5139549250026539,
+   "val_missing_per_1k_M16": 0.2801685190308216,
+   "val_missing_per_1k_alpha": 4.5599573839596115
+  },
+  {
+   "epoch": 5,
+   "time_s": 522.7157399654388,
+   "oom_skipped": 0,
+   "train_ce": 0.8152990907180209,
+   "train_bce": 0.09821218158893225,
+   "train_pi_mse": 0.8454104602962983,
+   "train_loss": 1.7643787685562582,
+   "train_conf_bce": 0.27281564052114965,
+   "val_missing_per_1k_M8": 0.5629643787551951,
+   "val_missing_per_1k_M16": 0.2899826111451843,
+   "val_missing_per_1k_alpha": 4.5599573839596115
+  },
+  {
+   "epoch": 6,
+   "time_s": 523.431205034256,
+   "oom_skipped": 0,
+   "train_ce": 0.8145444134203326,
+   "train_bce": 0.0974719236690958,
+   "train_pi_mse": 0.810599996957208,
+   "train_loss": 1.7282350797613129,
+   "train_conf_bce": 0.27177354215072985,
+   "val_missing_per_1k_M8": 0.525126063783379,
+   "val_missing_per_1k_M16": 0.2716540908671421,
+   "val_missing_per_1k_alpha": 4.5599573839596115
+  },
+  {
+   "epoch": 7,
+   "time_s": 522.2213418483734,
+   "oom_skipped": 0,
+   "train_ce": 0.8146313677523896,
+   "train_bce": 0.09762596737521351,
+   "train_pi_mse": 0.7819229213503652,
+   "train_loss": 1.699304624000851,
+   "train_conf_bce": 0.26968676261635166,
+   "val_missing_per_1k_M8": 0.46681708018519663,
+   "val_missing_per_1k_M16": 0.24179874572810323,
+   "val_missing_per_1k_alpha": 4.5599573839596115
+  },
+  {
+   "epoch": 8,
+   "time_s": 522.6120662689209,
+   "oom_skipped": 0,
+   "train_ce": 0.813933227721937,
+   "train_bce": 0.09700639344770634,
+   "train_pi_mse": 0.7441625471271518,
+   "train_loss": 1.6602725837288834,
+   "train_conf_bce": 0.26836806768825616,
+   "val_missing_per_1k_M8": 0.4647257936616968,
+   "val_missing_per_1k_M16": 0.24231175713311112,
+   "val_missing_per_1k_alpha": 4.5599573839596115
+  },
+  {
+   "epoch": 9,
+   "time_s": 522.585574388504,
+   "oom_skipped": 0,
+   "train_ce": 0.8140884123999497,
+   "train_bce": 0.09702327594950583,
+   "train_pi_mse": 0.7148711855129297,
+   "train_loss": 1.6310728448995329,
+   "train_conf_bce": 0.2680080436527278,
+   "val_missing_per_1k_M8": 0.4932090769029747,
+   "val_missing_per_1k_M16": 0.26638339843012676,
+   "val_missing_per_1k_alpha": 4.5599573839596115
+  },
+  {
+   "epoch": 10,
+   "time_s": 520.8420209884644,
+   "oom_skipped": 0,
+   "train_ce": 0.8140975354098472,
+   "train_bce": 0.09695641297001799,
+   "train_pi_mse": 0.6896584204765929,
+   "train_loss": 1.6055623353028499,
+   "train_conf_bce": 0.2666408709618224,
+   "val_missing_per_1k_M8": 0.4701210032808945,
+   "val_missing_per_1k_M16": 0.247756182047934,
+   "val_missing_per_1k_alpha": 4.5599573839596115
+  },
+  {
+   "epoch": 11,
+   "time_s": 522.0457541942596,
+   "oom_skipped": 0,
+   "train_ce": 0.8139581558584165,
+   "train_bce": 0.0967461902241246,
+   "train_pi_mse": 0.676556024894494,
+   "train_loss": 1.5923035098725007,
+   "train_conf_bce": 0.26708116267158205,
+   "val_missing_per_1k_M8": 0.4776443875387331,
+   "val_missing_per_1k_M16": 0.247756182047934,
+   "val_missing_per_1k_alpha": 4.5599573839596115
+  }
+ ],
+ "decision_v2": {
+  "coverage": [
+   {
+    "group": "clu10k",
+    "method": "POPMUSIC",
+    "missing_per_1k": 6.175,
+    "cov2": 0.850975,
+    "cov5": 0.993825
+   },
+   {
+    "group": "clu10k",
+    "method": "TourFold-v1 (M=16)",
+    "missing_per_1k": 0.8250000000000001,
+    "cov2": 0.92165,
+    "cov5": 0.999175
+   },
+   {
+    "group": "clu10k",
+    "method": "TourFold-v2 (M=16)",
+    "missing_per_1k": 0.2375,
+    "cov2": 0.9252375,
+    "cov5": 0.9997625
+   },
+   {
+    "group": "clu10k",
+    "method": "TourFold-v2 (M=8)",
+    "missing_per_1k": 0.5125,
+    "cov2": 0.9152125,
+    "cov5": 0.9994875000000001
+   },
+   {
+    "group": "clu10k",
+    "method": "alpha+ascent",
+    "missing_per_1k": 2.4625,
+    "cov2": 0.8947625,
+    "cov5": 0.9975375
+   },
+   {
+    "group": "clu10k",
+    "method": "sayım (kNN)",
+    "missing_per_1k": 1.8375,
+    "cov2": 0.9281375000000001,
+    "cov5": 0.9981625
+   },
+   {
+    "group": "clu10k",
+    "method": "sayım+ (M=16)",
+    "missing_per_1k": 1.4,
+    "cov2": 0.928125,
+    "cov5": 0.9985999999999999
+   },
+   {
+    "group": "clu10k",
+    "method": "sayım+ (M=8)",
+    "missing_per_1k": 2.6875,
+    "cov2": 0.92315,
+    "cov5": 0.9973125
+   },
+   {
+    "group": "clu10k",
+    "method": "tek-örnek",
+    "missing_per_1k": 0.8875,
+    "cov2": 0.9011875,
+    "cov5": 0.9991125
+   },
+   {
+    "group": "clu1k",
+    "method": "POPMUSIC",
+    "missing_per_1k": 5.625,
+    "cov2": 0.84509375,
+    "cov5": 0.994375
+   },
+   {
+    "group": "clu1k",
+    "method": "TourFold-v1 (M=16)",
+    "missing_per_1k": 4.5625,
+    "cov2": 0.9388125,
+    "cov5": 0.9954375
+   },
+   {
+    "group": "clu1k",
+    "method": "TourFold-v2 (M=16)",
+    "missing_per_1k": 0.375,
+    "cov2": 0.94253125,
+    "cov5": 0.999625
+   },
+   {
+    "group": "clu1k",
+    "method": "TourFold-v2 (M=8)",
+    "missing_per_1k": 0.59375,
+    "cov2": 0.93996875,
+    "cov5": 0.99940625
+   },
+   {
+    "group": "clu1k",
+    "method": "alpha+ascent",
+    "missing_per_1k": 3.890625,
+    "cov2": 0.88453125,
+    "cov5": 0.996109375
+   },
+   {
+    "group": "clu1k",
+    "method": "sayım (kNN)",
+    "missing_per_1k": 5.0,
+    "cov2": 0.9379375,
+    "cov5": 0.995
+   },
+   {
+    "group": "clu1k",
+    "method": "sayım+ (M=16)",
+    "missing_per_1k": 0.78125,
+    "cov2": 0.939328125,
+    "cov5": 0.99921875
+   },
+   {
+    "group": "clu1k",
+    "method": "sayım+ (M=8)",
+    "missing_per_1k": 1.859375,
+    "cov2": 0.936890625,
+    "cov5": 0.998140625
+   },
+   {
+    "group": "clu1k",
+    "method": "tek-örnek",
+    "missing_per_1k": 5.09375,
+    "cov2": 0.8876875,
+    "cov5": 0.99490625
+   },
+   {
+    "group": "tsplib",
+    "method": "POPMUSIC",
+    "missing_per_1k": 7.250727614929208,
+    "cov2": 0.8627860697223823,
+    "cov5": 0.9927492723850707
+   },
+   {
+    "group": "tsplib",
+    "method": "TourFold-v1 (M=16)",
+    "missing_per_1k": 4.098864520376291,
+    "cov2": 0.9172531600263049,
+    "cov5": 0.9959011354796237
+   },
+   {
+    "group": "tsplib",
+    "method": "TourFold-v2 (M=16)",
+    "missing_per_1k": 2.2181586158652147,
+    "cov2": 0.9195263997540626,
+    "cov5": 0.9977818413841348
+   },
+   {
+    "group": "tsplib",
+    "method": "TourFold-v2 (M=8)",
+    "missing_per_1k": 2.525472200340074,
+    "cov2": 0.9130609909172397,
+    "cov5": 0.99747452779966
+   },
+   {
+    "group": "tsplib",
+    "method": "alpha+ascent",
+    "missing_per_1k": 4.687966850013505,
+    "cov2": 0.9014881783232973,
+    "cov5": 0.9953120331499865
+   },
+   {
+    "group": "tsplib",
+    "method": "sayım (kNN)",
+    "missing_per_1k": 4.3927741814114745,
+    "cov2": 0.9178562323540095,
+    "cov5": 0.9956072258185885
+   },
+   {
+    "group": "tsplib",
+    "method": "sayım+ (M=16)",
+    "missing_per_1k": 2.5886802548947565,
+    "cov2": 0.917785849610831,
+    "cov5": 0.9974113197451052
+   },
+   {
+    "group": "tsplib",
+    "method": "sayım+ (M=8)",
+    "missing_per_1k": 3.92696260515408,
+    "cov2": 0.9161704027583051,
+    "cov5": 0.996073037394846
+   },
+   {
+    "group": "tsplib",
+    "method": "tek-örnek",
+    "missing_per_1k": 4.119657963621745,
+    "cov2": 0.8919210992725316,
+    "cov5": 0.9958803420363783
+   },
+   {
+    "group": "uni10k",
+    "method": "POPMUSIC",
+    "missing_per_1k": 5.6,
+    "cov2": 0.8556,
+    "cov5": 0.9944
+   },
+   {
+    "group": "uni10k",
+    "method": "TourFold-v1 (M=16)",
+    "missing_per_1k": 0.33749999999999997,
+    "cov2": 0.9339,
+    "cov5": 0.9996625
+   },
+   {
+    "group": "uni10k",
+    "method": "TourFold-v2 (M=16)",
+    "missing_per_1k": 0.225,
+    "cov2": 0.93615,
+    "cov5": 0.999775
+   },
+   {
+    "group": "uni10k",
+    "method": "TourFold-v2 (M=8)",
+    "missing_per_1k": 0.4375,
+    "cov2": 0.927475,
+    "cov5": 0.9995625
+   },
+   {
+    "group": "uni10k",
+    "method": "alpha+ascent",
+    "missing_per_1k": 2.7875,
+    "cov2": 0.8964,
+    "cov5": 0.9972125000000001
+   },
+   {
+    "group": "uni10k",
+    "method": "sayım (kNN)",
+    "missing_per_1k": 1.125,
+    "cov2": 0.9375875,
+    "cov5": 0.998875
+   },
+   {
+    "group": "uni10k",
+    "method": "sayım+ (M=16)",
+    "missing_per_1k": 1.1375,
+    "cov2": 0.9375249999999999,
+    "cov5": 0.9988625
+   },
+   {
+    "group": "uni10k",
+    "method": "sayım+ (M=8)",
+    "missing_per_1k": 2.075,
+    "cov2": 0.93385,
+    "cov5": 0.997925
+   },
+   {
+    "group": "uni10k",
+    "method": "tek-örnek",
+    "missing_per_1k": 0.4375,
+    "cov2": 0.9076,
+    "cov5": 0.9995625
+   },
+   {
+    "group": "uni1k",
+    "method": "POPMUSIC",
+    "missing_per_1k": 5.234375,
+    "cov2": 0.853296875,
+    "cov5": 0.994765625
+   },
+   {
+    "group": "uni1k",
+    "method": "TourFold-v1 (M=16)",
+    "missing_per_1k": 0.25,
+    "cov2": 0.946734375,
+    "cov5": 0.99975
+   },
+   {
+    "group": "uni1k",
+    "method": "TourFold-v2 (M=16)",
+    "missing_per_1k": 0.15625,
+    "cov2": 0.947703125,
+    "cov5": 0.99984375
+   },
+   {
+    "group": "uni1k",
+    "method": "TourFold-v2 (M=8)",
+    "missing_per_1k": 0.34375,
+    "cov2": 0.9389531249999999,
+    "cov5": 0.99965625
+   },
+   {
+    "group": "uni1k",
+    "method": "alpha+ascent",
+    "missing_per_1k": 2.265625,
+    "cov2": 0.8932656250000001,
+    "cov5": 0.997734375
+   },
+   {
+    "group": "uni1k",
+    "method": "sayım (kNN)",
+    "missing_per_1k": 0.71875,
+    "cov2": 0.9450625,
+    "cov5": 0.99928125
+   },
+   {
+    "group": "uni1k",
+    "method": "sayım+ (M=16)",
+    "missing_per_1k": 0.65625,
+    "cov2": 0.94503125,
+    "cov5": 0.99934375
+   },
+   {
+    "group": "uni1k",
+    "method": "sayım+ (M=8)",
+    "missing_per_1k": 1.59375,
+    "cov2": 0.942609375,
+    "cov5": 0.99840625
+   },
+   {
+    "group": "uni1k",
+    "method": "tek-örnek",
+    "missing_per_1k": 0.4375,
+    "cov2": 0.903484375,
+    "cov5": 0.9995625
+   },
+   {
+    "group": "val",
+    "method": "POPMUSIC",
+    "missing_per_1k": 3.949819171071584,
+    "cov2": 0.8500201550702411,
+    "cov5": 0.9960501808289284
+   },
+   {
+    "group": "val",
+    "method": "TourFold-v1 (M=16)",
+    "missing_per_1k": 7.234092554745155,
+    "cov2": 0.9624269173377136,
+    "cov5": 0.9927659074452548
+   },
+   {
+    "group": "val",
+    "method": "TourFold-v2 (M=16)",
+    "missing_per_1k": 0.24775618204793404,
+    "cov2": 0.9682056920774978,
+    "cov5": 0.999752243817952
+   },
+   {
+    "group": "val",
+    "method": "TourFold-v2 (M=8)",
+    "missing_per_1k": 0.4776443875387331,
+    "cov2": 0.9649642881012417,
+    "cov5": 0.9995223556124613
+   },
+   {
+    "group": "val",
+    "method": "alpha+ascent",
+    "missing_per_1k": 4.5599573839596115,
+    "cov2": 0.886598681898204,
+    "cov5": 0.9954400426160404
+   },
+   {
+    "group": "val",
+    "method": "sayım (kNN)",
+    "missing_per_1k": 7.595229322329363,
+    "cov2": 0.9517785422487818,
+    "cov5": 0.9924047706776706
+   },
+   {
+    "group": "val",
+    "method": "sayım+ (M=16)",
+    "missing_per_1k": 0.6589232698553903,
+    "cov2": 0.9563609217729618,
+    "cov5": 0.9993410767301447
+   },
+   {
+    "group": "val",
+    "method": "sayım+ (M=8)",
+    "missing_per_1k": 1.3200664110033957,
+    "cov2": 0.9552454639218522,
+    "cov5": 0.9986799335889966
+   },
+   {
+    "group": "val",
+    "method": "tek-örnek",
+    "missing_per_1k": 7.806559908563496,
+    "cov2": 0.8823253514033095,
+    "cov5": 0.9921934400914365
+   }
+  ],
+  "val_by_dist": [
+   {
+    "sub": "val-clustered",
+    "method": "POPMUSIC",
+    "missing_per_1k": 4.356988541565829
+   },
+   {
+    "sub": "val-clustered",
+    "method": "TourFold-v1 (M=16)",
+    "missing_per_1k": 14.410267665684103
+   },
+   {
+    "sub": "val-clustered",
+    "method": "TourFold-v2 (M=16)",
+    "missing_per_1k": 0.4074538565227055
+   },
+   {
+    "sub": "val-clustered",
+    "method": "TourFold-v2 (M=8)",
+    "missing_per_1k": 0.7547988920664092
+   },
+   {
+    "sub": "val-clustered",
+    "method": "alpha+ascent",
+    "missing_per_1k": 6.494852032028271
+   },
+   {
+    "sub": "val-clustered",
+    "method": "sayım (kNN)",
+    "missing_per_1k": 14.696940225826289
+   },
+   {
+    "sub": "val-clustered",
+    "method": "sayım+ (M=16)",
+    "missing_per_1k": 0.7837959362797842
+   },
+   {
+    "sub": "val-clustered",
+    "method": "sayım+ (M=8)",
+    "missing_per_1k": 1.5562891597556447
+   },
+   {
+    "sub": "val-clustered",
+    "method": "tek-örnek",
+    "missing_per_1k": 15.353275471716435
+   },
+   {
+    "sub": "val-uniform",
+    "method": "POPMUSIC",
+    "missing_per_1k": 3.5458941780314768
+   },
+   {
+    "sub": "val-uniform",
+    "method": "TourFold-v1 (M=16)",
+    "missing_per_1k": 0.11509812198102089
+   },
+   {
+    "sub": "val-uniform",
+    "method": "TourFold-v2 (M=16)",
+    "missing_per_1k": 0.08933099900324039
+   },
+   {
+    "sub": "val-uniform",
+    "method": "TourFold-v2 (M=8)",
+    "missing_per_1k": 0.20269828543757248
+   },
+   {
+    "sub": "val-uniform",
+    "method": "alpha+ascent",
+    "missing_per_1k": 2.640480223126559
+   },
+   {
+    "sub": "val-uniform",
+    "method": "sayım (kNN)",
+    "missing_per_1k": 0.5501057567089057
+   },
+   {
+    "sub": "val-uniform",
+    "method": "sayım+ (M=16)",
+    "missing_per_1k": 0.5350456047570874
+   },
+   {
+    "sub": "val-uniform",
+    "method": "sayım+ (M=8)",
+    "missing_per_1k": 1.085725915229252
+   },
+   {
+    "sub": "val-uniform",
+    "method": "tek-örnek",
+    "missing_per_1k": 0.3199775371488268
+   }
+  ],
+  "fixing": [
+   {
+    "group": "clu10k",
+    "method": "TourFold-v2 olasılığı (M=8)",
+    "precision": 1.0,
+    "recall": 0.0002875,
+    "fixed_frac": 0.0002875
+   },
+   {
+    "group": "clu10k",
+    "method": "omurga (M=16)",
+    "precision": 0.9966664005110188,
+    "recall": 0.6241125,
+    "fixed_frac": 0.6262
+   },
+   {
+    "group": "clu10k",
+    "method": "omurga (M=8)",
+    "precision": 0.9913874383521903,
+    "recall": 0.6834625,
+    "fixed_frac": 0.6894
+   },
+   {
+    "group": "clu10k",
+    "method": "omurga ∩ TourFold-v2 (M=8)",
+    "precision": 1.0,
+    "recall": 0.0002875,
+    "fixed_frac": 0.0002875
+   },
+   {
+    "group": "clu1k",
+    "method": "TourFold-v2 olasılığı (M=8)",
+    "precision": 0.9973905479849232,
+    "recall": 0.05375,
+    "fixed_frac": 0.053890625
+   },
+   {
+    "group": "clu1k",
+    "method": "omurga (M=16)",
+    "precision": 0.9971979223619464,
+    "recall": 0.683953125,
+    "fixed_frac": 0.685875
+   },
+   {
+    "group": "clu1k",
+    "method": "omurga (M=8)",
+    "precision": 0.9930438092016238,
+    "recall": 0.733859375,
+    "fixed_frac": 0.739
+   },
+   {
+    "group": "clu1k",
+    "method": "omurga ∩ TourFold-v2 (M=8)",
+    "precision": 0.997382960162838,
+    "recall": 0.05359375,
+    "fixed_frac": 0.053734375
+   },
+   {
+    "group": "tsplib",
+    "method": "TourFold-v2 olasılığı (M=8)",
+    "precision": 0.9968701095461658,
+    "recall": 0.14189926711367534,
+    "fixed_frac": 0.14234479071528813
+   },
+   {
+    "group": "tsplib",
+    "method": "omurga (M=16)",
+    "precision": 0.9971304931386389,
+    "recall": 0.6399055489964581,
+    "fixed_frac": 0.641747046549791
+   },
+   {
+    "group": "tsplib",
+    "method": "omurga (M=8)",
+    "precision": 0.9904478563459598,
+    "recall": 0.692165467465639,
+    "fixed_frac": 0.6988408960964707
+   },
+   {
+    "group": "tsplib",
+    "method": "omurga ∩ TourFold-v2 (M=8)",
+    "precision": 0.9983127702203944,
+    "recall": 0.14059239788227781,
+    "fixed_frac": 0.14083001046980465
+   },
+   {
+    "group": "uni10k",
+    "method": "TourFold-v2 olasılığı (M=8)",
+    "precision": 0.9984802431610942,
+    "recall": 0.016425,
+    "fixed_frac": 0.01645
+   },
+   {
+    "group": "uni10k",
+    "method": "omurga (M=16)",
+    "precision": 0.9976930831265509,
+    "recall": 0.6433125,
+    "fixed_frac": 0.6448
+   },
+   {
+    "group": "uni10k",
+    "method": "omurga (M=8)",
+    "precision": 0.9928015769650463,
+    "recall": 0.7051125,
+    "fixed_frac": 0.710225
+   },
+   {
+    "group": "uni10k",
+    "method": "omurga ∩ TourFold-v2 (M=8)",
+    "precision": 0.9984802431610942,
+    "recall": 0.016425,
+    "fixed_frac": 0.01645
+   },
+   {
+    "group": "uni1k",
+    "method": "TourFold-v2 olasılığı (M=8)",
+    "precision": 0.9978187919463087,
+    "recall": 0.092921875,
+    "fixed_frac": 0.093125
+   },
+   {
+    "group": "uni1k",
+    "method": "omurga (M=16)",
+    "precision": 0.998196429386786,
+    "recall": 0.683171875,
+    "fixed_frac": 0.68440625
+   },
+   {
+    "group": "uni1k",
+    "method": "omurga (M=8)",
+    "precision": 0.9941532811279735,
+    "recall": 0.7359375,
+    "fixed_frac": 0.740265625
+   },
+   {
+    "group": "uni1k",
+    "method": "omurga ∩ TourFold-v2 (M=8)",
+    "precision": 0.997979797979798,
+    "recall": 0.092625,
+    "fixed_frac": 0.0928125
+   },
+   {
+    "group": "val",
+    "method": "TourFold-v2 olasılığı (M=8)",
+    "precision": 0.9963763225384432,
+    "recall": 0.32322300103404955,
+    "fixed_frac": 0.3243985166273144
+   },
+   {
+    "group": "val",
+    "method": "omurga (M=16)",
+    "precision": 0.9981033851305394,
+    "recall": 0.7710607596727419,
+    "fixed_frac": 0.7725259438649201
+   },
+   {
+    "group": "val",
+    "method": "omurga (M=8)",
+    "precision": 0.9949418331594632,
+    "recall": 0.8063026497940321,
+    "fixed_frac": 0.8104017972926091
+   },
+   {
+    "group": "val",
+    "method": "omurga ∩ TourFold-v2 (M=8)",
+    "precision": 0.9970432813286362,
+    "recall": 0.32029936912873747,
+    "fixed_frac": 0.3212492126740117
+   }
+  ],
+  "tau_f": 0.98,
+  "tau_p": 0.98,
+  "verdict": {
+   "clu10k": {
+    "main": "TourFold-v2 (M=8)",
+    "TourFold-v2 (M=8)": 0.5125,
+    "TourFold-v2 (M=16)": 0.2375,
+    "wtl_vs_TourFold-v2 (M=16)": [
+     0,
+     0,
+     8
+    ],
+    "sayım+ (M=8)": 2.6875,
+    "wtl_vs_sayım+ (M=8)": [
+     8,
+     0,
+     0
+    ],
+    "sayım (kNN)": 1.8375,
+    "wtl_vs_sayım (kNN)": [
+     8,
+     0,
+     0
+    ],
+    "POPMUSIC": 6.175,
+    "wtl_vs_POPMUSIC": [
+     8,
+     0,
+     0
+    ],
+    "alpha+ascent": 2.4625,
+    "wtl_vs_alpha+ascent": [
+     8,
+     0,
+     0
+    ],
+    "TourFold-v1 (M=16)": 0.8250000000000001,
+    "wtl_vs_TourFold-v1 (M=16)": [
+     6,
+     1,
+     1
+    ],
+    "tek-örnek": 0.8875,
+    "wtl_vs_tek-örnek": [
+     7,
+     0,
+     1
+    ]
+   },
+   "clu1k": {
+    "main": "TourFold-v2 (M=8)",
+    "TourFold-v2 (M=8)": 0.59375,
+    "TourFold-v2 (M=16)": 0.375,
+    "wtl_vs_TourFold-v2 (M=16)": [
+     1,
+     52,
+     11
+    ],
+    "sayım+ (M=8)": 1.859375,
+    "wtl_vs_sayım+ (M=8)": [
+     35,
+     27,
+     2
+    ],
+    "sayım (kNN)": 5.0,
+    "wtl_vs_sayım (kNN)": [
+     58,
+     5,
+     1
+    ],
+    "POPMUSIC": 5.625,
+    "wtl_vs_POPMUSIC": [
+     63,
+     1,
+     0
+    ],
+    "alpha+ascent": 3.890625,
+    "wtl_vs_alpha+ascent": [
+     59,
+     4,
+     1
+    ],
+    "TourFold-v1 (M=16)": 4.5625,
+    "wtl_vs_TourFold-v1 (M=16)": [
+     57,
+     6,
+     1
+    ],
+    "tek-örnek": 5.09375,
+    "wtl_vs_tek-örnek": [
+     58,
+     5,
+     1
+    ]
+   },
+   "tsplib": {
+    "main": "TourFold-v2 (M=8)",
+    "TourFold-v2 (M=8)": 2.525472200340074,
+    "TourFold-v2 (M=16)": 2.2181586158652147,
+    "wtl_vs_TourFold-v2 (M=16)": [
+     2,
+     12,
+     17
+    ],
+    "sayım+ (M=8)": 3.92696260515408,
+    "wtl_vs_sayım+ (M=8)": [
+     26,
+     3,
+     2
+    ],
+    "sayım (kNN)": 4.3927741814114745,
+    "wtl_vs_sayım (kNN)": [
+     24,
+     5,
+     2
+    ],
+    "POPMUSIC": 7.250727614929208,
+    "wtl_vs_POPMUSIC": [
+     30,
+     1,
+     0
+    ],
+    "alpha+ascent": 4.687966850013505,
+    "wtl_vs_alpha+ascent": [
+     25,
+     1,
+     5
+    ],
+    "TourFold-v1 (M=16)": 4.098864520376291,
+    "wtl_vs_TourFold-v1 (M=16)": [
+     20,
+     6,
+     5
+    ],
+    "tek-örnek": 4.119657963621745,
+    "wtl_vs_tek-örnek": [
+     21,
+     5,
+     5
+    ]
+   },
+   "uni10k": {
+    "main": "TourFold-v2 (M=8)",
+    "TourFold-v2 (M=8)": 0.4375,
+    "TourFold-v2 (M=16)": 0.225,
+    "wtl_vs_TourFold-v2 (M=16)": [
+     0,
+     0,
+     8
+    ],
+    "sayım+ (M=8)": 2.075,
+    "wtl_vs_sayım+ (M=8)": [
+     8,
+     0,
+     0
+    ],
+    "sayım (kNN)": 1.125,
+    "wtl_vs_sayım (kNN)": [
+     7,
+     0,
+     1
+    ],
+    "POPMUSIC": 5.6,
+    "wtl_vs_POPMUSIC": [
+     8,
+     0,
+     0
+    ],
+    "alpha+ascent": 2.7875,
+    "wtl_vs_alpha+ascent": [
+     8,
+     0,
+     0
+    ],
+    "TourFold-v1 (M=16)": 0.33749999999999997,
+    "wtl_vs_TourFold-v1 (M=16)": [
+     2,
+     1,
+     5
+    ],
+    "tek-örnek": 0.4375,
+    "wtl_vs_tek-örnek": [
+     5,
+     2,
+     1
+    ]
+   },
+   "uni1k": {
+    "main": "TourFold-v2 (M=8)",
+    "TourFold-v2 (M=8)": 0.34375,
+    "TourFold-v2 (M=16)": 0.15625,
+    "wtl_vs_TourFold-v2 (M=16)": [
+     0,
+     53,
+     11
+    ],
+    "sayım+ (M=8)": 1.59375,
+    "wtl_vs_sayım+ (M=8)": [
+     39,
+     24,
+     1
+    ],
+    "sayım (kNN)": 0.71875,
+    "wtl_vs_sayım (kNN)": [
+     23,
+     35,
+     6
+    ],
+    "POPMUSIC": 5.234375,
+    "wtl_vs_POPMUSIC": [
+     63,
+     1,
+     0
+    ],
+    "alpha+ascent": 2.265625,
+    "wtl_vs_alpha+ascent": [
+     54,
+     8,
+     2
+    ],
+    "TourFold-v1 (M=16)": 0.25,
+    "wtl_vs_TourFold-v1 (M=16)": [
+     6,
+     47,
+     11
+    ],
+    "tek-örnek": 0.4375,
+    "wtl_vs_tek-örnek": [
+     17,
+     35,
+     12
+    ]
+   },
+   "val": {
+    "main": "TourFold-v2 (M=8)",
+    "TourFold-v2 (M=8)": 0.4776443875387331,
+    "TourFold-v2 (M=16)": 0.24775618204793404,
+    "wtl_vs_TourFold-v2 (M=16)": [
+     1,
+     944,
+     55
+    ],
+    "sayım+ (M=8)": 1.3200664110033957,
+    "wtl_vs_sayım+ (M=8)": [
+     164,
+     831,
+     5
+    ],
+    "sayım (kNN)": 7.595229322329363,
+    "wtl_vs_sayım (kNN)": [
+     490,
+     492,
+     18
+    ],
+    "POPMUSIC": 3.949819171071584,
+    "wtl_vs_POPMUSIC": [
+     642,
+     340,
+     18
+    ],
+    "alpha+ascent": 4.5599573839596115,
+    "wtl_vs_alpha+ascent": [
+     636,
+     338,
+     26
+    ],
+    "TourFold-v1 (M=16)": 7.234092554745155,
+    "wtl_vs_TourFold-v1 (M=16)": [
+     447,
+     527,
+     26
+    ],
+    "tek-örnek": 7.806559908563496,
+    "wtl_vs_tek-örnek": [
+     499,
+     475,
+     26
+    ]
+   }
+  },
+  "groups": [
+   "val",
+   "uni1k",
+   "clu1k",
+   "uni10k",
+   "clu10k",
+   "tsplib"
+  ]
+ },
+ "lkh_eval_v2": {
+  "gap": [
+   {
+    "set": "uni1k",
+    "config": "LKH-3 POPMUSIC (ascent yok)",
+    "gap@10%B": 0.23406806156331061,
+    "gap@25%B": 0.03386371298128458,
+    "gap@50%B": 0.011593202923638628,
+    "gap@100%B": 0.009833055176362753,
+    "turlu@10%B": 8,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "uni1k",
+    "config": "LKH-3 varsayılan (α+ascent)",
+    "gap@10%B": NaN,
+    "gap@25%B": 0.11632829254772017,
+    "gap@50%B": 0.014552836302941163,
+    "gap@100%B": 0.007622985168871895,
+    "turlu@10%B": 0,
+    "turlu@25%B": 5,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "uni1k",
+    "config": "Topluluk(8) + sayım+",
+    "gap@10%B": 0.2232396508863447,
+    "gap@25%B": 0.04650019712763409,
+    "gap@50%B": 0.007899546042830403,
+    "gap@100%B": 0.0035708195677147444,
+    "turlu@10%B": 4,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "uni1k",
+    "config": "Topluluk(8) omurgası sabit",
+    "gap@10%B": 0.2232396508863447,
+    "gap@25%B": 0.025833085472753772,
+    "gap@50%B": 0.02553135230023026,
+    "gap@100%B": 0.025350286009653687,
+    "turlu@10%B": 4,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "uni1k",
+    "config": "TourFold-v2(8)",
+    "gap@10%B": 0.2232396508863447,
+    "gap@25%B": 0.022027262349314288,
+    "gap@50%B": 0.005784666237450212,
+    "gap@100%B": 0.0005694333778478973,
+    "turlu@10%B": 4,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "uni1k",
+    "config": "TourFold-v2(16)",
+    "gap@10%B": 0.2232396508863447,
+    "gap@25%B": 0.07082797518382428,
+    "gap@50%B": 0.004626148019768949,
+    "gap@100%B": 0.002779711646932734,
+    "turlu@10%B": 4,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "uni1k",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "gap@10%B": 0.2232396508863447,
+    "gap@25%B": 0.03925157043364368,
+    "gap@50%B": 0.005222399946738665,
+    "gap@100%B": 0.004425906016938063,
+    "turlu@10%B": 4,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "clu1k",
+    "config": "LKH-3 POPMUSIC (ascent yok)",
+    "gap@10%B": NaN,
+    "gap@25%B": 0.12038716834672748,
+    "gap@50%B": 0.030963446966135077,
+    "gap@100%B": 0.014457456244004976,
+    "turlu@10%B": 0,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "clu1k",
+    "config": "LKH-3 varsayılan (α+ascent)",
+    "gap@10%B": NaN,
+    "gap@25%B": NaN,
+    "gap@50%B": 0.5591397564383179,
+    "gap@100%B": 0.27705709566649966,
+    "turlu@10%B": 0,
+    "turlu@25%B": 0,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "clu1k",
+    "config": "Topluluk(8) + sayım+",
+    "gap@10%B": NaN,
+    "gap@25%B": 0.1757700090511944,
+    "gap@50%B": 0.08852599485588263,
+    "gap@100%B": 0.035976687432015646,
+    "turlu@10%B": 0,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "clu1k",
+    "config": "Topluluk(8) omurgası sabit",
+    "gap@10%B": NaN,
+    "gap@25%B": 0.1757700090511944,
+    "gap@50%B": 0.07512326807451607,
+    "gap@100%B": 0.037108778169068074,
+    "turlu@10%B": 0,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "clu1k",
+    "config": "TourFold-v2(8)",
+    "gap@10%B": NaN,
+    "gap@25%B": 0.1757700090511944,
+    "gap@50%B": 0.09138573275638924,
+    "gap@100%B": 0.006331400925734634,
+    "turlu@10%B": 0,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "clu1k",
+    "config": "TourFold-v2(16)",
+    "gap@10%B": NaN,
+    "gap@25%B": 0.1757700090511944,
+    "gap@50%B": 0.11936846118408267,
+    "gap@100%B": 0.037398299341896674,
+    "turlu@10%B": 0,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "clu1k",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "gap@10%B": NaN,
+    "gap@25%B": 0.1757700090511944,
+    "gap@50%B": 0.0932694509686444,
+    "gap@100%B": 0.007953004124954833,
+    "turlu@10%B": 0,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "tsplib",
+    "config": "LKH-3 POPMUSIC (ascent yok)",
+    "gap@10%B": 0.15089152518075755,
+    "gap@25%B": 0.07757848522502174,
+    "gap@50%B": 0.050818238549380716,
+    "gap@100%B": 0.02077581589269353,
+    "turlu@10%B": 11,
+    "turlu@25%B": 11,
+    "turlu@100%B": 11,
+    "örnek": 11
+   },
+   {
+    "set": "tsplib",
+    "config": "LKH-3 varsayılan (α+ascent)",
+    "gap@10%B": NaN,
+    "gap@25%B": 1.4234403362565053,
+    "gap@50%B": 0.42783907225004725,
+    "gap@100%B": 0.21651295423978353,
+    "turlu@10%B": 0,
+    "turlu@25%B": 2,
+    "turlu@100%B": 7,
+    "örnek": 11
+   },
+   {
+    "set": "tsplib",
+    "config": "Topluluk(8) + sayım+",
+    "gap@10%B": 0.2788498572553919,
+    "gap@25%B": 0.078230113933169,
+    "gap@50%B": 0.05101022980006589,
+    "gap@100%B": 0.026712781464989455,
+    "turlu@10%B": 11,
+    "turlu@25%B": 11,
+    "turlu@100%B": 11,
+    "örnek": 11
+   },
+   {
+    "set": "tsplib",
+    "config": "Topluluk(8) omurgası sabit",
+    "gap@10%B": 0.27648070353544,
+    "gap@25%B": 0.09850897295630888,
+    "gap@50%B": 0.08703063344146827,
+    "gap@100%B": 0.08294758245399007,
+    "turlu@10%B": 11,
+    "turlu@25%B": 11,
+    "turlu@100%B": 11,
+    "örnek": 11
+   },
+   {
+    "set": "tsplib",
+    "config": "TourFold-v2(8)",
+    "gap@10%B": 0.2736880801817044,
+    "gap@25%B": 0.06473912353077091,
+    "gap@50%B": 0.04712042572717283,
+    "gap@100%B": 0.03680994095785615,
+    "turlu@10%B": 11,
+    "turlu@25%B": 11,
+    "turlu@100%B": 11,
+    "örnek": 11
+   },
+   {
+    "set": "tsplib",
+    "config": "TourFold-v2(16)",
+    "gap@10%B": 0.32404124667739476,
+    "gap@25%B": 0.11359226101808571,
+    "gap@50%B": 0.030620338159407436,
+    "gap@100%B": 0.02304764979731132,
+    "turlu@10%B": 11,
+    "turlu@25%B": 11,
+    "turlu@100%B": 11,
+    "örnek": 11
+   },
+   {
+    "set": "tsplib",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "gap@10%B": 0.2713836363150619,
+    "gap@25%B": 0.07077191936358784,
+    "gap@50%B": 0.05409910380984335,
+    "gap@100%B": 0.04850543061010708,
+    "turlu@10%B": 11,
+    "turlu@25%B": 11,
+    "turlu@100%B": 11,
+    "örnek": 11
+   },
+   {
+    "set": "uni10k",
+    "config": "LKH-3 POPMUSIC (ascent yok)",
+    "gap@10%B": 0.17821037251222077,
+    "gap@25%B": 0.061058680198767444,
+    "gap@50%B": 0.044054187639829094,
+    "gap@100%B": 0.027509444635908833,
+    "turlu@10%B": 8,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "uni10k",
+    "config": "LKH-3 varsayılan (α+ascent)",
+    "gap@10%B": NaN,
+    "gap@25%B": NaN,
+    "gap@50%B": NaN,
+    "gap@100%B": NaN,
+    "turlu@10%B": 0,
+    "turlu@25%B": 0,
+    "turlu@100%B": 0,
+    "örnek": 8
+   },
+   {
+    "set": "uni10k",
+    "config": "Topluluk(8) + sayım+",
+    "gap@10%B": 0.27581292468027163,
+    "gap@25%B": 0.1078308532183831,
+    "gap@50%B": 0.050542862415946,
+    "gap@100%B": 0.028924118104813476,
+    "turlu@10%B": 8,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "uni10k",
+    "config": "Topluluk(8) omurgası sabit",
+    "gap@10%B": 0.27581292468027163,
+    "gap@25%B": 0.09249101935943348,
+    "gap@50%B": 0.04928499654906743,
+    "gap@100%B": 0.04243911918294556,
+    "turlu@10%B": 8,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "uni10k",
+    "config": "TourFold-v2(8)",
+    "gap@10%B": 0.27581292468027163,
+    "gap@25%B": 0.12054998523761384,
+    "gap@50%B": 0.0486352354969034,
+    "gap@100%B": 0.023475115111639067,
+    "turlu@10%B": 8,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "uni10k",
+    "config": "TourFold-v2(16)",
+    "gap@10%B": 0.27581292468027163,
+    "gap@25%B": 0.20747124852017915,
+    "gap@50%B": 0.08137177420712705,
+    "gap@100%B": 0.030601758020279826,
+    "turlu@10%B": 8,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "uni10k",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "gap@10%B": 0.27581292468027163,
+    "gap@25%B": 0.11299068859430139,
+    "gap@50%B": 0.0511944619295331,
+    "gap@100%B": 0.02691832196260423,
+    "turlu@10%B": 8,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "clu10k",
+    "config": "LKH-3 POPMUSIC (ascent yok)",
+    "gap@10%B": 0.5148686695104355,
+    "gap@25%B": 0.07500673065318571,
+    "gap@50%B": 0.043092783913696545,
+    "gap@100%B": 0.024389697318841146,
+    "turlu@10%B": 6,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "clu10k",
+    "config": "LKH-3 varsayılan (α+ascent)",
+    "gap@10%B": NaN,
+    "gap@25%B": NaN,
+    "gap@50%B": NaN,
+    "gap@100%B": NaN,
+    "turlu@10%B": 0,
+    "turlu@25%B": 0,
+    "turlu@100%B": 0,
+    "örnek": 8
+   },
+   {
+    "set": "clu10k",
+    "config": "Topluluk(8) + sayım+",
+    "gap@10%B": 0.433859290148271,
+    "gap@25%B": 0.3711127065315916,
+    "gap@50%B": 0.05562701839482419,
+    "gap@100%B": 0.020949788841727646,
+    "turlu@10%B": 6,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "clu10k",
+    "config": "Topluluk(8) omurgası sabit",
+    "gap@10%B": 0.433859290148271,
+    "gap@25%B": 0.3711127065315916,
+    "gap@50%B": 0.0664930576787231,
+    "gap@100%B": 0.049942239636500595,
+    "turlu@10%B": 6,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "clu10k",
+    "config": "TourFold-v2(8)",
+    "gap@10%B": 0.433859290148271,
+    "gap@25%B": 0.3711127065315916,
+    "gap@50%B": 0.05569589188606286,
+    "gap@100%B": 0.022029634059705757,
+    "turlu@10%B": 6,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "clu10k",
+    "config": "TourFold-v2(16)",
+    "gap@10%B": 0.433859290148271,
+    "gap@25%B": 0.3711127065315916,
+    "gap@50%B": 0.31334044257850824,
+    "gap@100%B": 0.028074772985837968,
+    "turlu@10%B": 6,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "clu10k",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "gap@10%B": 0.433859290148271,
+    "gap@25%B": 0.3711127065315916,
+    "gap@50%B": 0.05977736676780406,
+    "gap@100%B": 0.017972906862165922,
+    "turlu@10%B": 6,
+    "turlu@25%B": 8,
+    "turlu@100%B": 8,
+    "örnek": 8
+   },
+   {
+    "set": "uni20k",
+    "config": "LKH-3 POPMUSIC (ascent yok)",
+    "gap@10%B": 0.14642706879327957,
+    "gap@25%B": 0.06289429540265826,
+    "gap@50%B": 0.02479154520805604,
+    "gap@100%B": 0.005511037358502482,
+    "turlu@10%B": 4,
+    "turlu@25%B": 4,
+    "turlu@100%B": 4,
+    "örnek": 4
+   },
+   {
+    "set": "uni20k",
+    "config": "LKH-3 varsayılan (α+ascent)",
+    "gap@10%B": NaN,
+    "gap@25%B": NaN,
+    "gap@50%B": NaN,
+    "gap@100%B": NaN,
+    "turlu@10%B": 0,
+    "turlu@25%B": 0,
+    "turlu@100%B": 0,
+    "örnek": 4
+   },
+   {
+    "set": "uni20k",
+    "config": "Topluluk(8) + sayım+",
+    "gap@10%B": 0.22442313921713136,
+    "gap@25%B": 0.18817344468748645,
+    "gap@50%B": 0.031363806610399274,
+    "gap@100%B": 0.006701574734019908,
+    "turlu@10%B": 4,
+    "turlu@25%B": 4,
+    "turlu@100%B": 4,
+    "örnek": 4
+   },
+   {
+    "set": "uni20k",
+    "config": "Topluluk(8) omurgası sabit",
+    "gap@10%B": 0.22442313921713136,
+    "gap@25%B": 0.18817344468748645,
+    "gap@50%B": 0.045545622697592596,
+    "gap@100%B": 0.031963170413689596,
+    "turlu@10%B": 4,
+    "turlu@25%B": 4,
+    "turlu@100%B": 4,
+    "örnek": 4
+   },
+   {
+    "set": "uni20k",
+    "config": "TourFold-v2(8)",
+    "gap@10%B": 0.22442313921713136,
+    "gap@25%B": 0.18817344468748645,
+    "gap@50%B": 0.053692688603823854,
+    "gap@100%B": 0.025850966773613603,
+    "turlu@10%B": 4,
+    "turlu@25%B": 4,
+    "turlu@100%B": 4,
+    "örnek": 4
+   },
+   {
+    "set": "uni20k",
+    "config": "TourFold-v2(16)",
+    "gap@10%B": 0.22442313921713136,
+    "gap@25%B": 0.18817344468748645,
+    "gap@50%B": 0.10532530424327158,
+    "gap@100%B": 0.03380135054135435,
+    "turlu@10%B": 4,
+    "turlu@25%B": 4,
+    "turlu@100%B": 4,
+    "örnek": 4
+   },
+   {
+    "set": "uni20k",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "gap@10%B": 0.22442313921713136,
+    "gap@25%B": 0.18817344468748645,
+    "gap@50%B": 0.05095509051645806,
+    "gap@100%B": 0.017782805697462153,
+    "turlu@10%B": 4,
+    "turlu@25%B": 4,
+    "turlu@100%B": 4,
+    "örnek": 4
+   },
+   {
+    "set": "clu20k",
+    "config": "LKH-3 POPMUSIC (ascent yok)",
+    "gap@10%B": 0.3306294733883655,
+    "gap@25%B": 0.08579320548041566,
+    "gap@50%B": 0.03489047151968664,
+    "gap@100%B": 0.0064657377167195405,
+    "turlu@10%B": 4,
+    "turlu@25%B": 4,
+    "turlu@100%B": 4,
+    "örnek": 4
+   },
+   {
+    "set": "clu20k",
+    "config": "LKH-3 varsayılan (α+ascent)",
+    "gap@10%B": NaN,
+    "gap@25%B": NaN,
+    "gap@50%B": NaN,
+    "gap@100%B": NaN,
+    "turlu@10%B": 0,
+    "turlu@25%B": 0,
+    "turlu@100%B": 0,
+    "örnek": 4
+   },
+   {
+    "set": "clu20k",
+    "config": "Topluluk(8) + sayım+",
+    "gap@10%B": 0.4742636798955886,
+    "gap@25%B": 0.36613730086277324,
+    "gap@50%B": 0.06198188667075917,
+    "gap@100%B": 0.017653502884406844,
+    "turlu@10%B": 4,
+    "turlu@25%B": 4,
+    "turlu@100%B": 4,
+    "örnek": 4
+   },
+   {
+    "set": "clu20k",
+    "config": "Topluluk(8) omurgası sabit",
+    "gap@10%B": 0.4742636798955886,
+    "gap@25%B": 0.36613730086277324,
+    "gap@50%B": 0.06395714283531072,
+    "gap@100%B": 0.04542339533645262,
+    "turlu@10%B": 4,
+    "turlu@25%B": 4,
+    "turlu@100%B": 4,
+    "örnek": 4
+   },
+   {
+    "set": "clu20k",
+    "config": "TourFold-v2(8)",
+    "gap@10%B": 0.4742636798955886,
+    "gap@25%B": 0.36613730086277324,
+    "gap@50%B": 0.07059222702929129,
+    "gap@100%B": 0.017275989606512384,
+    "turlu@10%B": 4,
+    "turlu@25%B": 4,
+    "turlu@100%B": 4,
+    "örnek": 4
+   },
+   {
+    "set": "clu20k",
+    "config": "TourFold-v2(16)",
+    "gap@10%B": 0.4742636798955886,
+    "gap@25%B": 0.36613730086277324,
+    "gap@50%B": 0.28218538901282253,
+    "gap@100%B": 0.03511289293402467,
+    "turlu@10%B": 4,
+    "turlu@25%B": 4,
+    "turlu@100%B": 4,
+    "örnek": 4
+   },
+   {
+    "set": "clu20k",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "gap@10%B": 0.4742636798955886,
+    "gap@25%B": 0.36613730086277324,
+    "gap@50%B": 0.06229598205277888,
+    "gap@100%B": 0.008654794389910589,
+    "turlu@10%B": 4,
+    "turlu@25%B": 4,
+    "turlu@100%B": 4,
+    "örnek": 4
+   }
+  ],
+  "time_to_gap": [
+   {
+    "set": "uni1k",
+    "config": "LKH-3 POPMUSIC (ascent yok)",
+    "time_to_1.0%": 0.485,
+    "time_to_0.5%": 0.485,
+    "time_to_0.2%": 0.51,
+    "time_to_0.1%": 0.555,
+    "time_to_0.05%": 0.7949999999999999
+   },
+   {
+    "set": "uni1k",
+    "config": "LKH-3 varsayılan (α+ascent)",
+    "time_to_1.0%": 1.2349999999999999,
+    "time_to_0.5%": 1.2349999999999999,
+    "time_to_0.2%": 1.245,
+    "time_to_0.1%": 1.53,
+    "time_to_0.05%": 1.585
+   },
+   {
+    "set": "uni1k",
+    "config": "Topluluk(8) + sayım+",
+    "time_to_1.0%": 0.5007217970005513,
+    "time_to_0.5%": 0.5007217970005513,
+    "time_to_0.2%": 0.6022345185019731,
+    "time_to_0.1%": 0.9822894169989377,
+    "time_to_0.05%": 1.227548144999564
+   },
+   {
+    "set": "uni1k",
+    "config": "Topluluk(8) omurgası sabit",
+    "time_to_1.0%": 0.5007217970005513,
+    "time_to_0.5%": 0.5007217970005513,
+    "time_to_0.2%": 0.6022345185019731,
+    "time_to_0.1%": 0.9722894169989377,
+    "time_to_0.05%": 1.0965341510003055
+   },
+   {
+    "set": "uni1k",
+    "config": "TourFold-v2(8)",
+    "time_to_1.0%": 0.5007217970005513,
+    "time_to_0.5%": 0.5007217970005513,
+    "time_to_0.2%": 0.6022345185019731,
+    "time_to_0.1%": 0.9937376659981965,
+    "time_to_0.05%": 1.1463856425002086
+   },
+   {
+    "set": "uni1k",
+    "config": "TourFold-v2(16)",
+    "time_to_1.0%": 0.5007217970005513,
+    "time_to_0.5%": 0.5007217970005513,
+    "time_to_0.2%": 0.6022345185019731,
+    "time_to_0.1%": 0.9937376659981965,
+    "time_to_0.05%": 1.6831394655031544
+   },
+   {
+    "set": "uni1k",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "time_to_1.0%": 0.5007217970005513,
+    "time_to_0.5%": 0.5007217970005513,
+    "time_to_0.2%": 0.6022345185019731,
+    "time_to_0.1%": 0.9937376659981965,
+    "time_to_0.05%": 1.1719181005004793
+   },
+   {
+    "set": "clu1k",
+    "config": "LKH-3 POPMUSIC (ascent yok)",
+    "time_to_1.0%": 0.64,
+    "time_to_0.5%": 0.69,
+    "time_to_0.2%": 0.8049999999999999,
+    "time_to_0.1%": 1.065,
+    "time_to_0.05%": 1.21
+   },
+   {
+    "set": "clu1k",
+    "config": "LKH-3 varsayılan (α+ascent)",
+    "time_to_1.0%": 1.73,
+    "time_to_0.5%": 1.81,
+    "time_to_0.2%": 2.435,
+    "time_to_0.1%": 2.435,
+    "time_to_0.05%": 2.46
+   },
+   {
+    "set": "clu1k",
+    "config": "Topluluk(8) + sayım+",
+    "time_to_1.0%": 0.613039574499453,
+    "time_to_0.5%": 0.613039574499453,
+    "time_to_0.2%": 1.2628584720005165,
+    "time_to_0.1%": 1.6100684370003364,
+    "time_to_0.05%": 2.639095193500616
+   },
+   {
+    "set": "clu1k",
+    "config": "Topluluk(8) omurgası sabit",
+    "time_to_1.0%": 0.613039574499453,
+    "time_to_0.5%": 0.613039574499453,
+    "time_to_0.2%": 1.2628584720005165,
+    "time_to_0.1%": 1.571505829500893,
+    "time_to_0.05%": 2.529095193500616
+   },
+   {
+    "set": "clu1k",
+    "config": "TourFold-v2(8)",
+    "time_to_1.0%": 0.613039574499453,
+    "time_to_0.5%": 0.613039574499453,
+    "time_to_0.2%": 1.2628584720005165,
+    "time_to_0.1%": 1.6100684370003364,
+    "time_to_0.05%": 2.9246762769998167
+   },
+   {
+    "set": "clu1k",
+    "config": "TourFold-v2(16)",
+    "time_to_1.0%": 0.613039574499453,
+    "time_to_0.5%": 0.613039574499453,
+    "time_to_0.2%": 1.2628584720005165,
+    "time_to_0.1%": 1.6100684370003364,
+    "time_to_0.05%": 4.048966832498845
+   },
+   {
+    "set": "clu1k",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "time_to_1.0%": 0.613039574499453,
+    "time_to_0.5%": 0.613039574499453,
+    "time_to_0.2%": 1.2628584720005165,
+    "time_to_0.1%": 1.6100684370003364,
+    "time_to_0.05%": 2.7646762769998166
+   },
+   {
+    "set": "tsplib",
+    "config": "LKH-3 POPMUSIC (ascent yok)",
+    "time_to_1.0%": 4.66,
+    "time_to_0.5%": 7.91,
+    "time_to_0.2%": 13.98,
+    "time_to_0.1%": 29.28,
+    "time_to_0.05%": 51.58
+   },
+   {
+    "set": "tsplib",
+    "config": "LKH-3 varsayılan (α+ascent)",
+    "time_to_1.0%": 233.93,
+    "time_to_0.5%": 233.93,
+    "time_to_0.2%": 234.76,
+    "time_to_0.1%": 239.52,
+    "time_to_0.05%": Infinity
+   },
+   {
+    "set": "tsplib",
+    "config": "Topluluk(8) + sayım+",
+    "time_to_1.0%": 7.984891349000754,
+    "time_to_0.5%": 7.984891349000754,
+    "time_to_0.2%": 17.476353104000736,
+    "time_to_0.1%": 51.10419361499684,
+    "time_to_0.05%": 74.60489134900075
+   },
+   {
+    "set": "tsplib",
+    "config": "Topluluk(8) omurgası sabit",
+    "time_to_1.0%": 7.804891349000754,
+    "time_to_0.5%": 8.794891349000753,
+    "time_to_0.2%": 17.476353104000736,
+    "time_to_0.1%": 54.95419361499684,
+    "time_to_0.05%": Infinity
+   },
+   {
+    "set": "tsplib",
+    "config": "TourFold-v2(8)",
+    "time_to_1.0%": 8.260251283999459,
+    "time_to_0.5%": 8.260251283999459,
+    "time_to_0.2%": 13.77025128399946,
+    "time_to_0.1%": 47.17941714599845,
+    "time_to_0.05%": 61.59941714599845
+   },
+   {
+    "set": "tsplib",
+    "config": "TourFold-v2(16)",
+    "time_to_1.0%": 10.701958550998825,
+    "time_to_0.5%": 13.354102165001677,
+    "time_to_0.2%": 17.476353104000736,
+    "time_to_0.1%": 41.77359491999458,
+    "time_to_0.05%": 47.56359491999457
+   },
+   {
+    "set": "tsplib",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "time_to_1.0%": 8.12025128399946,
+    "time_to_0.5%": 8.12025128399946,
+    "time_to_0.2%": 17.476353104000736,
+    "time_to_0.1%": 46.38941714599845,
+    "time_to_0.05%": 77.31697952999778
+   },
+   {
+    "set": "uni10k",
+    "config": "LKH-3 POPMUSIC (ascent yok)",
+    "time_to_1.0%": 8.735,
+    "time_to_0.5%": 8.735,
+    "time_to_0.2%": 11.165000000000001,
+    "time_to_0.1%": 18.36,
+    "time_to_0.05%": 37.47
+   },
+   {
+    "set": "uni10k",
+    "config": "LKH-3 varsayılan (α+ascent)",
+    "time_to_1.0%": Infinity,
+    "time_to_0.5%": Infinity,
+    "time_to_0.2%": Infinity,
+    "time_to_0.1%": Infinity,
+    "time_to_0.05%": Infinity
+   },
+   {
+    "set": "uni10k",
+    "config": "Topluluk(8) + sayım+",
+    "time_to_1.0%": 9.646837157999471,
+    "time_to_0.5%": 9.646837157999471,
+    "time_to_0.2%": 25.407186779500954,
+    "time_to_0.1%": 34.69218677950095,
+    "time_to_0.05%": 63.91246095100167
+   },
+   {
+    "set": "uni10k",
+    "config": "Topluluk(8) omurgası sabit",
+    "time_to_1.0%": 9.646837157999471,
+    "time_to_0.5%": 9.646837157999471,
+    "time_to_0.2%": 25.353211268499507,
+    "time_to_0.1%": 29.665233393501513,
+    "time_to_0.05%": 55.58527311600028
+   },
+   {
+    "set": "uni10k",
+    "config": "TourFold-v2(8)",
+    "time_to_1.0%": 9.646837157999471,
+    "time_to_0.5%": 9.646837157999471,
+    "time_to_0.2%": 25.299240025500183,
+    "time_to_0.1%": 31.69002130700057,
+    "time_to_0.05%": 61.94519978549906
+   },
+   {
+    "set": "uni10k",
+    "config": "TourFold-v2(16)",
+    "time_to_1.0%": 9.646837157999471,
+    "time_to_0.5%": 9.646837157999471,
+    "time_to_0.2%": 42.25123582600358,
+    "time_to_0.1%": 52.64532916550256,
+    "time_to_0.05%": 73.46672179100555
+   },
+   {
+    "set": "uni10k",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "time_to_1.0%": 9.646837157999471,
+    "time_to_0.5%": 9.646837157999471,
+    "time_to_0.2%": 25.304240025500185,
+    "time_to_0.1%": 30.84111554499934,
+    "time_to_0.05%": 59.15988712849983
+   },
+   {
+    "set": "clu10k",
+    "config": "LKH-3 POPMUSIC (ascent yok)",
+    "time_to_1.0%": 10.555,
+    "time_to_0.5%": 11.91,
+    "time_to_0.2%": 18.545,
+    "time_to_0.1%": 23.865000000000002,
+    "time_to_0.05%": 47.025000000000006
+   },
+   {
+    "set": "clu10k",
+    "config": "LKH-3 varsayılan (α+ascent)",
+    "time_to_1.0%": Infinity,
+    "time_to_0.5%": Infinity,
+    "time_to_0.2%": Infinity,
+    "time_to_0.1%": Infinity,
+    "time_to_0.05%": Infinity
+   },
+   {
+    "set": "clu10k",
+    "config": "Topluluk(8) + sayım+",
+    "time_to_1.0%": 11.583185587499429,
+    "time_to_0.5%": 11.796592767499533,
+    "time_to_0.2%": 44.574538030502666,
+    "time_to_0.1%": 50.66344504549929,
+    "time_to_0.05%": 60.44095443149931
+   },
+   {
+    "set": "clu10k",
+    "config": "Topluluk(8) omurgası sabit",
+    "time_to_1.0%": 11.583185587499429,
+    "time_to_0.5%": 11.796592767499533,
+    "time_to_0.2%": 42.10157221149883,
+    "time_to_0.1%": 47.34953803050267,
+    "time_to_0.05%": 75.2455272585
+   },
+   {
+    "set": "clu10k",
+    "config": "TourFold-v2(8)",
+    "time_to_1.0%": 11.583185587499429,
+    "time_to_0.5%": 11.796592767499533,
+    "time_to_0.2%": 44.42833660849912,
+    "time_to_0.1%": 49.69744546950133,
+    "time_to_0.05%": 63.728047186997614
+   },
+   {
+    "set": "clu10k",
+    "config": "TourFold-v2(16)",
+    "time_to_1.0%": 11.583185587499429,
+    "time_to_0.5%": 11.796592767499533,
+    "time_to_0.2%": 76.4743739509995,
+    "time_to_0.1%": 86.2143739509995,
+    "time_to_0.05%": 98.16962961550092
+   },
+   {
+    "set": "clu10k",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "time_to_1.0%": 11.583185587499429,
+    "time_to_0.5%": 11.796592767499533,
+    "time_to_0.2%": 44.7654352780023,
+    "time_to_0.1%": 49.42603699549858,
+    "time_to_0.05%": 59.82304718699761
+   },
+   {
+    "set": "uni20k",
+    "config": "LKH-3 POPMUSIC (ascent yok)",
+    "time_to_1.0%": 20.11,
+    "time_to_0.5%": 20.11,
+    "time_to_0.2%": 23.435000000000002,
+    "time_to_0.1%": 58.715,
+    "time_to_0.05%": 80.58500000000001
+   },
+   {
+    "set": "uni20k",
+    "config": "LKH-3 varsayılan (α+ascent)",
+    "time_to_1.0%": Infinity,
+    "time_to_0.5%": Infinity,
+    "time_to_0.2%": Infinity,
+    "time_to_0.1%": Infinity,
+    "time_to_0.05%": Infinity
+   },
+   {
+    "set": "uni20k",
+    "config": "Topluluk(8) + sayım+",
+    "time_to_1.0%": 23.922852948499894,
+    "time_to_0.5%": 23.922852948499894,
+    "time_to_0.2%": 42.17177293300119,
+    "time_to_0.1%": 88.96922671249722,
+    "time_to_0.05%": 119.37533392849684
+   },
+   {
+    "set": "uni20k",
+    "config": "Topluluk(8) omurgası sabit",
+    "time_to_1.0%": 23.922852948499894,
+    "time_to_0.5%": 23.922852948499894,
+    "time_to_0.2%": 42.17177293300119,
+    "time_to_0.1%": 91.90175034400053,
+    "time_to_0.05%": 140.51106238099794
+   },
+   {
+    "set": "uni20k",
+    "config": "TourFold-v2(8)",
+    "time_to_1.0%": 23.922852948499894,
+    "time_to_0.5%": 23.922852948499894,
+    "time_to_0.2%": 42.17177293300119,
+    "time_to_0.1%": 87.18155654549857,
+    "time_to_0.05%": 175.20203288150176
+   },
+   {
+    "set": "uni20k",
+    "config": "TourFold-v2(16)",
+    "time_to_1.0%": 23.922852948499894,
+    "time_to_0.5%": 23.922852948499894,
+    "time_to_0.2%": 42.17177293300119,
+    "time_to_0.1%": 152.74936933600085,
+    "time_to_0.05%": 213.74436933600086
+   },
+   {
+    "set": "uni20k",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "time_to_1.0%": 23.922852948499894,
+    "time_to_0.5%": 23.922852948499894,
+    "time_to_0.2%": 42.17177293300119,
+    "time_to_0.1%": 93.13709932649614,
+    "time_to_0.05%": 170.67655654549856
+   },
+   {
+    "set": "clu20k",
+    "config": "LKH-3 POPMUSIC (ascent yok)",
+    "time_to_1.0%": 21.655,
+    "time_to_0.5%": 21.655,
+    "time_to_0.2%": 40.405,
+    "time_to_0.1%": 74.195,
+    "time_to_0.05%": 121.915
+   },
+   {
+    "set": "clu20k",
+    "config": "LKH-3 varsayılan (α+ascent)",
+    "time_to_1.0%": Infinity,
+    "time_to_0.5%": Infinity,
+    "time_to_0.2%": Infinity,
+    "time_to_0.1%": Infinity,
+    "time_to_0.05%": Infinity
+   },
+   {
+    "set": "clu20k",
+    "config": "Topluluk(8) + sayım+",
+    "time_to_1.0%": 25.91250885050067,
+    "time_to_0.5%": 30.520880421000584,
+    "time_to_0.2%": 106.33157307700174,
+    "time_to_0.1%": 120.69657307700174,
+    "time_to_0.05%": 159.0066003175004
+   },
+   {
+    "set": "clu20k",
+    "config": "Topluluk(8) omurgası sabit",
+    "time_to_1.0%": 25.91250885050067,
+    "time_to_0.5%": 30.520880421000584,
+    "time_to_0.2%": 104.10657307700174,
+    "time_to_0.1%": 116.69003903350237,
+    "time_to_0.05%": Infinity
+   },
+   {
+    "set": "clu20k",
+    "config": "TourFold-v2(8)",
+    "time_to_1.0%": 25.91250885050067,
+    "time_to_0.5%": 30.520880421000584,
+    "time_to_0.2%": 105.95089685300161,
+    "time_to_0.1%": 124.41565779100034,
+    "time_to_0.05%": 156.67910553299987
+   },
+   {
+    "set": "clu20k",
+    "config": "TourFold-v2(16)",
+    "time_to_1.0%": 25.91250885050067,
+    "time_to_0.5%": 30.520880421000584,
+    "time_to_0.2%": 185.90275666300207,
+    "time_to_0.1%": 205.62275666300206,
+    "time_to_0.05%": 248.3991961680008
+   },
+   {
+    "set": "clu20k",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "time_to_1.0%": 25.91250885050067,
+    "time_to_0.5%": 30.520880421000584,
+    "time_to_0.2%": 105.94089685300162,
+    "time_to_0.1%": 119.24589685300163,
+    "time_to_0.05%": 152.16410553299988
+   }
+  ],
+  "wtl": [
+   {
+    "set": "uni1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8)",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 4,
+    "losses": 3,
+    "ties": 1
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8)",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 8,
+    "losses": 0,
+    "ties": 0
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8)",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 5,
+    "losses": 1,
+    "ties": 2
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8)",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 4,
+    "losses": 3,
+    "ties": 1
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(16)",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 2,
+    "losses": 6,
+    "ties": 0
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(16)",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 7,
+    "losses": 1,
+    "ties": 0
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(16)",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 0,
+    "losses": 6,
+    "ties": 2
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(16)",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 0,
+    "losses": 8,
+    "ties": 0
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 3,
+    "losses": 5,
+    "ties": 0
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 7,
+    "losses": 1,
+    "ties": 0
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 3,
+    "losses": 2,
+    "ties": 3
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 0,
+    "losses": 8,
+    "ties": 0
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8)",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 4,
+    "losses": 0,
+    "ties": 4
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8)",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 5,
+    "losses": 0,
+    "ties": 3
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8)",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 2,
+    "losses": 1,
+    "ties": 5
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8)",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 7,
+    "losses": 0,
+    "ties": 1
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(16)",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 4,
+    "losses": 1,
+    "ties": 3
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(16)",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 3,
+    "losses": 0,
+    "ties": 5
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(16)",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 1,
+    "losses": 0,
+    "ties": 7
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(16)",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 7,
+    "losses": 0,
+    "ties": 1
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 2,
+    "losses": 2,
+    "ties": 4
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 2,
+    "losses": 1,
+    "ties": 5
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 1,
+    "losses": 2,
+    "ties": 5
+   },
+   {
+    "set": "uni1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 7,
+    "losses": 0,
+    "ties": 1
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8)",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 2,
+    "losses": 6,
+    "ties": 0
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8)",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 8,
+    "losses": 0,
+    "ties": 0
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8)",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 0,
+    "losses": 0,
+    "ties": 8
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8)",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 0,
+    "losses": 0,
+    "ties": 8
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(16)",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 2,
+    "losses": 6,
+    "ties": 0
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(16)",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 8,
+    "losses": 0,
+    "ties": 0
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(16)",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 0,
+    "losses": 0,
+    "ties": 8
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(16)",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 0,
+    "losses": 0,
+    "ties": 8
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 2,
+    "losses": 6,
+    "ties": 0
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 8,
+    "losses": 0,
+    "ties": 0
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 0,
+    "losses": 0,
+    "ties": 8
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 0,
+    "losses": 0,
+    "ties": 8
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8)",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 5,
+    "losses": 1,
+    "ties": 2
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8)",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 5,
+    "losses": 0,
+    "ties": 3
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8)",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 2,
+    "losses": 0,
+    "ties": 6
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8)",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 7,
+    "losses": 0,
+    "ties": 1
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(16)",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 2,
+    "losses": 5,
+    "ties": 1
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(16)",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 5,
+    "losses": 1,
+    "ties": 2
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(16)",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 1,
+    "losses": 4,
+    "ties": 3
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(16)",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 4,
+    "losses": 3,
+    "ties": 1
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 5,
+    "losses": 0,
+    "ties": 3
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 5,
+    "losses": 1,
+    "ties": 2
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 3,
+    "losses": 0,
+    "ties": 5
+   },
+   {
+    "set": "clu1k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 7,
+    "losses": 0,
+    "ties": 1
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8)",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 6,
+    "losses": 5,
+    "ties": 0
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8)",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 10,
+    "losses": 1,
+    "ties": 0
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8)",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 9,
+    "losses": 1,
+    "ties": 1
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8)",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 9,
+    "losses": 2,
+    "ties": 0
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(16)",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 5,
+    "losses": 6,
+    "ties": 0
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(16)",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 11,
+    "losses": 0,
+    "ties": 0
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(16)",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 5,
+    "losses": 6,
+    "ties": 0
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(16)",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 5,
+    "losses": 6,
+    "ties": 0
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 5,
+    "losses": 6,
+    "ties": 0
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 11,
+    "losses": 0,
+    "ties": 0
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 8,
+    "losses": 2,
+    "ties": 1
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 10,
+    "losses": 1,
+    "ties": 0
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8)",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 4,
+    "losses": 6,
+    "ties": 1
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8)",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 9,
+    "losses": 2,
+    "ties": 0
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8)",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 4,
+    "losses": 6,
+    "ties": 1
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8)",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 10,
+    "losses": 1,
+    "ties": 0
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(16)",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 6,
+    "losses": 4,
+    "ties": 1
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(16)",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 9,
+    "losses": 2,
+    "ties": 0
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(16)",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 5,
+    "losses": 5,
+    "ties": 1
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(16)",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 9,
+    "losses": 2,
+    "ties": 0
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 2,
+    "losses": 9,
+    "ties": 0
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 10,
+    "losses": 1,
+    "ties": 0
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 4,
+    "losses": 6,
+    "ties": 1
+   },
+   {
+    "set": "tsplib",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 9,
+    "losses": 2,
+    "ties": 0
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8)",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 0,
+    "losses": 8,
+    "ties": 0
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8)",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 8,
+    "losses": 0,
+    "ties": 0
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8)",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 3,
+    "losses": 5,
+    "ties": 0
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8)",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 1,
+    "losses": 7,
+    "ties": 0
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(16)",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 0,
+    "losses": 8,
+    "ties": 0
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(16)",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 8,
+    "losses": 0,
+    "ties": 0
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(16)",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 0,
+    "losses": 8,
+    "ties": 0
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(16)",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 0,
+    "losses": 8,
+    "ties": 0
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 0,
+    "losses": 8,
+    "ties": 0
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 8,
+    "losses": 0,
+    "ties": 0
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 4,
+    "losses": 4,
+    "ties": 0
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 2,
+    "losses": 6,
+    "ties": 0
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8)",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 4,
+    "losses": 4,
+    "ties": 0
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8)",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 8,
+    "losses": 0,
+    "ties": 0
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8)",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 6,
+    "losses": 2,
+    "ties": 0
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8)",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 7,
+    "losses": 1,
+    "ties": 0
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(16)",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 3,
+    "losses": 5,
+    "ties": 0
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(16)",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 8,
+    "losses": 0,
+    "ties": 0
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(16)",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 4,
+    "losses": 4,
+    "ties": 0
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(16)",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 6,
+    "losses": 2,
+    "ties": 0
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 5,
+    "losses": 3,
+    "ties": 0
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 8,
+    "losses": 0,
+    "ties": 0
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 4,
+    "losses": 4,
+    "ties": 0
+   },
+   {
+    "set": "uni10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 7,
+    "losses": 1,
+    "ties": 0
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8)",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 0,
+    "losses": 8,
+    "ties": 0
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8)",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 8,
+    "losses": 0,
+    "ties": 0
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8)",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 0,
+    "losses": 0,
+    "ties": 8
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8)",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 0,
+    "losses": 0,
+    "ties": 8
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(16)",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 0,
+    "losses": 8,
+    "ties": 0
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(16)",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 8,
+    "losses": 0,
+    "ties": 0
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(16)",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 0,
+    "losses": 0,
+    "ties": 8
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(16)",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 0,
+    "losses": 0,
+    "ties": 8
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 0,
+    "losses": 8,
+    "ties": 0
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 8,
+    "losses": 0,
+    "ties": 0
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 0,
+    "losses": 0,
+    "ties": 8
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 0,
+    "losses": 0,
+    "ties": 8
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8)",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 3,
+    "losses": 5,
+    "ties": 0
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8)",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 8,
+    "losses": 0,
+    "ties": 0
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8)",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 4,
+    "losses": 4,
+    "ties": 0
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8)",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 8,
+    "losses": 0,
+    "ties": 0
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(16)",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 4,
+    "losses": 4,
+    "ties": 0
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(16)",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 8,
+    "losses": 0,
+    "ties": 0
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(16)",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 3,
+    "losses": 5,
+    "ties": 0
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(16)",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 6,
+    "losses": 2,
+    "ties": 0
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 5,
+    "losses": 3,
+    "ties": 0
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 8,
+    "losses": 0,
+    "ties": 0
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 5,
+    "losses": 3,
+    "ties": 0
+   },
+   {
+    "set": "clu10k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 8,
+    "losses": 0,
+    "ties": 0
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8)",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 0,
+    "losses": 4,
+    "ties": 0
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8)",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 4,
+    "losses": 0,
+    "ties": 0
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8)",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 0,
+    "losses": 0,
+    "ties": 4
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8)",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 0,
+    "losses": 0,
+    "ties": 4
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(16)",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 0,
+    "losses": 4,
+    "ties": 0
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(16)",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 4,
+    "losses": 0,
+    "ties": 0
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(16)",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 0,
+    "losses": 0,
+    "ties": 4
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(16)",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 0,
+    "losses": 0,
+    "ties": 4
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 0,
+    "losses": 4,
+    "ties": 0
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 4,
+    "losses": 0,
+    "ties": 0
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 0,
+    "losses": 0,
+    "ties": 4
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 0,
+    "losses": 0,
+    "ties": 4
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8)",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 0,
+    "losses": 4,
+    "ties": 0
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8)",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 4,
+    "losses": 0,
+    "ties": 0
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8)",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 0,
+    "losses": 4,
+    "ties": 0
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8)",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 2,
+    "losses": 2,
+    "ties": 0
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(16)",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 0,
+    "losses": 4,
+    "ties": 0
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(16)",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 4,
+    "losses": 0,
+    "ties": 0
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(16)",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 1,
+    "losses": 3,
+    "ties": 0
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(16)",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 2,
+    "losses": 2,
+    "ties": 0
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 1,
+    "losses": 3,
+    "ties": 0
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 4,
+    "losses": 0,
+    "ties": 0
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 0,
+    "losses": 4,
+    "ties": 0
+   },
+   {
+    "set": "uni20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 3,
+    "losses": 1,
+    "ties": 0
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8)",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 0,
+    "losses": 4,
+    "ties": 0
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8)",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 4,
+    "losses": 0,
+    "ties": 0
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8)",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 0,
+    "losses": 0,
+    "ties": 4
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8)",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 0,
+    "losses": 0,
+    "ties": 4
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(16)",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 0,
+    "losses": 4,
+    "ties": 0
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(16)",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 4,
+    "losses": 0,
+    "ties": 0
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(16)",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 0,
+    "losses": 0,
+    "ties": 4
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(16)",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 0,
+    "losses": 0,
+    "ties": 4
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 0,
+    "losses": 4,
+    "ties": 0
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 4,
+    "losses": 0,
+    "ties": 0
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 0,
+    "losses": 0,
+    "ties": 4
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@25%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 0,
+    "losses": 0,
+    "ties": 4
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8)",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 1,
+    "losses": 3,
+    "ties": 0
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8)",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 4,
+    "losses": 0,
+    "ties": 0
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8)",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 3,
+    "losses": 1,
+    "ties": 0
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8)",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 4,
+    "losses": 0,
+    "ties": 0
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(16)",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 0,
+    "losses": 4,
+    "ties": 0
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(16)",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 4,
+    "losses": 0,
+    "ties": 0
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(16)",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 0,
+    "losses": 4,
+    "ties": 0
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(16)",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 3,
+    "losses": 1,
+    "ties": 0
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "LKH-3 POPMUSIC (ascent yok)",
+    "wins": 3,
+    "losses": 1,
+    "ties": 0
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "LKH-3 varsayılan (α+ascent)",
+    "wins": 4,
+    "losses": 0,
+    "ties": 0
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "Topluluk(8) + sayım+",
+    "wins": 4,
+    "losses": 0,
+    "ties": 0
+   },
+   {
+    "set": "clu20k",
+    "at": "gap@100%B",
+    "config": "TourFold-v2(8) + süzülmüş omurga",
+    "vs": "Topluluk(8) omurgası sabit",
+    "wins": 4,
+    "losses": 0,
+    "ties": 0
+   }
+  ]
+ }
+}

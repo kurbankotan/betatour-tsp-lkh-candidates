@@ -1,0 +1,95 @@
+[2026-10-21 06:40:17] TourFold v4 başlıyor | ortam {'nproc': 12, 'ram_gb': 53.0, 'gpu': 'NVIDIA L4, 23034 MiB', 'numpy': '2.1.3'} | cihaz cuda | örnek başına 6 paralel LKH koşusu (tohumlar [101, 102, 103, 104, 105, 106]) | veri /content/drive/MyDrive/TourFold_TSP | sonuçlar /content/drive/MyDrive/TourFold_TSP/v4
+[2026-10-21 06:40:17] » 1-LKH
+[2026-10-21 06:40:24] LKH hazır: /content/tourfold_local/lkh/LKH-3.0.14/LKH (sürüm 3.0.14)
+[2026-10-21 06:40:24] » 1-öz-sınama
+[2026-10-21 06:40:27] OK    LKH-3 POPMUSIC koşusu iyileşme izi verdi
+[2026-10-21 06:40:27] OK    ilk deneme geçerli bir tur ve aday listesi verdi
+[2026-10-21 06:40:27] OK    ilk deneme, aynı tohumlu tam koşunun ilk denemesiyle aynı
+[2026-10-21 06:40:27] OK    koşu, ilk denemenin turundan yeni adaylarla devam etti
+[2026-10-21 06:40:27] » 2-örnekler
+[2026-10-21 06:42:40] TSPLIB: 32 örnek dosyası hazır
+[2026-10-21 06:43:08] 51 örnek: {'uni1k': 8, 'clu1k': 8, 'tsplib': 11, 'uni10k': 8, 'clu10k': 8, 'uni20k': 4, 'clu20k': 4} | toplam bütçe 1.80 saat (yapılandırma başına)
+[2026-10-21 06:43:08] » 2-model
+[2026-10-21 06:43:14] TourFold-v2 yüklendi: 1.88 M parametre, 12 epoch
+[2026-10-21 06:43:14] » 2-model denetimi
+[2026-10-21 06:43:27] TourFold-v2, doğrulama: eksik tur kenarı / 1000 düğüm (ilk 5 aday): 4 tur 0.91, 6 tur 0.71, 8 tur 0.56
+[2026-10-21 06:43:27] Kaba tahmin: kalan ~3.7 saat (51/51 örnek kaldı; son tahmin log_v4.txt ve status_v4.json içinde)
+[2026-10-21 06:43:27] » 3-çok çekirdekli LKH
+[2026-10-21 06:43:27] Çok çekirdekli karşılaştırma: 51 örnek (51 kaldı), örnek başına 2 × 6 LKH koşusu | bu adım için tahmini ~3.7 saat
+[2026-10-21 06:43:29] 6 işçi süreci hazır
+[2026-10-21 06:43:39] 1/51 uni1k_000 (n=1000, bütçe 5 sn): bütçe sonunda en iyi tur POPMUSIC×6 23282160, TourFold×6 23282160 (+0.0000%) | TourFold'un devam anı 0.6 sn | bu adım için kalan ~2.5 saat
+[2026-10-21 06:43:50] 2/51 uni1k_001 (n=1000, bütçe 5 sn): bütçe sonunda en iyi tur POPMUSIC×6 22913582, TourFold×6 22910907 (-0.0117%) | TourFold'un devam anı 0.6 sn | bu adım için kalan ~2.3 saat
+[2026-10-21 06:44:00] 3/51 uni1k_002 (n=1000, bütçe 5 sn): bütçe sonunda en iyi tur POPMUSIC×6 22988818, TourFold×6 22988818 (+0.0000%) | TourFold'un devam anı 0.6 sn | bu adım için kalan ~2.3 saat
+[2026-10-21 06:44:11] 4/51 uni1k_003 (n=1000, bütçe 5 sn): bütçe sonunda en iyi tur POPMUSIC×6 23174291, TourFold×6 23174291 (+0.0000%) | TourFold'un devam anı 0.6 sn | bu adım için kalan ~2.2 saat
+[2026-10-21 06:44:21] 5/51 uni1k_004 (n=1000, bütçe 5 sn): bütçe sonunda en iyi tur POPMUSIC×6 23063745, TourFold×6 23063745 (+0.0000%) | TourFold'un devam anı 0.6 sn | bu adım için kalan ~2.2 saat
+[2026-10-21 06:44:32] 6/51 uni1k_005 (n=1000, bütçe 5 sn): bütçe sonunda en iyi tur POPMUSIC×6 23049696, TourFold×6 23049696 (+0.0000%) | TourFold'un devam anı 0.6 sn | bu adım için kalan ~2.2 saat
+[2026-10-21 06:44:42] 7/51 uni1k_006 (n=1000, bütçe 5 sn): bütçe sonunda en iyi tur POPMUSIC×6 23201534, TourFold×6 23201534 (+0.0000%) | TourFold'un devam anı 0.6 sn | bu adım için kalan ~2.2 saat
+[2026-10-21 06:44:53] 8/51 uni1k_007 (n=1000, bütçe 5 sn): bütçe sonunda en iyi tur POPMUSIC×6 23208279, TourFold×6 23208279 (+0.0000%) | TourFold'un devam anı 0.6 sn | bu adım için kalan ~2.2 saat
+[2026-10-21 06:45:03] 9/51 clu1k_000 (n=1000, bütçe 5 sn): bütçe sonunda en iyi tur POPMUSIC×6 11647428, TourFold×6 11647428 (+0.0000%) | TourFold'un devam anı 0.9 sn | bu adım için kalan ~2.2 saat
+[2026-10-21 06:45:14] 10/51 clu1k_001 (n=1000, bütçe 5 sn): bütçe sonunda en iyi tur POPMUSIC×6 14545700, TourFold×6 14545700 (+0.0000%) | TourFold'un devam anı 0.8 sn | bu adım için kalan ~2.2 saat
+[2026-10-21 06:45:25] 11/51 clu1k_002 (n=1000, bütçe 5 sn): bütçe sonunda en iyi tur POPMUSIC×6 13797960, TourFold×6 13797997 (+0.0003%) | TourFold'un devam anı 0.8 sn | bu adım için kalan ~2.2 saat
+[2026-10-21 06:45:35] 12/51 clu1k_003 (n=1000, bütçe 5 sn): bütçe sonunda en iyi tur POPMUSIC×6 10487915, TourFold×6 10487915 (+0.0000%) | TourFold'un devam anı 0.8 sn | bu adım için kalan ~2.2 saat
+[2026-10-21 06:45:46] 13/51 clu1k_004 (n=1000, bütçe 5 sn): bütçe sonunda en iyi tur POPMUSIC×6 11369188, TourFold×6 11369188 (+0.0000%) | TourFold'un devam anı 0.9 sn | bu adım için kalan ~2.2 saat
+[2026-10-21 06:45:56] 14/51 clu1k_005 (n=1000, bütçe 5 sn): bütçe sonunda en iyi tur POPMUSIC×6 7488866, TourFold×6 7488408 (-0.0061%) | TourFold'un devam anı 0.9 sn | bu adım için kalan ~2.2 saat
+[2026-10-21 06:46:07] 15/51 clu1k_006 (n=1000, bütçe 5 sn): bütçe sonunda en iyi tur POPMUSIC×6 13676842, TourFold×6 13676842 (+0.0000%) | TourFold'un devam anı 0.8 sn | bu adım için kalan ~2.1 saat
+[2026-10-21 06:46:18] 16/51 clu1k_007 (n=1000, bütçe 5 sn): bütçe sonunda en iyi tur POPMUSIC×6 8314624, TourFold×6 8314624 (+0.0000%) | TourFold'un devam anı 0.9 sn | bu adım için kalan ~2.1 saat
+[2026-10-21 06:48:21] 17/51 pcb3038 (n=3038, bütçe 61 sn): bütçe sonunda en iyi tur POPMUSIC×6 137694, TourFold×6 137698 (+0.0029%) | TourFold'un devam anı 1.9 sn | bu adım için kalan ~2.5 saat
+[2026-10-21 06:50:55] 18/51 fl3795 (n=3795, bütçe 76 sn): bütçe sonunda en iyi tur POPMUSIC×6 28772, TourFold×6 28772 (+0.0000%) | TourFold'un devam anı 2.5 sn | bu adım için kalan ~2.8 saat
+[2026-10-21 06:53:56] 19/51 fnl4461 (n=4461, bütçe 89 sn): bütçe sonunda en iyi tur POPMUSIC×6 182566, TourFold×6 182566 (+0.0000%) | TourFold'un devam anı 3.3 sn | bu adım için kalan ~2.9 saat
+[2026-10-21 06:57:57] 20/51 rl5915 (n=5915, bütçe 118 sn): bütçe sonunda en iyi tur POPMUSIC×6 565544, TourFold×6 565541 (-0.0005%) | TourFold'un devam anı 4.5 sn | bu adım için kalan ~3.0 saat
+[2026-10-21 07:01:58] 21/51 rl5934 (n=5934, bütçe 119 sn): bütçe sonunda en iyi tur POPMUSIC×6 556046, TourFold×6 556045 (-0.0002%) | TourFold'un devam anı 4.9 sn | bu adım için kalan ~3.0 saat
+[2026-10-21 07:06:03] 22/51 uni10k_000 (n=10000, bütçe 120 sn): bütçe sonunda en iyi tur POPMUSIC×6 71986338, TourFold×6 71976854 (-0.0132%) | TourFold'un devam anı 10.4 sn | bu adım için kalan ~3.0 saat
+[2026-10-21 07:10:08] 23/51 uni10k_001 (n=10000, bütçe 120 sn): bütçe sonunda en iyi tur POPMUSIC×6 71858298, TourFold×6 71848734 (-0.0133%) | TourFold'un devam anı 10.9 sn | bu adım için kalan ~2.9 saat
+[2026-10-21 07:14:13] 24/51 uni10k_002 (n=10000, bütçe 120 sn): bütçe sonunda en iyi tur POPMUSIC×6 72081846, TourFold×6 72075609 (-0.0087%) | TourFold'un devam anı 10.5 sn | bu adım için kalan ~2.9 saat
+[2026-10-21 07:18:17] 25/51 uni10k_003 (n=10000, bütçe 120 sn): bütçe sonunda en iyi tur POPMUSIC×6 71835437, TourFold×6 71831788 (-0.0051%) | TourFold'un devam anı 10.5 sn | bu adım için kalan ~2.9 saat
+[2026-10-21 07:22:22] 26/51 uni10k_004 (n=10000, bütçe 120 sn): bütçe sonunda en iyi tur POPMUSIC×6 71861037, TourFold×6 71859661 (-0.0019%) | TourFold'un devam anı 10.5 sn | bu adım için kalan ~2.8 saat
+[2026-10-21 07:26:27] 27/51 uni10k_005 (n=10000, bütçe 120 sn): bütçe sonunda en iyi tur POPMUSIC×6 71775327, TourFold×6 71775459 (+0.0002%) | TourFold'un devam anı 11.2 sn | bu adım için kalan ~2.8 saat
+[2026-10-21 07:30:32] 28/51 uni10k_006 (n=10000, bütçe 120 sn): bütçe sonunda en iyi tur POPMUSIC×6 71438530, TourFold×6 71429900 (-0.0121%) | TourFold'un devam anı 11.0 sn | bu adım için kalan ~2.7 saat
+[2026-10-21 07:34:37] 29/51 uni10k_007 (n=10000, bütçe 120 sn): bütçe sonunda en iyi tur POPMUSIC×6 71605103, TourFold×6 71610376 (+0.0074%) | TourFold'un devam anı 11.0 sn | bu adım için kalan ~2.7 saat
+[2026-10-21 07:38:42] 30/51 clu10k_000 (n=10000, bütçe 120 sn): bütçe sonunda en iyi tur POPMUSIC×6 36675958, TourFold×6 36675965 (+0.0000%) | TourFold'un devam anı 14.6 sn | bu adım için kalan ~2.6 saat
+[2026-10-21 07:42:48] 31/51 clu10k_001 (n=10000, bütçe 120 sn): bütçe sonunda en iyi tur POPMUSIC×6 27849108, TourFold×6 27849823 (+0.0026%) | TourFold'un devam anı 14.5 sn | bu adım için kalan ~2.5 saat
+[2026-10-21 07:46:53] 32/51 clu10k_002 (n=10000, bütçe 120 sn): bütçe sonunda en iyi tur POPMUSIC×6 23118889, TourFold×6 23119350 (+0.0020%) | TourFold'un devam anı 14.6 sn | bu adım için kalan ~2.5 saat
+[2026-10-21 07:50:58] 33/51 clu10k_003 (n=10000, bütçe 120 sn): bütçe sonunda en iyi tur POPMUSIC×6 40483747, TourFold×6 40488065 (+0.0107%) | TourFold'un devam anı 13.6 sn | bu adım için kalan ~2.4 saat
+[2026-10-21 07:55:03] 34/51 clu10k_004 (n=10000, bütçe 120 sn): bütçe sonunda en iyi tur POPMUSIC×6 32403060, TourFold×6 32403585 (+0.0016%) | TourFold'un devam anı 14.2 sn | bu adım için kalan ~2.4 saat
+[2026-10-21 07:59:09] 35/51 clu10k_005 (n=10000, bütçe 120 sn): bütçe sonunda en iyi tur POPMUSIC×6 35777035, TourFold×6 35776222 (-0.0023%) | TourFold'un devam anı 13.8 sn | bu adım için kalan ~2.3 saat
+[2026-10-21 08:03:14] 36/51 clu10k_006 (n=10000, bütçe 120 sn): bütçe sonunda en iyi tur POPMUSIC×6 23085453, TourFold×6 23086108 (+0.0028%) | TourFold'un devam anı 13.9 sn | bu adım için kalan ~2.2 saat
+[2026-10-21 08:07:19] 37/51 clu10k_007 (n=10000, bütçe 120 sn): bütçe sonunda en iyi tur POPMUSIC×6 38606064, TourFold×6 38601803 (-0.0110%) | TourFold'un devam anı 13.8 sn | bu adım için kalan ~2.2 saat
+[2026-10-21 08:12:18] 38/51 pla7397 (n=7397, bütçe 148 sn): bütçe sonunda en iyi tur POPMUSIC×6 23262274, TourFold×6 23261645 (-0.0027%) | TourFold'un devam anı 6.8 sn | bu adım için kalan ~2.1 saat
+[2026-10-21 08:20:18] 39/51 rl11849 (n=11849, bütçe 237 sn): bütçe sonunda en iyi tur POPMUSIC×6 923660, TourFold×6 923529 (-0.0142%) | TourFold'un devam anı 14.1 sn | bu adım için kalan ~2.0 saat
+[2026-10-21 08:29:25] 40/51 usa13509 (n=13509, bütçe 270 sn): bütçe sonunda en iyi tur POPMUSIC×6 19984443, TourFold×6 19984185 (-0.0013%) | TourFold'un devam anı 15.4 sn | bu adım için kalan ~1.8 saat
+[2026-10-21 08:38:53] 41/51 brd14051 (n=14051, bütçe 281 sn): bütçe sonunda en iyi tur POPMUSIC×6 469472, TourFold×6 469481 (+0.0019%) | TourFold'un devam anı 16.3 sn | bu adım için kalan ~1.7 saat
+[2026-10-21 08:49:00] 42/51 uni20k_000 (n=20000, bütçe 300 sn): bütçe sonunda en iyi tur POPMUSIC×6 101477541, TourFold×6 101474556 (-0.0029%) | TourFold'un devam anı 28.0 sn | bu adım için kalan ~1.5 saat
+[2026-10-21 08:59:06] 43/51 uni20k_001 (n=20000, bütçe 300 sn): bütçe sonunda en iyi tur POPMUSIC×6 101366051, TourFold×6 101384221 (+0.0179%) | TourFold'un devam anı 25.8 sn | bu adım için kalan ~1.4 saat
+[2026-10-21 09:09:13] 44/51 uni20k_002 (n=20000, bütçe 300 sn): bütçe sonunda en iyi tur POPMUSIC×6 100968657, TourFold×6 101013396 (+0.0443%) | TourFold'un devam anı 25.8 sn | bu adım için kalan ~1.2 saat
+[2026-10-21 09:19:19] 45/51 uni20k_003 (n=20000, bütçe 300 sn): bütçe sonunda en iyi tur POPMUSIC×6 101366557, TourFold×6 101389532 (+0.0227%) | TourFold'un devam anı 26.4 sn | bu adım için kalan ~1.0 saat
+[2026-10-21 09:29:26] 46/51 clu20k_000 (n=20000, bütçe 300 sn): bütçe sonunda en iyi tur POPMUSIC×6 62164081, TourFold×6 62178105 (+0.0226%) | TourFold'un devam anı 31.3 sn | bu adım için kalan ~52 dk
+[2026-10-21 09:39:32] 47/51 clu20k_001 (n=20000, bütçe 300 sn): bütçe sonunda en iyi tur POPMUSIC×6 47305519, TourFold×6 47310777 (+0.0111%) | TourFold'un devam anı 33.8 sn | bu adım için kalan ~42 dk
+[2026-10-21 09:49:39] 48/51 clu20k_002 (n=20000, bütçe 300 sn): bütçe sonunda en iyi tur POPMUSIC×6 40729808, TourFold×6 40728701 (-0.0027%) | TourFold'un devam anı 28.9 sn | bu adım için kalan ~32 dk
+[2026-10-21 09:59:45] 49/51 clu20k_003 (n=20000, bütçe 300 sn): bütçe sonunda en iyi tur POPMUSIC×6 38456225, TourFold×6 38457873 (+0.0043%) | TourFold'un devam anı 28.2 sn | bu adım için kalan ~22 dk
+[2026-10-21 10:09:56] 50/51 d15112 (n=15112, bütçe 302 sn): bütçe sonunda en iyi tur POPMUSIC×6 1573506, TourFold×6 1573340 (-0.0105%) | TourFold'un devam anı 18.4 sn | bu adım için kalan ~12 dk
+[2026-10-21 10:22:23] 51/51 d18512 (n=18512, bütçe 370 sn): bütçe sonunda en iyi tur POPMUSIC×6 645312, TourFold×6 645491 (+0.0277%) | TourFold'un devam anı 20.5 sn | bu adım için kalan ~1 dk
+[2026-10-21 10:22:23] » 4-analiz
+[2026-10-21 10:22:43] v4 — 6 koşunun en iyisi, en iyi bilinene göre fark (%):
+                          gap@10%B  gap@25%B  gap@50%B  gap@100%B  turlu@10%B  turlu@25%B  örnek
+set    config                                                                                   
+clu1k  LKH-3 POPMUSIC ×6       NaN    0.0119    0.0062     0.0008           0           8      8
+       TourFold ×6             NaN    0.0228    0.0109     0.0000           0           8      8
+uni1k  LKH-3 POPMUSIC ×6    0.0682    0.0096    0.0023     0.0015           8           8      8
+       TourFold ×6          0.0869    0.0044    0.0006     0.0000           8           8      8
+tsplib LKH-3 POPMUSIC ×6    0.0861    0.0329    0.0171     0.0104          11          11     11
+       TourFold ×6          0.0650    0.0232    0.0148     0.0107          11          11     11
+clu10k LKH-3 POPMUSIC ×6    0.2904    0.0541    0.0217     0.0088           8           8      8
+       TourFold ×6          0.3305    0.0562    0.0235     0.0096           8           8      8
+uni10k LKH-3 POPMUSIC ×6    0.1383    0.0463    0.0229     0.0142           8           8      8
+       TourFold ×6          0.1752    0.0467    0.0180     0.0084           8           8      8
+clu20k LKH-3 POPMUSIC ×6    0.2071    0.0607    0.0173     0.0007           4           4      4
+       TourFold ×6          0.3491    0.0838    0.0384     0.0095           4           4      4
+uni20k LKH-3 POPMUSIC ×6    0.1353    0.0426    0.0182     0.0007           4           4      4
+       TourFold ×6          0.1521    0.0630    0.0404     0.0212           4           4      4
+[2026-10-21 10:22:43] v4 — TourFold vs POPMUSIC, kazanç/beraberlik/kayıp:
+bütçe     1k   10k TSPLIB   20k     tümü işaret testi p Wilcoxon p  ort. fark (puan)
+  %25  4/7/5 8/0/8  5/1/5 1/0/7  18/8/25           0.36      0.131            0.0026
+  %50 3/11/2 8/0/8  4/2/5 0/0/8 15/13/23          0.256      0.455            0.0029
+ %100 2/13/1 8/0/8  6/2/3 2/0/6 18/15/18              1      0.969            0.0012
+[2026-10-21 10:22:44] Rapor yazıldı: /content/drive/MyDrive/TourFold_TSP/v4/RAPOR_v4.md
+[2026-10-21 10:22:44] BİTTİ. Rapor: /content/drive/MyDrive/TourFold_TSP/v4/RAPOR_v4.md — bu dosyayı (ya da TourFold_v4_sonuclar.zip'i) bana gönderin.

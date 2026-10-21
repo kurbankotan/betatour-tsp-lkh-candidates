@@ -1,0 +1,52 @@
+{
+ "scale": "L",
+ "n_small": 64,
+ "n_large": 8,
+ "tsplib_max_n": 20000,
+ "profile_sizes": [
+  1000,
+  2000,
+  5000,
+  10000,
+  20000
+ ],
+ "n_train": 30000,
+ "epochs": 12,
+ "any_small": 8,
+ "any_large": 2,
+ "tsplib_any_max_n": 3000,
+ "size_small": 1000,
+ "size_large": 10000,
+ "M_ens": 16,
+ "K": 16,
+ "k_tri": 12,
+ "ref_trials_cap": 1000,
+ "ref_max_candidates": 8,
+ "train_n": [
+  100,
+  500
+ ],
+ "shard_size": 1000,
+ "val_instances": 1000,
+ "max_nodes": 7500,
+ "lr": 0.0003,
+ "warmup": 300,
+ "model": {
+  "dn": 128,
+  "de": 64,
+  "dm": 32,
+  "dtri": 32,
+  "msa_layers": 2,
+  "pair_layers": 6
+ },
+ "budget_small": 30.0,
+ "budget_large": 300.0,
+ "budget_per_node": 0.02,
+ "budget_min": 10.0,
+ "fix_precision": 0.999,
+ "num_workers": 4,
+ "eval_part_size": 12,
+ "lkh_eval_part_size": 6,
+ "lkh_version": "3.0.14",
+ "fixed_edges_ok": true
+}

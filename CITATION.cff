@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this code or these results, please cite the paper and this repository."
+title: "BetaTour: learning near-optimal TSP candidate edges from LKH-3 tour ensembles"
+type: software
+authors:
+  - family-names: "Kotan"
+    given-names: "Kurban"
+    orcid: "https://orcid.org/0000-0002-6660-0565"
+    email: "kurban.kotan@cbu.edu.tr"
+    affiliation: "Department of Artificial Intelligence and Machine Learning, Faculty of Computer and Information Sciences, Manisa Celal Bayar University"
+license: MIT
+keywords:
+  - traveling salesman problem
+  - Lin-Kernighan-Helsgaun heuristic
+  - LKH-3
+  - candidate sets
+  - graph neural networks
+  - combinatorial optimization
+preferred-citation:
+  type: unpublished
+  title: "Better Candidates, Same Speed: Learning Near-Optimal TSP Edges from Tour Ensembles with BetaTour"
+  authors:
+    - family-names: "Kotan"
+      given-names: "Kurban"
+      orcid: "https://orcid.org/0000-0002-6660-0565"
+  year: 2026
+  notes: "Manuscript submitted for publication"

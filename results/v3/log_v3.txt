@@ -1,0 +1,139 @@
+[2026-10-21 02:45:38] TourFold v3 başlıyor | ortam {'nproc': 12, 'ram_gb': 167.1, 'gpu': 'NVIDIA A100-SXM4-80GB, 81920 MiB', 'numpy': '2.1.3'} | cihaz cuda | ölçek L | veri /content/drive/MyDrive/TourFold_TSP | sonuçlar /content/drive/MyDrive/TourFold_TSP/v3
+[2026-10-21 02:45:40] UYARI: çalışma zamanı v2'dekinden farklı (v2: 12 vCPU, NVIDIA L4, 23034 MiB; şimdi: 12 vCPU, NVIDIA A100-SXM4-80GB, 81920 MiB). Süreler v2 ile birebir karşılaştırılamaz ve LKH aşaması ~2.4 saat sürer. Mümkünse L4 GPU + yüksek RAM seçip hücreyi yeniden başlatın.
+[2026-10-21 02:45:40] » 1-lkh
+[2026-10-21 02:45:45] LKH hazır: /content/tourfold_local/lkh/LKH-3.0.14/LKH (sürüm 3.0.14)
+[2026-10-21 02:45:45] » 1-selftest
+[2026-10-21 02:45:46] OK    LKH geçerli bir tur üretti
+[2026-10-21 02:45:46] OK    tur uzunluğu LKH'nin bildirdiğiyle aynı
+[2026-10-21 02:45:46] OK    LKH iyileşme izi okundu
+[2026-10-21 02:45:46] OK    LKH ön-işleme süresi okundu
+[2026-10-21 02:45:46] OK    LKH aday (CANDIDATE_FILE) ve ceza (PI_FILE) dosyaları okundu
+[2026-10-21 02:45:46] OK    π birimi (PRECISION = 100) doğrulandı
+[2026-10-21 02:45:46] OK    kendi yazdığımız aday/π dosyaları LKH'ye kabul edildi
+[2026-10-21 02:45:46] OK    tur topluluğu üretildi (POPMUSIC adaylar, ascent yok)
+[2026-10-21 02:45:47] OK    başlangıç turu + dışarıdan aday dosyasıyla LKH çalıştı
+[2026-10-21 02:45:47] BİLGİ LKH sabit kenarları 0 uzunlukla sayıyor; bildirdiği maliyetler gerçek tur uzunluğuna çevriliyor
+[2026-10-21 02:45:47] OK    sabit kenarlar (FIXED_EDGES_SECTION) LKH turunda korundu
+[2026-10-21 02:45:47] » 3-eval_sets
+[2026-10-21 02:47:51] TSPLIB: 32 örnek dosyası hazır
+[2026-10-21 02:47:51] » 3-eval_ref
+[2026-10-21 02:47:59] değerlendirme kümesi uni1k: 64 örnek
+[2026-10-21 02:48:07] değerlendirme kümesi clu1k: 64 örnek
+[2026-10-21 02:48:09] değerlendirme kümesi uni10k: 8 örnek
+[2026-10-21 02:48:12] değerlendirme kümesi clu10k: 8 örnek
+[2026-10-21 02:48:17] değerlendirme kümesi tsplib: 31 örnek
+[2026-10-21 02:48:17] » 4-train_data
+[2026-10-21 02:48:17] Kayıtlı veri hazır: 175 değerlendirme örneği, 30 eğitim parçası. Kaba tahmin: kalan ~2.4 saat (ölçülerek güncellenir; son tahmin log_v3.txt ve status_v3.json içinde)
+[2026-10-21 02:48:17] » 6-train_v2
+[2026-10-21 02:48:22] TourFold-v2 Drive'dan yüklendi: 1.88 M parametre, 12 epoch; yeni eğitim yapılmıyor
+[2026-10-21 02:48:22] » 6-val
+[2026-10-21 02:48:25] » 7-coverage_v3
+[2026-10-21 02:48:57] aday listesi kalitesi (val): 1000/1175 | bu aşama için kalan ~1 dk | tümü için kalan ~2.4 saat
+[2026-10-21 02:49:02] aday listesi kalitesi (uni1k): 1064/1175 | bu aşama için kalan ~1 dk | tümü için kalan ~2.4 saat
+[2026-10-21 02:49:07] aday listesi kalitesi (clu1k): 1128/1175 | bu aşama için kalan ~1 dk | tümü için kalan ~2.4 saat
+[2026-10-21 02:49:12] aday listesi kalitesi (uni10k): 1136/1175 | bu aşama için kalan ~1 dk | tümü için kalan ~2.4 saat
+[2026-10-21 02:49:17] aday listesi kalitesi (clu10k): 1144/1175 | bu aşama için kalan ~1 dk | tümü için kalan ~2.4 saat
+[2026-10-21 02:49:26] aday listesi kalitesi (tsplib): 1175/1175 | bu aşama için kalan ~1 dk | tümü için kalan ~2.4 saat
+[2026-10-21 02:49:26] Aday listesi kalitesi — eksik tur kenarı / 1000 düğüm (küçük = iyi):
+group                        clu10k  clu1k  tsplib  uni10k  uni1k    val
+method                                                                  
+POPMUSIC                       6.18   5.62    7.25    5.60   5.23   3.95
+TourFold-v2(4) 3+POPMUSIC 2    2.19   1.62    3.64    1.91   1.48   0.88
+TourFold-v2(4) ilk 5           0.94   1.27    2.99    0.74   0.58   0.87
+TourFold-v2(8) 3+POPMUSIC 2    2.14   1.19    3.23    1.74   1.09   0.59
+TourFold-v2(8) 3+yakın 2       3.70   2.25    4.64    2.85   1.91   1.41
+TourFold-v2(8) ilk 5           0.52   0.61    2.55    0.42   0.31   0.48
+TourFold-v2(8) ∪ POPMUSIC      0.29   0.31    1.95    0.29   0.16   0.20
+en yakın 5 komşu              18.23  23.41   21.68   17.51  19.53  30.52
+sayım+ (8)                     2.69   1.86    3.93    2.08   1.59   1.32
+α+ascent (LKH-3 varsayılan)    2.46   3.89    4.69    2.79   2.27   4.56
+[2026-10-21 02:49:27] » 8-lkh_eval_v3
+[2026-10-21 02:49:27] LKH karşılaştırması v3: 51 örnek (51 kaldı), 9 parça, 8 yapılandırma; topluluk (8 tur) oturum içinde üretilip süresi sayılır | bu aşama için tahmini ~2.4 saat
+[2026-10-21 02:50:05] LKH karşılaştırması v3: 6/51 örnek | bu aşama için kalan ~2.3 saat | tümü için kalan ~2.3 saat
+[2026-10-21 02:50:40] LKH karşılaştırması v3: 12/51 örnek | bu aşama için kalan ~2.2 saat | tümü için kalan ~2.2 saat
+[2026-10-21 02:54:25] LKH karşılaştırması v3: 18/51 örnek | bu aşama için kalan ~2.4 saat | tümü için kalan ~2.4 saat
+[2026-10-21 03:09:15] LKH karşılaştırması v3: 24/51 örnek | bu aşama için kalan ~2.0 saat | tümü için kalan ~2.0 saat
+[2026-10-21 03:23:55] LKH karşılaştırması v3: 30/51 örnek | bu aşama için kalan ~1.7 saat | tümü için kalan ~1.7 saat
+[2026-10-21 03:36:54] LKH karşılaştırması v3: 36/51 örnek | bu aşama için kalan ~1.4 saat | tümü için kalan ~1.4 saat
+[2026-10-21 04:06:29] LKH karşılaştırması v3: 42/51 örnek | bu aşama için kalan ~58 dk | tümü için kalan ~58 dk
+[2026-10-21 04:40:51] LKH karşılaştırması v3: 48/51 örnek | bu aşama için kalan ~20 dk | tümü için kalan ~20 dk
+[2026-10-21 05:03:20] LKH karşılaştırması v3: 51/51 örnek | bu aşama için kalan ~1 dk | tümü için kalan ~1 dk
+[2026-10-21 05:03:28] LKH v3 — aynı süre bütçesinde fark (%, en iyi bilinene göre; küçük = iyi):
+                                                   gap@10%B  gap@25%B  gap@50%B  gap@100%B  turlu@10%B  turlu@25%B  turlu@100%B  örnek
+set    config                                                                                                                         
+uni1k  LKH-3 POPMUSIC                                0.2241    0.0339    0.0116     0.0098           7           8            8      8
+       Kontrol: POPMUSIC + topluluk(8) başlangıcı    0.1800    0.0270    0.0060     0.0052           3           8            8      8
+       sayım+ (8)                                    0.1800    0.0415    0.0079     0.0036           3           8            8      8
+       TourFold-v2(8) ilk 5                          0.1800    0.0401    0.0022     0.0015           3           8            8      8
+       TourFold-v2(8) 3+POPMUSIC 2                   0.1800    0.0362    0.0098     0.0031           3           8            8      8
+       TourFold-v2(8) 3+yakın 2                      0.1800    0.0416    0.0115     0.0036           3           8            8      8
+       TourFold-v2(8) ∪ POPMUSIC                     0.1800    0.0514    0.0078     0.0013           3           8            8      8
+       TourFold-v2(4) 3+POPMUSIC 2                   0.1800    0.0281    0.0090     0.0058           3           8            8      8
+clu1k  LKH-3 POPMUSIC                                   NaN    0.1220    0.0310     0.0145           0           8            8      8
+       Kontrol: POPMUSIC + topluluk(8) başlangıcı       NaN    0.1758    0.0901     0.0067           0           8            8      8
+       sayım+ (8)                                       NaN    0.1758    0.0886     0.0360           0           8            8      8
+       TourFold-v2(8) ilk 5                             NaN    0.1758    0.0866     0.0047           0           8            8      8
+       TourFold-v2(8) 3+POPMUSIC 2                      NaN    0.1758    0.1031     0.0103           0           8            8      8
+       TourFold-v2(8) 3+yakın 2                         NaN    0.1758    0.0942     0.0468           0           8            8      8
+       TourFold-v2(8) ∪ POPMUSIC                        NaN    0.1758    0.0981     0.0223           0           8            8      8
+       TourFold-v2(4) 3+POPMUSIC 2                      NaN    0.1758    0.0398     0.0027           0           8            8      8
+tsplib LKH-3 POPMUSIC                                0.1533    0.0787    0.0509     0.0209          11          11           11     11
+       Kontrol: POPMUSIC + topluluk(8) başlangıcı    0.2987    0.0809    0.0602     0.0508          11          11           11     11
+       sayım+ (8)                                    0.2878    0.0791    0.0512     0.0268          11          11           11     11
+       TourFold-v2(8) ilk 5                          0.2747    0.0702    0.0297     0.0234          11          11           11     11
+       TourFold-v2(8) 3+POPMUSIC 2                   0.2965    0.0809    0.0324     0.0247          11          11           11     11
+       TourFold-v2(8) 3+yakın 2                      0.2924    0.0843    0.0576     0.0475          11          11           11     11
+       TourFold-v2(8) ∪ POPMUSIC                     0.2969    0.0807    0.0487     0.0222          11          11           11     11
+       TourFold-v2(4) 3+POPMUSIC 2                   0.1754    0.0620    0.0480     0.0373          11          11           11     11
+uni10k LKH-3 POPMUSIC                                0.2235    0.0638    0.0441     0.0282           8           8            8      8
+       Kontrol: POPMUSIC + topluluk(8) başlangıcı    0.2984    0.1774    0.0602     0.0393           8           8            8      8
+       sayım+ (8)                                    0.2984    0.1250    0.0523     0.0304           8           8            8      8
+       TourFold-v2(8) ilk 5                          0.2984    0.1480    0.0751     0.0356           8           8            8      8
+       TourFold-v2(8) 3+POPMUSIC 2                   0.2984    0.1509    0.0540     0.0311           8           8            8      8
+       TourFold-v2(8) 3+yakın 2                      0.2984    0.1475    0.0576     0.0325           8           8            8      8
+       TourFold-v2(8) ∪ POPMUSIC                     0.2984    0.1550    0.0646     0.0349           8           8            8      8
+       TourFold-v2(4) 3+POPMUSIC 2                   0.2984    0.0956    0.0438     0.0266           8           8            8      8
+clu10k LKH-3 POPMUSIC                                0.6136    0.0843    0.0438     0.0249           6           8            8      8
+       Kontrol: POPMUSIC + topluluk(8) başlangıcı    0.4057    0.3711    0.1084     0.0246           2           8            8      8
+       sayım+ (8)                                    0.4057    0.3711    0.0582     0.0215           2           8            8      8
+       TourFold-v2(8) ilk 5                          0.4057    0.3711    0.0873     0.0197           2           8            8      8
+       TourFold-v2(8) 3+POPMUSIC 2                   0.4057    0.3711    0.0847     0.0264           2           8            8      8
+       TourFold-v2(8) 3+yakın 2                      0.4057    0.3711    0.0768     0.0278           2           8            8      8
+       TourFold-v2(8) ∪ POPMUSIC                     0.4057    0.3711    0.1064     0.0298           2           8            8      8
+       TourFold-v2(4) 3+POPMUSIC 2                   0.4057    0.2702    0.0510     0.0238           2           8            8      8
+uni20k LKH-3 POPMUSIC                                0.1678    0.0780    0.0352     0.0145           4           4            4      4
+       Kontrol: POPMUSIC + topluluk(8) başlangıcı    0.2319    0.1957    0.0941     0.0550           4           4            4      4
+       sayım+ (8)                                    0.2319    0.1957    0.0418     0.0149           4           4            4      4
+       TourFold-v2(8) ilk 5                          0.2319    0.1957    0.0572     0.0288           4           4            4      4
+       TourFold-v2(8) 3+POPMUSIC 2                   0.2319    0.1957    0.0714     0.0422           4           4            4      4
+       TourFold-v2(8) 3+yakın 2                      0.2319    0.1957    0.0620     0.0066           4           4            4      4
+       TourFold-v2(8) ∪ POPMUSIC                     0.2319    0.1957    0.0681     0.0387           4           4            4      4
+       TourFold-v2(4) 3+POPMUSIC 2                   0.2319    0.1079    0.0527     0.0210           4           4            4      4
+clu20k LKH-3 POPMUSIC                                0.4389    0.0940    0.0364     0.0079           4           4            4      4
+       Kontrol: POPMUSIC + topluluk(8) başlangıcı    0.4184    0.3669    0.0971     0.0307           3           4            4      4
+       sayım+ (8)                                    0.4184    0.3669    0.0662     0.0197           3           4            4      4
+       TourFold-v2(8) ilk 5                          0.4184    0.3669    0.0796     0.0177           3           4            4      4
+       TourFold-v2(8) 3+POPMUSIC 2                   0.4184    0.3669    0.0963     0.0137           3           4            4      4
+       TourFold-v2(8) 3+yakın 2                      0.4184    0.3669    0.0746     0.0121           3           4            4      4
+       TourFold-v2(8) ∪ POPMUSIC                     0.4184    0.3669    0.1292     0.0429           3           4            4      4
+       TourFold-v2(4) 3+POPMUSIC 2                   0.4184    0.2540    0.0570     0.0080           3           4            4      4
+[2026-10-21 05:03:28] LKH v3 — toplu kazanç/beraberlik/kayıp (%100 bütçe):
+                              yapılandırma                                      rakip     1k    10k TSPLIB   20k     tümü  p (işaret testi)
+Kontrol: POPMUSIC + topluluk(8) başlangıcı                             LKH-3 POPMUSIC  7/6/3 6/0/10  3/0/8 0/0/8  16/6/29          0.072454
+                                sayım+ (8)                             LKH-3 POPMUSIC  7/6/3  8/0/8  3/0/8 3/0/5  21/6/24          0.765992
+                      TourFold-v2(8) ilk 5                             LKH-3 POPMUSIC 10/4/2  7/0/9  5/0/6 2/0/6  24/4/23          1.000000
+               TourFold-v2(8) 3+POPMUSIC 2                             LKH-3 POPMUSIC  9/5/2  7/0/9  5/1/5 2/0/6  23/6/22          1.000000
+                  TourFold-v2(8) 3+yakın 2                             LKH-3 POPMUSIC  6/5/5  7/0/9  3/0/8 3/0/5  19/5/27          0.301996
+                 TourFold-v2(8) ∪ POPMUSIC                             LKH-3 POPMUSIC  9/4/3 4/0/12  5/1/5 1/0/7  19/5/27          0.301996
+               TourFold-v2(4) 3+POPMUSIC 2                             LKH-3 POPMUSIC 10/4/2  8/0/8  3/1/7 3/0/5  24/5/22          0.882996
+                                sayım+ (8) Kontrol: POPMUSIC + topluluk(8) başlangıcı  5/6/5 10/0/6  8/0/3 5/0/3  28/6/17          0.135156
+                      TourFold-v2(8) ilk 5 Kontrol: POPMUSIC + topluluk(8) başlangıcı  8/5/3  9/0/7  8/1/2 6/0/2  31/6/14          0.016094
+               TourFold-v2(8) 3+POPMUSIC 2 Kontrol: POPMUSIC + topluluk(8) başlangıcı  5/7/4 10/0/6  8/1/2 6/0/2  29/8/14          0.031539
+                  TourFold-v2(8) 3+yakın 2 Kontrol: POPMUSIC + topluluk(8) başlangıcı  6/4/6  8/0/8  6/0/5 7/0/1  27/4/20          0.381693
+                 TourFold-v2(8) ∪ POPMUSIC Kontrol: POPMUSIC + topluluk(8) başlangıcı  6/6/4  8/0/8  9/0/2 4/0/4  27/6/18          0.232693
+               TourFold-v2(4) 3+POPMUSIC 2 Kontrol: POPMUSIC + topluluk(8) başlangıcı  7/6/3 12/0/4  9/0/2 8/0/0   36/6/9          0.000066
+               TourFold-v2(8) 3+POPMUSIC 2                       TourFold-v2(8) ilk 5  2/9/5  9/0/7  4/2/5 5/0/3 20/11/20          1.000000
+                  TourFold-v2(8) 3+yakın 2                       TourFold-v2(8) ilk 5 0/10/6  7/0/9  2/1/8 6/0/2 15/11/25          0.153860
+                 TourFold-v2(8) ∪ POPMUSIC                       TourFold-v2(8) ilk 5 2/11/3  7/0/9  5/2/4 2/0/6 16/13/22          0.417692
+               TourFold-v2(4) 3+POPMUSIC 2                TourFold-v2(8) 3+POPMUSIC 2  4/9/3 11/0/5  3/0/8 7/0/1  25/9/17          0.279956
+[2026-10-21 05:03:30] BİTTİ. Rapor: /content/drive/MyDrive/TourFold_TSP/v3/RAPOR_v3.md — bu dosyayı (ya da TourFold_v3_sonuclar.zip'i) bana gönderin.

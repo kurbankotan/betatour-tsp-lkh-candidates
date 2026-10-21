@@ -1,0 +1,26 @@
+{
+ "graph_extra": 4,
+ "m_choices": [
+  4,
+  8,
+  12,
+  16
+ ],
+ "m_small": 8,
+ "m_full": 16,
+ "epochs": 12,
+ "lr": 0.0003,
+ "warmup": 300,
+ "fix_precision": 0.999,
+ "b1k": 5.0,
+ "b10k": 120.0,
+ "b20k": 300.0,
+ "tsplib_per_node": 0.02,
+ "tsplib_min": 10.0,
+ "tsplib_min_n": 3000,
+ "any_1k": 8,
+ "any_10k": 8,
+ "n20k": 4,
+ "size20k": 20000,
+ "part_size": 6
+}

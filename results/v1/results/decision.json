@@ -1,0 +1,551 @@
+{
+ "coverage": [
+  {
+   "group": "clu10k",
+   "method": "POPMUSIC",
+   "missing_per_1k": 6.175,
+   "cov2": 0.850975,
+   "cov3": 0.9461875,
+   "cov5": 0.993825
+  },
+  {
+   "group": "clu10k",
+   "method": "TourFold",
+   "missing_per_1k": 0.8250000000000001,
+   "cov2": 0.92165,
+   "cov3": 0.991325,
+   "cov5": 0.999175
+  },
+  {
+   "group": "clu10k",
+   "method": "alpha+ascent",
+   "missing_per_1k": 2.4625,
+   "cov2": 0.8947625,
+   "cov3": 0.9769625,
+   "cov5": 0.9975375
+  },
+  {
+   "group": "clu10k",
+   "method": "count",
+   "missing_per_1k": 1.8375,
+   "cov2": 0.9281375000000001,
+   "cov3": 0.9916625,
+   "cov5": 0.9981625
+  },
+  {
+   "group": "clu10k",
+   "method": "single-instance",
+   "missing_per_1k": 0.8875,
+   "cov2": 0.9011875,
+   "cov3": 0.9836,
+   "cov5": 0.9991125
+  },
+  {
+   "group": "clu1k",
+   "method": "POPMUSIC",
+   "missing_per_1k": 5.625,
+   "cov2": 0.84509375,
+   "cov3": 0.944265625,
+   "cov5": 0.994375
+  },
+  {
+   "group": "clu1k",
+   "method": "TourFold",
+   "missing_per_1k": 4.5625,
+   "cov2": 0.9388125,
+   "cov3": 0.990625,
+   "cov5": 0.9954375
+  },
+  {
+   "group": "clu1k",
+   "method": "alpha+ascent",
+   "missing_per_1k": 3.890625,
+   "cov2": 0.88453125,
+   "cov3": 0.972421875,
+   "cov5": 0.996109375
+  },
+  {
+   "group": "clu1k",
+   "method": "count",
+   "missing_per_1k": 5.0,
+   "cov2": 0.9379375,
+   "cov3": 0.989609375,
+   "cov5": 0.995
+  },
+  {
+   "group": "clu1k",
+   "method": "single-instance",
+   "missing_per_1k": 5.09375,
+   "cov2": 0.8876875,
+   "cov3": 0.976703125,
+   "cov5": 0.99490625
+  },
+  {
+   "group": "tsplib",
+   "method": "POPMUSIC",
+   "missing_per_1k": 7.250727614929208,
+   "cov2": 0.8627860697223823,
+   "cov3": 0.9542119112053273,
+   "cov5": 0.9927492723850707
+  },
+  {
+   "group": "tsplib",
+   "method": "TourFold",
+   "missing_per_1k": 4.098864520376291,
+   "cov2": 0.9172510254270118,
+   "cov3": 0.9811159342911393,
+   "cov5": 0.9959011354796237
+  },
+  {
+   "group": "tsplib",
+   "method": "alpha+ascent",
+   "missing_per_1k": 4.687966850013505,
+   "cov2": 0.9014881783232973,
+   "cov3": 0.9751278227238662,
+   "cov5": 0.9953120331499865
+  },
+  {
+   "group": "tsplib",
+   "method": "count",
+   "missing_per_1k": 4.3927741814114745,
+   "cov2": 0.9178562323540095,
+   "cov3": 0.9816212173206226,
+   "cov5": 0.9956072258185885
+  },
+  {
+   "group": "tsplib",
+   "method": "single-instance",
+   "missing_per_1k": 4.119657963621745,
+   "cov2": 0.8919210992725316,
+   "cov3": 0.9751177260285528,
+   "cov5": 0.9958803420363783
+  },
+  {
+   "group": "uni10k",
+   "method": "POPMUSIC",
+   "missing_per_1k": 5.6,
+   "cov2": 0.8556,
+   "cov3": 0.9490125,
+   "cov5": 0.9944
+  },
+  {
+   "group": "uni10k",
+   "method": "TourFold",
+   "missing_per_1k": 0.33749999999999997,
+   "cov2": 0.9339,
+   "cov3": 0.993725,
+   "cov5": 0.9996625
+  },
+  {
+   "group": "uni10k",
+   "method": "alpha+ascent",
+   "missing_per_1k": 2.7875,
+   "cov2": 0.8964,
+   "cov3": 0.9767875,
+   "cov5": 0.9972125000000001
+  },
+  {
+   "group": "uni10k",
+   "method": "count",
+   "missing_per_1k": 1.125,
+   "cov2": 0.9375875,
+   "cov3": 0.9939875,
+   "cov5": 0.998875
+  },
+  {
+   "group": "uni10k",
+   "method": "single-instance",
+   "missing_per_1k": 0.4375,
+   "cov2": 0.9076,
+   "cov3": 0.985225,
+   "cov5": 0.9995625
+  },
+  {
+   "group": "uni1k",
+   "method": "POPMUSIC",
+   "missing_per_1k": 5.234375,
+   "cov2": 0.853296875,
+   "cov3": 0.948703125,
+   "cov5": 0.994765625
+  },
+  {
+   "group": "uni1k",
+   "method": "TourFold",
+   "missing_per_1k": 0.25,
+   "cov2": 0.946734375,
+   "cov3": 0.996,
+   "cov5": 0.99975
+  },
+  {
+   "group": "uni1k",
+   "method": "alpha+ascent",
+   "missing_per_1k": 2.265625,
+   "cov2": 0.8932656250000001,
+   "cov3": 0.976984375,
+   "cov5": 0.997734375
+  },
+  {
+   "group": "uni1k",
+   "method": "count",
+   "missing_per_1k": 0.71875,
+   "cov2": 0.9450625,
+   "cov3": 0.995515625,
+   "cov5": 0.99928125
+  },
+  {
+   "group": "uni1k",
+   "method": "single-instance",
+   "missing_per_1k": 0.4375,
+   "cov2": 0.903484375,
+   "cov3": 0.985671875,
+   "cov5": 0.9995625
+  },
+  {
+   "group": "val",
+   "method": "POPMUSIC",
+   "missing_per_1k": 3.949819171071584,
+   "cov2": 0.8500201550702411,
+   "cov3": 0.9518820365725869,
+   "cov5": 0.9960501808289284
+  },
+  {
+   "group": "val",
+   "method": "TourFold",
+   "missing_per_1k": 7.234092554745155,
+   "cov2": 0.9624269173377136,
+   "cov3": 0.9908058568956218,
+   "cov5": 0.9927659074452548
+  },
+  {
+   "group": "val",
+   "method": "alpha+ascent",
+   "missing_per_1k": 4.5599573839596115,
+   "cov2": 0.886598681898204,
+   "cov3": 0.9715059091928742,
+   "cov5": 0.9954400426160404
+  },
+  {
+   "group": "val",
+   "method": "count",
+   "missing_per_1k": 7.595229322329363,
+   "cov2": 0.9517785422487818,
+   "cov3": 0.9900238367653525,
+   "cov5": 0.9924047706776706
+  },
+  {
+   "group": "val",
+   "method": "single-instance",
+   "missing_per_1k": 7.806559908563496,
+   "cov2": 0.8823253514033095,
+   "cov3": 0.972940488975254,
+   "cov5": 0.9921934400914365
+  }
+ ],
+ "fixing": [
+  {
+   "group": "clu10k",
+   "method": "TourFold",
+   "precision": 1.0,
+   "recall": 1.25e-05,
+   "fixed_frac": 1.25e-05
+  },
+  {
+   "group": "clu10k",
+   "method": "count backbone (all tours)",
+   "precision": 0.9966663339654657,
+   "recall": 0.6241,
+   "fixed_frac": 0.6261875
+  },
+  {
+   "group": "clu10k",
+   "method": "single-instance",
+   "precision": NaN,
+   "recall": 0.0,
+   "fixed_frac": 0.0
+  },
+  {
+   "group": "clu1k",
+   "method": "TourFold",
+   "precision": 1.0,
+   "recall": 0.002921875,
+   "fixed_frac": 0.002921875
+  },
+  {
+   "group": "clu1k",
+   "method": "count backbone (all tours)",
+   "precision": 0.9972169628396104,
+   "recall": 0.683046875,
+   "fixed_frac": 0.684953125
+  },
+  {
+   "group": "clu1k",
+   "method": "single-instance",
+   "precision": NaN,
+   "recall": 0.0,
+   "fixed_frac": 0.0
+  },
+  {
+   "group": "tsplib",
+   "method": "TourFold",
+   "precision": 0.9991087344028521,
+   "recall": 0.008323865956799062,
+   "fixed_frac": 0.008331291350159274
+  },
+  {
+   "group": "tsplib",
+   "method": "count backbone (all tours)",
+   "precision": 0.997129729291807,
+   "recall": 0.6397347649491731,
+   "fixed_frac": 0.6415762625025061
+  },
+  {
+   "group": "tsplib",
+   "method": "single-instance",
+   "precision": NaN,
+   "recall": 0.0,
+   "fixed_frac": 0.0
+  },
+  {
+   "group": "uni10k",
+   "method": "TourFold",
+   "precision": 1.0,
+   "recall": 0.0012,
+   "fixed_frac": 0.0012
+  },
+  {
+   "group": "uni10k",
+   "method": "count backbone (all tours)",
+   "precision": 0.9976930831265509,
+   "recall": 0.6433125,
+   "fixed_frac": 0.6448
+  },
+  {
+   "group": "uni10k",
+   "method": "single-instance",
+   "precision": NaN,
+   "recall": 0.0,
+   "fixed_frac": 0.0
+  },
+  {
+   "group": "uni1k",
+   "method": "TourFold",
+   "precision": 1.0,
+   "recall": 0.008125,
+   "fixed_frac": 0.008125
+  },
+  {
+   "group": "uni1k",
+   "method": "count backbone (all tours)",
+   "precision": 0.998196429386786,
+   "recall": 0.683171875,
+   "fixed_frac": 0.68440625
+  },
+  {
+   "group": "uni1k",
+   "method": "single-instance",
+   "precision": NaN,
+   "recall": 0.0,
+   "fixed_frac": 0.0
+  },
+  {
+   "group": "val",
+   "method": "TourFold",
+   "precision": 0.9990136570561456,
+   "recall": 0.0886992195789027,
+   "fixed_frac": 0.08878679380648116
+  },
+  {
+   "group": "val",
+   "method": "count backbone (all tours)",
+   "precision": 0.998143103644597,
+   "recall": 0.7676689424738372,
+   "fixed_frac": 0.7690970760312708
+  },
+  {
+   "group": "val",
+   "method": "single-instance",
+   "precision": NaN,
+   "recall": 0.0,
+   "fixed_frac": 0.0
+  }
+ ],
+ "tau": 0.99,
+ "verdict": {
+  "clu10k": {
+   "TourFold": 0.8250000000000001,
+   "count": 1.8375,
+   "POPMUSIC": 6.175,
+   "alpha+ascent": 2.4625,
+   "single-instance": 0.8875,
+   "beats_count_and_popmusic": true,
+   "wtl_vs_count": [
+    8,
+    0,
+    0
+   ],
+   "wtl_vs_POPMUSIC": [
+    8,
+    0,
+    0
+   ],
+   "wtl_vs_alpha+ascent": [
+    8,
+    0,
+    0
+   ],
+   "wtl_vs_single-instance": [
+    3,
+    4,
+    1
+   ]
+  },
+  "clu1k": {
+   "TourFold": 4.5625,
+   "count": 5.0,
+   "POPMUSIC": 5.625,
+   "alpha+ascent": 3.890625,
+   "single-instance": 5.09375,
+   "beats_count_and_popmusic": true,
+   "wtl_vs_count": [
+    19,
+    43,
+    2
+   ],
+   "wtl_vs_POPMUSIC": [
+    39,
+    5,
+    20
+   ],
+   "wtl_vs_alpha+ascent": [
+    19,
+    13,
+    32
+   ],
+   "wtl_vs_single-instance": [
+    29,
+    30,
+    5
+   ]
+  },
+  "tsplib": {
+   "TourFold": 4.098864520376291,
+   "count": 4.3927741814114745,
+   "POPMUSIC": 7.250727614929208,
+   "alpha+ascent": 4.687966850013505,
+   "single-instance": 4.119657963621745,
+   "beats_count_and_popmusic": true,
+   "wtl_vs_count": [
+    18,
+    11,
+    2
+   ],
+   "wtl_vs_POPMUSIC": [
+    28,
+    0,
+    3
+   ],
+   "wtl_vs_alpha+ascent": [
+    20,
+    4,
+    7
+   ],
+   "wtl_vs_single-instance": [
+    14,
+    10,
+    7
+   ]
+  },
+  "uni10k": {
+   "TourFold": 0.33749999999999997,
+   "count": 1.125,
+   "POPMUSIC": 5.6,
+   "alpha+ascent": 2.7875,
+   "single-instance": 0.4375,
+   "beats_count_and_popmusic": true,
+   "wtl_vs_count": [
+    8,
+    0,
+    0
+   ],
+   "wtl_vs_POPMUSIC": [
+    8,
+    0,
+    0
+   ],
+   "wtl_vs_alpha+ascent": [
+    8,
+    0,
+    0
+   ],
+   "wtl_vs_single-instance": [
+    6,
+    0,
+    2
+   ]
+  },
+  "uni1k": {
+   "TourFold": 0.25,
+   "count": 0.71875,
+   "POPMUSIC": 5.234375,
+   "alpha+ascent": 2.265625,
+   "single-instance": 0.4375,
+   "beats_count_and_popmusic": true,
+   "wtl_vs_count": [
+    24,
+    39,
+    1
+   ],
+   "wtl_vs_POPMUSIC": [
+    63,
+    1,
+    0
+   ],
+   "wtl_vs_alpha+ascent": [
+    53,
+    10,
+    1
+   ],
+   "wtl_vs_single-instance": [
+    15,
+    41,
+    8
+   ]
+  },
+  "val": {
+   "TourFold": 7.234092554745155,
+   "count": 7.595229322329363,
+   "POPMUSIC": 3.949819171071584,
+   "alpha+ascent": 4.5599573839596115,
+   "single-instance": 7.806559908563496,
+   "beats_count_and_popmusic": false,
+   "wtl_vs_count": [
+    83,
+    910,
+    7
+   ],
+   "wtl_vs_POPMUSIC": [
+    381,
+    240,
+    379
+   ],
+   "wtl_vs_alpha+ascent": [
+    328,
+    308,
+    364
+   ],
+   "wtl_vs_single-instance": [
+    170,
+    800,
+    30
+   ]
+  }
+ },
+ "groups": [
+  "val",
+  "uni1k",
+  "clu1k",
+  "uni10k",
+  "clu10k",
+  "tsplib"
+ ]
+}

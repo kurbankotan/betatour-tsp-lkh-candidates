@@ -1,0 +1,211 @@
+set,at,config,vs,wins,ties,losses
+uni1k,gap@25%B,TourFold-v2(8) ilk 5,LKH-3 POPMUSIC,4,0,4
+uni1k,gap@25%B,TourFold-v2(8) ilk 5,Kontrol: POPMUSIC + topluluk(8) başlangıcı,0,2,6
+uni1k,gap@25%B,TourFold-v2(8) ilk 5,sayım+ (8),2,4,2
+uni1k,gap@25%B,TourFold-v2(8) 3+POPMUSIC 2,LKH-3 POPMUSIC,3,0,5
+uni1k,gap@25%B,TourFold-v2(8) 3+POPMUSIC 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,2,1,5
+uni1k,gap@25%B,TourFold-v2(8) 3+POPMUSIC 2,sayım+ (8),5,1,2
+uni1k,gap@25%B,TourFold-v2(8) 3+yakın 2,LKH-3 POPMUSIC,3,1,4
+uni1k,gap@25%B,TourFold-v2(8) 3+yakın 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,1,0,7
+uni1k,gap@25%B,TourFold-v2(8) 3+yakın 2,sayım+ (8),4,2,2
+uni1k,gap@25%B,TourFold-v2(8) ∪ POPMUSIC,LKH-3 POPMUSIC,2,1,5
+uni1k,gap@25%B,TourFold-v2(8) ∪ POPMUSIC,Kontrol: POPMUSIC + topluluk(8) başlangıcı,0,2,6
+uni1k,gap@25%B,TourFold-v2(8) ∪ POPMUSIC,sayım+ (8),2,3,3
+uni1k,gap@25%B,TourFold-v2(4) 3+POPMUSIC 2,LKH-3 POPMUSIC,4,2,2
+uni1k,gap@25%B,TourFold-v2(4) 3+POPMUSIC 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,4,0,4
+uni1k,gap@25%B,TourFold-v2(4) 3+POPMUSIC 2,sayım+ (8),5,2,1
+uni1k,gap@100%B,TourFold-v2(8) ilk 5,LKH-3 POPMUSIC,4,3,1
+uni1k,gap@100%B,TourFold-v2(8) ilk 5,Kontrol: POPMUSIC + topluluk(8) başlangıcı,3,4,1
+uni1k,gap@100%B,TourFold-v2(8) ilk 5,sayım+ (8),1,7,0
+uni1k,gap@100%B,TourFold-v2(8) 3+POPMUSIC 2,LKH-3 POPMUSIC,4,3,1
+uni1k,gap@100%B,TourFold-v2(8) 3+POPMUSIC 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,2,5,1
+uni1k,gap@100%B,TourFold-v2(8) 3+POPMUSIC 2,sayım+ (8),2,5,1
+uni1k,gap@100%B,TourFold-v2(8) 3+yakın 2,LKH-3 POPMUSIC,3,4,1
+uni1k,gap@100%B,TourFold-v2(8) 3+yakın 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,3,3,2
+uni1k,gap@100%B,TourFold-v2(8) 3+yakın 2,sayım+ (8),1,6,1
+uni1k,gap@100%B,TourFold-v2(8) ∪ POPMUSIC,LKH-3 POPMUSIC,4,3,1
+uni1k,gap@100%B,TourFold-v2(8) ∪ POPMUSIC,Kontrol: POPMUSIC + topluluk(8) başlangıcı,3,4,1
+uni1k,gap@100%B,TourFold-v2(8) ∪ POPMUSIC,sayım+ (8),1,7,0
+uni1k,gap@100%B,TourFold-v2(4) 3+POPMUSIC 2,LKH-3 POPMUSIC,4,2,2
+uni1k,gap@100%B,TourFold-v2(4) 3+POPMUSIC 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,2,4,2
+uni1k,gap@100%B,TourFold-v2(4) 3+POPMUSIC 2,sayım+ (8),1,4,3
+clu1k,gap@25%B,TourFold-v2(8) ilk 5,LKH-3 POPMUSIC,2,0,6
+clu1k,gap@25%B,TourFold-v2(8) ilk 5,Kontrol: POPMUSIC + topluluk(8) başlangıcı,0,8,0
+clu1k,gap@25%B,TourFold-v2(8) ilk 5,sayım+ (8),0,8,0
+clu1k,gap@25%B,TourFold-v2(8) 3+POPMUSIC 2,LKH-3 POPMUSIC,2,0,6
+clu1k,gap@25%B,TourFold-v2(8) 3+POPMUSIC 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,0,8,0
+clu1k,gap@25%B,TourFold-v2(8) 3+POPMUSIC 2,sayım+ (8),0,8,0
+clu1k,gap@25%B,TourFold-v2(8) 3+yakın 2,LKH-3 POPMUSIC,2,0,6
+clu1k,gap@25%B,TourFold-v2(8) 3+yakın 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,0,8,0
+clu1k,gap@25%B,TourFold-v2(8) 3+yakın 2,sayım+ (8),0,8,0
+clu1k,gap@25%B,TourFold-v2(8) ∪ POPMUSIC,LKH-3 POPMUSIC,2,0,6
+clu1k,gap@25%B,TourFold-v2(8) ∪ POPMUSIC,Kontrol: POPMUSIC + topluluk(8) başlangıcı,0,8,0
+clu1k,gap@25%B,TourFold-v2(8) ∪ POPMUSIC,sayım+ (8),0,8,0
+clu1k,gap@25%B,TourFold-v2(4) 3+POPMUSIC 2,LKH-3 POPMUSIC,2,0,6
+clu1k,gap@25%B,TourFold-v2(4) 3+POPMUSIC 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,0,8,0
+clu1k,gap@25%B,TourFold-v2(4) 3+POPMUSIC 2,sayım+ (8),0,8,0
+clu1k,gap@100%B,TourFold-v2(8) ilk 5,LKH-3 POPMUSIC,6,1,1
+clu1k,gap@100%B,TourFold-v2(8) ilk 5,Kontrol: POPMUSIC + topluluk(8) başlangıcı,5,1,2
+clu1k,gap@100%B,TourFold-v2(8) ilk 5,sayım+ (8),4,4,0
+clu1k,gap@100%B,TourFold-v2(8) 3+POPMUSIC 2,LKH-3 POPMUSIC,5,2,1
+clu1k,gap@100%B,TourFold-v2(8) 3+POPMUSIC 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,3,2,3
+clu1k,gap@100%B,TourFold-v2(8) 3+POPMUSIC 2,sayım+ (8),1,6,1
+clu1k,gap@100%B,TourFold-v2(8) 3+yakın 2,LKH-3 POPMUSIC,3,1,4
+clu1k,gap@100%B,TourFold-v2(8) 3+yakın 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,3,1,4
+clu1k,gap@100%B,TourFold-v2(8) 3+yakın 2,sayım+ (8),1,4,3
+clu1k,gap@100%B,TourFold-v2(8) ∪ POPMUSIC,LKH-3 POPMUSIC,5,1,2
+clu1k,gap@100%B,TourFold-v2(8) ∪ POPMUSIC,Kontrol: POPMUSIC + topluluk(8) başlangıcı,3,2,3
+clu1k,gap@100%B,TourFold-v2(8) ∪ POPMUSIC,sayım+ (8),2,3,3
+clu1k,gap@100%B,TourFold-v2(4) 3+POPMUSIC 2,LKH-3 POPMUSIC,6,2,0
+clu1k,gap@100%B,TourFold-v2(4) 3+POPMUSIC 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,5,2,1
+clu1k,gap@100%B,TourFold-v2(4) 3+POPMUSIC 2,sayım+ (8),4,4,0
+tsplib,gap@25%B,TourFold-v2(8) ilk 5,LKH-3 POPMUSIC,6,0,5
+tsplib,gap@25%B,TourFold-v2(8) ilk 5,Kontrol: POPMUSIC + topluluk(8) başlangıcı,9,0,2
+tsplib,gap@25%B,TourFold-v2(8) ilk 5,sayım+ (8),8,0,3
+tsplib,gap@25%B,TourFold-v2(8) 3+POPMUSIC 2,LKH-3 POPMUSIC,6,1,4
+tsplib,gap@25%B,TourFold-v2(8) 3+POPMUSIC 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,7,0,4
+tsplib,gap@25%B,TourFold-v2(8) 3+POPMUSIC 2,sayım+ (8),7,0,4
+tsplib,gap@25%B,TourFold-v2(8) 3+yakın 2,LKH-3 POPMUSIC,5,0,6
+tsplib,gap@25%B,TourFold-v2(8) 3+yakın 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,6,0,5
+tsplib,gap@25%B,TourFold-v2(8) 3+yakın 2,sayım+ (8),4,1,6
+tsplib,gap@25%B,TourFold-v2(8) ∪ POPMUSIC,LKH-3 POPMUSIC,5,0,6
+tsplib,gap@25%B,TourFold-v2(8) ∪ POPMUSIC,Kontrol: POPMUSIC + topluluk(8) başlangıcı,7,0,4
+tsplib,gap@25%B,TourFold-v2(8) ∪ POPMUSIC,sayım+ (8),4,1,6
+tsplib,gap@25%B,TourFold-v2(4) 3+POPMUSIC 2,LKH-3 POPMUSIC,8,0,3
+tsplib,gap@25%B,TourFold-v2(4) 3+POPMUSIC 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,8,0,3
+tsplib,gap@25%B,TourFold-v2(4) 3+POPMUSIC 2,sayım+ (8),9,0,2
+tsplib,gap@100%B,TourFold-v2(8) ilk 5,LKH-3 POPMUSIC,5,0,6
+tsplib,gap@100%B,TourFold-v2(8) ilk 5,Kontrol: POPMUSIC + topluluk(8) başlangıcı,8,1,2
+tsplib,gap@100%B,TourFold-v2(8) ilk 5,sayım+ (8),5,2,4
+tsplib,gap@100%B,TourFold-v2(8) 3+POPMUSIC 2,LKH-3 POPMUSIC,5,1,5
+tsplib,gap@100%B,TourFold-v2(8) 3+POPMUSIC 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,8,1,2
+tsplib,gap@100%B,TourFold-v2(8) 3+POPMUSIC 2,sayım+ (8),6,1,4
+tsplib,gap@100%B,TourFold-v2(8) 3+yakın 2,LKH-3 POPMUSIC,3,0,8
+tsplib,gap@100%B,TourFold-v2(8) 3+yakın 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,6,0,5
+tsplib,gap@100%B,TourFold-v2(8) 3+yakın 2,sayım+ (8),2,2,7
+tsplib,gap@100%B,TourFold-v2(8) ∪ POPMUSIC,LKH-3 POPMUSIC,5,1,5
+tsplib,gap@100%B,TourFold-v2(8) ∪ POPMUSIC,Kontrol: POPMUSIC + topluluk(8) başlangıcı,9,0,2
+tsplib,gap@100%B,TourFold-v2(8) ∪ POPMUSIC,sayım+ (8),6,2,3
+tsplib,gap@100%B,TourFold-v2(4) 3+POPMUSIC 2,LKH-3 POPMUSIC,3,1,7
+tsplib,gap@100%B,TourFold-v2(4) 3+POPMUSIC 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,9,0,2
+tsplib,gap@100%B,TourFold-v2(4) 3+POPMUSIC 2,sayım+ (8),5,0,6
+uni10k,gap@25%B,TourFold-v2(8) ilk 5,LKH-3 POPMUSIC,0,0,8
+uni10k,gap@25%B,TourFold-v2(8) ilk 5,Kontrol: POPMUSIC + topluluk(8) başlangıcı,7,0,1
+uni10k,gap@25%B,TourFold-v2(8) ilk 5,sayım+ (8),2,0,6
+uni10k,gap@25%B,TourFold-v2(8) 3+POPMUSIC 2,LKH-3 POPMUSIC,0,0,8
+uni10k,gap@25%B,TourFold-v2(8) 3+POPMUSIC 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,6,0,2
+uni10k,gap@25%B,TourFold-v2(8) 3+POPMUSIC 2,sayım+ (8),2,0,6
+uni10k,gap@25%B,TourFold-v2(8) 3+yakın 2,LKH-3 POPMUSIC,0,0,8
+uni10k,gap@25%B,TourFold-v2(8) 3+yakın 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,6,0,2
+uni10k,gap@25%B,TourFold-v2(8) 3+yakın 2,sayım+ (8),2,0,6
+uni10k,gap@25%B,TourFold-v2(8) ∪ POPMUSIC,LKH-3 POPMUSIC,0,0,8
+uni10k,gap@25%B,TourFold-v2(8) ∪ POPMUSIC,Kontrol: POPMUSIC + topluluk(8) başlangıcı,5,0,3
+uni10k,gap@25%B,TourFold-v2(8) ∪ POPMUSIC,sayım+ (8),2,0,6
+uni10k,gap@25%B,TourFold-v2(4) 3+POPMUSIC 2,LKH-3 POPMUSIC,0,0,8
+uni10k,gap@25%B,TourFold-v2(4) 3+POPMUSIC 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,8,0,0
+uni10k,gap@25%B,TourFold-v2(4) 3+POPMUSIC 2,sayım+ (8),7,0,1
+uni10k,gap@100%B,TourFold-v2(8) ilk 5,LKH-3 POPMUSIC,2,0,6
+uni10k,gap@100%B,TourFold-v2(8) ilk 5,Kontrol: POPMUSIC + topluluk(8) başlangıcı,4,0,4
+uni10k,gap@100%B,TourFold-v2(8) ilk 5,sayım+ (8),3,0,5
+uni10k,gap@100%B,TourFold-v2(8) 3+POPMUSIC 2,LKH-3 POPMUSIC,3,0,5
+uni10k,gap@100%B,TourFold-v2(8) 3+POPMUSIC 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,6,0,2
+uni10k,gap@100%B,TourFold-v2(8) 3+POPMUSIC 2,sayım+ (8),4,0,4
+uni10k,gap@100%B,TourFold-v2(8) 3+yakın 2,LKH-3 POPMUSIC,4,0,4
+uni10k,gap@100%B,TourFold-v2(8) 3+yakın 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,5,0,3
+uni10k,gap@100%B,TourFold-v2(8) 3+yakın 2,sayım+ (8),3,0,5
+uni10k,gap@100%B,TourFold-v2(8) ∪ POPMUSIC,LKH-3 POPMUSIC,2,0,6
+uni10k,gap@100%B,TourFold-v2(8) ∪ POPMUSIC,Kontrol: POPMUSIC + topluluk(8) başlangıcı,5,0,3
+uni10k,gap@100%B,TourFold-v2(8) ∪ POPMUSIC,sayım+ (8),3,0,5
+uni10k,gap@100%B,TourFold-v2(4) 3+POPMUSIC 2,LKH-3 POPMUSIC,3,0,5
+uni10k,gap@100%B,TourFold-v2(4) 3+POPMUSIC 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,7,0,1
+uni10k,gap@100%B,TourFold-v2(4) 3+POPMUSIC 2,sayım+ (8),5,0,3
+clu10k,gap@25%B,TourFold-v2(8) ilk 5,LKH-3 POPMUSIC,0,0,8
+clu10k,gap@25%B,TourFold-v2(8) ilk 5,Kontrol: POPMUSIC + topluluk(8) başlangıcı,0,8,0
+clu10k,gap@25%B,TourFold-v2(8) ilk 5,sayım+ (8),0,8,0
+clu10k,gap@25%B,TourFold-v2(8) 3+POPMUSIC 2,LKH-3 POPMUSIC,0,0,8
+clu10k,gap@25%B,TourFold-v2(8) 3+POPMUSIC 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,0,8,0
+clu10k,gap@25%B,TourFold-v2(8) 3+POPMUSIC 2,sayım+ (8),0,8,0
+clu10k,gap@25%B,TourFold-v2(8) 3+yakın 2,LKH-3 POPMUSIC,0,0,8
+clu10k,gap@25%B,TourFold-v2(8) 3+yakın 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,0,8,0
+clu10k,gap@25%B,TourFold-v2(8) 3+yakın 2,sayım+ (8),0,8,0
+clu10k,gap@25%B,TourFold-v2(8) ∪ POPMUSIC,LKH-3 POPMUSIC,0,0,8
+clu10k,gap@25%B,TourFold-v2(8) ∪ POPMUSIC,Kontrol: POPMUSIC + topluluk(8) başlangıcı,0,8,0
+clu10k,gap@25%B,TourFold-v2(8) ∪ POPMUSIC,sayım+ (8),0,8,0
+clu10k,gap@25%B,TourFold-v2(4) 3+POPMUSIC 2,LKH-3 POPMUSIC,0,0,8
+clu10k,gap@25%B,TourFold-v2(4) 3+POPMUSIC 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,7,1,0
+clu10k,gap@25%B,TourFold-v2(4) 3+POPMUSIC 2,sayım+ (8),7,1,0
+clu10k,gap@100%B,TourFold-v2(8) ilk 5,LKH-3 POPMUSIC,5,0,3
+clu10k,gap@100%B,TourFold-v2(8) ilk 5,Kontrol: POPMUSIC + topluluk(8) başlangıcı,5,0,3
+clu10k,gap@100%B,TourFold-v2(8) ilk 5,sayım+ (8),5,0,3
+clu10k,gap@100%B,TourFold-v2(8) 3+POPMUSIC 2,LKH-3 POPMUSIC,4,0,4
+clu10k,gap@100%B,TourFold-v2(8) 3+POPMUSIC 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,4,0,4
+clu10k,gap@100%B,TourFold-v2(8) 3+POPMUSIC 2,sayım+ (8),3,0,5
+clu10k,gap@100%B,TourFold-v2(8) 3+yakın 2,LKH-3 POPMUSIC,3,0,5
+clu10k,gap@100%B,TourFold-v2(8) 3+yakın 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,3,0,5
+clu10k,gap@100%B,TourFold-v2(8) 3+yakın 2,sayım+ (8),2,0,6
+clu10k,gap@100%B,TourFold-v2(8) ∪ POPMUSIC,LKH-3 POPMUSIC,2,0,6
+clu10k,gap@100%B,TourFold-v2(8) ∪ POPMUSIC,Kontrol: POPMUSIC + topluluk(8) başlangıcı,3,0,5
+clu10k,gap@100%B,TourFold-v2(8) ∪ POPMUSIC,sayım+ (8),2,0,6
+clu10k,gap@100%B,TourFold-v2(4) 3+POPMUSIC 2,LKH-3 POPMUSIC,5,0,3
+clu10k,gap@100%B,TourFold-v2(4) 3+POPMUSIC 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,5,0,3
+clu10k,gap@100%B,TourFold-v2(4) 3+POPMUSIC 2,sayım+ (8),4,0,4
+uni20k,gap@25%B,TourFold-v2(8) ilk 5,LKH-3 POPMUSIC,0,0,4
+uni20k,gap@25%B,TourFold-v2(8) ilk 5,Kontrol: POPMUSIC + topluluk(8) başlangıcı,0,4,0
+uni20k,gap@25%B,TourFold-v2(8) ilk 5,sayım+ (8),0,4,0
+uni20k,gap@25%B,TourFold-v2(8) 3+POPMUSIC 2,LKH-3 POPMUSIC,0,0,4
+uni20k,gap@25%B,TourFold-v2(8) 3+POPMUSIC 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,0,4,0
+uni20k,gap@25%B,TourFold-v2(8) 3+POPMUSIC 2,sayım+ (8),0,4,0
+uni20k,gap@25%B,TourFold-v2(8) 3+yakın 2,LKH-3 POPMUSIC,0,0,4
+uni20k,gap@25%B,TourFold-v2(8) 3+yakın 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,0,4,0
+uni20k,gap@25%B,TourFold-v2(8) 3+yakın 2,sayım+ (8),0,4,0
+uni20k,gap@25%B,TourFold-v2(8) ∪ POPMUSIC,LKH-3 POPMUSIC,0,0,4
+uni20k,gap@25%B,TourFold-v2(8) ∪ POPMUSIC,Kontrol: POPMUSIC + topluluk(8) başlangıcı,0,4,0
+uni20k,gap@25%B,TourFold-v2(8) ∪ POPMUSIC,sayım+ (8),0,4,0
+uni20k,gap@25%B,TourFold-v2(4) 3+POPMUSIC 2,LKH-3 POPMUSIC,1,0,3
+uni20k,gap@25%B,TourFold-v2(4) 3+POPMUSIC 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,4,0,0
+uni20k,gap@25%B,TourFold-v2(4) 3+POPMUSIC 2,sayım+ (8),4,0,0
+uni20k,gap@100%B,TourFold-v2(8) ilk 5,LKH-3 POPMUSIC,1,0,3
+uni20k,gap@100%B,TourFold-v2(8) ilk 5,Kontrol: POPMUSIC + topluluk(8) başlangıcı,3,0,1
+uni20k,gap@100%B,TourFold-v2(8) ilk 5,sayım+ (8),1,0,3
+uni20k,gap@100%B,TourFold-v2(8) 3+POPMUSIC 2,LKH-3 POPMUSIC,0,0,4
+uni20k,gap@100%B,TourFold-v2(8) 3+POPMUSIC 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,3,0,1
+uni20k,gap@100%B,TourFold-v2(8) 3+POPMUSIC 2,sayım+ (8),1,0,3
+uni20k,gap@100%B,TourFold-v2(8) 3+yakın 2,LKH-3 POPMUSIC,2,0,2
+uni20k,gap@100%B,TourFold-v2(8) 3+yakın 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,4,0,0
+uni20k,gap@100%B,TourFold-v2(8) 3+yakın 2,sayım+ (8),2,0,2
+uni20k,gap@100%B,TourFold-v2(8) ∪ POPMUSIC,LKH-3 POPMUSIC,0,0,4
+uni20k,gap@100%B,TourFold-v2(8) ∪ POPMUSIC,Kontrol: POPMUSIC + topluluk(8) başlangıcı,3,0,1
+uni20k,gap@100%B,TourFold-v2(8) ∪ POPMUSIC,sayım+ (8),0,0,4
+uni20k,gap@100%B,TourFold-v2(4) 3+POPMUSIC 2,LKH-3 POPMUSIC,1,0,3
+uni20k,gap@100%B,TourFold-v2(4) 3+POPMUSIC 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,4,0,0
+uni20k,gap@100%B,TourFold-v2(4) 3+POPMUSIC 2,sayım+ (8),1,0,3
+clu20k,gap@25%B,TourFold-v2(8) ilk 5,LKH-3 POPMUSIC,0,0,4
+clu20k,gap@25%B,TourFold-v2(8) ilk 5,Kontrol: POPMUSIC + topluluk(8) başlangıcı,0,4,0
+clu20k,gap@25%B,TourFold-v2(8) ilk 5,sayım+ (8),0,4,0
+clu20k,gap@25%B,TourFold-v2(8) 3+POPMUSIC 2,LKH-3 POPMUSIC,0,0,4
+clu20k,gap@25%B,TourFold-v2(8) 3+POPMUSIC 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,0,4,0
+clu20k,gap@25%B,TourFold-v2(8) 3+POPMUSIC 2,sayım+ (8),0,4,0
+clu20k,gap@25%B,TourFold-v2(8) 3+yakın 2,LKH-3 POPMUSIC,0,0,4
+clu20k,gap@25%B,TourFold-v2(8) 3+yakın 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,0,4,0
+clu20k,gap@25%B,TourFold-v2(8) 3+yakın 2,sayım+ (8),0,4,0
+clu20k,gap@25%B,TourFold-v2(8) ∪ POPMUSIC,LKH-3 POPMUSIC,0,0,4
+clu20k,gap@25%B,TourFold-v2(8) ∪ POPMUSIC,Kontrol: POPMUSIC + topluluk(8) başlangıcı,0,4,0
+clu20k,gap@25%B,TourFold-v2(8) ∪ POPMUSIC,sayım+ (8),0,4,0
+clu20k,gap@25%B,TourFold-v2(4) 3+POPMUSIC 2,LKH-3 POPMUSIC,0,0,4
+clu20k,gap@25%B,TourFold-v2(4) 3+POPMUSIC 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,4,0,0
+clu20k,gap@25%B,TourFold-v2(4) 3+POPMUSIC 2,sayım+ (8),4,0,0
+clu20k,gap@100%B,TourFold-v2(8) ilk 5,LKH-3 POPMUSIC,1,0,3
+clu20k,gap@100%B,TourFold-v2(8) ilk 5,Kontrol: POPMUSIC + topluluk(8) başlangıcı,3,0,1
+clu20k,gap@100%B,TourFold-v2(8) ilk 5,sayım+ (8),2,0,2
+clu20k,gap@100%B,TourFold-v2(8) 3+POPMUSIC 2,LKH-3 POPMUSIC,2,0,2
+clu20k,gap@100%B,TourFold-v2(8) 3+POPMUSIC 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,3,0,1
+clu20k,gap@100%B,TourFold-v2(8) 3+POPMUSIC 2,sayım+ (8),4,0,0
+clu20k,gap@100%B,TourFold-v2(8) 3+yakın 2,LKH-3 POPMUSIC,1,0,3
+clu20k,gap@100%B,TourFold-v2(8) 3+yakın 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,3,0,1
+clu20k,gap@100%B,TourFold-v2(8) 3+yakın 2,sayım+ (8),1,0,3
+clu20k,gap@100%B,TourFold-v2(8) ∪ POPMUSIC,LKH-3 POPMUSIC,1,0,3
+clu20k,gap@100%B,TourFold-v2(8) ∪ POPMUSIC,Kontrol: POPMUSIC + topluluk(8) başlangıcı,1,0,3
+clu20k,gap@100%B,TourFold-v2(8) ∪ POPMUSIC,sayım+ (8),0,0,4
+clu20k,gap@100%B,TourFold-v2(4) 3+POPMUSIC 2,LKH-3 POPMUSIC,2,0,2
+clu20k,gap@100%B,TourFold-v2(4) 3+POPMUSIC 2,Kontrol: POPMUSIC + topluluk(8) başlangıcı,4,0,0
+clu20k,gap@100%B,TourFold-v2(4) 3+POPMUSIC 2,sayım+ (8),4,0,0

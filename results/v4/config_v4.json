@@ -1,0 +1,8 @@
+{
+ "workers": 6,
+ "seed0": 101,
+ "k_tf": 3,
+ "k": 5,
+ "pad": 3.0,
+ "overhead_s": 8.0
+}

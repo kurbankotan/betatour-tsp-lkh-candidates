@@ -1,0 +1,202 @@
+[2026-10-20 19:34:34] TourFold v2 başlıyor | ortam {'nproc': 12, 'ram_gb': 53.0, 'gpu': 'NVIDIA L4, 23034 MiB', 'numpy': '2.1.3'} | cihaz cuda | ölçek L | veri /content/drive/MyDrive/TourFold_TSP | sonuçlar /content/drive/MyDrive/TourFold_TSP/v2
+[2026-10-20 19:34:34] » 1-lkh
+[2026-10-20 19:34:43] LKH hazır: /content/tourfold_local/lkh/LKH-3.0.14/LKH (sürüm 3.0.14)
+[2026-10-20 19:34:43] » 1-selftest
+[2026-10-20 19:34:44] OK    LKH geçerli bir tur üretti
+[2026-10-20 19:34:44] OK    tur uzunluğu LKH'nin bildirdiğiyle aynı
+[2026-10-20 19:34:44] OK    LKH iyileşme izi okundu
+[2026-10-20 19:34:44] OK    LKH ön-işleme süresi okundu
+[2026-10-20 19:34:44] OK    LKH aday (CANDIDATE_FILE) ve ceza (PI_FILE) dosyaları okundu
+[2026-10-20 19:34:44] OK    π birimi (PRECISION = 100) doğrulandı
+[2026-10-20 19:34:44] OK    kendi yazdığımız aday/π dosyaları LKH'ye kabul edildi
+[2026-10-20 19:34:44] OK    tur topluluğu üretildi (POPMUSIC adaylar, ascent yok)
+[2026-10-20 19:34:44] OK    başlangıç turu + dışarıdan aday dosyasıyla LKH çalıştı
+[2026-10-20 19:34:45] BİLGİ LKH sabit kenarları 0 uzunlukla sayıyor; bildirdiği maliyetler gerçek tur uzunluğuna çevriliyor
+[2026-10-20 19:34:45] OK    sabit kenarlar (FIXED_EDGES_SECTION) LKH turunda korundu
+[2026-10-20 19:34:45] » 2-profile
+[2026-10-20 19:34:46] » 3-eval_sets
+[2026-10-20 19:36:54] TSPLIB: 32 örnek dosyası hazır
+[2026-10-20 19:36:54] » 3-eval_ref
+[2026-10-20 19:37:03] değerlendirme kümesi uni1k: 64 örnek
+[2026-10-20 19:37:14] değerlendirme kümesi clu1k: 64 örnek
+[2026-10-20 19:37:17] değerlendirme kümesi uni10k: 8 örnek
+[2026-10-20 19:37:19] değerlendirme kümesi clu10k: 8 örnek
+[2026-10-20 19:37:23] değerlendirme kümesi tsplib: 31 örnek
+[2026-10-20 19:37:23] » 3-classic_coverage
+[2026-10-20 19:37:24] » 4-train_data
+[2026-10-20 19:37:24] Kayıtlı veri hazır: 175 değerlendirme örneği, 30 eğitim parçası. Kaba tahmin: kalan ~4.4 saat (ölçülerek güncellenir; son tahmin log_v2.txt ve status_v2.json içinde)
+[2026-10-20 19:37:24] » 5-v1_tourfold
+[2026-10-20 19:38:33] » 5-v1_single
+[2026-10-20 19:38:44] » 6-train_v2
+[2026-10-20 19:38:52] TourFold-v2: 1.88 M parametre | 29000 eğitim, 1000 doğrulama örneği | topluluk boyu [4, 8, 12, 16] | grafiğe düğüm başına en çok 4 topluluk kenarı | ~1189 adım/epoch
+[2026-10-20 19:39:02] TourFold-v2: tepe GPU belleği 10.7 GB, tahmini 10 dk/epoch
+[2026-10-20 19:47:34] TourFold-v2 epoch 1/12: kayıp 2.2202 | eksik tur kenarı/1000 (ilk 5 aday): M=8 0.81, M=16 0.45, α+ascent 4.56 | 8.7 dk | bu model için kalan ~1.6 saat, tümü için ~4.3 saat
+[2026-10-20 19:56:16] TourFold-v2 epoch 2/12: kayıp 1.9377 | eksik tur kenarı/1000 (ilk 5 aday): M=8 0.75, M=16 0.39, α+ascent 4.56 | 8.7 dk | bu model için kalan ~1.4 saat, tümü için ~4.2 saat
+[2026-10-20 20:04:58] TourFold-v2 epoch 3/12: kayıp 1.8765 | eksik tur kenarı/1000 (ilk 5 aday): M=8 0.61, M=16 0.33, α+ascent 4.56 | 8.7 dk | bu model için kalan ~1.3 saat, tümü için ~4.0 saat
+[2026-10-20 20:13:40] TourFold-v2 epoch 4/12: kayıp 1.8303 | eksik tur kenarı/1000 (ilk 5 aday): M=8 0.62, M=16 0.36, α+ascent 4.56 | 8.7 dk | bu model için kalan ~1.2 saat, tümü için ~3.9 saat
+[2026-10-20 20:22:24] TourFold-v2 epoch 5/12: kayıp 1.7903 | eksik tur kenarı/1000 (ilk 5 aday): M=8 0.51, M=16 0.28, α+ascent 4.56 | 8.7 dk | bu model için kalan ~1.0 saat, tümü için ~3.7 saat
+[2026-10-20 20:31:07] TourFold-v2 epoch 6/12: kayıp 1.7644 | eksik tur kenarı/1000 (ilk 5 aday): M=8 0.56, M=16 0.29, α+ascent 4.56 | 8.7 dk | bu model için kalan ~52 dk, tümü için ~3.6 saat
+[2026-10-20 20:39:51] TourFold-v2 epoch 7/12: kayıp 1.7282 | eksik tur kenarı/1000 (ilk 5 aday): M=8 0.53, M=16 0.27, α+ascent 4.56 | 8.7 dk | bu model için kalan ~44 dk, tümü için ~3.4 saat
+[2026-10-20 20:48:34] TourFold-v2 epoch 8/12: kayıp 1.6993 | eksik tur kenarı/1000 (ilk 5 aday): M=8 0.47, M=16 0.24, α+ascent 4.56 | 8.7 dk | bu model için kalan ~35 dk, tümü için ~3.3 saat
+[2026-10-20 20:57:16] TourFold-v2 epoch 9/12: kayıp 1.6603 | eksik tur kenarı/1000 (ilk 5 aday): M=8 0.46, M=16 0.24, α+ascent 4.56 | 8.7 dk | bu model için kalan ~26 dk, tümü için ~3.1 saat
+[2026-10-20 21:05:59] TourFold-v2 epoch 10/12: kayıp 1.6311 | eksik tur kenarı/1000 (ilk 5 aday): M=8 0.49, M=16 0.27, α+ascent 4.56 | 8.7 dk | bu model için kalan ~17 dk, tümü için ~3.0 saat
+[2026-10-20 21:14:41] TourFold-v2 epoch 11/12: kayıp 1.6056 | eksik tur kenarı/1000 (ilk 5 aday): M=8 0.47, M=16 0.25, α+ascent 4.56 | 8.7 dk | bu model için kalan ~9 dk, tümü için ~2.9 saat
+[2026-10-20 21:23:23] TourFold-v2 epoch 12/12: kayıp 1.5923 | eksik tur kenarı/1000 (ilk 5 aday): M=8 0.48, M=16 0.25, α+ascent 4.56 | 8.7 dk | bu model için kalan ~1 dk, tümü için ~2.7 saat
+[2026-10-20 21:23:23] » 7-decision_v2
+[2026-10-20 21:25:44] Karar deneyi v2 — eksik tur kenarı / 1000 düğüm (ilk 5 aday):
+method  POPMUSIC  TourFold-v1 (M=16)  TourFold-v2 (M=16)  TourFold-v2 (M=8)  alpha+ascent  sayım (kNN)  sayım+ (M=16)  sayım+ (M=8)  tek-örnek
+group                                                                                                                                         
+clu10k      6.18                0.82                0.24               0.51          2.46         1.84           1.40          2.69       0.89
+clu1k       5.62                4.56                0.38               0.59          3.89         5.00           0.78          1.86       5.09
+tsplib      7.25                4.10                2.22               2.53          4.69         4.39           2.59          3.93       4.12
+uni10k      5.60                0.34                0.22               0.44          2.79         1.12           1.14          2.08       0.44
+uni1k       5.23                0.25                0.16               0.34          2.27         0.72           0.66          1.59       0.44
+val         3.95                7.23                0.25               0.48          4.56         7.60           0.66          1.32       7.81
+Doğrulama, dağılıma göre:
+method         POPMUSIC  TourFold-v1 (M=16)  TourFold-v2 (M=16)  TourFold-v2 (M=8)  alpha+ascent  sayım (kNN)  sayım+ (M=16)  sayım+ (M=8)  tek-örnek
+sub                                                                                                                                                  
+val-clustered      4.36               14.41                0.41               0.75          6.49        14.70           0.78          1.56      15.35
+val-uniform        3.55                0.12                0.09               0.20          2.64         0.55           0.54          1.09       0.32
+[2026-10-20 21:25:44] Sabitleme: süzülmüş omurga eşiği τ = 0.98, yalnız olasılık eşiği τ = 0.98
+                                    precision  recall  fixed_frac
+group  method                                                    
+clu10k TourFold-v2 olasılığı (M=8)     1.0000  0.0003      0.0003
+       omurga (M=16)                   0.9967  0.6241      0.6262
+       omurga (M=8)                    0.9914  0.6835      0.6894
+       omurga ∩ TourFold-v2 (M=8)      1.0000  0.0003      0.0003
+clu1k  TourFold-v2 olasılığı (M=8)     0.9974  0.0538      0.0539
+       omurga (M=16)                   0.9972  0.6840      0.6859
+       omurga (M=8)                    0.9930  0.7339      0.7390
+       omurga ∩ TourFold-v2 (M=8)      0.9974  0.0536      0.0537
+tsplib TourFold-v2 olasılığı (M=8)     0.9969  0.1419      0.1423
+       omurga (M=16)                   0.9971  0.6399      0.6417
+       omurga (M=8)                    0.9904  0.6922      0.6988
+       omurga ∩ TourFold-v2 (M=8)      0.9983  0.1406      0.1408
+uni10k TourFold-v2 olasılığı (M=8)     0.9985  0.0164      0.0164
+       omurga (M=16)                   0.9977  0.6433      0.6448
+       omurga (M=8)                    0.9928  0.7051      0.7102
+       omurga ∩ TourFold-v2 (M=8)      0.9985  0.0164      0.0164
+uni1k  TourFold-v2 olasılığı (M=8)     0.9978  0.0929      0.0931
+       omurga (M=16)                   0.9982  0.6832      0.6844
+       omurga (M=8)                    0.9942  0.7359      0.7403
+       omurga ∩ TourFold-v2 (M=8)      0.9980  0.0926      0.0928
+val    TourFold-v2 olasılığı (M=8)     0.9964  0.3232      0.3244
+       omurga (M=16)                   0.9981  0.7711      0.7725
+       omurga (M=8)                    0.9949  0.8063      0.8104
+       omurga ∩ TourFold-v2 (M=8)      0.9970  0.3203      0.3212
+[2026-10-20 21:25:44] » 8-lkh_eval_v2
+[2026-10-20 21:25:44] LKH karşılaştırması v2: 51 örnek (51 kaldı), 9 parça; topluluk (16 tur, ilk 8'i 8'li yapılandırmalarda) oturum içinde üretilip süresi sayılır; sabit kenar yapılandırmaları: var
+[2026-10-20 21:26:22] LKH karşılaştırması v2 (örnek): 6/51 | bu aşama için kalan ~5 dk | tümü için kalan ~5 dk
+[2026-10-20 21:26:56] LKH karşılaştırması v2 (örnek): 12/51 | bu aşama için kalan ~4 dk | tümü için kalan ~4 dk
+[2026-10-20 21:30:45] LKH karşılaştırması v2 (örnek): 18/51 | bu aşama için kalan ~9 dk | tümü için kalan ~9 dk
+[2026-10-20 21:44:43] LKH karşılaştırması v2 (örnek): 24/51 | bu aşama için kalan ~21 dk | tümü için kalan ~21 dk
+[2026-10-20 21:58:32] LKH karşılaştırması v2 (örnek): 30/51 | bu aşama için kalan ~23 dk | tümü için kalan ~23 dk
+[2026-10-20 22:11:08] LKH karşılaştırması v2 (örnek): 36/51 | bu aşama için kalan ~19 dk | tümü için kalan ~19 dk
+[2026-10-20 22:38:30] LKH karşılaştırması v2 (örnek): 42/51 | bu aşama için kalan ~16 dk | tümü için kalan ~16 dk
+[2026-10-20 23:11:42] LKH karşılaştırması v2 (örnek): 48/51 | bu aşama için kalan ~7 dk | tümü için kalan ~7 dk
+[2026-10-20 23:34:25] LKH karşılaştırması v2 (örnek): 51/51 | bu aşama için kalan ~1 dk | tümü için kalan ~1 dk
+[2026-10-20 23:34:25] LKH v2 — aynı süre bütçesinde fark (%, en iyi bilinene göre; küçük = iyi):
+                                         gap@10%B  gap@25%B  gap@50%B  gap@100%B  turlu@10%B  turlu@25%B  turlu@100%B  örnek
+set    config                                                                                                               
+uni1k  LKH-3 POPMUSIC (ascent yok)         0.2341    0.0339    0.0116     0.0098           8           8            8      8
+       LKH-3 varsayılan (α+ascent)            NaN    0.1163    0.0146     0.0076           0           5            8      8
+       Topluluk(8) + sayım+                0.2232    0.0465    0.0079     0.0036           4           8            8      8
+       Topluluk(8) omurgası sabit          0.2232    0.0258    0.0255     0.0254           4           8            8      8
+       TourFold-v2(8)                      0.2232    0.0220    0.0058     0.0006           4           8            8      8
+       TourFold-v2(16)                     0.2232    0.0708    0.0046     0.0028           4           8            8      8
+       TourFold-v2(8) + süzülmüş omurga    0.2232    0.0393    0.0052     0.0044           4           8            8      8
+clu1k  LKH-3 POPMUSIC (ascent yok)            NaN    0.1204    0.0310     0.0145           0           8            8      8
+       LKH-3 varsayılan (α+ascent)            NaN       NaN    0.5591     0.2771           0           0            8      8
+       Topluluk(8) + sayım+                   NaN    0.1758    0.0885     0.0360           0           8            8      8
+       Topluluk(8) omurgası sabit             NaN    0.1758    0.0751     0.0371           0           8            8      8
+       TourFold-v2(8)                         NaN    0.1758    0.0914     0.0063           0           8            8      8
+       TourFold-v2(16)                        NaN    0.1758    0.1194     0.0374           0           8            8      8
+       TourFold-v2(8) + süzülmüş omurga       NaN    0.1758    0.0933     0.0080           0           8            8      8
+tsplib LKH-3 POPMUSIC (ascent yok)         0.1509    0.0776    0.0508     0.0208          11          11           11     11
+       LKH-3 varsayılan (α+ascent)            NaN    1.4234    0.4278     0.2165           0           2            7     11
+       Topluluk(8) + sayım+                0.2788    0.0782    0.0510     0.0267          11          11           11     11
+       Topluluk(8) omurgası sabit          0.2765    0.0985    0.0870     0.0829          11          11           11     11
+       TourFold-v2(8)                      0.2737    0.0647    0.0471     0.0368          11          11           11     11
+       TourFold-v2(16)                     0.3240    0.1136    0.0306     0.0230          11          11           11     11
+       TourFold-v2(8) + süzülmüş omurga    0.2714    0.0708    0.0541     0.0485          11          11           11     11
+uni10k LKH-3 POPMUSIC (ascent yok)         0.1782    0.0611    0.0441     0.0275           8           8            8      8
+       LKH-3 varsayılan (α+ascent)            NaN       NaN       NaN        NaN           0           0            0      8
+       Topluluk(8) + sayım+                0.2758    0.1078    0.0505     0.0289           8           8            8      8
+       Topluluk(8) omurgası sabit          0.2758    0.0925    0.0493     0.0424           8           8            8      8
+       TourFold-v2(8)                      0.2758    0.1205    0.0486     0.0235           8           8            8      8
+       TourFold-v2(16)                     0.2758    0.2075    0.0814     0.0306           8           8            8      8
+       TourFold-v2(8) + süzülmüş omurga    0.2758    0.1130    0.0512     0.0269           8           8            8      8
+clu10k LKH-3 POPMUSIC (ascent yok)         0.5149    0.0750    0.0431     0.0244           6           8            8      8
+       LKH-3 varsayılan (α+ascent)            NaN       NaN       NaN        NaN           0           0            0      8
+       Topluluk(8) + sayım+                0.4339    0.3711    0.0556     0.0209           6           8            8      8
+       Topluluk(8) omurgası sabit          0.4339    0.3711    0.0665     0.0499           6           8            8      8
+       TourFold-v2(8)                      0.4339    0.3711    0.0557     0.0220           6           8            8      8
+       TourFold-v2(16)                     0.4339    0.3711    0.3133     0.0281           6           8            8      8
+       TourFold-v2(8) + süzülmüş omurga    0.4339    0.3711    0.0598     0.0180           6           8            8      8
+uni20k LKH-3 POPMUSIC (ascent yok)         0.1464    0.0629    0.0248     0.0055           4           4            4      4
+       LKH-3 varsayılan (α+ascent)            NaN       NaN       NaN        NaN           0           0            0      4
+       Topluluk(8) + sayım+                0.2244    0.1882    0.0314     0.0067           4           4            4      4
+       Topluluk(8) omurgası sabit          0.2244    0.1882    0.0455     0.0320           4           4            4      4
+       TourFold-v2(8)                      0.2244    0.1882    0.0537     0.0259           4           4            4      4
+       TourFold-v2(16)                     0.2244    0.1882    0.1053     0.0338           4           4            4      4
+       TourFold-v2(8) + süzülmüş omurga    0.2244    0.1882    0.0510     0.0178           4           4            4      4
+clu20k LKH-3 POPMUSIC (ascent yok)         0.3306    0.0858    0.0349     0.0065           4           4            4      4
+       LKH-3 varsayılan (α+ascent)            NaN       NaN       NaN        NaN           0           0            0      4
+       Topluluk(8) + sayım+                0.4743    0.3661    0.0620     0.0177           4           4            4      4
+       Topluluk(8) omurgası sabit          0.4743    0.3661    0.0640     0.0454           4           4            4      4
+       TourFold-v2(8)                      0.4743    0.3661    0.0706     0.0173           4           4            4      4
+       TourFold-v2(16)                     0.4743    0.3661    0.2822     0.0351           4           4            4      4
+       TourFold-v2(8) + süzülmüş omurga    0.4743    0.3661    0.0623     0.0087           4           4            4      4
+[2026-10-20 23:34:25] LKH v2 — hedef farka ulaşma süresi (sn, medyan; inf = ulaşamadı):
+                                         time_to_1.0%  time_to_0.5%  time_to_0.2%  time_to_0.1%  time_to_0.05%
+set    config                                                                                                 
+uni1k  LKH-3 POPMUSIC (ascent yok)               0.48          0.48          0.51          0.56           0.80
+       LKH-3 varsayılan (α+ascent)               1.23          1.23          1.25          1.53           1.58
+       Topluluk(8) + sayım+                      0.50          0.50          0.60          0.98           1.23
+       Topluluk(8) omurgası sabit                0.50          0.50          0.60          0.97           1.10
+       TourFold-v2(8)                            0.50          0.50          0.60          0.99           1.15
+       TourFold-v2(16)                           0.50          0.50          0.60          0.99           1.68
+       TourFold-v2(8) + süzülmüş omurga          0.50          0.50          0.60          0.99           1.17
+clu1k  LKH-3 POPMUSIC (ascent yok)               0.64          0.69          0.80          1.06           1.21
+       LKH-3 varsayılan (α+ascent)               1.73          1.81          2.44          2.44           2.46
+       Topluluk(8) + sayım+                      0.61          0.61          1.26          1.61           2.64
+       Topluluk(8) omurgası sabit                0.61          0.61          1.26          1.57           2.53
+       TourFold-v2(8)                            0.61          0.61          1.26          1.61           2.92
+       TourFold-v2(16)                           0.61          0.61          1.26          1.61           4.05
+       TourFold-v2(8) + süzülmüş omurga          0.61          0.61          1.26          1.61           2.76
+tsplib LKH-3 POPMUSIC (ascent yok)               4.66          7.91         13.98         29.28          51.58
+       LKH-3 varsayılan (α+ascent)             233.93        233.93        234.76        239.52            inf
+       Topluluk(8) + sayım+                      7.98          7.98         17.48         51.10          74.60
+       Topluluk(8) omurgası sabit                7.80          8.79         17.48         54.95            inf
+       TourFold-v2(8)                            8.26          8.26         13.77         47.18          61.60
+       TourFold-v2(16)                          10.70         13.35         17.48         41.77          47.56
+       TourFold-v2(8) + süzülmüş omurga          8.12          8.12         17.48         46.39          77.32
+uni10k LKH-3 POPMUSIC (ascent yok)               8.74          8.74         11.16         18.36          37.47
+       LKH-3 varsayılan (α+ascent)                inf           inf           inf           inf            inf
+       Topluluk(8) + sayım+                      9.65          9.65         25.41         34.69          63.91
+       Topluluk(8) omurgası sabit                9.65          9.65         25.35         29.67          55.59
+       TourFold-v2(8)                            9.65          9.65         25.30         31.69          61.95
+       TourFold-v2(16)                           9.65          9.65         42.25         52.65          73.47
+       TourFold-v2(8) + süzülmüş omurga          9.65          9.65         25.30         30.84          59.16
+clu10k LKH-3 POPMUSIC (ascent yok)              10.56         11.91         18.55         23.86          47.03
+       LKH-3 varsayılan (α+ascent)                inf           inf           inf           inf            inf
+       Topluluk(8) + sayım+                     11.58         11.80         44.57         50.66          60.44
+       Topluluk(8) omurgası sabit               11.58         11.80         42.10         47.35          75.25
+       TourFold-v2(8)                           11.58         11.80         44.43         49.70          63.73
+       TourFold-v2(16)                          11.58         11.80         76.47         86.21          98.17
+       TourFold-v2(8) + süzülmüş omurga         11.58         11.80         44.77         49.43          59.82
+uni20k LKH-3 POPMUSIC (ascent yok)              20.11         20.11         23.44         58.72          80.59
+       LKH-3 varsayılan (α+ascent)                inf           inf           inf           inf            inf
+       Topluluk(8) + sayım+                     23.92         23.92         42.17         88.97         119.38
+       Topluluk(8) omurgası sabit               23.92         23.92         42.17         91.90         140.51
+       TourFold-v2(8)                           23.92         23.92         42.17         87.18         175.20
+       TourFold-v2(16)                          23.92         23.92         42.17        152.75         213.74
+       TourFold-v2(8) + süzülmüş omurga         23.92         23.92         42.17         93.14         170.68
+clu20k LKH-3 POPMUSIC (ascent yok)              21.66         21.66         40.40         74.19         121.92
+       LKH-3 varsayılan (α+ascent)                inf           inf           inf           inf            inf
+       Topluluk(8) + sayım+                     25.91         30.52        106.33        120.70         159.01
+       Topluluk(8) omurgası sabit               25.91         30.52        104.11        116.69            inf
+       TourFold-v2(8)                           25.91         30.52        105.95        124.42         156.68
+       TourFold-v2(16)                          25.91         30.52        185.90        205.62         248.40
+       TourFold-v2(8) + süzülmüş omurga         25.91         30.52        105.94        119.25         152.16
+[2026-10-20 23:34:26] BİTTİ. Rapor: /content/drive/MyDrive/TourFold_TSP/v2/RAPOR_v2.md — bu dosyayı (ya da TourFold_v2_sonuclar.zip'i) bana gönderin.

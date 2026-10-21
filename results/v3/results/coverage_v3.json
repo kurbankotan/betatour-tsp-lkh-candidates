@@ -1,0 +1,594 @@
+{
+ "coverage": [
+  {
+   "group": "clu10k",
+   "method": "POPMUSIC",
+   "missing_per_1k": 6.175,
+   "cov2": 0.850975,
+   "cov3": 0.9461875,
+   "list_len": 4.8979125
+  },
+  {
+   "group": "clu10k",
+   "method": "TourFold-v2(4) 3+POPMUSIC 2",
+   "missing_per_1k": 2.1875,
+   "cov2": 0.9002375,
+   "cov3": 0.9868875,
+   "list_len": 5.0
+  },
+  {
+   "group": "clu10k",
+   "method": "TourFold-v2(4) ilk 5",
+   "missing_per_1k": 0.9375,
+   "cov2": 0.9002375,
+   "cov3": 0.9868875,
+   "list_len": 5.0
+  },
+  {
+   "group": "clu10k",
+   "method": "TourFold-v2(8) 3+POPMUSIC 2",
+   "missing_per_1k": 2.1374999999999997,
+   "cov2": 0.9152625,
+   "cov3": 0.98915,
+   "list_len": 5.0
+  },
+  {
+   "group": "clu10k",
+   "method": "TourFold-v2(8) 3+yakın 2",
+   "missing_per_1k": 3.6999999999999997,
+   "cov2": 0.9152625,
+   "cov3": 0.98915,
+   "list_len": 5.0
+  },
+  {
+   "group": "clu10k",
+   "method": "TourFold-v2(8) ilk 5",
+   "missing_per_1k": 0.525,
+   "cov2": 0.9152625,
+   "cov3": 0.98915,
+   "list_len": 5.0
+  },
+  {
+   "group": "clu10k",
+   "method": "TourFold-v2(8) ∪ POPMUSIC",
+   "missing_per_1k": 0.2875,
+   "cov2": 0.9152625,
+   "cov3": 0.98915,
+   "list_len": 5.759
+  },
+  {
+   "group": "clu10k",
+   "method": "en yakın 5 komşu",
+   "missing_per_1k": 18.225,
+   "cov2": 0.8293125,
+   "cov3": 0.9239,
+   "list_len": 5.0
+  },
+  {
+   "group": "clu10k",
+   "method": "sayım+ (8)",
+   "missing_per_1k": 2.6875,
+   "cov2": 0.92315,
+   "cov3": 0.9889,
+   "list_len": 5.0
+  },
+  {
+   "group": "clu10k",
+   "method": "α+ascent (LKH-3 varsayılan)",
+   "missing_per_1k": 2.4625,
+   "cov2": 0.8947625,
+   "cov3": 0.9769625,
+   "list_len": 4.9680375
+  },
+  {
+   "group": "clu1k",
+   "method": "POPMUSIC",
+   "missing_per_1k": 5.625,
+   "cov2": 0.84509375,
+   "cov3": 0.944265625,
+   "list_len": 4.739390625
+  },
+  {
+   "group": "clu1k",
+   "method": "TourFold-v2(4) 3+POPMUSIC 2",
+   "missing_per_1k": 1.625,
+   "cov2": 0.92521875,
+   "cov3": 0.99034375,
+   "list_len": 5.0
+  },
+  {
+   "group": "clu1k",
+   "method": "TourFold-v2(4) ilk 5",
+   "missing_per_1k": 1.265625,
+   "cov2": 0.92521875,
+   "cov3": 0.99034375,
+   "list_len": 5.0
+  },
+  {
+   "group": "clu1k",
+   "method": "TourFold-v2(8) 3+POPMUSIC 2",
+   "missing_per_1k": 1.1875,
+   "cov2": 0.93996875,
+   "cov3": 0.99325,
+   "list_len": 5.0
+  },
+  {
+   "group": "clu1k",
+   "method": "TourFold-v2(8) 3+yakın 2",
+   "missing_per_1k": 2.25,
+   "cov2": 0.93996875,
+   "cov3": 0.99325,
+   "list_len": 5.0
+  },
+  {
+   "group": "clu1k",
+   "method": "TourFold-v2(8) ilk 5",
+   "missing_per_1k": 0.609375,
+   "cov2": 0.93996875,
+   "cov3": 0.99325,
+   "list_len": 5.0
+  },
+  {
+   "group": "clu1k",
+   "method": "TourFold-v2(8) ∪ POPMUSIC",
+   "missing_per_1k": 0.3125,
+   "cov2": 0.93996875,
+   "cov3": 0.99325,
+   "list_len": 5.7264375
+  },
+  {
+   "group": "clu1k",
+   "method": "en yakın 5 komşu",
+   "missing_per_1k": 23.40625,
+   "cov2": 0.8241875,
+   "cov3": 0.916734375,
+   "list_len": 5.0
+  },
+  {
+   "group": "clu1k",
+   "method": "sayım+ (8)",
+   "missing_per_1k": 1.859375,
+   "cov2": 0.936890625,
+   "cov3": 0.991828125,
+   "list_len": 5.0
+  },
+  {
+   "group": "clu1k",
+   "method": "α+ascent (LKH-3 varsayılan)",
+   "missing_per_1k": 3.890625,
+   "cov2": 0.88453125,
+   "cov3": 0.972421875,
+   "list_len": 4.9711875
+  },
+  {
+   "group": "tsplib",
+   "method": "POPMUSIC",
+   "missing_per_1k": 7.250727614929208,
+   "cov2": 0.8627860697223823,
+   "cov3": 0.9542119112053273,
+   "list_len": 4.733534623044994
+  },
+  {
+   "group": "tsplib",
+   "method": "TourFold-v2(4) 3+POPMUSIC 2",
+   "missing_per_1k": 3.6407142155266503,
+   "cov2": 0.8992236918693477,
+   "cov3": 0.9771504625782345,
+   "list_len": 5.0
+  },
+  {
+   "group": "tsplib",
+   "method": "TourFold-v2(4) ilk 5",
+   "missing_per_1k": 2.9938948092335185,
+   "cov2": 0.8992236918693477,
+   "cov3": 0.9771504625782345,
+   "list_len": 5.0
+  },
+  {
+   "group": "tsplib",
+   "method": "TourFold-v2(8) 3+POPMUSIC 2",
+   "missing_per_1k": 3.2329973124469378,
+   "cov2": 0.9129436171025715,
+   "cov3": 0.9805247967790788,
+   "list_len": 5.0
+  },
+  {
+   "group": "tsplib",
+   "method": "TourFold-v2(8) 3+yakın 2",
+   "missing_per_1k": 4.643006452338677,
+   "cov2": 0.9129436171025715,
+   "cov3": 0.9805247967790788,
+   "list_len": 5.0
+  },
+  {
+   "group": "tsplib",
+   "method": "TourFold-v2(8) ilk 5",
+   "missing_per_1k": 2.5455870591474414,
+   "cov2": 0.9129436171025715,
+   "cov3": 0.9805247967790788,
+   "list_len": 5.0
+  },
+  {
+   "group": "tsplib",
+   "method": "TourFold-v2(8) ∪ POPMUSIC",
+   "missing_per_1k": 1.9486794152787628,
+   "cov2": 0.9129436171025715,
+   "cov3": 0.9805247967790788,
+   "list_len": 5.862701660038944
+  },
+  {
+   "group": "tsplib",
+   "method": "en yakın 5 komşu",
+   "missing_per_1k": 21.67769974362495,
+   "cov2": 0.8543709437014441,
+   "cov3": 0.9368595943218785,
+   "list_len": 5.0
+  },
+  {
+   "group": "tsplib",
+   "method": "sayım+ (8)",
+   "missing_per_1k": 3.92696260515408,
+   "cov2": 0.9161704027583051,
+   "cov3": 0.9807320530264901,
+   "list_len": 5.0
+  },
+  {
+   "group": "tsplib",
+   "method": "α+ascent (LKH-3 varsayılan)",
+   "missing_per_1k": 4.687966850013505,
+   "cov2": 0.9014881783232973,
+   "cov3": 0.9751278227238662,
+   "list_len": 4.977844425401134
+  },
+  {
+   "group": "uni10k",
+   "method": "POPMUSIC",
+   "missing_per_1k": 5.6,
+   "cov2": 0.8556,
+   "cov3": 0.9490125,
+   "list_len": 4.882825
+  },
+  {
+   "group": "uni10k",
+   "method": "TourFold-v2(4) 3+POPMUSIC 2",
+   "missing_per_1k": 1.9125,
+   "cov2": 0.91215,
+   "cov3": 0.989575,
+   "list_len": 5.0
+  },
+  {
+   "group": "uni10k",
+   "method": "TourFold-v2(4) ilk 5",
+   "missing_per_1k": 0.7375,
+   "cov2": 0.91215,
+   "cov3": 0.989575,
+   "list_len": 5.0
+  },
+  {
+   "group": "uni10k",
+   "method": "TourFold-v2(8) 3+POPMUSIC 2",
+   "missing_per_1k": 1.7375,
+   "cov2": 0.9274625,
+   "cov3": 0.991825,
+   "list_len": 5.0
+  },
+  {
+   "group": "uni10k",
+   "method": "TourFold-v2(8) 3+yakın 2",
+   "missing_per_1k": 2.85,
+   "cov2": 0.9274625,
+   "cov3": 0.991825,
+   "list_len": 5.0
+  },
+  {
+   "group": "uni10k",
+   "method": "TourFold-v2(8) ilk 5",
+   "missing_per_1k": 0.425,
+   "cov2": 0.9274625,
+   "cov3": 0.991825,
+   "list_len": 5.0
+  },
+  {
+   "group": "uni10k",
+   "method": "TourFold-v2(8) ∪ POPMUSIC",
+   "missing_per_1k": 0.2875,
+   "cov2": 0.9274625,
+   "cov3": 0.991825,
+   "list_len": 5.738725
+  },
+  {
+   "group": "uni10k",
+   "method": "en yakın 5 komşu",
+   "missing_per_1k": 17.5125,
+   "cov2": 0.827925,
+   "cov3": 0.9227,
+   "list_len": 5.0
+  },
+  {
+   "group": "uni10k",
+   "method": "sayım+ (8)",
+   "missing_per_1k": 2.075,
+   "cov2": 0.93385,
+   "cov3": 0.991175,
+   "list_len": 5.0
+  },
+  {
+   "group": "uni10k",
+   "method": "α+ascent (LKH-3 varsayılan)",
+   "missing_per_1k": 2.7875,
+   "cov2": 0.8964,
+   "cov3": 0.9767875,
+   "list_len": 4.9936
+  },
+  {
+   "group": "uni1k",
+   "method": "POPMUSIC",
+   "missing_per_1k": 5.234375,
+   "cov2": 0.853296875,
+   "cov3": 0.948703125,
+   "list_len": 4.76153125
+  },
+  {
+   "group": "uni1k",
+   "method": "TourFold-v2(4) 3+POPMUSIC 2",
+   "missing_per_1k": 1.484375,
+   "cov2": 0.924671875,
+   "cov3": 0.992109375,
+   "list_len": 5.0
+  },
+  {
+   "group": "uni1k",
+   "method": "TourFold-v2(4) ilk 5",
+   "missing_per_1k": 0.578125,
+   "cov2": 0.924671875,
+   "cov3": 0.992109375,
+   "list_len": 5.0
+  },
+  {
+   "group": "uni1k",
+   "method": "TourFold-v2(8) 3+POPMUSIC 2",
+   "missing_per_1k": 1.09375,
+   "cov2": 0.938921875,
+   "cov3": 0.994625,
+   "list_len": 5.0
+  },
+  {
+   "group": "uni1k",
+   "method": "TourFold-v2(8) 3+yakın 2",
+   "missing_per_1k": 1.90625,
+   "cov2": 0.938921875,
+   "cov3": 0.994625,
+   "list_len": 5.0
+  },
+  {
+   "group": "uni1k",
+   "method": "TourFold-v2(8) ilk 5",
+   "missing_per_1k": 0.3125,
+   "cov2": 0.938921875,
+   "cov3": 0.994625,
+   "list_len": 5.0
+  },
+  {
+   "group": "uni1k",
+   "method": "TourFold-v2(8) ∪ POPMUSIC",
+   "missing_per_1k": 0.15625,
+   "cov2": 0.938921875,
+   "cov3": 0.994625,
+   "list_len": 5.6918125
+  },
+  {
+   "group": "uni1k",
+   "method": "en yakın 5 komşu",
+   "missing_per_1k": 19.53125,
+   "cov2": 0.8255625,
+   "cov3": 0.91990625,
+   "list_len": 5.0
+  },
+  {
+   "group": "uni1k",
+   "method": "sayım+ (8)",
+   "missing_per_1k": 1.59375,
+   "cov2": 0.942609375,
+   "cov3": 0.99365625,
+   "list_len": 5.0
+  },
+  {
+   "group": "uni1k",
+   "method": "α+ascent (LKH-3 varsayılan)",
+   "missing_per_1k": 2.265625,
+   "cov2": 0.8932656250000001,
+   "cov3": 0.976984375,
+   "list_len": 4.989578125
+  },
+  {
+   "group": "val",
+   "method": "POPMUSIC",
+   "missing_per_1k": 3.949819171071584,
+   "cov2": 0.8500201550702411,
+   "cov3": 0.9518820365725869,
+   "list_len": 4.370622672289009
+  },
+  {
+   "group": "val",
+   "method": "TourFold-v2(4) 3+POPMUSIC 2",
+   "missing_per_1k": 0.8827781791655626,
+   "cov2": 0.9595263249500916,
+   "cov3": 0.9940893798266116,
+   "list_len": 5.0
+  },
+  {
+   "group": "val",
+   "method": "TourFold-v2(4) ilk 5",
+   "missing_per_1k": 0.8704025331587376,
+   "cov2": 0.9595263249500916,
+   "cov3": 0.9940893798266116,
+   "list_len": 5.0
+  },
+  {
+   "group": "val",
+   "method": "TourFold-v2(8) 3+POPMUSIC 2",
+   "missing_per_1k": 0.5930405552664533,
+   "cov2": 0.9649676367715477,
+   "cov3": 0.996610637562421,
+   "list_len": 5.0
+  },
+  {
+   "group": "val",
+   "method": "TourFold-v2(8) 3+yakın 2",
+   "missing_per_1k": 1.406594123218891,
+   "cov2": 0.9649676367715477,
+   "cov3": 0.996610637562421,
+   "list_len": 5.0
+  },
+  {
+   "group": "val",
+   "method": "TourFold-v2(8) ilk 5",
+   "missing_per_1k": 0.47550816157224546,
+   "cov2": 0.9649676367715477,
+   "cov3": 0.996610637562421,
+   "list_len": 5.0
+  },
+  {
+   "group": "val",
+   "method": "TourFold-v2(8) ∪ POPMUSIC",
+   "missing_per_1k": 0.20353165730724732,
+   "cov2": 0.9649676367715477,
+   "cov3": 0.996610637562421,
+   "list_len": 5.584119979848761
+  },
+  {
+   "group": "val",
+   "method": "en yakın 5 komşu",
+   "missing_per_1k": 30.515558534671932,
+   "cov2": 0.8154707445818827,
+   "cov3": 0.9092710547594204,
+   "list_len": 5.0
+  },
+  {
+   "group": "val",
+   "method": "sayım+ (8)",
+   "missing_per_1k": 1.3200664110033957,
+   "cov2": 0.9552454639218522,
+   "cov3": 0.995185210541584,
+   "list_len": 5.0
+  },
+  {
+   "group": "val",
+   "method": "α+ascent (LKH-3 varsayılan)",
+   "missing_per_1k": 4.5599573839596115,
+   "cov2": 0.886598681898204,
+   "cov3": 0.9715059091928742,
+   "list_len": 4.986365393910368
+  }
+ ],
+ "val_by_dist": [
+  {
+   "sub": "val-clustered",
+   "method": "POPMUSIC",
+   "missing_per_1k": 4.356988541565829
+  },
+  {
+   "sub": "val-clustered",
+   "method": "TourFold-v2(4) 3+POPMUSIC 2",
+   "missing_per_1k": 0.8700332682265901
+  },
+  {
+   "sub": "val-clustered",
+   "method": "TourFold-v2(4) ilk 5",
+   "missing_per_1k": 1.3819414252368578
+  },
+  {
+   "sub": "val-clustered",
+   "method": "TourFold-v2(8) 3+POPMUSIC 2",
+   "missing_per_1k": 0.6363819726102973
+  },
+  {
+   "sub": "val-clustered",
+   "method": "TourFold-v2(8) 3+yakın 2",
+   "missing_per_1k": 1.6440854248419914
+  },
+  {
+   "sub": "val-clustered",
+   "method": "TourFold-v2(8) ilk 5",
+   "missing_per_1k": 0.755878351554273
+  },
+  {
+   "sub": "val-clustered",
+   "method": "TourFold-v2(8) ∪ POPMUSIC",
+   "missing_per_1k": 0.28505203875764396
+  },
+  {
+   "sub": "val-clustered",
+   "method": "en yakın 5 komşu",
+   "missing_per_1k": 40.295561838398015
+  },
+  {
+   "sub": "val-clustered",
+   "method": "sayım+ (8)",
+   "missing_per_1k": 1.5562891597556447
+  },
+  {
+   "sub": "val-clustered",
+   "method": "α+ascent (LKH-3 varsayılan)",
+   "missing_per_1k": 6.494852032028271
+  },
+  {
+   "sub": "val-uniform",
+   "method": "POPMUSIC",
+   "missing_per_1k": 3.5458941780314768
+  },
+  {
+   "sub": "val-uniform",
+   "method": "TourFold-v2(4) 3+POPMUSIC 2",
+   "missing_per_1k": 0.8954215370293239
+  },
+  {
+   "sub": "val-uniform",
+   "method": "TourFold-v2(4) ilk 5",
+   "missing_per_1k": 0.36293964818880947
+  },
+  {
+   "sub": "val-uniform",
+   "method": "TourFold-v2(8) 3+POPMUSIC 2",
+   "missing_per_1k": 0.5500444878616039
+  },
+  {
+   "sub": "val-uniform",
+   "method": "TourFold-v2(8) 3+yakın 2",
+   "missing_per_1k": 1.1709951825648988
+  },
+  {
+   "sub": "val-uniform",
+   "method": "TourFold-v2(8) ilk 5",
+   "missing_per_1k": 0.19737199700840147
+  },
+  {
+   "sub": "val-uniform",
+   "method": "TourFold-v2(8) ∪ POPMUSIC",
+   "missing_per_1k": 0.12266084064928412
+  },
+  {
+   "sub": "val-uniform",
+   "method": "en yakın 5 komşu",
+   "missing_per_1k": 20.813483544122942
+  },
+  {
+   "sub": "val-uniform",
+   "method": "sayım+ (8)",
+   "missing_per_1k": 1.085725915229252
+  },
+  {
+   "sub": "val-uniform",
+   "method": "α+ascent (LKH-3 varsayılan)",
+   "missing_per_1k": 2.640480223126559
+  }
+ ],
+ "groups": [
+  "val",
+  "uni1k",
+  "clu1k",
+  "uni10k",
+  "clu10k",
+  "tsplib"
+ ]
+}

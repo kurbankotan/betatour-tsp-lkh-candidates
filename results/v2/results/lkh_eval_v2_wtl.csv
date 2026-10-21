@@ -1,0 +1,169 @@
+set,at,config,vs,wins,losses,ties
+uni1k,gap@25%B,TourFold-v2(8),LKH-3 POPMUSIC (ascent yok),4,3,1
+uni1k,gap@25%B,TourFold-v2(8),LKH-3 varsayılan (α+ascent),8,0,0
+uni1k,gap@25%B,TourFold-v2(8),Topluluk(8) + sayım+,5,1,2
+uni1k,gap@25%B,TourFold-v2(8),Topluluk(8) omurgası sabit,4,3,1
+uni1k,gap@25%B,TourFold-v2(16),LKH-3 POPMUSIC (ascent yok),2,6,0
+uni1k,gap@25%B,TourFold-v2(16),LKH-3 varsayılan (α+ascent),7,1,0
+uni1k,gap@25%B,TourFold-v2(16),Topluluk(8) + sayım+,0,6,2
+uni1k,gap@25%B,TourFold-v2(16),Topluluk(8) omurgası sabit,0,8,0
+uni1k,gap@25%B,TourFold-v2(8) + süzülmüş omurga,LKH-3 POPMUSIC (ascent yok),3,5,0
+uni1k,gap@25%B,TourFold-v2(8) + süzülmüş omurga,LKH-3 varsayılan (α+ascent),7,1,0
+uni1k,gap@25%B,TourFold-v2(8) + süzülmüş omurga,Topluluk(8) + sayım+,3,2,3
+uni1k,gap@25%B,TourFold-v2(8) + süzülmüş omurga,Topluluk(8) omurgası sabit,0,8,0
+uni1k,gap@100%B,TourFold-v2(8),LKH-3 POPMUSIC (ascent yok),4,0,4
+uni1k,gap@100%B,TourFold-v2(8),LKH-3 varsayılan (α+ascent),5,0,3
+uni1k,gap@100%B,TourFold-v2(8),Topluluk(8) + sayım+,2,1,5
+uni1k,gap@100%B,TourFold-v2(8),Topluluk(8) omurgası sabit,7,0,1
+uni1k,gap@100%B,TourFold-v2(16),LKH-3 POPMUSIC (ascent yok),4,1,3
+uni1k,gap@100%B,TourFold-v2(16),LKH-3 varsayılan (α+ascent),3,0,5
+uni1k,gap@100%B,TourFold-v2(16),Topluluk(8) + sayım+,1,0,7
+uni1k,gap@100%B,TourFold-v2(16),Topluluk(8) omurgası sabit,7,0,1
+uni1k,gap@100%B,TourFold-v2(8) + süzülmüş omurga,LKH-3 POPMUSIC (ascent yok),2,2,4
+uni1k,gap@100%B,TourFold-v2(8) + süzülmüş omurga,LKH-3 varsayılan (α+ascent),2,1,5
+uni1k,gap@100%B,TourFold-v2(8) + süzülmüş omurga,Topluluk(8) + sayım+,1,2,5
+uni1k,gap@100%B,TourFold-v2(8) + süzülmüş omurga,Topluluk(8) omurgası sabit,7,0,1
+clu1k,gap@25%B,TourFold-v2(8),LKH-3 POPMUSIC (ascent yok),2,6,0
+clu1k,gap@25%B,TourFold-v2(8),LKH-3 varsayılan (α+ascent),8,0,0
+clu1k,gap@25%B,TourFold-v2(8),Topluluk(8) + sayım+,0,0,8
+clu1k,gap@25%B,TourFold-v2(8),Topluluk(8) omurgası sabit,0,0,8
+clu1k,gap@25%B,TourFold-v2(16),LKH-3 POPMUSIC (ascent yok),2,6,0
+clu1k,gap@25%B,TourFold-v2(16),LKH-3 varsayılan (α+ascent),8,0,0
+clu1k,gap@25%B,TourFold-v2(16),Topluluk(8) + sayım+,0,0,8
+clu1k,gap@25%B,TourFold-v2(16),Topluluk(8) omurgası sabit,0,0,8
+clu1k,gap@25%B,TourFold-v2(8) + süzülmüş omurga,LKH-3 POPMUSIC (ascent yok),2,6,0
+clu1k,gap@25%B,TourFold-v2(8) + süzülmüş omurga,LKH-3 varsayılan (α+ascent),8,0,0
+clu1k,gap@25%B,TourFold-v2(8) + süzülmüş omurga,Topluluk(8) + sayım+,0,0,8
+clu1k,gap@25%B,TourFold-v2(8) + süzülmüş omurga,Topluluk(8) omurgası sabit,0,0,8
+clu1k,gap@100%B,TourFold-v2(8),LKH-3 POPMUSIC (ascent yok),5,1,2
+clu1k,gap@100%B,TourFold-v2(8),LKH-3 varsayılan (α+ascent),5,0,3
+clu1k,gap@100%B,TourFold-v2(8),Topluluk(8) + sayım+,2,0,6
+clu1k,gap@100%B,TourFold-v2(8),Topluluk(8) omurgası sabit,7,0,1
+clu1k,gap@100%B,TourFold-v2(16),LKH-3 POPMUSIC (ascent yok),2,5,1
+clu1k,gap@100%B,TourFold-v2(16),LKH-3 varsayılan (α+ascent),5,1,2
+clu1k,gap@100%B,TourFold-v2(16),Topluluk(8) + sayım+,1,4,3
+clu1k,gap@100%B,TourFold-v2(16),Topluluk(8) omurgası sabit,4,3,1
+clu1k,gap@100%B,TourFold-v2(8) + süzülmüş omurga,LKH-3 POPMUSIC (ascent yok),5,0,3
+clu1k,gap@100%B,TourFold-v2(8) + süzülmüş omurga,LKH-3 varsayılan (α+ascent),5,1,2
+clu1k,gap@100%B,TourFold-v2(8) + süzülmüş omurga,Topluluk(8) + sayım+,3,0,5
+clu1k,gap@100%B,TourFold-v2(8) + süzülmüş omurga,Topluluk(8) omurgası sabit,7,0,1
+tsplib,gap@25%B,TourFold-v2(8),LKH-3 POPMUSIC (ascent yok),6,5,0
+tsplib,gap@25%B,TourFold-v2(8),LKH-3 varsayılan (α+ascent),10,1,0
+tsplib,gap@25%B,TourFold-v2(8),Topluluk(8) + sayım+,9,1,1
+tsplib,gap@25%B,TourFold-v2(8),Topluluk(8) omurgası sabit,9,2,0
+tsplib,gap@25%B,TourFold-v2(16),LKH-3 POPMUSIC (ascent yok),5,6,0
+tsplib,gap@25%B,TourFold-v2(16),LKH-3 varsayılan (α+ascent),11,0,0
+tsplib,gap@25%B,TourFold-v2(16),Topluluk(8) + sayım+,5,6,0
+tsplib,gap@25%B,TourFold-v2(16),Topluluk(8) omurgası sabit,5,6,0
+tsplib,gap@25%B,TourFold-v2(8) + süzülmüş omurga,LKH-3 POPMUSIC (ascent yok),5,6,0
+tsplib,gap@25%B,TourFold-v2(8) + süzülmüş omurga,LKH-3 varsayılan (α+ascent),11,0,0
+tsplib,gap@25%B,TourFold-v2(8) + süzülmüş omurga,Topluluk(8) + sayım+,8,2,1
+tsplib,gap@25%B,TourFold-v2(8) + süzülmüş omurga,Topluluk(8) omurgası sabit,10,1,0
+tsplib,gap@100%B,TourFold-v2(8),LKH-3 POPMUSIC (ascent yok),4,6,1
+tsplib,gap@100%B,TourFold-v2(8),LKH-3 varsayılan (α+ascent),9,2,0
+tsplib,gap@100%B,TourFold-v2(8),Topluluk(8) + sayım+,4,6,1
+tsplib,gap@100%B,TourFold-v2(8),Topluluk(8) omurgası sabit,10,1,0
+tsplib,gap@100%B,TourFold-v2(16),LKH-3 POPMUSIC (ascent yok),6,4,1
+tsplib,gap@100%B,TourFold-v2(16),LKH-3 varsayılan (α+ascent),9,2,0
+tsplib,gap@100%B,TourFold-v2(16),Topluluk(8) + sayım+,5,5,1
+tsplib,gap@100%B,TourFold-v2(16),Topluluk(8) omurgası sabit,9,2,0
+tsplib,gap@100%B,TourFold-v2(8) + süzülmüş omurga,LKH-3 POPMUSIC (ascent yok),2,9,0
+tsplib,gap@100%B,TourFold-v2(8) + süzülmüş omurga,LKH-3 varsayılan (α+ascent),10,1,0
+tsplib,gap@100%B,TourFold-v2(8) + süzülmüş omurga,Topluluk(8) + sayım+,4,6,1
+tsplib,gap@100%B,TourFold-v2(8) + süzülmüş omurga,Topluluk(8) omurgası sabit,9,2,0
+uni10k,gap@25%B,TourFold-v2(8),LKH-3 POPMUSIC (ascent yok),0,8,0
+uni10k,gap@25%B,TourFold-v2(8),LKH-3 varsayılan (α+ascent),8,0,0
+uni10k,gap@25%B,TourFold-v2(8),Topluluk(8) + sayım+,3,5,0
+uni10k,gap@25%B,TourFold-v2(8),Topluluk(8) omurgası sabit,1,7,0
+uni10k,gap@25%B,TourFold-v2(16),LKH-3 POPMUSIC (ascent yok),0,8,0
+uni10k,gap@25%B,TourFold-v2(16),LKH-3 varsayılan (α+ascent),8,0,0
+uni10k,gap@25%B,TourFold-v2(16),Topluluk(8) + sayım+,0,8,0
+uni10k,gap@25%B,TourFold-v2(16),Topluluk(8) omurgası sabit,0,8,0
+uni10k,gap@25%B,TourFold-v2(8) + süzülmüş omurga,LKH-3 POPMUSIC (ascent yok),0,8,0
+uni10k,gap@25%B,TourFold-v2(8) + süzülmüş omurga,LKH-3 varsayılan (α+ascent),8,0,0
+uni10k,gap@25%B,TourFold-v2(8) + süzülmüş omurga,Topluluk(8) + sayım+,4,4,0
+uni10k,gap@25%B,TourFold-v2(8) + süzülmüş omurga,Topluluk(8) omurgası sabit,2,6,0
+uni10k,gap@100%B,TourFold-v2(8),LKH-3 POPMUSIC (ascent yok),4,4,0
+uni10k,gap@100%B,TourFold-v2(8),LKH-3 varsayılan (α+ascent),8,0,0
+uni10k,gap@100%B,TourFold-v2(8),Topluluk(8) + sayım+,6,2,0
+uni10k,gap@100%B,TourFold-v2(8),Topluluk(8) omurgası sabit,7,1,0
+uni10k,gap@100%B,TourFold-v2(16),LKH-3 POPMUSIC (ascent yok),3,5,0
+uni10k,gap@100%B,TourFold-v2(16),LKH-3 varsayılan (α+ascent),8,0,0
+uni10k,gap@100%B,TourFold-v2(16),Topluluk(8) + sayım+,4,4,0
+uni10k,gap@100%B,TourFold-v2(16),Topluluk(8) omurgası sabit,6,2,0
+uni10k,gap@100%B,TourFold-v2(8) + süzülmüş omurga,LKH-3 POPMUSIC (ascent yok),5,3,0
+uni10k,gap@100%B,TourFold-v2(8) + süzülmüş omurga,LKH-3 varsayılan (α+ascent),8,0,0
+uni10k,gap@100%B,TourFold-v2(8) + süzülmüş omurga,Topluluk(8) + sayım+,4,4,0
+uni10k,gap@100%B,TourFold-v2(8) + süzülmüş omurga,Topluluk(8) omurgası sabit,7,1,0
+clu10k,gap@25%B,TourFold-v2(8),LKH-3 POPMUSIC (ascent yok),0,8,0
+clu10k,gap@25%B,TourFold-v2(8),LKH-3 varsayılan (α+ascent),8,0,0
+clu10k,gap@25%B,TourFold-v2(8),Topluluk(8) + sayım+,0,0,8
+clu10k,gap@25%B,TourFold-v2(8),Topluluk(8) omurgası sabit,0,0,8
+clu10k,gap@25%B,TourFold-v2(16),LKH-3 POPMUSIC (ascent yok),0,8,0
+clu10k,gap@25%B,TourFold-v2(16),LKH-3 varsayılan (α+ascent),8,0,0
+clu10k,gap@25%B,TourFold-v2(16),Topluluk(8) + sayım+,0,0,8
+clu10k,gap@25%B,TourFold-v2(16),Topluluk(8) omurgası sabit,0,0,8
+clu10k,gap@25%B,TourFold-v2(8) + süzülmüş omurga,LKH-3 POPMUSIC (ascent yok),0,8,0
+clu10k,gap@25%B,TourFold-v2(8) + süzülmüş omurga,LKH-3 varsayılan (α+ascent),8,0,0
+clu10k,gap@25%B,TourFold-v2(8) + süzülmüş omurga,Topluluk(8) + sayım+,0,0,8
+clu10k,gap@25%B,TourFold-v2(8) + süzülmüş omurga,Topluluk(8) omurgası sabit,0,0,8
+clu10k,gap@100%B,TourFold-v2(8),LKH-3 POPMUSIC (ascent yok),3,5,0
+clu10k,gap@100%B,TourFold-v2(8),LKH-3 varsayılan (α+ascent),8,0,0
+clu10k,gap@100%B,TourFold-v2(8),Topluluk(8) + sayım+,4,4,0
+clu10k,gap@100%B,TourFold-v2(8),Topluluk(8) omurgası sabit,8,0,0
+clu10k,gap@100%B,TourFold-v2(16),LKH-3 POPMUSIC (ascent yok),4,4,0
+clu10k,gap@100%B,TourFold-v2(16),LKH-3 varsayılan (α+ascent),8,0,0
+clu10k,gap@100%B,TourFold-v2(16),Topluluk(8) + sayım+,3,5,0
+clu10k,gap@100%B,TourFold-v2(16),Topluluk(8) omurgası sabit,6,2,0
+clu10k,gap@100%B,TourFold-v2(8) + süzülmüş omurga,LKH-3 POPMUSIC (ascent yok),5,3,0
+clu10k,gap@100%B,TourFold-v2(8) + süzülmüş omurga,LKH-3 varsayılan (α+ascent),8,0,0
+clu10k,gap@100%B,TourFold-v2(8) + süzülmüş omurga,Topluluk(8) + sayım+,5,3,0
+clu10k,gap@100%B,TourFold-v2(8) + süzülmüş omurga,Topluluk(8) omurgası sabit,8,0,0
+uni20k,gap@25%B,TourFold-v2(8),LKH-3 POPMUSIC (ascent yok),0,4,0
+uni20k,gap@25%B,TourFold-v2(8),LKH-3 varsayılan (α+ascent),4,0,0
+uni20k,gap@25%B,TourFold-v2(8),Topluluk(8) + sayım+,0,0,4
+uni20k,gap@25%B,TourFold-v2(8),Topluluk(8) omurgası sabit,0,0,4
+uni20k,gap@25%B,TourFold-v2(16),LKH-3 POPMUSIC (ascent yok),0,4,0
+uni20k,gap@25%B,TourFold-v2(16),LKH-3 varsayılan (α+ascent),4,0,0
+uni20k,gap@25%B,TourFold-v2(16),Topluluk(8) + sayım+,0,0,4
+uni20k,gap@25%B,TourFold-v2(16),Topluluk(8) omurgası sabit,0,0,4
+uni20k,gap@25%B,TourFold-v2(8) + süzülmüş omurga,LKH-3 POPMUSIC (ascent yok),0,4,0
+uni20k,gap@25%B,TourFold-v2(8) + süzülmüş omurga,LKH-3 varsayılan (α+ascent),4,0,0
+uni20k,gap@25%B,TourFold-v2(8) + süzülmüş omurga,Topluluk(8) + sayım+,0,0,4
+uni20k,gap@25%B,TourFold-v2(8) + süzülmüş omurga,Topluluk(8) omurgası sabit,0,0,4
+uni20k,gap@100%B,TourFold-v2(8),LKH-3 POPMUSIC (ascent yok),0,4,0
+uni20k,gap@100%B,TourFold-v2(8),LKH-3 varsayılan (α+ascent),4,0,0
+uni20k,gap@100%B,TourFold-v2(8),Topluluk(8) + sayım+,0,4,0
+uni20k,gap@100%B,TourFold-v2(8),Topluluk(8) omurgası sabit,2,2,0
+uni20k,gap@100%B,TourFold-v2(16),LKH-3 POPMUSIC (ascent yok),0,4,0
+uni20k,gap@100%B,TourFold-v2(16),LKH-3 varsayılan (α+ascent),4,0,0
+uni20k,gap@100%B,TourFold-v2(16),Topluluk(8) + sayım+,1,3,0
+uni20k,gap@100%B,TourFold-v2(16),Topluluk(8) omurgası sabit,2,2,0
+uni20k,gap@100%B,TourFold-v2(8) + süzülmüş omurga,LKH-3 POPMUSIC (ascent yok),1,3,0
+uni20k,gap@100%B,TourFold-v2(8) + süzülmüş omurga,LKH-3 varsayılan (α+ascent),4,0,0
+uni20k,gap@100%B,TourFold-v2(8) + süzülmüş omurga,Topluluk(8) + sayım+,0,4,0
+uni20k,gap@100%B,TourFold-v2(8) + süzülmüş omurga,Topluluk(8) omurgası sabit,3,1,0
+clu20k,gap@25%B,TourFold-v2(8),LKH-3 POPMUSIC (ascent yok),0,4,0
+clu20k,gap@25%B,TourFold-v2(8),LKH-3 varsayılan (α+ascent),4,0,0
+clu20k,gap@25%B,TourFold-v2(8),Topluluk(8) + sayım+,0,0,4
+clu20k,gap@25%B,TourFold-v2(8),Topluluk(8) omurgası sabit,0,0,4
+clu20k,gap@25%B,TourFold-v2(16),LKH-3 POPMUSIC (ascent yok),0,4,0
+clu20k,gap@25%B,TourFold-v2(16),LKH-3 varsayılan (α+ascent),4,0,0
+clu20k,gap@25%B,TourFold-v2(16),Topluluk(8) + sayım+,0,0,4
+clu20k,gap@25%B,TourFold-v2(16),Topluluk(8) omurgası sabit,0,0,4
+clu20k,gap@25%B,TourFold-v2(8) + süzülmüş omurga,LKH-3 POPMUSIC (ascent yok),0,4,0
+clu20k,gap@25%B,TourFold-v2(8) + süzülmüş omurga,LKH-3 varsayılan (α+ascent),4,0,0
+clu20k,gap@25%B,TourFold-v2(8) + süzülmüş omurga,Topluluk(8) + sayım+,0,0,4
+clu20k,gap@25%B,TourFold-v2(8) + süzülmüş omurga,Topluluk(8) omurgası sabit,0,0,4
+clu20k,gap@100%B,TourFold-v2(8),LKH-3 POPMUSIC (ascent yok),1,3,0
+clu20k,gap@100%B,TourFold-v2(8),LKH-3 varsayılan (α+ascent),4,0,0
+clu20k,gap@100%B,TourFold-v2(8),Topluluk(8) + sayım+,3,1,0
+clu20k,gap@100%B,TourFold-v2(8),Topluluk(8) omurgası sabit,4,0,0
+clu20k,gap@100%B,TourFold-v2(16),LKH-3 POPMUSIC (ascent yok),0,4,0
+clu20k,gap@100%B,TourFold-v2(16),LKH-3 varsayılan (α+ascent),4,0,0
+clu20k,gap@100%B,TourFold-v2(16),Topluluk(8) + sayım+,0,4,0
+clu20k,gap@100%B,TourFold-v2(16),Topluluk(8) omurgası sabit,3,1,0
+clu20k,gap@100%B,TourFold-v2(8) + süzülmüş omurga,LKH-3 POPMUSIC (ascent yok),3,1,0
+clu20k,gap@100%B,TourFold-v2(8) + süzülmüş omurga,LKH-3 varsayılan (α+ascent),4,0,0
+clu20k,gap@100%B,TourFold-v2(8) + süzülmüş omurga,Topluluk(8) + sayım+,4,0,0
+clu20k,gap@100%B,TourFold-v2(8) + süzülmüş omurga,Topluluk(8) omurgası sabit,4,0,0

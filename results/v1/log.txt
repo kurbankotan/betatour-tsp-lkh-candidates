@@ -1,0 +1,246 @@
+[2026-10-19 18:30:11] Başlıyor | ortam {'nproc': 12, 'ram_gb': 53.0, 'gpu': 'NVIDIA L4, 23034 MiB', 'numpy': '2.1.3'} | cihaz cuda | ölçek L | klasör /content/drive/MyDrive/TourFold_TSP
+[2026-10-19 18:30:11] » 1-lkh
+[2026-10-19 18:30:21] LKH hazır: /content/tourfold_local/lkh/LKH-3.0.14/LKH (sürüm 3.0.14)
+[2026-10-19 18:30:21] » 1-selftest
+[2026-10-19 18:30:22] OK    LKH geçerli bir tur üretti
+[2026-10-19 18:30:22] OK    tur uzunluğu LKH'nin bildirdiğiyle aynı
+[2026-10-19 18:30:22] OK    LKH iyileşme izi okundu
+[2026-10-19 18:30:22] OK    LKH ön-işleme süresi okundu
+[2026-10-19 18:30:22] OK    LKH aday (CANDIDATE_FILE) ve ceza (PI_FILE) dosyaları okundu
+[2026-10-19 18:30:22] OK    π birimi (PRECISION = 100) doğrulandı
+[2026-10-19 18:30:22] OK    kendi yazdığımız aday/π dosyaları LKH'ye kabul edildi
+[2026-10-19 18:30:22] OK    tur topluluğu üretildi (POPMUSIC adaylar, ascent yok)
+[2026-10-19 18:30:23] OK    başlangıç turu + dışarıdan aday dosyasıyla LKH çalıştı
+[2026-10-19 18:30:23] BİLGİ LKH sabit kenarları 0 uzunlukla sayıyor; bildirdiği maliyetler gerçek tur uzunluğuna çevriliyor
+[2026-10-19 18:30:23] OK    sabit kenarlar (FIXED_EDGES_SECTION) LKH turunda korundu
+[2026-10-19 18:30:23] » 2-profile
+[2026-10-19 18:42:26] LKH ön-işleme süresi (sn):
+config  POPMUSIC, no ascent  alpha+ascent  alpha, no ascent
+n                                                          
+1000                   0.42          1.13              0.05
+2000                   1.13          5.77              0.19
+5000                   3.65         36.66              2.28
+10000                  8.17        161.71             11.06
+20000                 17.21        710.97             45.30
+[2026-10-19 18:42:26] » 3-eval_sets
+[2026-10-19 19:22:40] Başlıyor | ortam {'nproc': 12, 'ram_gb': 53.0, 'gpu': 'NVIDIA L4, 23034 MiB', 'numpy': '2.1.3'} | cihaz cuda | ölçek L | klasör /content/drive/MyDrive/TourFold_TSP
+[2026-10-19 19:22:41] » 1-lkh
+[2026-10-19 19:22:48] LKH hazır: /content/tourfold_local/lkh/LKH-3.0.14/LKH (sürüm 3.0.14)
+[2026-10-19 19:22:48] » 1-selftest
+[2026-10-19 19:22:49] OK    LKH geçerli bir tur üretti
+[2026-10-19 19:22:49] OK    tur uzunluğu LKH'nin bildirdiğiyle aynı
+[2026-10-19 19:22:49] OK    LKH iyileşme izi okundu
+[2026-10-19 19:22:49] OK    LKH ön-işleme süresi okundu
+[2026-10-19 19:22:49] OK    LKH aday (CANDIDATE_FILE) ve ceza (PI_FILE) dosyaları okundu
+[2026-10-19 19:22:49] OK    π birimi (PRECISION = 100) doğrulandı
+[2026-10-19 19:22:50] OK    kendi yazdığımız aday/π dosyaları LKH'ye kabul edildi
+[2026-10-19 19:22:50] OK    tur topluluğu üretildi (POPMUSIC adaylar, ascent yok)
+[2026-10-19 19:22:50] OK    başlangıç turu + dışarıdan aday dosyasıyla LKH çalıştı
+[2026-10-19 19:22:50] BİLGİ LKH sabit kenarları 0 uzunlukla sayıyor; bildirdiği maliyetler gerçek tur uzunluğuna çevriliyor
+[2026-10-19 19:22:50] OK    sabit kenarlar (FIXED_EDGES_SECTION) LKH turunda korundu
+[2026-10-19 19:22:50] » 2-profile
+[2026-10-19 19:22:51] » 3-eval_sets
+[2026-10-19 19:22:56] TSPLIB: 32 örnek dosyası hazır
+[2026-10-19 19:22:56] Kaba tahmin: kalan toplam süre ~7.3 saat (aşamalar ilerledikçe ölçülerek güncellenir; son tahmin her zaman log.txt ve status.json içinde)
+[2026-10-19 19:22:56] » 3-eval_ref
+[2026-10-19 19:24:20] değerlendirme örnekleri (uni1k): 12/175 | bu aşama için kalan ~19 dk | tümü için kalan ~6.8 saat
+[2026-10-19 19:25:09] değerlendirme örnekleri (uni1k): 24/175 | bu aşama için kalan ~14 dk | tümü için kalan ~6.7 saat
+[2026-10-19 19:26:14] değerlendirme örnekleri (uni1k): 36/175 | bu aşama için kalan ~13 dk | tümü için kalan ~6.7 saat
+[2026-10-19 19:27:23] değerlendirme örnekleri (uni1k): 48/175 | bu aşama için kalan ~12 dk | tümü için kalan ~6.7 saat
+[2026-10-19 19:28:19] değerlendirme örnekleri (uni1k): 60/175 | bu aşama için kalan ~10 dk | tümü için kalan ~6.7 saat
+[2026-10-19 19:28:35] değerlendirme örnekleri (uni1k): 64/175 | bu aşama için kalan ~10 dk | tümü için kalan ~6.6 saat
+[2026-10-19 19:28:35] değerlendirme kümesi uni1k: 64 örnek
+[2026-10-19 19:38:34] değerlendirme örnekleri (clu1k): 76/175 | bu aşama için kalan ~20 dk | tümü için kalan ~6.8 saat
+[2026-10-19 19:48:08] değerlendirme örnekleri (clu1k): 88/175 | bu aşama için kalan ~25 dk | tümü için kalan ~6.9 saat
+[2026-10-19 20:05:22] değerlendirme örnekleri (clu1k): 100/175 | bu aşama için kalan ~32 dk | tümü için kalan ~7.0 saat
+[2026-10-19 20:11:24] değerlendirme örnekleri (clu1k): 112/175 | bu aşama için kalan ~27 dk | tümü için kalan ~6.9 saat
+[2026-10-19 20:18:06] değerlendirme örnekleri (clu1k): 124/175 | bu aşama için kalan ~23 dk | tümü için kalan ~6.9 saat
+[2026-10-19 20:21:46] değerlendirme örnekleri (clu1k): 128/175 | bu aşama için kalan ~22 dk | tümü için kalan ~6.8 saat
+[2026-10-19 20:21:46] değerlendirme kümesi clu1k: 64 örnek
+[2026-10-19 20:45:17] değerlendirme örnekleri (uni10k): 136/175 | bu aşama için kalan ~24 dk | tümü için kalan ~6.9 saat
+[2026-10-19 20:45:17] değerlendirme kümesi uni10k: 8 örnek
+[2026-10-19 22:27:31] değerlendirme örnekleri (clu10k): 144/175 | bu aşama için kalan ~40 dk | tümü için kalan ~7.1 saat
+[2026-10-19 22:27:31] değerlendirme kümesi clu10k: 8 örnek
+[2026-10-19 23:06:12] değerlendirme örnekleri (tsplib): 156/175 | bu aşama için kalan ~27 dk | tümü için kalan ~6.9 saat
+[2026-10-19 23:44:19] değerlendirme örnekleri (tsplib): 168/175 | bu aşama için kalan ~11 dk | tümü için kalan ~6.7 saat
+[2026-10-20 00:49:19] değerlendirme örnekleri (tsplib): 175/175 | bu aşama için kalan ~1 dk | tümü için kalan ~6.5 saat
+[2026-10-20 00:49:19] değerlendirme kümesi tsplib: 31 örnek
+[2026-10-20 00:49:19] » 3-classic_coverage
+[2026-10-20 00:51:32] » 4-train_data
+[2026-10-20 01:19:51] eğitim verisi parçaları: 1/30 | bu aşama için kalan ~13.7 saat | tümü için kalan ~17.9 saat
+[2026-10-20 01:47:10] eğitim verisi parçaları: 2/30 | bu aşama için kalan ~13.0 saat | tümü için kalan ~17.2 saat
+[2026-10-20 02:13:22] eğitim verisi parçaları: 3/30 | bu aşama için kalan ~12.3 saat | tümü için kalan ~16.5 saat
+[2026-10-20 02:39:43] eğitim verisi parçaları: 4/30 | bu aşama için kalan ~11.7 saat | tümü için kalan ~15.9 saat
+[2026-10-20 03:03:45] eğitim verisi parçaları: 5/30 | bu aşama için kalan ~11.0 saat | tümü için kalan ~15.2 saat
+[2026-10-20 03:27:59] eğitim verisi parçaları: 6/30 | bu aşama için kalan ~10.4 saat | tümü için kalan ~14.6 saat
+[2026-10-20 03:51:26] eğitim verisi parçaları: 7/30 | bu aşama için kalan ~9.9 saat | tümü için kalan ~14.1 saat
+[2026-10-20 04:18:02] eğitim verisi parçaları: 8/30 | bu aşama için kalan ~9.5 saat | tümü için kalan ~13.7 saat
+[2026-10-20 04:42:32] eğitim verisi parçaları: 9/30 | bu aşama için kalan ~9.0 saat | tümü için kalan ~13.2 saat
+[2026-10-20 05:05:24] eğitim verisi parçaları: 10/30 | bu aşama için kalan ~8.5 saat | tümü için kalan ~12.7 saat
+[2026-10-20 05:34:29] eğitim verisi parçaları: 11/30 | bu aşama için kalan ~8.1 saat | tümü için kalan ~12.4 saat
+[2026-10-20 06:01:51] eğitim verisi parçaları: 12/30 | bu aşama için kalan ~7.8 saat | tümü için kalan ~12.0 saat
+[2026-10-20 06:28:18] eğitim verisi parçaları: 13/30 | bu aşama için kalan ~7.3 saat | tümü için kalan ~11.6 saat
+[2026-10-20 06:55:55] eğitim verisi parçaları: 14/30 | bu aşama için kalan ~6.9 saat | tümü için kalan ~11.2 saat
+[2026-10-20 07:23:07] eğitim verisi parçaları: 15/30 | bu aşama için kalan ~6.5 saat | tümü için kalan ~10.7 saat
+[2026-10-20 07:47:16] eğitim verisi parçaları: 16/30 | bu aşama için kalan ~6.1 saat | tümü için kalan ~10.3 saat
+[2026-10-20 08:11:40] eğitim verisi parçaları: 17/30 | bu aşama için kalan ~5.6 saat | tümü için kalan ~9.8 saat
+[2026-10-20 08:37:39] eğitim verisi parçaları: 18/30 | bu aşama için kalan ~5.2 saat | tümü için kalan ~9.4 saat
+[2026-10-20 09:04:28] eğitim verisi parçaları: 19/30 | bu aşama için kalan ~4.8 saat | tümü için kalan ~9.0 saat
+[2026-10-20 09:30:20] eğitim verisi parçaları: 20/30 | bu aşama için kalan ~4.3 saat | tümü için kalan ~8.5 saat
+[2026-10-20 09:57:22] eğitim verisi parçaları: 21/30 | bu aşama için kalan ~3.9 saat | tümü için kalan ~8.1 saat
+[2026-10-20 10:21:16] eğitim verisi parçaları: 22/30 | bu aşama için kalan ~3.5 saat | tümü için kalan ~7.7 saat
+[2026-10-20 10:47:23] eğitim verisi parçaları: 23/30 | bu aşama için kalan ~3.0 saat | tümü için kalan ~7.2 saat
+[2026-10-20 11:14:11] eğitim verisi parçaları: 24/30 | bu aşama için kalan ~2.6 saat | tümü için kalan ~6.8 saat
+[2026-10-20 11:42:23] eğitim verisi parçaları: 25/30 | bu aşama için kalan ~2.2 saat | tümü için kalan ~6.4 saat
+[2026-10-20 12:06:27] eğitim verisi parçaları: 26/30 | bu aşama için kalan ~1.7 saat | tümü için kalan ~5.9 saat
+[2026-10-20 12:32:20] eğitim verisi parçaları: 27/30 | bu aşama için kalan ~1.3 saat | tümü için kalan ~5.5 saat
+[2026-10-20 12:59:11] eğitim verisi parçaları: 28/30 | bu aşama için kalan ~52 dk | tümü için kalan ~5.1 saat
+[2026-10-20 13:26:26] eğitim verisi parçaları: 29/30 | bu aşama için kalan ~26 dk | tümü için kalan ~4.7 saat
+[2026-10-20 13:49:58] eğitim verisi parçaları: 30/30 | bu aşama için kalan ~1 dk | tümü için kalan ~4.2 saat
+[2026-10-20 13:49:58] » 5-train_tourfold
+[2026-10-20 13:50:10] TourFold: 1.88 M parametre | 29000 eğitim, 1000 doğrulama örneği | partide en çok 7500 düğüm, ~1191 adım/epoch
+[2026-10-20 13:50:21] TourFold: tepe GPU belleği 10.8 GB, tahmini 10 dk/epoch
+[2026-10-20 13:59:09] TourFold epoch 1/12: kayıp 2.2407 | eksik tur kenarı/1000 (ilk 5 aday): model 7.40, α+ascent 4.56 | 9.0 dk | bu model için kalan ~1.6 saat, tümü için ~3.7 saat
+[2026-10-20 14:08:08] TourFold epoch 2/12: kayıp 1.9724 | eksik tur kenarı/1000 (ilk 5 aday): model 7.38, α+ascent 4.56 | 9.0 dk | bu model için kalan ~1.5 saat, tümü için ~3.6 saat
+[2026-10-20 14:17:06] TourFold epoch 3/12: kayıp 1.9082 | eksik tur kenarı/1000 (ilk 5 aday): model 7.35, α+ascent 4.56 | 9.0 dk | bu model için kalan ~1.3 saat, tümü için ~3.4 saat
+[2026-10-20 14:26:05] TourFold epoch 4/12: kayıp 1.8659 | eksik tur kenarı/1000 (ilk 5 aday): model 7.31, α+ascent 4.56 | 9.0 dk | bu model için kalan ~1.2 saat, tümü için ~3.3 saat
+[2026-10-20 14:35:04] TourFold epoch 5/12: kayıp 1.8211 | eksik tur kenarı/1000 (ilk 5 aday): model 7.30, α+ascent 4.56 | 9.0 dk | bu model için kalan ~1.0 saat, tümü için ~3.1 saat
+[2026-10-20 14:44:03] TourFold epoch 6/12: kayıp 1.7828 | eksik tur kenarı/1000 (ilk 5 aday): model 7.28, α+ascent 4.56 | 9.0 dk | bu model için kalan ~54 dk, tümü için ~3.0 saat
+[2026-10-20 14:53:02] TourFold epoch 7/12: kayıp 1.7442 | eksik tur kenarı/1000 (ilk 5 aday): model 7.28, α+ascent 4.56 | 9.0 dk | bu model için kalan ~45 dk, tümü için ~2.8 saat
+[2026-10-20 15:02:00] TourFold epoch 8/12: kayıp 1.7118 | eksik tur kenarı/1000 (ilk 5 aday): model 7.26, α+ascent 4.56 | 9.0 dk | bu model için kalan ~36 dk, tümü için ~2.7 saat
+[2026-10-20 15:10:59] TourFold epoch 9/12: kayıp 1.6800 | eksik tur kenarı/1000 (ilk 5 aday): model 7.24, α+ascent 4.56 | 9.0 dk | bu model için kalan ~27 dk, tümü için ~2.5 saat
+[2026-10-20 15:19:58] TourFold epoch 10/12: kayıp 1.6502 | eksik tur kenarı/1000 (ilk 5 aday): model 7.28, α+ascent 4.56 | 9.0 dk | bu model için kalan ~18 dk, tümü için ~2.4 saat
+[2026-10-20 15:28:57] TourFold epoch 11/12: kayıp 1.6279 | eksik tur kenarı/1000 (ilk 5 aday): model 7.24, α+ascent 4.56 | 9.0 dk | bu model için kalan ~9 dk, tümü için ~2.3 saat
+[2026-10-20 15:37:56] TourFold epoch 12/12: kayıp 1.6154 | eksik tur kenarı/1000 (ilk 5 aday): model 7.23, α+ascent 4.56 | 9.0 dk | bu model için kalan ~1 dk, tümü için ~2.1 saat
+[2026-10-20 15:37:56] » 5-train_single
+[2026-10-20 15:38:03] single-instance: 1.39 M parametre | 29000 eğitim, 1000 doğrulama örneği | partide en çok 7500 düğüm, ~1191 adım/epoch
+[2026-10-20 15:38:09] single-instance: tepe GPU belleği 10.9 GB, tahmini 6 dk/epoch
+[2026-10-20 15:43:39] single-instance epoch 1/12: kayıp 2.7267 | eksik tur kenarı/1000 (ilk 5 aday): model 8.86, α+ascent 4.56 | 5.6 dk | bu model için kalan ~1.0 saat, tümü için ~2.0 saat
+[2026-10-20 15:49:14] single-instance epoch 2/12: kayıp 2.4717 | eksik tur kenarı/1000 (ilk 5 aday): model 8.41, α+ascent 4.56 | 5.6 dk | bu model için kalan ~56 dk, tümü için ~2.0 saat
+[2026-10-20 15:54:50] single-instance epoch 3/12: kayıp 2.4238 | eksik tur kenarı/1000 (ilk 5 aday): model 8.08, α+ascent 4.56 | 5.6 dk | bu model için kalan ~50 dk, tümü için ~1.9 saat
+[2026-10-20 16:00:25] single-instance epoch 4/12: kayıp 2.3963 | eksik tur kenarı/1000 (ilk 5 aday): model 8.10, α+ascent 4.56 | 5.6 dk | bu model için kalan ~45 dk, tümü için ~1.8 saat
+[2026-10-20 16:06:01] single-instance epoch 5/12: kayıp 2.3689 | eksik tur kenarı/1000 (ilk 5 aday): model 8.08, α+ascent 4.56 | 5.6 dk | bu model için kalan ~39 dk, tümü için ~1.7 saat
+[2026-10-20 16:11:36] single-instance epoch 6/12: kayıp 2.3487 | eksik tur kenarı/1000 (ilk 5 aday): model 8.04, α+ascent 4.56 | 5.6 dk | bu model için kalan ~34 dk, tümü için ~1.6 saat
+[2026-10-20 16:17:12] single-instance epoch 7/12: kayıp 2.3299 | eksik tur kenarı/1000 (ilk 5 aday): model 7.82, α+ascent 4.56 | 5.6 dk | bu model için kalan ~28 dk, tümü için ~1.5 saat
+[2026-10-20 16:22:48] single-instance epoch 8/12: kayıp 2.3148 | eksik tur kenarı/1000 (ilk 5 aday): model 7.83, α+ascent 4.56 | 5.6 dk | bu model için kalan ~22 dk, tümü için ~1.4 saat
+[2026-10-20 16:28:24] single-instance epoch 9/12: kayıp 2.2990 | eksik tur kenarı/1000 (ilk 5 aday): model 7.85, α+ascent 4.56 | 5.6 dk | bu model için kalan ~17 dk, tümü için ~1.3 saat
+[2026-10-20 16:33:59] single-instance epoch 10/12: kayıp 2.2842 | eksik tur kenarı/1000 (ilk 5 aday): model 7.80, α+ascent 4.56 | 5.6 dk | bu model için kalan ~11 dk, tümü için ~1.2 saat
+[2026-10-20 16:39:35] single-instance epoch 11/12: kayıp 2.2727 | eksik tur kenarı/1000 (ilk 5 aday): model 7.82, α+ascent 4.56 | 5.6 dk | bu model için kalan ~6 dk, tümü için ~1.1 saat
+[2026-10-20 16:45:10] single-instance epoch 12/12: kayıp 2.2652 | eksik tur kenarı/1000 (ilk 5 aday): model 7.81, α+ascent 4.56 | 5.6 dk | bu model için kalan ~1 dk, tümü için ~1.0 saat
+[2026-10-20 16:45:11] » 6-decision
+[2026-10-20 16:46:02] Karar deneyi — eksik tur kenarı / 1000 düğüm (ilk 5 aday; küçük = iyi):
+method  POPMUSIC  TourFold  alpha+ascent  count  single-instance
+group                                                           
+clu10k      6.18      0.82          2.46   1.84             0.89
+clu1k       5.62      4.56          3.89   5.00             5.09
+tsplib      7.25      4.10          4.69   4.39             4.12
+uni10k      5.60      0.34          2.79   1.12             0.44
+uni1k       5.23      0.25          2.27   0.72             0.44
+val         3.95      7.23          4.56   7.60             7.81
+[2026-10-20 16:46:02] Kenar sabitleme: doğrulamada kesinlik ≥ 0.999 veren eşik τ = 0.99
+                                   precision  recall  fixed_frac
+group  method                                                   
+clu10k TourFold                       1.0000  0.0000      0.0000
+       count backbone (all tours)     0.9967  0.6241      0.6262
+       single-instance                   NaN  0.0000      0.0000
+clu1k  TourFold                       1.0000  0.0029      0.0029
+       count backbone (all tours)     0.9972  0.6830      0.6850
+       single-instance                   NaN  0.0000      0.0000
+tsplib TourFold                       0.9991  0.0083      0.0083
+       count backbone (all tours)     0.9971  0.6397      0.6416
+       single-instance                   NaN  0.0000      0.0000
+uni10k TourFold                       1.0000  0.0012      0.0012
+       count backbone (all tours)     0.9977  0.6433      0.6448
+       single-instance                   NaN  0.0000      0.0000
+uni1k  TourFold                       1.0000  0.0081      0.0081
+       count backbone (all tours)     0.9982  0.6832      0.6844
+       single-instance                   NaN  0.0000      0.0000
+val    TourFold                       0.9990  0.0887      0.0888
+       count backbone (all tours)     0.9981  0.7677      0.7691
+       single-instance                   NaN  0.0000      0.0000
+[2026-10-20 16:46:03] » 7-lkh_eval
+[2026-10-20 16:46:03] LKH karşılaştırması: 40 örnek (40 kaldı), 7 parça; tur toplulukları oturum içinde yeniden üretilip süresi sayılır
+[2026-10-20 16:49:38] LKH karşılaştırması (örnek): 6/40 | bu aşama için kalan ~20 dk | tümü için kalan ~20 dk
+[2026-10-20 16:53:12] LKH karşılaştırması (örnek): 12/40 | bu aşama için kalan ~17 dk | tümü için kalan ~17 dk
+[2026-10-20 17:09:13] LKH karşılaştırması (örnek): 18/40 | bu aşama için kalan ~28 dk | tümü için kalan ~28 dk
+[2026-10-20 17:22:43] LKH karşılaştırması (örnek): 24/40 | bu aşama için kalan ~24 dk | tümü için kalan ~24 dk
+[2026-10-20 17:25:54] LKH karşılaştırması (örnek): 30/40 | bu aşama için kalan ~13 dk | tümü için kalan ~13 dk
+[2026-10-20 17:30:03] LKH karşılaştırması (örnek): 36/40 | bu aşama için kalan ~5 dk | tümü için kalan ~5 dk
+[2026-10-20 17:33:49] LKH karşılaştırması (örnek): 40/40 | bu aşama için kalan ~1 dk | tümü için kalan ~1 dk
+[2026-10-20 17:33:49] Aynı süre bütçesinde fark (%, en iyi bilinene göre; küçük = iyi):
+                                           gap@10%B  gap@25%B  gap@50%B  gap@100%B  turlu@10%B  turlu@25%B  örnek
+set    config                                                                                                    
+uni1k  LKH-3 varsayılan (α+ascent)           0.0131    0.0076    0.0062     0.0062           8           8      8
+       LKH-3 POPMUSIC (ascent yok)           0.0116    0.0098    0.0037     0.0029           8           8      8
+       Topluluk + sayım adayları             0.0060    0.0028    0.0026     0.0026           8           8      8
+       Tek-örnek model adayları              0.0055    0.0013    0.0000     0.0000           8           8      8
+       TourFold adayları                     0.0035    0.0019    0.0004     0.0004           8           8      8
+       TourFold adayları + π                 0.0036    0.0013    0.0013     0.0000           8           8      8
+       TourFold adayları + sabit kenarlar    0.0061    0.0019    0.0019     0.0019           8           8      8
+clu1k  LKH-3 varsayılan (α+ascent)           0.4803    0.2753    0.0735     0.0110           8           8      8
+       LKH-3 POPMUSIC (ascent yok)           0.0186    0.0139    0.0081     0.0004           8           8      8
+       Topluluk + sayım adayları             0.1101    0.0236    0.0153     0.0101           8           8      8
+       Tek-örnek model adayları              0.1101    0.0158    0.0138     0.0138           8           8      8
+       TourFold adayları                     0.1101    0.0142    0.0138     0.0057           8           8      8
+       TourFold adayları + π                 0.1101    0.0190    0.0138     0.0138           8           8      8
+       TourFold adayları + sabit kenarlar    0.1101    0.0142    0.0138     0.0057           8           8      8
+uni10k LKH-3 varsayılan (α+ascent)              NaN       NaN       NaN     0.0036           0           0      2
+       LKH-3 POPMUSIC (ascent yok)           0.0664    0.0493    0.0298     0.0225           2           2      2
+       Topluluk + sayım adayları             0.2125    0.0457    0.0350     0.0230           2           2      2
+       Tek-örnek model adayları              0.2125    0.0589    0.0345     0.0224           2           2      2
+       TourFold adayları                     0.2125    0.0615    0.0265     0.0146           2           2      2
+       TourFold adayları + π                 0.2125    0.0570    0.0376     0.0305           2           2      2
+       TourFold adayları + sabit kenarlar    0.2125    0.0576    0.0251     0.0206           2           2      2
+clu10k LKH-3 varsayılan (α+ascent)              NaN       NaN       NaN     0.0094           0           0      2
+       LKH-3 POPMUSIC (ascent yok)           0.0876    0.0339    0.0265     0.0143           2           2      2
+       Topluluk + sayım adayları             0.3512    0.2488    0.0300     0.0114           2           2      2
+       Tek-örnek model adayları              0.3512    0.3077    0.0183     0.0047           2           2      2
+       TourFold adayları                     0.3512    0.3077    0.0257     0.0183           2           2      2
+       TourFold adayları + π                 0.3512    0.3077    0.0187     0.0070           2           2      2
+       TourFold adayları + sabit kenarlar    0.3512    0.3077    0.0257     0.0183           2           2      2
+tsplib LKH-3 varsayılan (α+ascent)           0.7406    0.0479    0.0432     0.0309          15          20     20
+       LKH-3 POPMUSIC (ascent yok)           0.1406    0.0854    0.0337     0.0297          20          20     20
+       Topluluk + sayım adayları             0.1236    0.0290    0.0193     0.0104          20          20     20
+       Tek-örnek model adayları              0.1152    0.0402    0.0289     0.0244          20          20     20
+       TourFold adayları                     0.1205    0.0377    0.0317     0.0165          20          20     20
+       TourFold adayları + π                 0.1259    0.0339    0.0248     0.0189          20          20     20
+       TourFold adayları + sabit kenarlar    0.1220    0.0400    0.0370     0.0228          20          20     20
+[2026-10-20 17:33:49] Hedef farka ulaşma süresi (sn, medyan; inf = ulaşamadı):
+                                           time_to_1.0%  time_to_0.5%  time_to_0.2%  time_to_0.1%
+set    config                                                                                    
+uni1k  LKH-3 varsayılan (α+ascent)                 1.23          1.23          1.25          1.56
+       LKH-3 POPMUSIC (ascent yok)                 0.49          0.49          0.52          0.56
+       Topluluk + sayım adayları                   0.49          0.49          0.59          0.97
+       Tek-örnek model adayları                    0.49          0.49          0.59          0.97
+       TourFold adayları                           0.49          0.49          0.59          0.97
+       TourFold adayları + π                       0.49          0.49          0.59          0.97
+       TourFold adayları + sabit kenarlar          0.49          0.49          0.59          0.97
+clu1k  LKH-3 varsayılan (α+ascent)                 1.74          2.33          2.44          2.44
+       LKH-3 POPMUSIC (ascent yok)                 0.65          0.70          0.80          1.04
+       Topluluk + sayım adayları                   0.63          0.63          1.28          1.62
+       Tek-örnek model adayları                    0.63          0.63          1.28          1.62
+       TourFold adayları                           0.63          0.63          1.28          1.62
+       TourFold adayları + π                       0.63          0.63          1.28          1.62
+       TourFold adayları + sabit kenarlar          0.63          0.63          1.28          1.62
+uni10k LKH-3 varsayılan (α+ascent)               154.99        154.99        154.99        157.26
+       LKH-3 POPMUSIC (ascent yok)                 9.00          9.00         11.16         18.01
+       Topluluk + sayım adayları                   9.34          9.34         34.75         49.94
+       Tek-örnek model adayları                    9.34          9.34         34.81         53.02
+       TourFold adayları                           9.34          9.34         34.91         51.21
+       TourFold adayları + π                       9.34          9.34         34.91         47.82
+       TourFold adayları + sabit kenarlar          9.34          9.34         34.91         50.43
+clu10k LKH-3 varsayılan (α+ascent)               157.26        158.17        167.91        177.42
+       LKH-3 POPMUSIC (ascent yok)                11.61         14.74         22.29         25.62
+       Topluluk + sayım adayları                  11.32         13.34         78.05         88.92
+       Tek-örnek model adayları                   11.32         13.34         78.57         87.43
+       TourFold adayları                          11.32         13.34         79.68         86.90
+       TourFold adayları + π                      11.32         13.34         76.91         80.89
+       TourFold adayları + sabit kenarlar         11.32         13.34         79.73         86.99
+tsplib LKH-3 varsayılan (α+ascent)                 2.58          2.58          3.38          3.73
+       LKH-3 POPMUSIC (ascent yok)                 0.75          0.82          1.13          1.76
+       Topluluk + sayım adayları                   0.76          0.82          1.34          2.60
+       Tek-örnek model adayları                    0.76          0.82          1.34          2.69
+       TourFold adayları                           0.76          0.82          1.34          2.79
+       TourFold adayları + π                       0.76          0.82          1.34          2.88
+       TourFold adayları + sabit kenarlar          0.76          0.82          1.34          2.72
+[2026-10-20 17:33:50] BİTTİ. Rapor: /content/drive/MyDrive/TourFold_TSP/RAPOR.md — bu dosyayı (ya da TourFold_sonuclar.zip'i) bana gönderin.

@@ -1,0 +1,43 @@
+{
+ "checks": {
+  "LKH geçerli bir tur üretti": true,
+  "tur uzunluğu LKH'nin bildirdiğiyle aynı": true,
+  "LKH iyileşme izi okundu": true,
+  "LKH ön-işleme süresi okundu": true,
+  "LKH aday (CANDIDATE_FILE) ve ceza (PI_FILE) dosyaları okundu": true,
+  "kendi yazdığımız aday/π dosyaları LKH'ye kabul edildi": true,
+  "tur topluluğu üretildi (POPMUSIC adaylar, ascent yok)": true,
+  "başlangıç turu + dışarıdan aday dosyasıyla LKH çalıştı": true
+ },
+ "warnings": {
+  "π birimi (PRECISION = 100) doğrulandı": true,
+  "sabit kenarlar (FIXED_EDGES_SECTION) LKH turunda korundu": true
+ },
+ "info": {
+  "lkh_output_head": [
+   "PARAMETER_FILE = /content/tourfold_local/work/lkh_reirrdf5/run.par",
+   "Reading PROBLEM_FILE: \"/content/tourfold_local/work/lkh_reirrdf5/p.tsp\" ... done",
+   "ALPHA = 0.00",
+   "ASCENT_CANDIDATES = 50",
+   "BACKBONE_TRIALS = 0",
+   "BACKTRACKING = NO",
+   "# BWTSP =",
+   "CANDIDATE_FILE = /content/tourfold_local/work/lkh_reirrdf5/out.cand",
+   "CANDIDATE_SET_TYPE = ALPHA",
+   "# DISTANCE =",
+   "# DEPOT =",
+   "# EDGE_FILE =",
+   "DRONES = 1",
+   "ENDURANCE = 0.0",
+   "EXCESS = 0.00333333"
+  ],
+  "fixed_edges_tested": 243,
+  "fixed_cost_shift": 9233480.0,
+  "fixed_len": 9233480.0
+ },
+ "pi_unit_rel": {
+  "100": 0.0,
+  "1": 131.77548010447268
+ },
+ "fixed_edges_supported": true
+}

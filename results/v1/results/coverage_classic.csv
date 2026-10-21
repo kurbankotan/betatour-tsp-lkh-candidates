@@ -1,0 +1,351 @@
+set,method,inst,n,cov5,missing_per_1k,build_s
+uni1k,"alpha, no ascent",uni1k_000,1000,0.985,15.0,0.05
+uni1k,"alpha, no ascent",uni1k_001,1000,0.976,24.0,0.05
+uni1k,"alpha, no ascent",uni1k_002,1000,0.983,17.0,0.03
+uni1k,"alpha, no ascent",uni1k_003,1000,0.985,15.0,0.03
+uni1k,"alpha, no ascent",uni1k_004,1000,0.985,15.0,0.03
+uni1k,"alpha, no ascent",uni1k_005,1000,0.988,12.0,0.03
+uni1k,"alpha, no ascent",uni1k_006,1000,0.98,20.0,0.03
+uni1k,"alpha, no ascent",uni1k_007,1000,0.987,13.0,0.03
+uni1k,"alpha, no ascent",uni1k_008,1000,0.984,16.0,0.03
+uni1k,"alpha, no ascent",uni1k_009,1000,0.978,22.0,0.03
+uni1k,"alpha, no ascent",uni1k_010,1000,0.983,17.0,0.03
+uni1k,"alpha, no ascent",uni1k_011,1000,0.981,19.0,0.03
+uni1k,"alpha, no ascent",uni1k_012,1000,0.988,12.0,0.03
+uni1k,"alpha, no ascent",uni1k_013,1000,0.983,17.0,0.03
+uni1k,"alpha, no ascent",uni1k_014,1000,0.982,18.0,0.03
+uni1k,"alpha, no ascent",uni1k_015,1000,0.989,11.0,0.03
+uni1k,"alpha, no ascent",uni1k_016,1000,0.981,19.0,0.03
+uni1k,"alpha, no ascent",uni1k_017,1000,0.982,18.0,0.03
+uni1k,"alpha, no ascent",uni1k_018,1000,0.984,16.0,0.03
+uni1k,"alpha, no ascent",uni1k_019,1000,0.98,20.0,0.03
+uni1k,"alpha, no ascent",uni1k_020,1000,0.99,10.0,0.03
+uni1k,"alpha, no ascent",uni1k_021,1000,0.986,14.0,0.03
+uni1k,"alpha, no ascent",uni1k_022,1000,0.988,12.0,0.03
+uni1k,"alpha, no ascent",uni1k_023,1000,0.984,16.0,0.03
+uni1k,"alpha, no ascent",uni1k_024,1000,0.98,20.0,0.03
+uni1k,"alpha, no ascent",uni1k_025,1000,0.986,14.0,0.03
+uni1k,"alpha, no ascent",uni1k_026,1000,0.989,11.0,0.04
+uni1k,"alpha, no ascent",uni1k_027,1000,0.984,16.0,0.03
+uni1k,"alpha, no ascent",uni1k_028,1000,0.978,22.0,0.03
+uni1k,"alpha, no ascent",uni1k_029,1000,0.984,16.0,0.03
+uni1k,"alpha, no ascent",uni1k_030,1000,0.982,18.0,0.03
+uni1k,"alpha, no ascent",uni1k_031,1000,0.983,17.0,0.03
+uni1k,"alpha, no ascent",uni1k_032,1000,0.982,18.0,0.03
+uni1k,"alpha, no ascent",uni1k_033,1000,0.988,12.0,0.03
+uni1k,"alpha, no ascent",uni1k_034,1000,0.972,28.0,0.03
+uni1k,"alpha, no ascent",uni1k_035,1000,0.985,15.0,0.03
+uni1k,"alpha, no ascent",uni1k_036,1000,0.979,21.0,0.03
+uni1k,"alpha, no ascent",uni1k_037,1000,0.985,15.0,0.03
+uni1k,"alpha, no ascent",uni1k_038,1000,0.983,17.0,0.03
+uni1k,"alpha, no ascent",uni1k_039,1000,0.99,10.0,0.03
+uni1k,"alpha, no ascent",uni1k_040,1000,0.975,25.0,0.04
+uni1k,"alpha, no ascent",uni1k_041,1000,0.985,15.0,0.03
+uni1k,"alpha, no ascent",uni1k_042,1000,0.984,16.0,0.03
+uni1k,"alpha, no ascent",uni1k_043,1000,0.981,19.0,0.03
+uni1k,"alpha, no ascent",uni1k_044,1000,0.977,23.0,0.03
+uni1k,"alpha, no ascent",uni1k_045,1000,0.981,19.0,0.03
+uni1k,"alpha, no ascent",uni1k_046,1000,0.982,18.0,0.03
+uni1k,"alpha, no ascent",uni1k_047,1000,0.983,17.0,0.03
+uni1k,"alpha, no ascent",uni1k_048,1000,0.983,17.0,0.03
+uni1k,"alpha, no ascent",uni1k_049,1000,0.982,18.0,0.03
+uni1k,"alpha, no ascent",uni1k_050,1000,0.976,24.0,0.03
+uni1k,"alpha, no ascent",uni1k_051,1000,0.982,18.0,0.03
+uni1k,"alpha, no ascent",uni1k_052,1000,0.988,12.0,0.03
+uni1k,"alpha, no ascent",uni1k_053,1000,0.982,18.0,0.03
+uni1k,"alpha, no ascent",uni1k_054,1000,0.987,13.0,0.03
+uni1k,"alpha, no ascent",uni1k_055,1000,0.976,24.0,0.03
+uni1k,"alpha, no ascent",uni1k_056,1000,0.99,10.0,0.03
+uni1k,"alpha, no ascent",uni1k_057,1000,0.99,10.0,0.03
+uni1k,"alpha, no ascent",uni1k_058,1000,0.976,24.0,0.04
+uni1k,"alpha, no ascent",uni1k_059,1000,0.985,15.0,0.03
+uni1k,"alpha, no ascent",uni1k_060,1000,0.977,23.0,0.03
+uni1k,"alpha, no ascent",uni1k_061,1000,0.98,20.0,0.03
+uni1k,"alpha, no ascent",uni1k_062,1000,0.988,12.0,0.03
+uni1k,"alpha, no ascent",uni1k_063,1000,0.983,17.0,0.03
+uni1k,nearest neighbour,uni1k_000,1000,0.981,19.0,0.01
+uni1k,nearest neighbour,uni1k_001,1000,0.975,25.0,0.01
+uni1k,nearest neighbour,uni1k_002,1000,0.985,15.0,0.01
+uni1k,nearest neighbour,uni1k_003,1000,0.985,15.0,0.01
+uni1k,nearest neighbour,uni1k_004,1000,0.985,15.0,0.01
+uni1k,nearest neighbour,uni1k_005,1000,0.985,15.0,0.01
+uni1k,nearest neighbour,uni1k_006,1000,0.985,15.0,0.01
+uni1k,nearest neighbour,uni1k_007,1000,0.983,17.0,0.0
+uni1k,nearest neighbour,uni1k_008,1000,0.973,27.0,0.01
+uni1k,nearest neighbour,uni1k_009,1000,0.976,24.0,0.01
+uni1k,nearest neighbour,uni1k_010,1000,0.98,20.0,0.01
+uni1k,nearest neighbour,uni1k_011,1000,0.978,22.0,0.01
+uni1k,nearest neighbour,uni1k_012,1000,0.981,19.0,0.0
+uni1k,nearest neighbour,uni1k_013,1000,0.983,17.0,0.0
+uni1k,nearest neighbour,uni1k_014,1000,0.982,18.0,0.0
+uni1k,nearest neighbour,uni1k_015,1000,0.99,10.0,0.0
+uni1k,nearest neighbour,uni1k_016,1000,0.983,17.0,0.0
+uni1k,nearest neighbour,uni1k_017,1000,0.975,25.0,0.0
+uni1k,nearest neighbour,uni1k_018,1000,0.982,18.0,0.0
+uni1k,nearest neighbour,uni1k_019,1000,0.985,15.0,0.0
+uni1k,nearest neighbour,uni1k_020,1000,0.985,15.0,0.01
+uni1k,nearest neighbour,uni1k_021,1000,0.982,18.0,0.0
+uni1k,nearest neighbour,uni1k_022,1000,0.987,13.0,0.0
+uni1k,nearest neighbour,uni1k_023,1000,0.981,19.0,0.0
+uni1k,nearest neighbour,uni1k_024,1000,0.978,22.0,0.01
+uni1k,nearest neighbour,uni1k_025,1000,0.981,19.0,0.01
+uni1k,nearest neighbour,uni1k_026,1000,0.988,12.0,0.01
+uni1k,nearest neighbour,uni1k_027,1000,0.978,22.0,0.0
+uni1k,nearest neighbour,uni1k_028,1000,0.979,21.0,0.0
+uni1k,nearest neighbour,uni1k_029,1000,0.978,22.0,0.0
+uni1k,nearest neighbour,uni1k_030,1000,0.98,20.0,0.01
+uni1k,nearest neighbour,uni1k_031,1000,0.974,26.0,0.0
+uni1k,nearest neighbour,uni1k_032,1000,0.978,22.0,0.0
+uni1k,nearest neighbour,uni1k_033,1000,0.986,14.0,0.0
+uni1k,nearest neighbour,uni1k_034,1000,0.976,24.0,0.0
+uni1k,nearest neighbour,uni1k_035,1000,0.983,17.0,0.0
+uni1k,nearest neighbour,uni1k_036,1000,0.975,25.0,0.0
+uni1k,nearest neighbour,uni1k_037,1000,0.986,14.0,0.0
+uni1k,nearest neighbour,uni1k_038,1000,0.984,16.0,0.0
+uni1k,nearest neighbour,uni1k_039,1000,0.982,18.0,0.0
+uni1k,nearest neighbour,uni1k_040,1000,0.984,16.0,0.0
+uni1k,nearest neighbour,uni1k_041,1000,0.982,18.0,0.0
+uni1k,nearest neighbour,uni1k_042,1000,0.981,19.0,0.0
+uni1k,nearest neighbour,uni1k_043,1000,0.98,20.0,0.0
+uni1k,nearest neighbour,uni1k_044,1000,0.978,22.0,0.01
+uni1k,nearest neighbour,uni1k_045,1000,0.973,27.0,0.0
+uni1k,nearest neighbour,uni1k_046,1000,0.982,18.0,0.0
+uni1k,nearest neighbour,uni1k_047,1000,0.983,17.0,0.01
+uni1k,nearest neighbour,uni1k_048,1000,0.982,18.0,0.0
+uni1k,nearest neighbour,uni1k_049,1000,0.977,23.0,0.01
+uni1k,nearest neighbour,uni1k_050,1000,0.975,25.0,0.0
+uni1k,nearest neighbour,uni1k_051,1000,0.98,20.0,0.0
+uni1k,nearest neighbour,uni1k_052,1000,0.98,20.0,0.0
+uni1k,nearest neighbour,uni1k_053,1000,0.973,27.0,0.0
+uni1k,nearest neighbour,uni1k_054,1000,0.982,18.0,0.0
+uni1k,nearest neighbour,uni1k_055,1000,0.97,30.0,0.0
+uni1k,nearest neighbour,uni1k_056,1000,0.989,11.0,0.01
+uni1k,nearest neighbour,uni1k_057,1000,0.979,21.0,0.0
+uni1k,nearest neighbour,uni1k_058,1000,0.968,32.0,0.0
+uni1k,nearest neighbour,uni1k_059,1000,0.982,18.0,0.0
+uni1k,nearest neighbour,uni1k_060,1000,0.977,23.0,0.0
+uni1k,nearest neighbour,uni1k_061,1000,0.98,20.0,0.0
+uni1k,nearest neighbour,uni1k_062,1000,0.982,18.0,0.0
+uni1k,nearest neighbour,uni1k_063,1000,0.979,21.0,0.01
+clu1k,"alpha, no ascent",clu1k_000,1000,0.97,30.0,0.03
+clu1k,"alpha, no ascent",clu1k_001,1000,0.969,31.0,0.05
+clu1k,"alpha, no ascent",clu1k_002,1000,0.978,22.0,0.03
+clu1k,"alpha, no ascent",clu1k_003,1000,0.974,26.0,0.05
+clu1k,"alpha, no ascent",clu1k_004,1000,0.969,31.0,0.03
+clu1k,"alpha, no ascent",clu1k_005,1000,0.972,28.0,0.03
+clu1k,"alpha, no ascent",clu1k_006,1000,0.975,25.0,0.03
+clu1k,"alpha, no ascent",clu1k_007,1000,0.976,24.0,0.03
+clu1k,"alpha, no ascent",clu1k_008,1000,0.97,30.0,0.03
+clu1k,"alpha, no ascent",clu1k_009,1000,0.971,29.0,0.03
+clu1k,"alpha, no ascent",clu1k_010,1000,0.972,28.0,0.03
+clu1k,"alpha, no ascent",clu1k_011,1000,0.976,24.0,0.03
+clu1k,"alpha, no ascent",clu1k_012,1000,0.971,29.0,0.03
+clu1k,"alpha, no ascent",clu1k_013,1000,0.968,32.0,0.03
+clu1k,"alpha, no ascent",clu1k_014,1000,0.977,23.0,0.04
+clu1k,"alpha, no ascent",clu1k_015,1000,0.979,21.0,0.03
+clu1k,"alpha, no ascent",clu1k_016,1000,0.973,27.0,0.03
+clu1k,"alpha, no ascent",clu1k_017,1000,0.971,29.0,0.03
+clu1k,"alpha, no ascent",clu1k_018,1000,0.972,28.0,0.03
+clu1k,"alpha, no ascent",clu1k_019,1000,0.965,35.0,0.03
+clu1k,"alpha, no ascent",clu1k_020,1000,0.972,28.0,0.03
+clu1k,"alpha, no ascent",clu1k_021,1000,0.968,32.0,0.03
+clu1k,"alpha, no ascent",clu1k_022,1000,0.971,29.0,0.03
+clu1k,"alpha, no ascent",clu1k_023,1000,0.972,28.0,0.03
+clu1k,"alpha, no ascent",clu1k_024,1000,0.976,24.0,0.03
+clu1k,"alpha, no ascent",clu1k_025,1000,0.974,26.0,0.04
+clu1k,"alpha, no ascent",clu1k_026,1000,0.98,20.0,0.03
+clu1k,"alpha, no ascent",clu1k_027,1000,0.965,35.0,0.03
+clu1k,"alpha, no ascent",clu1k_028,1000,0.975,25.0,0.03
+clu1k,"alpha, no ascent",clu1k_029,1000,0.969,31.0,0.03
+clu1k,"alpha, no ascent",clu1k_030,1000,0.966,34.0,0.03
+clu1k,"alpha, no ascent",clu1k_031,1000,0.982,18.0,0.03
+clu1k,"alpha, no ascent",clu1k_032,1000,0.98,20.0,0.03
+clu1k,"alpha, no ascent",clu1k_033,1000,0.97,30.0,0.03
+clu1k,"alpha, no ascent",clu1k_034,1000,0.978,22.0,0.03
+clu1k,"alpha, no ascent",clu1k_035,1000,0.969,31.0,0.03
+clu1k,"alpha, no ascent",clu1k_036,1000,0.975,25.0,0.04
+clu1k,"alpha, no ascent",clu1k_037,1000,0.977,23.0,0.05
+clu1k,"alpha, no ascent",clu1k_038,1000,0.967,33.0,0.03
+clu1k,"alpha, no ascent",clu1k_039,1000,0.967,33.0,0.03
+clu1k,"alpha, no ascent",clu1k_040,1000,0.973,27.0,0.03
+clu1k,"alpha, no ascent",clu1k_041,1000,0.975,25.0,0.03
+clu1k,"alpha, no ascent",clu1k_042,1000,0.977,23.0,0.03
+clu1k,"alpha, no ascent",clu1k_043,1000,0.985,15.0,0.03
+clu1k,"alpha, no ascent",clu1k_044,1000,0.976,24.0,0.03
+clu1k,"alpha, no ascent",clu1k_045,1000,0.968,32.0,0.03
+clu1k,"alpha, no ascent",clu1k_046,1000,0.974,26.0,0.03
+clu1k,"alpha, no ascent",clu1k_047,1000,0.972,28.0,0.03
+clu1k,"alpha, no ascent",clu1k_048,1000,0.98,20.0,0.03
+clu1k,"alpha, no ascent",clu1k_049,1000,0.976,24.0,0.03
+clu1k,"alpha, no ascent",clu1k_050,1000,0.971,29.0,0.03
+clu1k,"alpha, no ascent",clu1k_051,1000,0.975,25.0,0.03
+clu1k,"alpha, no ascent",clu1k_052,1000,0.973,27.0,0.03
+clu1k,"alpha, no ascent",clu1k_053,1000,0.973,27.0,0.03
+clu1k,"alpha, no ascent",clu1k_054,1000,0.975,25.0,0.03
+clu1k,"alpha, no ascent",clu1k_055,1000,0.961,39.0,0.03
+clu1k,"alpha, no ascent",clu1k_056,1000,0.973,27.0,0.03
+clu1k,"alpha, no ascent",clu1k_057,1000,0.978,22.0,0.03
+clu1k,"alpha, no ascent",clu1k_058,1000,0.97,30.0,0.03
+clu1k,"alpha, no ascent",clu1k_059,1000,0.972,28.0,0.03
+clu1k,"alpha, no ascent",clu1k_060,1000,0.973,27.0,0.03
+clu1k,"alpha, no ascent",clu1k_061,1000,0.971,29.0,0.03
+clu1k,"alpha, no ascent",clu1k_062,1000,0.977,23.0,0.03
+clu1k,"alpha, no ascent",clu1k_063,1000,0.972,28.0,0.03
+clu1k,nearest neighbour,clu1k_000,1000,0.978,22.0,0.01
+clu1k,nearest neighbour,clu1k_001,1000,0.975,25.0,0.01
+clu1k,nearest neighbour,clu1k_002,1000,0.974,26.0,0.01
+clu1k,nearest neighbour,clu1k_003,1000,0.974,26.0,0.01
+clu1k,nearest neighbour,clu1k_004,1000,0.98,20.0,0.0
+clu1k,nearest neighbour,clu1k_005,1000,0.977,23.0,0.01
+clu1k,nearest neighbour,clu1k_006,1000,0.979,21.0,0.0
+clu1k,nearest neighbour,clu1k_007,1000,0.978,22.0,0.0
+clu1k,nearest neighbour,clu1k_008,1000,0.967,33.0,0.01
+clu1k,nearest neighbour,clu1k_009,1000,0.977,23.0,0.0
+clu1k,nearest neighbour,clu1k_010,1000,0.981,19.0,0.0
+clu1k,nearest neighbour,clu1k_011,1000,0.977,23.0,0.0
+clu1k,nearest neighbour,clu1k_012,1000,0.975,25.0,0.0
+clu1k,nearest neighbour,clu1k_013,1000,0.978,22.0,0.0
+clu1k,nearest neighbour,clu1k_014,1000,0.98,20.0,0.01
+clu1k,nearest neighbour,clu1k_015,1000,0.98,20.0,0.0
+clu1k,nearest neighbour,clu1k_016,1000,0.969,31.0,0.0
+clu1k,nearest neighbour,clu1k_017,1000,0.982,18.0,0.01
+clu1k,nearest neighbour,clu1k_018,1000,0.974,26.0,0.0
+clu1k,nearest neighbour,clu1k_019,1000,0.981,19.0,0.0
+clu1k,nearest neighbour,clu1k_020,1000,0.968,32.0,0.0
+clu1k,nearest neighbour,clu1k_021,1000,0.979,21.0,0.0
+clu1k,nearest neighbour,clu1k_022,1000,0.984,16.0,0.0
+clu1k,nearest neighbour,clu1k_023,1000,0.976,24.0,0.01
+clu1k,nearest neighbour,clu1k_024,1000,0.985,15.0,0.0
+clu1k,nearest neighbour,clu1k_025,1000,0.977,23.0,0.01
+clu1k,nearest neighbour,clu1k_026,1000,0.981,19.0,0.0
+clu1k,nearest neighbour,clu1k_027,1000,0.972,28.0,0.01
+clu1k,nearest neighbour,clu1k_028,1000,0.982,18.0,0.0
+clu1k,nearest neighbour,clu1k_029,1000,0.979,21.0,0.0
+clu1k,nearest neighbour,clu1k_030,1000,0.97,30.0,0.01
+clu1k,nearest neighbour,clu1k_031,1000,0.981,19.0,0.0
+clu1k,nearest neighbour,clu1k_032,1000,0.975,25.0,0.0
+clu1k,nearest neighbour,clu1k_033,1000,0.967,33.0,0.0
+clu1k,nearest neighbour,clu1k_034,1000,0.972,28.0,0.0
+clu1k,nearest neighbour,clu1k_035,1000,0.979,21.0,0.01
+clu1k,nearest neighbour,clu1k_036,1000,0.977,23.0,0.0
+clu1k,nearest neighbour,clu1k_037,1000,0.979,21.0,0.0
+clu1k,nearest neighbour,clu1k_038,1000,0.966,34.0,0.0
+clu1k,nearest neighbour,clu1k_039,1000,0.974,26.0,0.0
+clu1k,nearest neighbour,clu1k_040,1000,0.974,26.0,0.0
+clu1k,nearest neighbour,clu1k_041,1000,0.982,18.0,0.0
+clu1k,nearest neighbour,clu1k_042,1000,0.98,20.0,0.0
+clu1k,nearest neighbour,clu1k_043,1000,0.987,13.0,0.0
+clu1k,nearest neighbour,clu1k_044,1000,0.977,23.0,0.01
+clu1k,nearest neighbour,clu1k_045,1000,0.973,27.0,0.01
+clu1k,nearest neighbour,clu1k_046,1000,0.981,19.0,0.0
+clu1k,nearest neighbour,clu1k_047,1000,0.973,27.0,0.0
+clu1k,nearest neighbour,clu1k_048,1000,0.976,24.0,0.0
+clu1k,nearest neighbour,clu1k_049,1000,0.979,21.0,0.0
+clu1k,nearest neighbour,clu1k_050,1000,0.969,31.0,0.0
+clu1k,nearest neighbour,clu1k_051,1000,0.973,27.0,0.0
+clu1k,nearest neighbour,clu1k_052,1000,0.976,24.0,0.0
+clu1k,nearest neighbour,clu1k_053,1000,0.978,22.0,0.0
+clu1k,nearest neighbour,clu1k_054,1000,0.98,20.0,0.01
+clu1k,nearest neighbour,clu1k_055,1000,0.969,31.0,0.0
+clu1k,nearest neighbour,clu1k_056,1000,0.98,20.0,0.0
+clu1k,nearest neighbour,clu1k_057,1000,0.981,19.0,0.01
+clu1k,nearest neighbour,clu1k_058,1000,0.97,30.0,0.0
+clu1k,nearest neighbour,clu1k_059,1000,0.975,25.0,0.01
+clu1k,nearest neighbour,clu1k_060,1000,0.978,22.0,0.01
+clu1k,nearest neighbour,clu1k_061,1000,0.982,18.0,0.01
+clu1k,nearest neighbour,clu1k_062,1000,0.974,26.0,0.0
+clu1k,nearest neighbour,clu1k_063,1000,0.976,24.0,0.0
+uni10k,"alpha, no ascent",uni10k_000,10000,0.9839,16.1,10.49
+uni10k,"alpha, no ascent",uni10k_001,10000,0.9851,14.9,10.45
+uni10k,"alpha, no ascent",uni10k_002,10000,0.9863,13.7,10.33
+uni10k,"alpha, no ascent",uni10k_003,10000,0.9838,16.2,10.48
+uni10k,"alpha, no ascent",uni10k_004,10000,0.9849,15.1,10.43
+uni10k,"alpha, no ascent",uni10k_005,10000,0.9851,14.9,10.32
+uni10k,"alpha, no ascent",uni10k_006,10000,0.9845,15.5,9.88
+uni10k,"alpha, no ascent",uni10k_007,10000,0.9848,15.2,10.03
+uni10k,nearest neighbour,uni10k_000,10000,0.9833,16.7,0.17
+uni10k,nearest neighbour,uni10k_001,10000,0.9841,15.9,0.17
+uni10k,nearest neighbour,uni10k_002,10000,0.9853,14.7,0.18
+uni10k,nearest neighbour,uni10k_003,10000,0.981,19.0,0.18
+uni10k,nearest neighbour,uni10k_004,10000,0.9833,16.7,0.17
+uni10k,nearest neighbour,uni10k_005,10000,0.9818,18.2,0.17
+uni10k,nearest neighbour,uni10k_006,10000,0.9797,20.3,0.17
+uni10k,nearest neighbour,uni10k_007,10000,0.9815,18.5,0.17
+clu10k,"alpha, no ascent",clu10k_000,10000,0.9777,22.3,10.42
+clu10k,"alpha, no ascent",clu10k_001,10000,0.9784,21.6,10.39
+clu10k,"alpha, no ascent",clu10k_002,10000,0.9759,24.1,10.5
+clu10k,"alpha, no ascent",clu10k_003,10000,0.9792,20.8,10.54
+clu10k,"alpha, no ascent",clu10k_004,10000,0.9776,22.4,10.3
+clu10k,"alpha, no ascent",clu10k_005,10000,0.9765,23.5,10.43
+clu10k,"alpha, no ascent",clu10k_006,10000,0.9787,21.3,9.98
+clu10k,"alpha, no ascent",clu10k_007,10000,0.9781,21.9,10.02
+clu10k,nearest neighbour,clu10k_000,10000,0.9806,19.4,0.18
+clu10k,nearest neighbour,clu10k_001,10000,0.9812,18.8,0.18
+clu10k,nearest neighbour,clu10k_002,10000,0.9823,17.7,0.17
+clu10k,nearest neighbour,clu10k_003,10000,0.9827,17.3,0.17
+clu10k,nearest neighbour,clu10k_004,10000,0.9796,20.4,0.17
+clu10k,nearest neighbour,clu10k_005,10000,0.9816,18.4,0.18
+clu10k,nearest neighbour,clu10k_006,10000,0.9825,17.5,0.17
+clu10k,nearest neighbour,clu10k_007,10000,0.9837,16.3,0.17
+tsplib,"alpha, no ascent",dsj1000,1000,0.973,27.0,0.03
+tsplib,"alpha, no ascent",pr1002,1002,0.9740518962075848,25.94810379241517,0.04
+tsplib,"alpha, no ascent",u1060,1060,0.9773584905660377,22.641509433962263,0.03
+tsplib,"alpha, no ascent",vm1084,1084,0.9658671586715867,34.132841328413285,0.06
+tsplib,"alpha, no ascent",pcb1173,1173,0.9838022165387894,16.19778346121057,0.03
+tsplib,"alpha, no ascent",d1291,1291,0.9852827265685515,14.71727343144849,0.04
+tsplib,"alpha, no ascent",rl1304,1304,0.9662576687116564,33.74233128834356,0.05
+tsplib,"alpha, no ascent",rl1323,1323,0.9674981103552532,32.50188964474679,0.05
+tsplib,"alpha, no ascent",nrw1379,1379,0.9934735315445975,6.5264684554024655,0.05
+tsplib,"alpha, no ascent",fl1400,1400,0.9721428571428572,27.857142857142858,0.05
+tsplib,"alpha, no ascent",u1432,1432,0.99231843575419,7.681564245810056,0.05
+tsplib,"alpha, no ascent",fl1577,1577,0.979708306911858,20.291693088142043,0.06
+tsplib,"alpha, no ascent",d1655,1655,0.9782477341389728,21.75226586102719,0.07
+tsplib,"alpha, no ascent",vm1748,1748,0.965675057208238,34.32494279176201,0.11
+tsplib,"alpha, no ascent",u1817,1817,0.9840396257567419,15.960374243258117,0.08
+tsplib,"alpha, no ascent",rl1889,1889,0.9677077818951826,32.292218104817366,0.11
+tsplib,"alpha, no ascent",d2103,2103,0.9919163100332857,8.083689966714218,0.13
+tsplib,"alpha, no ascent",u2152,2152,0.9860594795539034,13.940520446096654,0.16
+tsplib,"alpha, no ascent",u2319,2319,0.9974126778783958,2.5873221216041395,0.17
+tsplib,"alpha, no ascent",pr2392,2392,0.9828595317725752,17.140468227424748,0.19
+tsplib,"alpha, no ascent",pcb3038,3038,0.9950625411454904,4.937458854509546,0.41
+tsplib,"alpha, no ascent",fl3795,3795,0.9812911725955205,18.708827404479578,0.74
+tsplib,"alpha, no ascent",fnl4461,4461,0.9928267204662632,7.173279533736831,1.43
+tsplib,"alpha, no ascent",rl5915,5915,0.979374471682164,20.62552831783601,2.61
+tsplib,"alpha, no ascent",rl5934,5934,0.9817997977755308,18.200202224469162,2.46
+tsplib,"alpha, no ascent",pla7397,7397,0.9864810058131676,13.518994186832499,2.99
+tsplib,"alpha, no ascent",rl11849,11849,0.9813486370157819,18.65136298421808,15.53
+tsplib,"alpha, no ascent",usa13509,13509,0.9789029535864979,21.09704641350211,17.45
+tsplib,"alpha, no ascent",brd14051,14051,0.9908191587787346,9.180841221265391,18.86
+tsplib,"alpha, no ascent",d15112,15112,0.9907358390682901,9.264160931709899,24.77
+tsplib,"alpha, no ascent",d18512,18512,0.9914649956784788,8.535004321521175,32.34
+tsplib,nearest neighbour,dsj1000,1000,0.978,22.0,0.01
+tsplib,nearest neighbour,pr1002,1002,0.9850299401197605,14.970059880239521,0.01
+tsplib,nearest neighbour,u1060,1060,0.9783018867924528,21.69811320754717,0.01
+tsplib,nearest neighbour,vm1084,1084,0.9686346863468634,31.365313653136532,0.01
+tsplib,nearest neighbour,pcb1173,1173,0.9880647911338448,11.935208866155158,0.01
+tsplib,nearest neighbour,d1291,1291,0.95429899302866,45.70100697134005,0.01
+tsplib,nearest neighbour,rl1304,1304,0.9616564417177914,38.34355828220859,0.01
+tsplib,nearest neighbour,rl1323,1323,0.9614512471655329,38.54875283446712,0.01
+tsplib,nearest neighbour,nrw1379,1379,0.9912980420594634,8.701957940536621,0.01
+tsplib,nearest neighbour,fl1400,1400,0.9714285714285714,28.571428571428573,0.01
+tsplib,nearest neighbour,u1432,1432,0.99231843575419,7.681564245810056,0.01
+tsplib,nearest neighbour,fl1577,1577,0.9784400760938491,21.55992390615092,0.01
+tsplib,nearest neighbour,d1655,1655,0.9770392749244713,22.9607250755287,0.01
+tsplib,nearest neighbour,vm1748,1748,0.971395881006865,28.60411899313501,0.01
+tsplib,nearest neighbour,u1817,1817,0.9504678040726472,49.53219592735278,0.01
+tsplib,nearest neighbour,rl1889,1889,0.9666490206458443,33.35097935415564,0.01
+tsplib,nearest neighbour,d2103,2103,0.9838326200665716,16.167379933428435,0.01
+tsplib,nearest neighbour,u2152,2152,0.9679368029739777,32.0631970260223,0.01
+tsplib,nearest neighbour,u2319,2319,0.9969814575247952,3.0185424752048298,0.02
+tsplib,nearest neighbour,pr2392,2392,0.9816053511705686,18.39464882943144,0.02
+tsplib,nearest neighbour,pcb3038,3038,0.9924292297564187,7.570770243581303,0.02
+tsplib,nearest neighbour,fl3795,3795,0.9802371541501976,19.76284584980237,0.03
+tsplib,nearest neighbour,fnl4461,4461,0.991930060524546,8.069939475453934,0.04
+tsplib,nearest neighbour,rl5915,5915,0.975316990701606,24.683009298393912,0.07
+tsplib,nearest neighbour,rl5934,5934,0.9752275025278059,24.772497472194136,0.07
+tsplib,nearest neighbour,pla7397,7397,0.9910774638366906,8.92253616330945,0.09
+tsplib,nearest neighbour,rl11849,11849,0.9793231496328804,20.676850367119588,0.24
+tsplib,nearest neighbour,usa13509,13509,0.9815678436597823,18.43215634021763,0.29
+tsplib,nearest neighbour,brd14051,14051,0.9910326667141128,8.967333285887126,0.3
+tsplib,nearest neighbour,d15112,15112,0.9924563260984648,7.543673901535204,0.4
+tsplib,nearest neighbour,d18512,18512,0.9917350907519447,8.264909248055316,0.61
