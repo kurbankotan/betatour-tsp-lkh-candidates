@@ -9,6 +9,7 @@ authors:
     email: "kurban.kotan@cbu.edu.tr"
     affiliation: "Department of Artificial Intelligence and Machine Learning, Faculty of Computer and Information Sciences, Manisa Celal Bayar University"
 license: MIT
+repository-code: "https://github.com/kurbankotan/betatour-tsp-lkh-candidates"
 keywords:
   - traveling salesman problem
   - Lin-Kernighan-Helsgaun heuristic

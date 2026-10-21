@@ -28,7 +28,7 @@ src/          tsplab.py (instances, LKH-3 control, tour ensembles, coverage) and
 analysis/     scripts that recompute the statistics of the paper from results/
 results/      outputs of the four runs: reports, tables, LKH improvement traces, figures, logs and configurations
 figures/      the four figures of the paper
-checkpoints/  place for the trained BetaTour weights (see checkpoints/README.md)
+checkpoints/  the trained BetaTour checkpoint used in runs v2 to v4 (see checkpoints/README.md)
 ```
 
 ## Naming note
@@ -66,7 +66,7 @@ Estimated run time per stage (minutes, summed over the Colab sessions of the ori
 | | multi-core LKH experiment | 219 |
 | **Total** | | **about 32 h** |
 
-The model initialization was not seeded and deterministic GPU operations were not enforced, so a retrained model will not be identical to the checkpoint used in the paper. All seeds, LKH parameters and model settings are listed in Appendix A of the paper.
+The model initialization was not seeded and deterministic GPU operations were not enforced, so a retrained model will not be identical to the checkpoint used in the paper; that checkpoint is `checkpoints/betatour_v2.pt`. All seeds, LKH parameters and model settings are listed in Appendix A of the paper.
 
 ## Re-running the analyses
 
@@ -95,7 +95,7 @@ Each script reads `results/` and prints the statistics it computes.
 
 ## Trained model
 
-See `checkpoints/README.md`.
+`checkpoints/betatour_v2.pt` holds the trained BetaTour model of runs v2 to v4; `checkpoints/README.md` shows how to load it.
 
 ## Citation
 
