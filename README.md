@@ -20,15 +20,20 @@ Reference-tour edges missing from the first five candidates of each node, per 1,
 - The better lists did not make LKH-3 faster. With all overhead charged to the budget, BetaTour-guided LKH-3 tied ascent-free LKH-3 with POPMUSIC candidates on one core (24 wins, 4 ties, 23 losses over 51 instances of 1,000 to 20,000 nodes) and in a six-core multi-start setting (18/15/18).
 - The ascent-free baseline itself beat LKH-3's default configuration on 41 of the 51 instances at these budgets, so a comparison with the default configuration alone mixes the effect of the candidates with the time saved by skipping the subgradient ascent.
 
+## Experimental POPMUSIC-6 search pilot (v11)
+
+[`notebooks/05_BetaTour_v11_POP6_candidate_mechanism.ipynb`](notebooks/05_BetaTour_v11_POP6_candidate_mechanism.ipynb) tests whether residual model edges help inside a POPMUSIC-6/LKH search. It compares native POPMUSIC-6/7 with matched sham, BetaTour, frequency and random interventions, charges model inference to the wall budget, and records candidate-use telemetry. The four 10,000-node instances are reused development cases. This pilot has no results in this repository yet and makes no new manuscript performance claim. The [v11 protocol and code](experiments/v11_candidate/README.md) and [independent review brief](experiments/v11_candidate/REVIEW_FOR_CLAUDE.md) give the methods and limitations.
+
 ## Repository layout
 
 ```
-notebooks/    the four Google Colab notebooks (runs v1 to v4), exactly as they were run
+notebooks/    four original Google Colab notebooks (runs v1 to v4) and the experimental v11 pilot
 src/          tsplab.py (instances, LKH-3 control, tour ensembles, coverage) and tsp_model.py (the BetaTour model)
 analysis/     scripts that recompute the statistics of the paper from results/
 results/      outputs of the four runs: reports, tables, LKH improvement traces, figures, logs and configurations
 figures/      the four figures of the paper
 checkpoints/  the trained BetaTour checkpoint used in runs v2 to v4 (see checkpoints/README.md)
+experiments/  development pilots, their LKH hooks and guarded analysis code
 ```
 
 ## Naming note
