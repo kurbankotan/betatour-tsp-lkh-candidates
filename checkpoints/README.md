@@ -1,12 +1,16 @@
 # Trained checkpoint
 
-`betatour_v2.pt` (23.3 MB) is the trained BetaTour model used in runs v2 to v4 of the paper. It is the file that notebook 02 wrote to Google Drive as
+`betatour_v2.pt` (23.3 MB) is the trained BetaTour model used in runs v2 to v12 of the paper. It is the file that notebook 02 wrote to Google Drive as
 
 ```
 MyDrive/TourFold_TSP/v2/runs/TourFold-v2/ckpt.pt
 ```
 
-and that notebooks 03 and 04 loaded from there. Besides the model weights (`model`) and the model settings (`cfg`), the file holds the state of the optimizer and of the learning-rate schedule (`opt`, `sched`), the training history with one record per epoch (`hist`), the index of the last completed epoch counted from 0 (`epoch`) and the gradient-checkpointing flag (`grad_ckpt`).
+and that notebooks 03 and 04 loaded from there. Notebooks 05 to 13 (runs v5 to v12) clone this repository at commit `d63f7e17942a6af5cba14ad010edca1069d477b3` and load the file from `checkpoints/` only if its SHA-256 is
+
+```
+2322f66c752913f6179f8c61f6b50b0f9d21426857d3ec0155e02891fb3ebd70
+``` Besides the model weights (`model`) and the model settings (`cfg`), the file holds the state of the optimizer and of the learning-rate schedule (`opt`, `sched`), the training history with one record per epoch (`hist`), the index of the last completed epoch counted from 0 (`epoch`) and the gradient-checkpointing flag (`grad_ckpt`).
 
 Loading the checkpoint:
 
