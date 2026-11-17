@@ -43,7 +43,7 @@ static void SetTour(const int *Order)
 
 int main(int argc, char **argv)
 {
-    int i, k, Identity[N], Noop, Omit;
+    int i, k, Identity[N], Noop, Omit, Reject;
     FILE *File;
     char Path[PATH_MAX];
     const int Offsets[6] = {1, -1, 2, -2, 3, -3};
@@ -53,6 +53,7 @@ int main(int argc, char **argv)
     assert(argc == 2 || argc == 3);
     Noop = argc == 3 && strcmp(argv[2], "noop") == 0;
     Omit = argc == 3 && strcmp(argv[2], "omit") == 0;
+    Reject = argc == 3 && strcmp(argv[2], "reject") == 0;
     setenv("BETATOUR_HOOK_DIR", argv[1], 1);
     setenv("BETATOUR_HOOK_TIMEOUT_S", "5", 1);
     Dimension = DimensionSaved = N;
@@ -91,7 +92,8 @@ int main(int argc, char **argv)
     assert(File);
     fprintf(File, "%d\n", N);
     for (i = 1; i <= N; i++) {
-        if (!Noop && i == 1) fprintf(File, "1 7 3 500\n");
+        if (Reject && i == 1) fprintf(File, "1 8 2 500\n");
+        else if (!Noop && i == 1) fprintf(File, "1 7 3 500\n");
         else if (!Noop && i == 5) fprintf(File, "5 11 7 500\n");
         else if (!Noop && i == 9) fprintf(File, "9 3 11 500\n");
         else fprintf(File, "%d 0 0 0\n", i);
@@ -112,9 +114,25 @@ int main(int argc, char **argv)
 
     /* Protected edge, top-two victim, reverse duplicate, and missing victim. */
     assert(BT_ApplyOne(1, 8, 2, 500) == -1);
-    assert(BT_ApplyOne(1, 8, 12, 500) == -1);
+    assert(strcmp(BT_LastSwapRejectReason,
+                  "victim is a protected first-tour edge") == 0);
+    {
+        size_t ProtectedCount = BT_ProtectedCount;
+        BT_ProtectedCount = 0;
+        assert(BT_ApplyOne(1, 8, 12, 500) == -1);
+        assert(strcmp(BT_LastSwapRejectReason,
+                      "victim is in a protected top-two slot") == 0);
+        BT_ProtectedCount = ProtectedCount;
+    }
+    assert(BT_ApplyOne(1, 7, 4, 500) == -1);
+    assert(strcmp(BT_LastSwapRejectReason,
+                  "target already exists in source row") == 0);
     assert(BT_ApplyOne(1, 3, 4, 500) == -1);
+    assert(strcmp(BT_LastSwapRejectReason,
+                  "target already exists in reverse row") == 0);
     assert(BT_ApplyOne(1, 8, 9, 500) == -1);
+    assert(strcmp(BT_LastSwapRejectReason,
+                  "victim is missing from source row") == 0);
     assert(RowIndex(1, 7) == 2 && RowLength(1) == 6);
 
     BT_NoteCandidate(&NodeSet[1], &NodeSet[7]);

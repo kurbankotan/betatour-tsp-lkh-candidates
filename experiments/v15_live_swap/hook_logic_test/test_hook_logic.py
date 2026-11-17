@@ -85,6 +85,15 @@ def main() -> None:
         assert omit.returncode == 97, omit.stderr
         assert "omit seed tour edge" in omit.stderr
         assert not (omit_dir / "post.candidates").exists()
+
+        reject_dir = root / "reject"
+        reject_dir.mkdir()
+        reject = subprocess.run([str(binary), str(reject_dir), "reject"],
+                                capture_output=True, text=True, check=False)
+        assert reject.returncode == 97, reject.stderr
+        assert "from=1 to=8 victim=2 alpha=500" in reject.stderr
+        assert "victim is a protected first-tour edge" in reject.stderr
+        assert not (reject_dir / "post.candidates").exists()
     print("v15 hook logic test passed")
 
 

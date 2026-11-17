@@ -193,6 +193,68 @@ def _patched_events(base: Path, start_epoch: float, final_cost: int) -> tuple[li
     return events, flags
 
 
+def _guided_failure_message(result: dict, work_dir: Path, budget_s: float) -> str:
+    """Explain an incomplete barrier or swap using recorded process evidence."""
+    reason = result.get("failure_reason") or "incomplete_resume"
+    if reason == "hook_process_failed_before_barrier":
+        explanation = "LKH ilk tur bariyerinden önce durdu; ilgili stderr kaydına bakın."
+    elif reason == "deadline_before_barrier":
+        explanation = "Altı ilk tur süre sınırına kadar tamamlanmadı."
+    elif reason == "deadline_before_policy":
+        explanation = ("İlk turlar hazırdı, fakat kalan süre model kararını "
+                       "ve LKH'nin yeniden başlamasını karşılamıyordu.")
+    elif reason == "deadline_before_actions":
+        explanation = ("İlk turlar hazırdı, fakat model/politika hesabı veya dosya hazırlığı "
+                       "bütçeyi tüketti; LKH'ye eylem gönderilmedi.")
+    elif reason == "deadline_during_action_publication":
+        explanation = ("Süre sınırı eylem dosyaları yayımlanırken doldu; "
+                       "altı LKH süreci birlikte devam edemedi.")
+    elif reason == "actions_not_applied_before_deadline":
+        explanation = ("Eylemler gönderildi, fakat en az bir LKH süreci "
+                       "uygulama kaydını süre sınırından önce yazamadı.")
+    elif reason == "hook_process_failed":
+        explanation = ("Bir LKH süreci kancada hata verdi veya eylemi reddetti; "
+                       "ilgili stderr kaydına bakın.")
+    else:
+        explanation = "En az bir LKH süreci bariyeri tamamlayıp devam edemedi."
+    runs = []
+    for run in result.get("runs", []):
+        seed = int(run["seed"])
+        base = work_dir / f"seed_{seed}"
+        stderr = run.get("stderr_tail")
+        if stderr is None:
+            try:
+                stderr = (base / "stderr.txt").read_text(errors="replace")[-500:]
+            except OSError:
+                stderr = ""
+        runs.append({
+            "seed": seed,
+            "returncode": run.get("returncode"),
+            "action": bool(run.get("action_exists", (base / "action.txt").exists())),
+            "post": bool(run.get("post_exists", (base / "post.candidates").exists())),
+            "applied": bool(run.get("applied_exists", (base / "applied.stats").exists())),
+            "stderr_tail": str(stderr)[-500:],
+        })
+    details = {
+        "reason": reason,
+        "phase": result.get("phase"),
+        "exception": result.get("exception"),
+        "budget_s": float(budget_s),
+        "resume_reserve_s": result.get("resume_reserve_s"),
+        "phase_timings_s": result.get("phase_timings_s", {}),
+        "remaining_at_policy_end_s": result.get("remaining_at_policy_end_s"),
+        "actions_published_seeds": result.get("actions_published_seeds", []),
+        "resume_completed_seeds": result.get("resume_completed_seeds", []),
+        "runs": runs,
+        "audit": str(work_dir / "run_summary.json"),
+    }
+    advice = ("Az vCPU'lu CPU ortamında süre yetmediyse bütün kollar için daha uzun "
+              "eşit bütçe ve yeni EXPERIMENT_NAME kullanın; GPU/CPU sonuçlarını "
+              "aynı deneyde birleştirmeyin.")
+    return explanation + "\n" + advice + "\n" + json.dumps(
+        details, ensure_ascii=False, indent=2, allow_nan=False)
+
+
 def run_guided_arm(
     kind: str,
     patched_binary: Path,
@@ -231,14 +293,26 @@ def run_guided_arm(
                         protection_sha256=protection_sha256)
         return actions
 
-    result = run_six(Path(patched_binary), Path(problem), Path(work_dir),
-                     seeds, budget_s, callback,
-                     extra_params={"MAX_CANDIDATES": 6})
+    try:
+        result = run_six(Path(patched_binary), Path(problem), Path(work_dir),
+                         seeds, budget_s, callback,
+                         extra_params={"MAX_CANDIDATES": 6})
+    except Exception as exc:
+        summary = work_dir / "run_summary.json"
+        if summary.exists():
+            try:
+                result = json.loads(summary.read_text())
+                raise RuntimeError(_guided_failure_message(result, work_dir, budget_s)) from exc
+            except (OSError, ValueError, KeyError):
+                pass
+        raise
     cache_files = cache.flush()  # written after the timed window
     if not result["barrier_completed"] or "actions" not in decision:
-        raise RuntimeError("first-trial barrier incomplete")
-    if any(run["best_tour"] is None or run["applied_stats"] is None for run in result["runs"]):
-        raise RuntimeError("one or more LKH processes did not resume")
+        raise RuntimeError(_guided_failure_message(result, work_dir, budget_s))
+    if (result.get("failure_reason") or
+            any(run["best_tour"] is None or run["applied_stats"] is None
+                for run in result["runs"])):
+        raise RuntimeError(_guided_failure_message(result, work_dir, budget_s))
     actions, audit = decision["actions"], decision["audit"]
     for seed in seeds:
         protection_path = work_dir / f"seed_{seed}" / "protected.edges"

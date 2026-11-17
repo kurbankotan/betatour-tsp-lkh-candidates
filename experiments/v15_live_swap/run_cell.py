@@ -91,6 +91,8 @@ for inst in INSTANCES:
                       "seeds": SEEDS, "budget_s": inst["budget_s"],
                       "seed_costs": raw["seed_costs"], "best_cost": raw["best_cost"],
                       "wall_elapsed_s": raw["wall_elapsed_s"],
+                      "phase_timings_s": raw.get("phase_timings_s"),
+                      "remaining_at_policy_end_s": raw.get("remaining_at_policy_end_s"),
                       "start_epoch_s": raw["start_epoch_s"],
                       "deadline_epoch_s": raw["deadline_epoch_s"] if "deadline_epoch_s" in raw else raw["start_epoch_s"] + inst["budget_s"],
                       "first_costs": raw.get("first_costs"),
@@ -116,11 +118,21 @@ for inst in INSTANCES:
             save_progress(last=inst["name"] + "/" + arm)
             print("BİTTİ:", inst["name"], arm, "en iyi", raw["best_cost"], flush=True)
         except Exception as exc:
-            write_json_atomic(OUTPUT_ROOT / "errors" /
-                              (inst["name"] + "_" + arm + "_" + attempt_id + ".json"),
+            failure_dir = OUTPUT_ROOT / "errors" / (inst["name"] + "_" + arm + "_" + attempt_id)
+            failure_dir.mkdir(parents=True, exist_ok=True)
+            audit_copy_error = None
+            if local_run.exists():
+                try:
+                    shutil.copytree(local_run, failure_dir / "audit")
+                except Exception as copy_exc:
+                    audit_copy_error = repr(copy_exc)
+            write_json_atomic(failure_dir / "error.json",
                               {"instance": inst["name"], "arm": arm,
-                               "error": repr(exc),
+                               "attempt_id": attempt_id, "budget_s": inst["budget_s"],
+                               "hardware_profile": HARDWARE_PROFILE,
+                               "error": repr(exc), "audit_copy_error": audit_copy_error,
                                "utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())})
+            print("Başarısız deneme kayıtları:", failure_dir, flush=True)
             save_progress(state="error", last=inst["name"] + "/" + arm)
             raise
     if MAX_NEW_ARMS is not None and new_arms >= MAX_NEW_ARMS:

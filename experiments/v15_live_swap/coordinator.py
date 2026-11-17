@@ -145,96 +145,177 @@ def run_six(
     work_dir.mkdir(parents=True)
     processes: list[subprocess.Popen] = []
     open_logs: list = []
+    snapshots: list[Snapshot] = []
+    actions_published_seeds: list[int] = []
+    phase_timings_s: dict[str, float] = {}
+    remaining_at_policy_end_s: float | None = None
+    failure_reason: str | None = None
+    caught_exception: str | None = None
+    phase = "startup"
     start_mono = time.monotonic()
     start_epoch = time.time()
     deadline = start_mono + wall_budget_s
+    # Leave time for the six LKH processes to parse actions and export their
+    # post-swap rows. A tiny test budget gets a proportionally tiny reserve.
+    resume_reserve_s = min(10.0, max(0.1, 0.05 * wall_budget_s))
+
+    def mark(name: str) -> None:
+        phase_timings_s[name] = max(0.0, time.monotonic() - start_mono)
+
     try:
-        for seed in seeds:
-            seed_dir = work_dir / f"seed_{seed}"
-            seed_dir.mkdir()
-            params = seed_dir / "run.par"
-            _parameter_file(params, problem, seed, wall_budget_s, max_trials,
-                            extra_params or {})
-            stdout = (seed_dir / "stdout.txt").open("w")
-            stderr = (seed_dir / "stderr.txt").open("w")
-            open_logs.extend((stdout, stderr))
-            env = dict(os.environ)
-            env["BETATOUR_HOOK_DIR"] = str(seed_dir.resolve())
-            env["BETATOUR_HOOK_TIMEOUT_S"] = str(max(5.0, wall_budget_s + 5.0))
-            env["BETATOUR_HOOK_AFTER_S"] = str(hook_after_s)
-            processes.append(subprocess.Popen(
-                [str(lkh_binary.resolve()), str(params.resolve())],
-                cwd=seed_dir, stdout=stdout, stderr=stderr, env=env,
-            ))
-        first_paths = [work_dir / f"seed_{seed}" / barrier_name for seed in seeds]
-        while not all(path.exists() for path in first_paths):
-            failures = [p.returncode for p in processes if p.poll() not in (None, 0)]
-            if failures:
-                raise RuntimeError(f"LKH exited before first-tour barrier: {failures}")
-            if time.monotonic() >= deadline:
-                break
-            time.sleep(0.02)
-        snapshots: list[Snapshot] = []
-        if all(path.exists() for path in first_paths) and time.monotonic() < deadline:
+        try:
             for seed in seeds:
-                base = work_dir / f"seed_{seed}"
-                snapshots.append(Snapshot(
-                    seed=seed,
-                    first_tour=read_tour(base / barrier_name),
-                    native_candidates=read_candidates(base / "native.candidates"),
-                    live_candidates=read_candidates(base / "live.candidates"),
+                seed_dir = work_dir / f"seed_{seed}"
+                seed_dir.mkdir()
+                params = seed_dir / "run.par"
+                _parameter_file(params, problem, seed, wall_budget_s, max_trials,
+                                extra_params or {})
+                stdout = (seed_dir / "stdout.txt").open("w")
+                stderr = (seed_dir / "stderr.txt").open("w")
+                open_logs.extend((stdout, stderr))
+                env = dict(os.environ)
+                env["BETATOUR_HOOK_DIR"] = str(seed_dir.resolve())
+                env["BETATOUR_HOOK_TIMEOUT_S"] = str(max(5.0, wall_budget_s + 5.0))
+                env["BETATOUR_HOOK_AFTER_S"] = str(hook_after_s)
+                processes.append(subprocess.Popen(
+                    [str(lkh_binary.resolve()), str(params.resolve())],
+                    cwd=seed_dir, stdout=stdout, stderr=stderr, env=env,
                 ))
-            actions = action_fn(snapshots)
-            if len(actions) != len(seeds):
-                raise ValueError("Policy must return one action matrix per seed")
-            if time.monotonic() < deadline:
-                # action.txt is the readiness marker.  Write protections first
-                # for every process, then release the six processes together.
+            phase = "barrier"
+            first_paths = [work_dir / f"seed_{seed}" / barrier_name for seed in seeds]
+            while not all(path.exists() for path in first_paths):
+                failures = [p.returncode for p in processes if p.poll() not in (None, 0)]
+                if failures:
+                    failure_reason = "hook_process_failed_before_barrier"
+                    raise RuntimeError(f"LKH exited before first-tour barrier: {failures}")
+                if time.monotonic() >= deadline:
+                    failure_reason = "deadline_before_barrier"
+                    break
+                time.sleep(0.02)
+            if failure_reason is None and all(path.exists() for path in first_paths):
+                mark("barrier_ready")
+                phase = "snapshot_read"
                 for seed in seeds:
-                    write_protected_edges(work_dir / f"seed_{seed}" / "protected.edges",
-                                          [snapshot.first_tour for snapshot in snapshots])
-                for seed, snapshot, action in zip(seeds, snapshots, actions):
-                    if len(action) != len(snapshot.first_tour):
-                        raise ValueError(f"Policy dimension mismatch for seed {seed}")
-                    write_actions(work_dir / f"seed_{seed}" / "action.txt", action)
-        while any(p.poll() is None for p in processes) and time.monotonic() < deadline:
-            time.sleep(0.02)
+                    base = work_dir / f"seed_{seed}"
+                    snapshots.append(Snapshot(
+                        seed=seed,
+                        first_tour=read_tour(base / barrier_name),
+                        native_candidates=read_candidates(base / "native.candidates"),
+                        live_candidates=read_candidates(base / "live.candidates"),
+                    ))
+                mark("snapshots_ready")
+                if deadline - time.monotonic() <= resume_reserve_s:
+                    failure_reason = "deadline_before_policy"
+                else:
+                    phase = "policy"
+                    mark("policy_start")
+                    actions = action_fn(snapshots)
+                    mark("policy_end")
+                    remaining_at_policy_end_s = deadline - time.monotonic()
+                    if len(actions) != len(seeds):
+                        raise ValueError("Policy must return one action matrix per seed")
+                    if remaining_at_policy_end_s <= resume_reserve_s:
+                        failure_reason = "deadline_before_actions"
+                    else:
+                        # Validate every matrix before releasing any process.
+                        for seed, snapshot, action in zip(seeds, snapshots, actions):
+                            if len(action) != len(snapshot.first_tour):
+                                raise ValueError(f"Policy dimension mismatch for seed {seed}")
+                        phase = "action_publication"
+                        mark("actions_publish_start")
+                        # action.txt is the readiness marker: all protected
+                        # files must be committed before the first action.
+                        tours = [snapshot.first_tour for snapshot in snapshots]
+                        for seed in seeds:
+                            write_protected_edges(
+                                work_dir / f"seed_{seed}" / "protected.edges", tours)
+                        if deadline - time.monotonic() <= resume_reserve_s / 2:
+                            failure_reason = "deadline_during_action_publication"
+                        else:
+                            for seed, action in zip(seeds, actions):
+                                if deadline - time.monotonic() <= resume_reserve_s / 2:
+                                    failure_reason = "deadline_during_action_publication"
+                                    break
+                                write_actions(work_dir / f"seed_{seed}" / "action.txt", action)
+                                actions_published_seeds.append(int(seed))
+                        mark("actions_publish_end")
+                        if failure_reason is None:
+                            phase = "search_after_action"
+            while any(p.poll() is None for p in processes) and time.monotonic() < deadline:
+                if (failure_reason is None and actions_published_seeds and
+                        any(p.poll() not in (None, 0) for p in processes)):
+                    failure_reason = "hook_process_failed"
+                    break
+                time.sleep(0.02)
+        except Exception as exc:
+            caught_exception = repr(exc)
+            if failure_reason is None:
+                failure_reason = f"{phase}_exception"
+            raise
+        finally:
+            mark("process_stop_start")
+            for process in processes:
+                if process.poll() is None:
+                    process.terminate()
+            for process in processes:
+                try:
+                    process.wait(timeout=2)
+                except subprocess.TimeoutExpired:
+                    process.kill()
+                    process.wait()
+            for stream in open_logs:
+                stream.close()
+            mark("process_stop_end")
     finally:
-        for process in processes:
-            if process.poll() is None:
-                process.terminate()
-        for process in processes:
-            try:
-                process.wait(timeout=2)
-            except subprocess.TimeoutExpired:
-                process.kill()
-                process.wait()
-        for stream in open_logs:
-            stream.close()
-    result = {
-        "seeds": list(seeds),
-        "wall_budget_s": wall_budget_s,
-        "wall_elapsed_s": time.monotonic() - start_mono,
-        "start_epoch_s": start_epoch,
-        "deadline_epoch_s": start_epoch + wall_budget_s,
-        "barrier_completed": len(snapshots) == 6,
-        "runs": [],
-    }
-    for seed, process in zip(seeds, processes):
-        base = work_dir / f"seed_{seed}"
-        best = base / "best.tour"
-        result["runs"].append({
-            "seed": seed,
-            "returncode": process.returncode,
-            "first_tour": str(base / barrier_name) if (base / barrier_name).exists() else None,
-            "best_tour": str(best) if best.exists() else None,
-            "best_events": str(base / "best.events") if (base / "best.events").exists() else None,
-            "native_candidates": str(base / "native.candidates") if (base / "native.candidates").exists() else None,
-            "live_candidates": str(base / "live.candidates") if (base / "live.candidates").exists() else None,
-            "post_candidates": str(base / "post.candidates") if (base / "post.candidates").exists() else None,
-            "protected_edges_sha256": hashlib.sha256((base / "protected.edges").read_bytes()).hexdigest()
-            if (base / "protected.edges").exists() else None,
-            "applied_stats": str(base / "applied.stats") if (base / "applied.stats").exists() else None,
-        })
-    (work_dir / "run_summary.json").write_text(json.dumps(result, indent=2) + "\n")
+        # Persist diagnostics even if an exception interrupted the callback
+        # or action publication. The caller can copy this directory to Drive.
+        resume_completed_seeds = [int(seed) for seed in seeds
+                                  if (work_dir / f"seed_{seed}" / "applied.stats").exists()]
+        if failure_reason is None and len(snapshots) != len(seeds):
+            failure_reason = "deadline_before_barrier"
+        if failure_reason is None and len(actions_published_seeds) != len(seeds):
+            failure_reason = "deadline_before_actions"
+        if failure_reason is None and len(resume_completed_seeds) != len(seeds):
+            failure_reason = "actions_not_applied_before_deadline"
+        result = {
+            "seeds": list(seeds),
+            "wall_budget_s": wall_budget_s,
+            "wall_elapsed_s": time.monotonic() - start_mono,
+            "start_epoch_s": start_epoch,
+            "deadline_epoch_s": start_epoch + wall_budget_s,
+            "barrier_completed": len(snapshots) == 6,
+            "phase": phase,
+            "phase_timings_s": phase_timings_s,
+            "remaining_at_policy_end_s": remaining_at_policy_end_s,
+            "resume_reserve_s": resume_reserve_s,
+            "failure_reason": failure_reason,
+            "exception": caught_exception,
+            "actions_published_seeds": actions_published_seeds,
+            "resume_completed_seeds": resume_completed_seeds,
+            "runs": [],
+        }
+        for index, seed in enumerate(seeds):
+            process = processes[index] if index < len(processes) else None
+            base = work_dir / f"seed_{seed}"
+            best = base / "best.tour"
+            stderr_path = base / "stderr.txt"
+            result["runs"].append({
+                "seed": seed,
+                "returncode": process.returncode if process is not None else None,
+                "first_tour": str(base / barrier_name) if (base / barrier_name).exists() else None,
+                "best_tour": str(best) if best.exists() else None,
+                "best_events": str(base / "best.events") if (base / "best.events").exists() else None,
+                "native_candidates": str(base / "native.candidates") if (base / "native.candidates").exists() else None,
+                "live_candidates": str(base / "live.candidates") if (base / "live.candidates").exists() else None,
+                "post_candidates": str(base / "post.candidates") if (base / "post.candidates").exists() else None,
+                "action_exists": (base / "action.txt").exists(),
+                "post_exists": (base / "post.candidates").exists(),
+                "applied_exists": (base / "applied.stats").exists(),
+                "stderr_tail": stderr_path.read_text(errors="replace")[-1000:]
+                if stderr_path.exists() else "",
+                "protected_edges_sha256": hashlib.sha256((base / "protected.edges").read_bytes()).hexdigest()
+                if (base / "protected.edges").exists() else None,
+                "applied_stats": str(base / "applied.stats") if (base / "applied.stats").exists() else None,
+            })
+        (work_dir / "run_summary.json").write_text(json.dumps(result, indent=2) + "\n")
     return result

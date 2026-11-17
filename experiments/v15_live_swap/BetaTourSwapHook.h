@@ -355,49 +355,72 @@ static void BT_RecordBest(void)
     }
 }
 
+/* LKH runs one search thread per process, so this diagnosis is local to the
+ * process and is read immediately after a rejected action. */
+static const char *BT_LastSwapRejectReason = "none";
+
 static int BT_ApplyOne(int FromId, int ToId, int VictimId, int Alpha)
 {
     Node *From, *To;
     Candidate *Start, *Reverse;
     int Count = 0, VictimIndex = -1, i;
 
+    BT_LastSwapRejectReason = "none";
     if (FromId < 1 || FromId > DimensionSaved || ToId < 1 ||
         ToId > DimensionSaved || ToId == FromId || VictimId < 1 ||
         VictimId > DimensionSaved || VictimId == FromId ||
         VictimId == ToId ||
-        Alpha < 0 || Alpha == INT_MAX)
+        Alpha < 0 || Alpha == INT_MAX) {
+        BT_LastSwapRejectReason = "invalid node ID or alpha";
         return -1;
-    if (BT_IsProtected(FromId, VictimId))
+    }
+    if (BT_IsProtected(FromId, VictimId)) {
+        BT_LastSwapRejectReason = "victim is a protected first-tour edge";
         return -1;
+    }
     From = &NodeSet[FromId];
     To = &NodeSet[ToId];
     Start = From->CandidateSet;
-    if (!Start)
+    if (!Start) {
+        BT_LastSwapRejectReason = "source candidate row is missing";
         return -1;
+    }
     for (i = 0; Start[i].To; i++) {
-        if (Start[i].To == To)
+        if (Start[i].To == To) {
+            BT_LastSwapRejectReason = "target already exists in source row";
             return -1;
+        }
         if (Start[i].To->Id == VictimId)
             VictimIndex = i;
         Count++;
     }
     /* The two highest-priority native entries are protected. */
-    if (VictimIndex < 2)
+    if (VictimIndex < 0) {
+        BT_LastSwapRejectReason = "victim is missing from source row";
         return -1;
+    }
+    if (VictimIndex < 2) {
+        BT_LastSwapRejectReason = "victim is in a protected top-two slot";
+        return -1;
+    }
     /* The new undirected edge must be absent from the full live graph.
      * A row belongs to one source, so only this reverse row can contain it. */
     Reverse = To->CandidateSet;
     for (i = 0; Reverse && Reverse[i].To; i++)
-        if (Reverse[i].To == From)
+        if (Reverse[i].To == From) {
+            BT_LastSwapRejectReason = "target already exists in reverse row";
             return -1;
+        }
     Start[VictimIndex].To = To;
     Start[VictimIndex].Cost = C(From, To);
     Start[VictimIndex].Alpha = Alpha;
     /* In-place replacement must not alter the directed row's length. */
     for (i = 0; Start[i].To; i++)
         ;
-    if (i != Count)
+    if (i != Count) {
+        BT_LastSwapRejectReason = "source row length changed during swap";
         return -1;
+    }
     return 0;
 }
 
@@ -465,9 +488,12 @@ static void BT_WaitAndApply(const char *Directory)
         BT_ValidateNoop(From, To, Victim);
         if (To == 0)
             continue;
-        if (BT_ApplyOne(From, To, Victim, Alpha) != 0)
+        if (BT_ApplyOne(From, To, Victim, Alpha) != 0) {
             Rejected++;
-        else {
+            fprintf(stderr,
+                    "BetaTour rejected swap from=%d to=%d victim=%d alpha=%d: %s\n",
+                    From, To, Victim, Alpha, BT_LastSwapRejectReason);
+        } else {
             BT_ActionTo[From] = To;
             BT_ActionVictim[From] = Victim;
             Swapped++;

@@ -1,4 +1,4 @@
-"""Generate a self-contained Colab Pro notebook for the v15 live-swap pilot.
+"""Generate the self-contained v15r2 live-swap pilot with clear deadline diagnostics.
 
 The frozen source and checkpoint are read from a pinned Git commit.  The new
 experiment code is embedded in the notebook and copied verbatim to Drive.
@@ -15,7 +15,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[1]
-OUTPUT = REPO / "notebooks" / "15_BetaTour_v15_live_swap_pilot.ipynb"
+OUTPUT = REPO / "notebooks" / "16_BetaTour_v15r2_live_swap_pilot.ipynb"
 V11_BUILDER = HERE.parent / "v11_candidate" / "build_colab_notebook.py"
 spec = importlib.util.spec_from_file_location("v11_builder_for_v15", V11_BUILDER)
 if spec is None or spec.loader is None:
@@ -42,20 +42,20 @@ def make_notebook() -> dict:
     notebook = v11.make_notebook()
     old = lambda index: "".join(notebook["cells"][index]["source"])
 
-    set_cell(notebook, 0, """# BetaTour v15 — canlı aday değiştirme pilotu
+    set_cell(notebook, 0, """# BetaTour v15r2 — canlı aday değiştirme pilotu
 
 LKH-3.0.14'ün POPMUSIC-6 aday listesiyle ilk denemesi tamamlandığında, en çok düğümlerin %5'inde düşük öncelikli bir adayı başka bir adayla **yerinde değiştiriyoruz**. BetaTour, en yakın yeni komşu ve deterministik rastgele seçim aynı kaynak düğümleri ve aynı çıkarılacak adayları kullanır. İlk altı turun bütün kenarları ve her aday satırının ilk iki girdisi korunur. Native POPMUSIC-6 kesintisiz pratik kıyastır; sham aynı duraklamayı ve model çıkarımını öder.
 
-Bu **daha önce incelenmiş dört 10.000 düğümlü örnek üzerinde keşif pilotudur**. Sonuçlar bir üstünlük iddiası veya bağımsız doğrulama değildir. Bir politika gerçekten umut verirse, kodu ve analiz planını dondurup yeni örneklerde tekrar test edeceğiz. Her kol için 120 saniyelik toplam duvar saati sınırına ilk tur, bekleme, model çıkarımı ve sonraki arama dahildir. Bir örnekteki beş kol sırayla, her kolda altı LKH süreci paralel çalışır.
+Bu **daha önce incelenmiş dört 10.000 düğümlü örnek üzerinde keşif pilotudur**. Sonuçlar bir üstünlük iddiası veya bağımsız doğrulama değildir. Bir politika gerçekten umut verirse, kodu ve analiz planını dondurup yeni örneklerde tekrar test edeceğiz. Her kolun toplam duvar saati sınırına ilk tur, bekleme, model çıkarımı ve sonraki arama dahildir. Bir örnekteki beş kol sırayla, her kolda altı LKH süreci paralel çalışır.
 
-Colab Pro'da CPU, GPU veya High RAM çalışma ortamı seçebilirsiniz. CUDA varsa model onu kullanır; yoksa CPU kullanır. Özellikle 6'dan az vCPU, altı eşzamanlı LKH sürecini yavaşlatır; sonuçlar yine donanım profiliyle kaydedilir. Oturum kesilirse hücreleri yeniden çalıştırın: tamamlanan kollar `MyDrive/BetaTour/v15_live_swap_pilot` içinde doğrulanıp atlanır. Aynı Drive deneyi farklı GPU/vCPU profiliyle sürdürülmez. Pilot tamamlandığında sonuç ZIP'i tarayıcıya otomatik indirilir; ham denetim ZIP'i Drive'da kalır.
+Colab Pro'da CPU, GPU veya High RAM çalışma ortamı seçebilirsiniz. CUDA varsa model onu kullanır; yoksa CPU kullanır. CPU'da veya 6'dan az vCPU ile her kol **300 saniye**; en az 6 vCPU'lu GPU'da **120 saniye** çalışır. Bütçe ve donanım profili Drive deney adına ve manifestine yazılır. Oturum kesilirse hücreleri yeniden çalıştırın: tamamlanan kollar doğrulanıp atlanır. Aynı Drive deneyi farklı donanım profiliyle sürdürülmez. Pilot tamamlandığında sonuç ZIP'i tarayıcıya otomatik indirilir; ham denetim ZIP'i Drive'da kalır.
 
-Yaklaşık süre: kurulum/derleme 3–8 dakika, 4 örnek × 5 kol × 120 saniye = 40 dakika çözücü, arşiv 2–5 dakika. CPU ve az vCPU ile ilk altı tur 120 saniyede tamamlanamazsa o kol eksik tanı olarak kaydedilir; sonuç karşılaştırmasına girmez.
-
-İki vCPU'lu CPU ortamında bariyer 120 saniyede yetişmezse hücre 1'de dört `budget_s` değerini `300.0` ve `EXPERIMENT_NAME` değerini `v15_live_swap_pilot_cpu300` yapıp yeni bir Drive deneyi başlatın. Bu ayar beş kolu aynı 300 saniyelik bütçede karşılaştırır; 120 saniyelik GPU pilotuyla birleştirmeyin.
+Yaklaşık süre: GPU/6+ vCPU için 50–55 dakika; CPU veya az vCPU için yaklaşık 110 dakika ve kurulum. Her kol eşit bütçe alır. Süre yetmezse başarısız denemenin günlükleri Drive'a kaydedilir; eksik kol sonuç karşılaştırmasına girmez.
 """)
 
-    set_cell(notebook, 1, """EXPERIMENT_NAME = "v15_live_swap_pilot"
+    set_cell(notebook, 1, """EXPERIMENT_STEM = "v15r2_live_swap_pilot"
+GPU_BUDGET_S = 120.0
+CPU_OR_LOW_VCPU_BUDGET_S = 300.0
 SEEDS = list(range(301, 307))
 ARMS = ["native_pop6", "sham", "random_swap", "nearest_swap", "beta_swap"]
 INSTANCE_SPECS = [
@@ -111,7 +111,11 @@ def cpu_model_name():
                 return line.split(":", 1)[1].strip()
     return platform.processor() or "unknown"
 
-WORK_ROOT = Path("/content/betatour_v15_swap_work")
+PER_ARM_BUDGET_S = (CPU_OR_LOW_VCPU_BUDGET_S
+                    if DEVICE.type == "cpu" or CPU_COUNT < 6 else GPU_BUDGET_S)
+EXPERIMENT_NAME = f"{EXPERIMENT_STEM}_{DEVICE.type}{int(PER_ARM_BUDGET_S)}"
+INSTANCE_SPECS = [list(spec[:5]) + [PER_ARM_BUDGET_S] for spec in INSTANCE_SPECS]
+WORK_ROOT = Path("/content/betatour_v15r2_swap_work")
 WORK_ROOT.mkdir(parents=True, exist_ok=True)
 REPO = WORK_ROOT / "repo"
 if not (REPO / ".git").exists():
@@ -142,7 +146,8 @@ HARDWARE = {**HARDWARE_PROFILE,
             "cuda": torch.version.cuda}
 if CPU_COUNT < 6:
     print("UYARI: Altı LKH süreci", CPU_COUNT, "vCPU paylaşacak; pilot yavaşlayabilir.")
-print("Hazır:", HARDWARE, "Drive:", OUTPUT_ROOT)
+print("Hazır:", HARDWARE, "kol bütçesi:", PER_ARM_BUDGET_S,
+      "Drive:", OUTPUT_ROOT)
 """)
 
     files = {
@@ -176,7 +181,7 @@ print("Dondurulmuş deney kodu:", CODE_SHA256)
 
     build = old(4)
     build = replace_once(build, 'PATCHED_DIR = LKH_ROOT / "LKH-3.0.14-BetaTour-v11r2"',
-                         'PATCHED_DIR = LKH_ROOT / "LKH-3.0.14-BetaTour-v15-swap"')
+                         'PATCHED_DIR = LKH_ROOT / "LKH-3.0.14-BetaTour-v15r2-swap"')
     build = replace_once(build, 'assert patch_manifest["search_hook_sha256"] == CODE_SHA256["v11_candidate/BetaTourSearchHook.h"]',
                          'assert patch_manifest["search_hook_sha256"] == CODE_SHA256["v15_live_swap/BetaTourSwapHook.h"]')
     build = replace_once(build, 'assert patch_manifest["visit_header_sha256"] == CODE_SHA256["v11_candidate/BetaTourVisit.h"]',
@@ -206,7 +211,7 @@ MANIFEST = {"schema": 1, "profile": "four_reused_10k_development_instances",
             "checkpoint_sha256": CHECKPOINT_SHA256,
             "hardware_profile": HARDWARE_PROFILE, "code_sha256": CODE_SHA256,
             "build": BUILD_INFO,
-            "analysis_plan": "Exploratory 4-instance swap pilot; best-of-six valid cost at a common 120-second wall deadline; no independent superiority claim."}
+            "analysis_plan": "Exploratory 4-instance swap pilot; best-of-six valid cost at a common per-arm wall deadline selected by hardware profile; no independent superiority claim."}
 manifest_path = OUTPUT_ROOT / "manifest.json"
 if manifest_path.exists():
     saved = json.loads(manifest_path.read_text())
