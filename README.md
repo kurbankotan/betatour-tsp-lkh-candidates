@@ -43,6 +43,8 @@ The better lists did not make LKH-3 faster. Win/tie/loss counts below are by ins
 | v11r2 | `12_BetaTour_v11r2_POP6_candidate_mechanism` | v11 with corrected code on 12 vCPUs | 4 (as v11) | `results/v11r2/` |
 | v12 | `13_BetaTour_v12_candidate_self_correction` | how much of the POPMUSIC candidate deficit LKH-3 repairs itself | 43 with reference tours (from v2-v5) | `results/v12/` |
 
+The runnable [v15 live-swap pilot](notebooks/15_BetaTour_v15_live_swap_pilot.ipynb) tests in-place replacement of selected POPMUSIC-6 candidates against uninterrupted POPMUSIC-6 and matched sham, nearest-neighbor and random controls. It uses four previously examined 10,000-node instances; no v15 results or manuscript claims are included here. The [experiment README](experiments/v15_live_swap/README.md) records the intervention, audit rules and Colab instructions.
+
 Runs v1, v2, v4, v8 and v12 used an NVIDIA L4 GPU and runs v3, v5 to v7, v9, v10 and v11r2 an NVIDIA A100, all with 12 visible vCPUs; run v11 ran on a Tesla T4 with two vCPUs, below its stated requirement (Section 4.14 of the paper).
 
 ## Repository layout
