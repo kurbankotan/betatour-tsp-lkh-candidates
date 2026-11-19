@@ -1,0 +1,40 @@
+18 instances with the arms uninterrupted, native and rank
+  trials after 60 s, uninterrupted  mean  247.9
+  trials after 60 s, native         mean  271.1
+  trials after 60 s, rank           mean  171.4
+  share of first-trial tour edges with alpha = 0, native alpha==0: 0.757 (17 instances)
+  share of first-trial tour edges with alpha = 0, rank-1 only: 0.444 (17 instances)
+rank minus native (% of tour length; positive: rank is longer), 18 instances
+   after 10 s: mean +0.0213, median +0.0204, 95% CI +0.0088 to +0.0338, longer/equal/shorter 14/0/4, sign test p = 0.031
+   after 15 s: mean +0.0210, median +0.0222, 95% CI +0.0078 to +0.0348, longer/equal/shorter 11/0/7, sign test p = 0.481
+   after 20 s: mean +0.0181, median +0.0141, 95% CI +0.0061 to +0.0302, longer/equal/shorter 11/0/7, sign test p = 0.481
+   after 30 s: mean +0.0109, median +0.0069, 95% CI +0.0003 to +0.0216, longer/equal/shorter 11/0/7, sign test p = 0.481
+   after 45 s: mean +0.0098, median +0.0124, 95% CI +0.0009 to +0.0186, longer/equal/shorter 11/0/7, sign test p = 0.481
+   after 59 s: mean +0.0074, median +0.0083, 95% CI -0.0009 to +0.0149, longer/equal/shorter 12/0/6, sign test p = 0.238
+rank minus uninterrupted (% of tour length; positive: rank is longer), 18 instances
+   after 10 s: mean +0.0162, median +0.0200, 95% CI +0.0011 to +0.0308, longer/equal/shorter 11/0/7, sign test p = 0.481
+   after 15 s: mean +0.0153, median +0.0131, 95% CI +0.0014 to +0.0297, longer/equal/shorter 12/0/6, sign test p = 0.238
+   after 20 s: mean +0.0150, median +0.0176, 95% CI +0.0054 to +0.0248, longer/equal/shorter 15/0/3, sign test p = 0.008
+   after 30 s: mean +0.0116, median +0.0104, 95% CI +0.0031 to +0.0194, longer/equal/shorter 14/0/4, sign test p = 0.031
+   after 45 s: mean +0.0090, median +0.0063, 95% CI +0.0016 to +0.0168, longer/equal/shorter 12/0/6, sign test p = 0.238
+   after 59 s: mean +0.0057, median +0.0039, 95% CI -0.0022 to +0.0142, longer/equal/shorter 11/0/7, sign test p = 0.481
+native minus uninterrupted (% of tour length; positive: native is longer), 18 instances
+   after 10 s: mean -0.0050, median +0.0033, 95% CI -0.0202 to +0.0088, longer/equal/shorter 10/0/8, sign test p = 0.815
+   after 15 s: mean -0.0057, median +0.0064, 95% CI -0.0188 to +0.0062, longer/equal/shorter 12/0/6, sign test p = 0.238
+   after 20 s: mean -0.0031, median +0.0070, 95% CI -0.0158 to +0.0084, longer/equal/shorter 10/0/8, sign test p = 0.815
+   after 30 s: mean +0.0007, median +0.0054, 95% CI -0.0092 to +0.0106, longer/equal/shorter 11/0/7, sign test p = 0.481
+   after 45 s: mean -0.0008, median -0.0046, 95% CI -0.0095 to +0.0077, longer/equal/shorter 8/0/10, sign test p = 0.815
+   after 59 s: mean -0.0017, median +0.0002, 95% CI -0.0102 to +0.0058, longer/equal/shorter 9/0/9, sign test p = 1.000
+top2 minus native (% of tour length; positive: top2 is longer), 9 instances
+   after 15 s: mean -0.0017, median +0.0001, 95% CI -0.0126 to +0.0064, longer/equal/shorter 5/0/4, sign test p = 1.000
+   after 30 s: mean +0.0001, median +0.0027, 95% CI -0.0090 to +0.0092, longer/equal/shorter 5/0/4, sign test p = 1.000
+   after 59 s: mean +0.0038, median +0.0001, 95% CI -0.0033 to +0.0113, longer/equal/shorter 5/0/4, sign test p = 1.000
+none minus native (% of tour length; positive: none is longer), 9 instances
+   after 15 s: mean +0.0091, median +0.0068, 95% CI -0.0032 to +0.0221, longer/equal/shorter 5/0/4, sign test p = 1.000
+   after 30 s: mean +0.0046, median +0.0032, 95% CI -0.0124 to +0.0219, longer/equal/shorter 6/0/3, sign test p = 0.508
+   after 59 s: mean +0.0041, median +0.0036, 95% CI -0.0073 to +0.0154, longer/equal/shorter 5/0/4, sign test p = 1.000
+zero minus native (% of tour length; positive: zero is longer), 9 instances
+   after 15 s: mean +0.0416, median +0.0445, 95% CI +0.0257 to +0.0574, longer/equal/shorter 9/0/0, sign test p = 0.004
+   after 30 s: mean +0.0377, median +0.0347, 95% CI +0.0224 to +0.0538, longer/equal/shorter 9/0/0, sign test p = 0.004
+   after 59 s: mean +0.0338, median +0.0256, 95% CI +0.0203 to +0.0485, longer/equal/shorter 9/0/0, sign test p = 0.004
+two-phase schedule (30 s without kept edges, then 29 s): all candidates trusted minus none trusted, 9 instances: mean +0.0060, longer/equal/shorter 7/0/2
