@@ -1,6 +1,6 @@
 # BetaTour v11 and v11r2: residual candidate search pilot
 
-**Status:** completed. Run v11 ran on an under-provisioned runtime (Tesla T4, 2 vCPUs) and is superseded for its endpoint by run v11r2, which used the corrected code in this folder on an A100 with 12 vCPUs (Sections 4.14, 5.9 and A.12 of the paper). Neither run supports a claim that BetaTour beats POPMUSIC, LKH or any other solver.
+**Status:** completed. Run v11 ran on an under-provisioned runtime (Tesla T4, 2 vCPUs) and is superseded for its endpoint by run v11r2, which used the corrected code in this folder on an A100 with 12 vCPUs (Sections 4.13, 5.8 and A.12 of the paper). Neither run supports a claim that BetaTour beats POPMUSIC, LKH or any other solver.
 
 ## Why this experiment
 

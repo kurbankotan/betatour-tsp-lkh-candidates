@@ -1,6 +1,6 @@
 # BetaTour v10: external repair pilot
 
-**Status:** completed development pilot (run v10 of the paper, Sections 4.13, 5.8 and A.11). It made no performance claim and found no benefit. `README_tr.md` is the original Turkish protocol that was bundled with the notebook.
+**Status:** completed development pilot (run v10 of the paper, Sections 4.12, 5.7 and A.11). It made no performance claim and found no benefit. `README_tr.md` is the original Turkish protocol that was bundled with the notebook.
 
 ## Question and method
 

@@ -19,7 +19,7 @@ keywords:
   - combinatorial optimization
 preferred-citation:
   type: unpublished
-  title: "Better Candidates, Same Speed: Learning Near-Optimal TSP Edges from Tour Ensembles with BetaTour"
+  title: "Learning Near-Optimal TSP Edges from Tour Ensembles: Prediction Quality versus Solver Performance in LKH-3"
   authors:
     - family-names: "Kotan"
       given-names: "Kurban"

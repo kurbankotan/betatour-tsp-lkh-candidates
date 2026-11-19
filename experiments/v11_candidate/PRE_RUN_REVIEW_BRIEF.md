@@ -1,4 +1,4 @@
-> **Note.** This brief was written before run v11 and accompanied the run-v11 code when that code was sent for an independent review (see the generative-AI declaration of the paper). It is kept unchanged below as the record of the hypothesis, the controls and the primary endpoint fixed before the run. The results of runs v11 and v11r2 are reported in `README.md` and in Sections 5.9 and A.12 of the paper.
+> **Note.** This brief was written before run v11 and accompanied the run-v11 code when that code was sent for an independent review (see the generative-AI declaration of the paper). It is kept unchanged below as the record of the hypothesis, the controls and the primary endpoint fixed before the run. The results of runs v11 and v11r2 are reported in `README.md` and in Sections 5.8 and A.12 of the paper.
 
 # BetaTour v11: independent review brief
 
