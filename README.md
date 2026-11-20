@@ -8,6 +8,8 @@ BetaTour is a graph neural network with 1.9 million parameters. It reads an ense
 
 ## Main results
 
+> **Correction in progress (runs v21 to v23, 19 and 20 November 2026).** In runs v1 to v8, the candidate files that restarted LKH-3 did not encode two fields as LKH-3 does: the alpha-values, on which the restart of every later trial depends, and the father of each node in the minimum 1-tree. Every arm of those runs that gave LKH-3 its lists through such a file was concerned (BetaTour, counting and the restarted POPMUSIC controls). Run v21 measured the effect on 24 new 10,000-node instances with a protocol pushed before the run. With the old file, restarted LKH-3 found longer tours than with a file equivalent to its own on 19 of the 24 instances (adjusted p = 0.013). With corrected files, LKH-3 restarted with the BetaTour lists found shorter tours than uninterrupted POPMUSIC on 18 of the 24 instances (mean 0.006%, adjusted p = 0.023), and on 10 of 12 further 10,000-node instances in run v23 (mean 0.006%). Run v22 repeated the comparison on 43 instances of the other classes (1,000 and 20,000 nodes, TSPLIB): the restarted arm was shorter on 26 instances and longer on 13, which did not reach significance (mean of six seeds; mean 0.006%, adjusted p = 0.107); on the best of six seeds it was shorter on 8 and equal on 3 of the 11 TSPLIB instances and showed no difference at 20,000 nodes (shorter on 8, longer on 8). In runs v21 and v22, lists from tour counting did as well as the BetaTour lists, so the gain is not attributed to the learned model. Run v23 (exploratory) also tried two other rules for the zero alpha-values of the file and found no gain. Run v24 will repeat the 20,000-node comparison with twice the budget; its protocol is `experiments/PROTOCOL_v24.md` and it has not been run yet. The solver comparisons of runs v1 to v8 below were therefore affected, and the statement that the better lists did not make LKH-3 faster no longer holds for 10,000-node instances; the text below and the manuscript have not yet been revised. The coverage results and runs v9 to v12 did not use such files. Details: `experiments/PROTOCOL_v21.md` to `PROTOCOL_v23.md` and the README files of `experiments/v21_alpha_encoding/`, `experiments/v22_other_sizes/` and `experiments/v23_restart_marking/`.
+
 Reference-tour edges missing from the first five candidates of each node, per 1,000 nodes (lower is better; BetaTour and counting read the same eight-tour ensemble):
 
 | Candidate list | Validation | Uniform 1k | Clustered 1k | Uniform 10k | Clustered 10k | TSPLIB |
@@ -42,19 +44,27 @@ The better lists did not make LKH-3 faster. Win/tie/loss counts below are by ins
 | v11 | `11_BetaTour_v11_POP6_candidate_mechanism` | candidate telemetry inside LKH (2 vCPUs, superseded) | 4 (as v9, 10k) | `results/v11/` |
 | v11r2 | `12_BetaTour_v11r2_POP6_candidate_mechanism` | v11 with corrected code on 12 vCPUs | 4 (as v11) | `results/v11r2/` |
 | v12 | `13_BetaTour_v12_candidate_self_correction` | how much of the POPMUSIC candidate deficit LKH-3 repairs itself | 43 with reference tours (from v2-v5) | `results/v12/` |
+| v21 | `23_BetaTour_v21_alpha_encoding_control` | candidate-file encoding of the restarted arms; comparison with corrected files | 24 new (10,000 nodes) | `results/v21/` |
+| v22 | `24_BetaTour_v22_corrected_files_other_sizes` | the comparison with corrected files on the other sizes and on TSPLIB | 43 (32 new, 11 TSPLIB) | `results/v22/` |
+| v23 | `25_BetaTour_v23_restart_marking` | other rules for the zero alpha-values of the candidate file (exploratory) | 12 new (10,000 nodes) | `results/v23/` |
+| v24 | `26_BetaTour_v24_longer_budget_20k` | the comparison with corrected files at 20,000 nodes with twice the budget | 20 new (20,000 nodes) | not run yet |
 
-Runs v1, v2, v4, v8 and v12 used an NVIDIA L4 GPU and runs v3, v5 to v7, v9, v10 and v11r2 an NVIDIA A100, all with 12 visible vCPUs; run v11 ran on a Tesla T4 with two vCPUs, below its stated requirement (Section 4.13 of the paper).
+Runs v1, v2, v4, v8, v12, v21 and v23 used an NVIDIA L4 GPU and runs v3, v5 to v7, v9, v10, v11r2 and v22 an NVIDIA A100, all with 12 visible vCPUs; run v11 ran on a Tesla T4 with two vCPUs, below its stated requirement (Section 4.13 of the paper). Run numbers follow the laboratory record; numbers 13 to 20 belong to a planned hard-instance run and to exploratory solver pilots that are not part of the paper and are not in this repository.
 
 ## Repository layout
 
 ```
-notebooks/    the Colab notebooks of all thirteen runs, as they were run (with their outputs)
+notebooks/    the Colab notebooks of the runs; notebooks 01 to 13 as they were run (with their outputs), notebooks 23
+              to 26 (runs v21 to v24) without outputs (their reports are in the result ZIPs)
 src/          tsplab.py (instances, LKH-3 control, tour ensembles, coverage) and tsp_model.py (the BetaTour model)
 experiments/  code of the later runs: LKH-3 hooks and their builds (livehook/, v10_repair/, v11_candidate/), live-pilot and
               policy code (v9_live/, policy/), the run-v11r2 pipeline, the run-v12 diagnosis (v12_self_correction/),
-              their tests and the protocol of runs v12 and v13 (PROTOCOL_v12_v13.md)
+              the runs with corrected candidate files (v21_alpha_encoding/, v22_other_sizes/, v23_restart_marking/,
+              v24_longer_budget/), their tests and the protocols of runs v12 and v21 to v24 (PROTOCOL_v12_v13.md,
+              PROTOCOL_v21.md to PROTOCOL_v24.md)
 analysis/     scripts that recompute the statistics of the paper from results/
-results/      outputs of runs v1-v4 (reports, tables, traces) and the result ZIPs of runs v5-v12 (see results/README.md)
+results/      outputs of runs v1-v4 (reports, tables, traces) and the result ZIPs of runs v5-v12 and v21-v23 (see
+              results/README.md)
 figures/      the five figures of the paper
 checkpoints/  the trained BetaTour checkpoint used in runs v2 to v12 (see checkpoints/README.md)
 ```
@@ -98,7 +108,7 @@ Estimated run time per stage (minutes, summed over the Colab sessions of the ori
 | | multi-core LKH experiment | 219 |
 | **Total** | | **about 32 h** |
 
-**Runs v5 to v12.** These notebooks fix this repository at commit `d63f7e17942a6af5cba14ad010edca1069d477b3` and the checkpoint by its SHA-256, regenerate their instances from fixed seeds, store every completed instance or arm under `MyDrive/BetaTour/<experiment>` and skip completed work when they are run again. A manifest freezes the settings and code hashes; a changed setting needs a new experiment name. Arms run one after another with six parallel LKH processes, and each arm uses the wall-clock budget of its instance, so a run takes roughly the number of instances times the number of arms times the budget, plus set-up and archiving. For example, run v11r2 took about 3-5 min for set-up and the LKH builds, 1 min for its warm-up checks, 48 min for 4 instances × 6 arms × 120 s and 2-4 min for archiving; run v12 took 3-5 min for set-up, 1 min for its warm-up, 75 min for the 43 instances (68 min of solver budgets plus first trials, model and analysis) and 1-2 min for archiving. Runs v9 to v11r2 patch LKH-3.0.14; they download it from its author's website or, if that fails, from a pinned copy, and check the archive and the patched source files against recorded SHA-256 values.
+**Runs v5 to v12 and v21 to v23.** These notebooks fix this repository at commit `d63f7e17942a6af5cba14ad010edca1069d477b3` and the checkpoint by its SHA-256, regenerate their instances from fixed seeds, store every completed instance or arm under `MyDrive/BetaTour/<experiment>` and skip completed work when they are run again. A manifest freezes the settings and code hashes; a changed setting needs a new experiment name. Arms run one after another with six parallel LKH processes, and each arm uses the wall-clock budget of its instance, so a run takes roughly the number of instances times the number of arms times the budget, plus set-up and archiving. For example, run v11r2 took about 3-5 min for set-up and the LKH builds, 1 min for its warm-up checks, 48 min for 4 instances × 6 arms × 120 s and 2-4 min for archiving; run v12 took 3-5 min for set-up, 1 min for its warm-up, 75 min for the 43 instances (68 min of solver budgets plus first trials, model and analysis) and 1-2 min for archiving. Runs v9 to v11r2 patch LKH-3.0.14; they download it from its author's website or, if that fails, from a pinned copy, and check the archive and the patched source files against recorded SHA-256 values.
 
 The model initialization was not seeded and deterministic GPU operations were not enforced, so a retrained model will not be identical to the checkpoint used in the paper; that checkpoint is `checkpoints/betatour_v2.pt`. All seeds, LKH parameters and model settings are listed in Appendix A of the paper.
 
@@ -118,13 +128,16 @@ python analysis/v4_time_profiles_and_resume.py
 python analysis/v4_per_instance_table.py
 python analysis/v11_mechanism_pilot.py results/v11r2/v11r2_pop6_candidate_mechanism_results.zip
 python analysis/v12_self_correction.py results/v12/v12_selfcorrect43_results.zip results/v5/paper51_v1_results.zip
+python analysis/v21_file_encoding.py results/v21/v21_alphaenc24_results.zip results/v5/paper51_v1_results.zip
+python analysis/v22_other_sizes.py results/v22/v22_sizes43_results.zip
+python analysis/v23_restart_marking.py results/v23/v23_marking12_results.zip results/v21/v21_alphaenc24_results.zip
 ```
 
-The run-v4 and earlier scripts read `results/` and print the statistics they compute. The run-v11 script recomputes Tables 8 and 9 of the paper from the run-v11r2 result ZIP (or the run-v11 figures of Appendix A.12 from `results/v11/`), and the run-v12 script recomputes Table 10 and the checks against run v5. For runs v5 to v10, the `summary/` tables inside the result ZIPs are the tables quoted in the paper. The tests of the run-v11r2 and run-v12 code run without LKH (`experiments/v11_candidate/README.md`, `experiments/v12_self_correction/README.md`).
+The run-v4 and earlier scripts read `results/` and print the statistics they compute. The run-v11 script recomputes Tables 8 and 9 of the paper from the run-v11r2 result ZIP (or the run-v11 figures of Appendix A.12 from `results/v11/`), the run-v12 script recomputes Table 10 and the checks against run v5, the run-v21 script recomputes the comparisons of that run and the corresponding ones of run v5, and the run-v22 and run-v23 scripts recompute the comparisons of those runs (the run-v23 script also prints the comparisons it shares with run v21). For runs v5 to v10, the `summary/` tables inside the result ZIPs are the tables quoted in the paper. The tests of the run-v11r2 and run-v12 code run without LKH (`experiments/v11_candidate/README.md`, `experiments/v12_self_correction/README.md`).
 
 ## Data
 
-- **Synthetic instances** are not stored here. They are regenerated deterministically from the seeds in Appendix A.2 of the paper (training instance i: seed 1,000,000 + i; evaluation sets: seeds 101, 202, 303, 404, 505 and 606; runs v6 to v8: seeds 2101-2606, 3103-3406 and 4107-4410).
+- **Synthetic instances** are not stored here. They are regenerated deterministically from the seeds in Appendix A.2 of the paper (training instance i: seed 1,000,000 + i; evaluation sets: seeds 101, 202, 303, 404, 505 and 606; runs v6 to v8: seeds 2101-2606, 3103-3406 and 4107-4410; run v21: seeds 5111 and 5212; run v22: seeds 6101, 6202, 6505 and 6606; run v23: seeds 7111 and 7212; run v24: seeds 8505 and 8606).
 - **TSPLIB** instances are not redistributed. The notebooks download them from the TSPLIB website: https://comopt.ifi.uni-heidelberg.de/software/TSPLIB95/
 - **LKH-3** is not redistributed. The notebooks download it from its author's website: http://webhotel4.ruc.dk/~keld/research/LKH-3/
 - `results/v4/results/instances/` holds, for each of the 51 instances of the multi-core experiment, the improvement traces of all twelve LKH-3 runs.

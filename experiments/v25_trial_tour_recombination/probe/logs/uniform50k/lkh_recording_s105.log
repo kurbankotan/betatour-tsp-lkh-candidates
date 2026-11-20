@@ -1,0 +1,160 @@
+PARAMETER_FILE = /tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.par
+Reading PROBLEM_FILE: "/tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/uni50k.tsp" ... done
+ASCENT_CANDIDATES = 50
+BACKBONE_TRIALS = 0
+BACKTRACKING = NO
+# BWTSP =
+# CANDIDATE_FILE =
+CANDIDATE_SET_TYPE = POPMUSIC
+# DISTANCE =
+# DEPOT =
+# EDGE_FILE =
+DRONES = 1
+ENDURANCE = 0.0
+EXCESS = 2e-05
+EXTERNAL_SALESMEN = 0
+EXTRA_CANDIDATES = 0 
+EXTRA_CANDIDATE_SET_TYPE = QUADRANT
+GAIN23 = YES
+GAIN_CRITERION = YES
+INITIAL_PERIOD = 25000
+INITIAL_STEP_SIZE = 1
+INITIAL_TOUR_ALGORITHM = WALK
+# INITIAL_TOUR_FILE = 
+INITIAL_TOUR_FRACTION = 1.000
+# INPUT_TOUR_FILE = 
+# K =
+KICK_TYPE = 0
+KICKS = 1
+# MAX_BREADTH =
+MAKESPAN = NO
+MAX_CANDIDATES = 5 
+MAX_SWAPS = 50000
+MAX_TRIALS = 100000000
+# MERGE_TOUR_FILE =
+MOVE_TYPE = 5 
+# MTSP_MIN_SIZE =
+# MTSP_MAX_SIZE =
+# MTSP_OBJECTIVE =
+# MTSP_SOLUTION_FILE = 
+# NONSEQUENTIAL_MOVE_TYPE = 5
+# OPTIMUM =
+OUTPUT_TOUR_FILE = /tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.tour
+PATCHING_A = 1 
+PATCHING_C = 0 
+# PI_FILE = 
+POPMUSIC_INITIAL_TOUR = NO
+POPMUSIC_MAX_NEIGHBORS = 5
+POPMUSIC_SAMPLE_SIZE = 10
+POPMUSIC_SOLUTIONS = 50
+POPMUSIC_TRIALS = 1
+# POPULATION_SIZE = 0
+PRECISION = 100
+# PROBABILITY =
+PROBLEM_FILE = /tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/uni50k.tsp
+RECOMBINATION = IPT
+RESTRICTED_SEARCH = YES
+RUNS = 1
+SALESMEN = 1
+SCALE = 1
+SEED = 105
+# SINTEF_SOLUTION_FILE = 
+STOP_AT_OPTIMUM = YES
+SUBGRADIENT = NO
+# SUBPROBLEM_SIZE =
+# SUBPROBLEM_TOUR_FILE = 
+SUBSEQUENT_MOVE_TYPE = 5 
+SUBSEQUENT_PATCHING = YES
+TIME_LIMIT = 120.0
+# TOTAL_TIME_LIMIT =
+# TOUR_FILE = 
+TRACE_LEVEL = 1
+VEHICLES = 1
+
+Lower bound = 145058650.0, Ascent time = 14.08 sec.
+Cand.min = 2, Cand.avg = 4.9, Cand.max = 5
+Preprocessing time = 14.18 sec.
+* 1: Cost = 160350936, Time = 6.37 sec.
+Writing OUTPUT_TOUR_FILE: "/tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.tour" ... done
+* 2: Cost = 160300893, Time = 10.24 sec.
+Writing OUTPUT_TOUR_FILE: "/tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.tour" ... done
+* 3: Cost = 160253144, Time = 13.48 sec.
+Writing OUTPUT_TOUR_FILE: "/tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.tour" ... done
+* 4: Cost = 160222760, Time = 16.55 sec.
+Writing OUTPUT_TOUR_FILE: "/tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.tour" ... done
+* 5: Cost = 160211635, Time = 19.18 sec.
+Writing OUTPUT_TOUR_FILE: "/tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.tour" ... done
+* 6: Cost = 160211459, Time = 22.16 sec.
+Writing OUTPUT_TOUR_FILE: "/tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.tour" ... done
+* 7: Cost = 160184348, Time = 24.94 sec.
+Writing OUTPUT_TOUR_FILE: "/tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.tour" ... done
+* 8: Cost = 160182444, Time = 27.31 sec.
+Writing OUTPUT_TOUR_FILE: "/tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.tour" ... done
+* 9: Cost = 160179763, Time = 29.60 sec.
+Writing OUTPUT_TOUR_FILE: "/tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.tour" ... done
+* 10: Cost = 160154801, Time = 30.94 sec.
+Writing OUTPUT_TOUR_FILE: "/tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.tour" ... done
+* 12: Cost = 160152169, Time = 36.88 sec.
+Writing OUTPUT_TOUR_FILE: "/tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.tour" ... done
+* 13: Cost = 160150941, Time = 39.09 sec.
+Writing OUTPUT_TOUR_FILE: "/tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.tour" ... done
+* 14: Cost = 160150490, Time = 40.48 sec.
+Writing OUTPUT_TOUR_FILE: "/tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.tour" ... done
+* 15: Cost = 160143098, Time = 43.48 sec.
+Writing OUTPUT_TOUR_FILE: "/tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.tour" ... done
+* 16: Cost = 160140202, Time = 46.29 sec.
+Writing OUTPUT_TOUR_FILE: "/tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.tour" ... done
+* 17: Cost = 160126273, Time = 49.50 sec.
+Writing OUTPUT_TOUR_FILE: "/tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.tour" ... done
+* 19: Cost = 160126051, Time = 55.01 sec.
+Writing OUTPUT_TOUR_FILE: "/tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.tour" ... done
+* 21: Cost = 160124848, Time = 60.98 sec.
+Writing OUTPUT_TOUR_FILE: "/tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.tour" ... done
+* 22: Cost = 160117845, Time = 63.44 sec.
+Writing OUTPUT_TOUR_FILE: "/tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.tour" ... done
+* 23: Cost = 160083806, Time = 64.73 sec.
+Writing OUTPUT_TOUR_FILE: "/tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.tour" ... done
+* 24: Cost = 160082692, Time = 67.85 sec.
+Writing OUTPUT_TOUR_FILE: "/tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.tour" ... done
+* 25: Cost = 160081913, Time = 70.28 sec.
+Writing OUTPUT_TOUR_FILE: "/tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.tour" ... done
+* 26: Cost = 160080751, Time = 72.04 sec.
+Writing OUTPUT_TOUR_FILE: "/tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.tour" ... done
+* 27: Cost = 160080526, Time = 74.70 sec.
+Writing OUTPUT_TOUR_FILE: "/tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.tour" ... done
+* 28: Cost = 160078686, Time = 76.52 sec.
+Writing OUTPUT_TOUR_FILE: "/tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.tour" ... done
+* 29: Cost = 160075573, Time = 78.79 sec.
+Writing OUTPUT_TOUR_FILE: "/tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.tour" ... done
+* 30: Cost = 160074824, Time = 80.95 sec.
+Writing OUTPUT_TOUR_FILE: "/tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.tour" ... done
+* 32: Cost = 160074008, Time = 86.47 sec.
+Writing OUTPUT_TOUR_FILE: "/tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.tour" ... done
+* 33: Cost = 160073406, Time = 88.77 sec.
+Writing OUTPUT_TOUR_FILE: "/tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.tour" ... done
+* 36: Cost = 160072536, Time = 96.75 sec.
+Writing OUTPUT_TOUR_FILE: "/tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.tour" ... done
+* 37: Cost = 160072449, Time = 98.57 sec.
+Writing OUTPUT_TOUR_FILE: "/tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.tour" ... done
+* 38: Cost = 160072434, Time = 100.67 sec.
+Writing OUTPUT_TOUR_FILE: "/tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.tour" ... done
+* 39: Cost = 160071773, Time = 102.90 sec.
+Writing OUTPUT_TOUR_FILE: "/tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.tour" ... done
+* 40: Cost = 160069013, Time = 106.18 sec.
+Writing OUTPUT_TOUR_FILE: "/tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.tour" ... done
+* 41: Cost = 160066741, Time = 108.35 sec.
+Writing OUTPUT_TOUR_FILE: "/tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.tour" ... done
+* 43: Cost = 160066697, Time = 114.13 sec.
+Writing OUTPUT_TOUR_FILE: "/tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.tour" ... done
+* 45: Cost = 160063167, Time = 119.98 sec.
+Writing OUTPUT_TOUR_FILE: "/tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/big/s105.tour" ... done
+*** Time limit exceeded ***
+Run 1: Cost = 160063167, Time = 123.64 sec.
+
+Successes/Runs = 0/1 
+Cost.min = 160063167, Cost.avg = 160063167.00, Cost.max = 160063167
+Gap.min = 0.0000%, Gap.avg = 0.0000%, Gap.max = 0.0000%
+Trials.min = 46, Trials.avg = 46.0, Trials.max = 46
+Time.min = 123.64 sec., Time.avg = 123.64 sec., Time.max = 123.64 sec.
+Time.total = 137.84 sec.
+

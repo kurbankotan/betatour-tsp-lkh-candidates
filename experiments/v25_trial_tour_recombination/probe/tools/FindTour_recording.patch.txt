@@ -1,0 +1,38 @@
+--- /tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/lkhsrc/LKH-3.0.14/SRC/FindTour.c	2026-03-23 19:16:59.000000000 +0300
++++ /tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/lkh_dump/SRC/FindTour.c	2026-11-20 11:51:29.015486548 +0300
+@@ -75,6 +75,35 @@
+             (!FirstNode->InitialSuc || Trial > 1))
+             PCTSP_RepairTour();
+         Cost = LinKernighan();
++        {
++            /* Probe: record the local optimum of this trial before it is merged with the best tour.
++               Nothing of the search state is changed. */
++            static FILE *DumpFile = 0;
++            static int DumpTried = 0;
++            if (!DumpTried) {
++                char *DumpName = getenv("BETATOUR_TRIAL_DUMP");
++                DumpTried = 1;
++                if (DumpName)
++                    DumpFile = fopen(DumpName, "wb");
++            }
++            if (DumpFile) {
++                int *Buf = (int *) malloc((size_t) Dimension * sizeof(int));
++                long long Head[3];
++                Node *DumpN = FirstNode;
++                int DumpI;
++                for (DumpI = 0; DumpI < Dimension; DumpI++) {
++                    Buf[DumpI] = DumpN->Id;
++                    DumpN = DumpN->Suc;
++                }
++                Head[0] = Trial;
++                Head[1] = (long long) Cost;
++                Head[2] = (long long) (1000.0 * (GetTime() - EntryTime));
++                fwrite(Head, sizeof(long long), 3, DumpFile);
++                fwrite(Buf, sizeof(int), (size_t) Dimension, DumpFile);
++                fflush(DumpFile);
++                free(Buf);
++            }
++        }
+         if (GetTime() - EntryTime < TimeLimit &&
+             GetTime() - StartTime < TotalTimeLimit) {
+             if (FirstNode->BestSuc && !TSPTW_Makespan) {

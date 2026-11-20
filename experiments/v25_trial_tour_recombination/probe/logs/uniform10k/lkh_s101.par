@@ -1,0 +1,10 @@
+PROBLEM_FILE = /tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/probe/dev_uni10k.tsp
+RUNS = 1
+TRACE_LEVEL = 1
+TIME_LIMIT = 120
+MAX_TRIALS = 100000000
+SEED = 101
+CANDIDATE_SET_TYPE = POPMUSIC
+SUBGRADIENT = NO
+MAX_CANDIDATES = 5
+OUTPUT_TOUR_FILE = /tmp/claude-0/-home-claude/78d22fbc-1e89-5dee-b5c2-2e6fffdfb9b9/scratchpad/radical/probe/lkh/s101.tour

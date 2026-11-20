@@ -1,0 +1,6 @@
+1 20040491 cpu 10.0 s wall 10.3 s
+2 20050327 cpu 12.9 s wall 13.2 s
+10 20042107 cpu 36.9 s wall 37.8 s
+50 20036692 cpu 161.8 s wall 166.2 s
+100 20038101 cpu 308.4 s wall 314.5 s
+{'tours': 100, 'best': 20028660, 'mean': 20050073.33, 'worst': 20073779, 'distinct': 100, 'pairwise_shared_edges': 0.8815, 'child_cpu_s': 308.4, 'wall_s': 314.6}

@@ -1,0 +1,10 @@
+B17_120 N=102 n = 0 val = 71831533 Gen = 165 Time = 0 23
+C17_20 N=102 n = 0 val = 71833572 Gen = 346 Time = 0 51
+B5_120 N=30 n = 0 val = 71838919 Gen = 171 Time = 0 9
+A100_120 N=100 n = 0 val = 71858396 Gen = 250 Time = 0 32
+done
+S17_120 N=102 n = 0 val = 71833509 Gen = 267 Time = 0 39
+E17_first N=102 n = 0 val = 71840135 Gen = 291 Time = 0 49
+B10_120 N=60 n = 0 val = 71834520 Gen = 241 Time = 0 23
+C34_20 N=204 n = 0 val = 71833572 Gen = 331 Time = 0 77
+done

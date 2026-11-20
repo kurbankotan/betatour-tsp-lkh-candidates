@@ -1,0 +1,1 @@
+{"population": {"tours": 100, "best": 71865614, "mean": 71901261.64, "worst": 71980489, "union_edges": 14233, "common_to_all": 6445, "pairwise_shared": 0.9636, "reference_edges_missing_from_union": 40}, "dumps": [{"dump": "s101.bin", "trials_before_T": 552, "used": 100, "trial_range": [453, 552], "best_trial_cost_before_T": 71865614, "last_ms": 119788}]}

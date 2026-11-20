@@ -1,0 +1,6 @@
+{"names": ["s101", "s102", "s103", "s104", "s105", "s106"], "cost": [71864895, 71864593, 71861449, 71847996, 71853250, 71853777], "best": 71847996, "mean": 71857660.0, "union_edges": 11575, "common_to_all": 8504, "share_of_best_tour_common": 0.8504, "pairwise_shared_mean": 0.93038}
+eax_merge {"cost": 71838938, "wall": 2.92, "generations": 141}
+gpx2 {"cost": 71844821, "seconds": 0.27, "status": "complete", "budget_seconds": 120.0, "attempts": 27, "improvements": 2, "rounds": 2, "errors": 0}
+union {"cost": 71842772, "seconds": 39.92, "status": "optimal", "parents": 6, "distinct_parent_edge_sets": 6, "num_common_edges": 8504, "num_union_edges": 11575, "num_optional_edges": 3071, "num_paths": 1496, "longest_common_path_vertices": 235, "num_cuts": 223, "mip_calls": 12, "greedy_improvements": 1, "solver": "highs_milp", "restricted_optimum_proven": true, "best_parent_cost": 71847996, "gain_from_best_parent": 5224}
+lkh_merge_10 {"cost": 71843431, "wall": 13.4}
+{"eax_merge": [71838938, -0.01261], "gpx2": [71844821, -0.00442], "union_mip": [71842772, -0.00727], "lkh_merge_10": [71843431, -0.00635]}
