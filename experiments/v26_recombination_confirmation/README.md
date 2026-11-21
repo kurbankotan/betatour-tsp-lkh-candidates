@@ -157,6 +157,9 @@ of those of `lkh6` at 10,000, 20,000 and 50,000 nodes; `lkhmerge_50` used as man
   machine type; no statement extends beyond them. Tour merging is old (Cook and Seymour, 2003) and is part of LKH-3;
   no claim of novelty follows from this run.
 
+Run v27 (a pilot) followed with exact merging on the union graph of the six best tours, with and without edges ranked
+by BetaTour; neither shortened the tours of `dual_50`. Its result is in `../v27_union_exact/README.md`.
+
 `python analysis/v26_recombination_confirmation.py results/v26/v26_recomb38_results.zip` recomputes these numbers
 from the recorded time courses, and with `--tours src [TSPLIB_DIR]` also the lengths of the archived tours. The
 intervals above are those of the notebook (`summary/paired_stats.csv`, 5,000 resamples); the script draws 20,000
