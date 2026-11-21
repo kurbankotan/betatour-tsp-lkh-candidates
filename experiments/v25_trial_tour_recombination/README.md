@@ -190,7 +190,8 @@ of the run; if a confirmation run uses it, that run has to fix it beforehand.
 ### What follows
 
 By the rule a confirmation run is prepared: new instances, one primary comparison fixed beforehand, and a protocol
-that is committed and pushed before the run starts. It has not been run yet.
+that is committed and pushed before the run starts. This is run v26; its result is in
+`../v26_recombination_confirmation/README.md`.
 
 `python analysis/v25_trial_tour_recombination.py results/v25/v25_trialtours21_results.zip` recomputes these numbers
 from the recorded time courses, and with `--tours src [TSPLIB_DIR]` also the lengths of the archived tours. The
