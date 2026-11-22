@@ -121,6 +121,9 @@ p = 0.39). The staged arm was shorter than `dual_50` on 5 of the 6 uniform and 5
   models and parallel GA-EAX exist; no claim of novelty follows from this run. The confirmation run decides whether
   the result holds on new instances.
 
+The confirmation run (run v29) confirmed the result on 18 new instances of 20,000 and 50,000 nodes; it is in
+`../v29_staged_confirmation/README.md`.
+
 `python analysis/v28_staged_merging.py results/v28/v28_staged14_results.zip` recomputes these numbers from the
 records, and with `--tours src` also the lengths of the archived tours. The intervals above are those of the notebook
 (`summary/paired_stats.csv`, 5,000 resamples); the script draws 20,000 resamples of its own and can differ in the last
