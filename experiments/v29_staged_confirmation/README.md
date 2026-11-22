@@ -64,7 +64,7 @@ longer:
 | Test | Instances | Mean difference (%) | 95% interval | Sign test p | Holm p | Supported |
 |---|---|---|---|---|---|---|
 | H1: `staged_50` / `lkhmerge_50` | 18 / 0 / 0 | -0.0213 | -0.0261 to -0.0166 | 7.6e-6 | 1.5e-5 | yes |
-| H2: `staged_50` / `dual_50` | 17 / 0 / 1 | -0.0158 | -0.0203 to -0.0113 | 1.5e-4 | 1.5e-4 | yes |
+| H2: `staged_50` / `dual_50` | 17 / 0 / 1 | -0.0158 | -0.0203 to -0.0113 | 1.4e-4 | 1.4e-4 | yes |
 
 Both hypotheses were supported, so by the decision rule staged merging is recorded as confirmed at these sizes and
 budgets. On the one instance on which `staged_50` was longer than `dual_50` (`s29_uni20k_005`) the difference was
