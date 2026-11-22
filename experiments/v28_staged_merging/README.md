@@ -52,3 +52,76 @@ GA-EAX) 5-7 min; self-check 2-3 min; 12 instances of 20,000 nodes at about 11.5 
 about 28 min each, 1 h; analysis and archive 1 min; about 3.4 h in total. Completed instances are kept on Drive
 (`MyDrive/BetaTour/v28_staged14`) and skipped when the notebook is run again; an instance interrupted by a change of
 machine runs again from the start. `MAX_NEW_INSTANCES` in the first cell splits the run into sessions.
+
+## Result (run on 21 November 2026)
+
+All 14 instances completed in one Colab session (NVIDIA L4, not used; 12 vCPUs; 53 GB of RAM); they ran from 19:26
+to 22:03 UTC (2.6 h). The protocol and the notebook were committed at 19:19:36 UTC (commit d4244e7), and the notebook
+found both on GitHub as built at 19:24:49 UTC, before the first instance. The self-check passed on the machine of the
+run: besides the checks of run v26, the staged arm, run by the code of the experiment on a small instance (22 tours,
+six groups), covered every tour but the best one exactly once, ran both stages and returned a valid tour not longer
+than the best input. All 84 processes of `lkh6` were stopped from outside as designed, the populations held 102 and 6
+different tours and every stage-1 group 16, all six merging processes recorded a tour within their time on every
+instance, and every stage value in the records is the best tour its process had found by its deadline. There was no
+deviation from the protocol.
+
+### Readings of the protocol
+
+12 instances of 20,000 nodes; instances on which the first arm was shorter / equal / longer:
+
+| Reading | Instances | Mean difference (%) | 95% interval | Sign test p | Holds |
+|---|---|---|---|---|---|
+| R1: `staged_50` / `dual_50` | 10 / 0 / 2 | -0.0097 | -0.0146 to -0.0052 | 0.039 | yes |
+| R2: `staged_50` / `lkhmerge_50` | 12 / 0 / 0 | -0.0131 | -0.0171 to -0.0093 | 0.00049 | yes |
+
+Both readings held. On the two instances on which `staged_50` was longer than `dual_50`, the difference was 0.0004%.
+By the decision rule a confirmation run of staged merging is prepared: new instances, including instances of 50,000
+nodes, and a protocol pushed before the run.
+
+### How the staged arm used its time
+
+At 20,000 nodes all 72 stage-1 groups converged, after 38 s on average (their deadline was 72 s after the arm
+started), stage 2 converged on all 12 instances after 11 s on average, and the arm stopped after 49 s on average,
+between 31% and 49% of the 120 s left after the cut. GA-EAX on the 102 tours in one process converged on none of the
+12 instances within the 120 s, and `staged_50` was shorter than it on 10 (mean -0.0101%). After the cut the staged arm
+used 205 process-seconds on average, against 130 for `dual_50` and 732 for `lkhmerge_50`.
+
+At 50,000 nodes no stage-1 group converged within its 180 s, stage 2 converged after 106 s on average, and the arm used
+93% and 97% of the 300 s left. `staged_50` was the shortest arm on both instances: 0.038% and 0.030% shorter than
+`dual_50` and 0.041% and 0.025% shorter than `lkhmerge_50`. GA-EAX on the 102 tours in one process was longer than on
+the six best tours on both instances (mean +0.0475%), as at 50,000 nodes in run v26.
+
+### Other comparisons (descriptive)
+
+Instances on which the first arm was shorter / equal / longer, and the mean difference (%):
+
+| Comparison | 20,000 nodes (12) | 50,000 nodes (2) |
+|---|---|---|
+| `staged_50` / `lkh6` | 12 / 0 / 0, -0.0302 | 2 / 0 / 0, -0.0955 |
+| `staged_50` / `trials_50` | 10 / 0 / 2, -0.0101 | 2 / 0 / 0, -0.0812 |
+| `dual_50` / `lkhmerge_50` | 8 / 0 / 4, -0.0033 | 1 / 0 / 1, +0.0006 |
+| `trials_50` / `best6_50` | 11 / 0 / 1, -0.0051 | 0 / 0 / 2, +0.0475 |
+| `dual_50` / `lkh6` | 12 / 0 / 0, -0.0205 | 2 / 0 / 0, -0.0618 |
+| `lkhmerge_50` / `lkh6` | 11 / 0 / 1, -0.0171 | 2 / 0 / 0, -0.0624 |
+
+As in run v26, the GA-EAX arm was not significantly shorter than LKH-3's merging (8 of 12 instances of 20,000 nodes,
+p = 0.39). The staged arm was shorter than `dual_50` on 5 of the 6 uniform and 5 of the 6 clustered instances of
+20,000 nodes (mean -0.0145% and -0.0050%), and shorter than `lkhmerge_50` on all 12.
+
+### What the run shows
+
+- Supported (R1, R2; pilot, no correction): at 20,000 nodes with 12 ms per node, merging the 102 tours of the six
+  LKH-3 processes in two stages at half of the budget gave shorter tours at the budget than the GA-EAX arm of run v26
+  (10 of 12 instances) and than LKH-3's own merging (12 of 12), and it stopped after less than half of the remaining
+  time. On the two instances of 50,000 nodes it was the shortest arm by a wider margin, although its stage-1 groups
+  did not converge.
+- Limits: one budget per node, one cut, one number of groups, one division of the time between the stages, one way of
+  forming the groups, one LKH-3 version, one GA-EAX version with its fixed random seed, one machine type; no statement
+  extends beyond them. After the cut the arms use different numbers of cores (the staged arm six, then one). Island
+  models and parallel GA-EAX exist; no claim of novelty follows from this run. The confirmation run decides whether
+  the result holds on new instances.
+
+`python analysis/v28_staged_merging.py results/v28/v28_staged14_results.zip` recomputes these numbers from the
+records, and with `--tours src` also the lengths of the archived tours. The intervals above are those of the notebook
+(`summary/paired_stats.csv`, 5,000 resamples); the script draws 20,000 resamples of its own and can differ in the last
+digit. The report inside the ZIP is in Turkish.

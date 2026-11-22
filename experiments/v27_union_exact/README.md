@@ -158,6 +158,8 @@ comparisons. GA-EAX converged on the six tours on all 14 instances, and on the 1
   machine type; no statement extends beyond them. Exact tour merging (Cook and Seymour, 2003) and learned edge scores
   that restrict or extend a TSP graph exist; no claim of novelty follows from this run.
 
+Run v28 (a pilot) followed with merging the 102 tours in two stages; its result is in `../v28_staged_merging/README.md`.
+
 `python analysis/v27_union_exact.py results/v27/v27_union14_results.zip` recomputes these numbers from the records,
 and with `--tours src` also the lengths of the archived tours, the union graphs, the edges outside them and the
 consistency of the proven optima. The intervals above are those of the notebook (`summary/paired_stats.csv`, 5,000
