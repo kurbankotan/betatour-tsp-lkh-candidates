@@ -76,7 +76,7 @@ experiments/  code of the later runs: LKH-3 hooks and their builds (livehook/, v
 analysis/     scripts that recompute the statistics of the paper from results/
 results/      outputs of runs v1-v4 (reports, tables, traces) and the result ZIPs of runs v5-v12, v21-v23 and
               v25-v29 (see results/README.md)
-figures/      the five figures of the paper
+figures/      the five figures of the paper and the script that draws them (make_figures.py)
 checkpoints/  the trained BetaTour checkpoint used in runs v2 to v12 (see checkpoints/README.md)
 ```
 
