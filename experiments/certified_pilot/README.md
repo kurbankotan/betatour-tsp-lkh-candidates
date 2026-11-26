@@ -113,3 +113,71 @@ with the exact subtour LP of 9-node instances.
 
 The second test runs the whole notebook in its test mode with small instances. Concorde is replaced by
 `tests/fake_concorde.py`, a stand-in that solves the subtour LP and the exact problem with HiGHS. It is not Concorde.
+
+## Result (26 November 2026)
+
+The notebook ran once in Colab on a Tesla T4 runtime with 8 vCPUs; the self-check and all 24 instances completed.
+
+**Self-check.** On the 200-node instance, the `-z` dump with z = n − 1 covered the complete graph (19,900 edges, six
+decimals) and passed the checks. The per-node dump (z = 60) listed at least 60 edges per node, and its thresholds
+bounded every unlisted reduced cost. The experiment therefore used per-node dumps with k = 200. The root LP solved
+this instance (gap 0), so its checks were weak; the checks on the 21 instances below were not.
+
+**Proven optima.** Concorde proved the optimum of 21 of the 24 instances. Two uniform 2,000-node instances
+(`cp1_uni2k_00`, `cp1_uni2k_02`) and u1817 were not finished within 45 min. On the three solved TSPLIB instances,
+Concorde's optimum equals the published value.
+
+Mean solve times and branch-and-bound nodes:
+
+| Group | Solve time | Branch-and-bound nodes |
+|---|---|---|
+| uniform, 1,000 nodes | 184 s | 32 |
+| clustered, 1,000 nodes | 120 s | 25 |
+| uniform, 2,000 nodes (three solved) | 2,326 s | 163 |
+| clustered, 2,000 nodes | 1,258 s | 143 |
+
+Gaps of the bounds to the optimum (in % of the optimum, by group):
+
+| Bound | Gap |
+|---|---|
+| Root LP | 0.032–0.059% (TSPLIB 0.007%) |
+| 1-tree | 0.75–3.06% |
+| LKH tour (upper bound) | 0.003–0.115% |
+
+**Decision rule:**
+
+| Test | Outcome | Values |
+|---|---|---|
+| G1: C2 passes its checks | passed | All 21 instances with a proven optimum passed; no optimal edge was eliminated; dual slack ≥ 0. |
+| G2: remaining graph sparse | not passed | Mean degree with C2 and UB = LKH tour: 10.6, 7.2, 16.1 and 56.2 by synthetic group (limit 8). With the optimal tour as UB: 7.9, 6.9, 9.5 and 10.0. On one clustered 2,000-node instance, the LKH tour was 0.57% above the optimum, so 19% of that group's nodes stayed undecided. |
+| G3: BetaTour the better proposer | not passed | Nodes with a certified-complete top-5 list (C2, UB = LKH tour), at 1,000 / 2,000 nodes: BetaTour 14.3% / 2.5%, α-5 17.1% / 3.3%, counting 13.5% / 2.7%. |
+
+The C1 certificate (1-tree) eliminated far too little: 120–1,100 edges remained per node.
+
+**Decision.** By the rule written before the pilot, certified candidate lists built from root-LP certificates are not
+pursued: G2 is not met. A learned proposer would not change that, because even a perfect proposer is limited by the
+size of the remaining graph.
+
+**By-product: coverage of proven optimal tours (exploratory).** The 21 proven optimal tours have 29,479 edges in
+total. These are the edges that each five-candidate list missed (an edge counts as covered when it is in either end's
+list):
+
+| Lists | Missed optimal edges | Instances with the whole optimal tour inside the lists |
+|---|---|---|
+| BetaTour top five | 23 | 11/21 |
+| BetaTour top three + POPMUSIC | 51 | 5/21 |
+| counting top five | 63 | 8/21 |
+| α-5 (LKH-3) | 105 | 0/21 |
+| POPMUSIC-5 | 168 | 0/21 |
+| nearest five | 598 | 0/21 |
+
+Per instance, BetaTour's top five missed fewer optimal edges than:
+
+| Lists | Fewer / equal / more | Exact sign test (unadjusted) |
+|---|---|---|
+| counting top five | 13 / 7 / 1 | p = 0.0018 |
+| α-5 | 20 / 0 / 1 | p < 0.001 |
+| POPMUSIC-5 | 21 / 0 / 0 | p < 0.001 |
+
+These comparisons were not hypotheses of the pilot. They motivated run v30 (`../PROTOCOL_v30.md`), which tests
+whether such lists let LKH-3 reach the proven optimum sooner.

@@ -9,7 +9,7 @@ manuscript.
 **Question.** In run v29, staged merging stopped after 48 s of the 120 s left after the cut at 20,000 nodes on
 average. Could that time, used by LKH-3 processes that continue from the staged tour and by a second merge, shorten the
 tours further, and would BetaTour's candidate lists help there more than lists ranked by counting or the processes' own
-POPMUSIC lists? This was the design planned as run v30.
+POPMUSIC lists? This was the design considered for the next run.
 
 **Data.** The uniform 20,000-node development instance of the run-v28 checks (drawn from the generator of the study;
 not an instance of any run): its six recorded POPMUSIC-5 LKH-3 processes (seeds 201-206, 240 s) and the tour of staged
@@ -45,5 +45,6 @@ tour and the processes' best tours, 12 s).
 **Reading.** The unused time shortened the staged tour by at most 0.0007%, about a hundredth of what staged merging
 itself gained on this instance. The list types differed by a few hundred units on one instance; the difference of the
 BetaTour lists in check 2 came from one of the six groups. Two processes ran at a time on the two cores, each with its
-own time, so the six-process steps took three times as long as on the machine of the runs. Decision: run v30 was not
-prepared, and BetaTour's lists in the phase after staged merging are not pursued further.
+own time, so the six-process steps took three times as long as on the machine of the runs. Decision: this design was not
+prepared as a run, and BetaTour's lists in the phase after staged merging are not pursued further. Run v30 is a
+different run: the time to the proven optimum (`../PROTOCOL_v30.md`).
