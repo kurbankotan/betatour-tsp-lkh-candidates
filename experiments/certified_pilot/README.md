@@ -1,0 +1,115 @@
+# Certified candidate graphs: decision pilot
+
+This folder holds a pilot for a follow-up project. It is **not a run of the BetaTour study**, and its results are not
+part of the manuscript.
+
+## Question
+
+A learned model proposes sparse candidate lists. Can a lower-bound certificate prove that the lists are complete?
+
+An edge is eliminated only when every tour that uses it is provably longer than a known tour. The edges that remain
+form a graph that contains every optimal tour. A node's candidate list is *certified complete* when it contains all of
+the node's remaining edges. The pilot measures how sparse this graph is and how well BetaTour's ranking proposes it,
+compared with the α-, POPMUSIC-, counting- and nearest-neighbour lists.
+
+## Certificates
+
+**C1** is computed by `certpilot.py` in exact integer arithmetic. It is the 1-tree bound W with LKH-3's node
+penalties (π), together with the α-values of all edges of the complete graph. A tour that uses edge e costs at least
+(W + α(e)) / PRECISION.
+
+**C2** comes from Concorde's root LP with cutting planes (`concorde -B -z k`). It consists of the lower bound LB and
+the k lowest reduced costs rc of every node. A tour that uses edge e costs at least LB + rc(e) when rc are the reduced
+costs of a dual solution of value at least LB. C2 is used only when the following checks pass against the proven
+optimal tour (`c2_checks`):
+
+1. LB ≤ OPT.
+2. No edge of the optimal tour is eliminated.
+3. Dual consistency holds: OPT ≥ LB + Σ over the tour edges of rc + Σ over all edges of max(0, −rc). Reduced costs
+   that omit the cut duals violate this in general (see `tests/test_certificates.py`).
+
+C2 is in floating point and is not an exact proof. An exact check of the dual solution is left for a later step.
+
+## Design
+
+**Instances.** There are 20 new instances from the study's generator: 1,000 and 2,000 nodes, uniform and clustered,
+five of each (generator seeds 15101, 15202, 15303 and 15404). There are also four TSPLIB instances with known optima:
+pr1002, pcb1173, rl1304 and u1817. For these, Concorde's optimum must equal the known value.
+
+**LKH-3.0.14**, unmodified, supplies:
+
+- six first-trial tours with POPMUSIC-5 (seeds 201–206; the ensemble that BetaTour reads, as in the study);
+- the α-5 lists and node penalties (subgradient ascent; used by C1);
+- one upper-bound (UB) tour (POPMUSIC-5, 0.01 s per node).
+
+**BetaTour** uses the checkpoint `betatour_v2.pt` (SHA-256 2322f66c…) on the graph of 16 nearest neighbours plus
+ensemble edges.
+
+**Concorde (co031219 with QSopt)** is built from the official University of Waterloo pages. Each instance gets two
+runs:
+
+- the root LP with `-B` and `-z`;
+- a full solve that gives the proven optimum (time limit 45 min).
+
+**Self-check.** A 200-node instance first establishes what the `-z` dump contains. With z = n − 1 the dump must cover
+the complete graph and pass the checks; otherwise the run is repeated with the complete edge file (`-E`). The
+per-node dump (z = 60) is then compared with the complete dump: its thresholds must bound every unlisted reduced cost.
+In the experiment, k = 200 per node.
+
+## Decision rule (written before the pilot)
+
+- **G1.** C2 passes its checks on every instance with a proven optimum.
+- **G2.** With C2 and UB = the LKH tour, the mean degree of the remaining graph is at most 8 in every synthetic group.
+  At most 1% of nodes may be undecided by the per-node dump.
+- **G3.** BetaTour's top-5 lists are certified complete at more nodes than both LKH's α-5 lists and the counting top-5
+  lists. The margin must be at least 5 percentage points at both sizes (uniform and clustered pooled).
+
+How the outcomes are read:
+
+| Outcome | Next step |
+|---|---|
+| G1–G3 pass | Build the method: LKH on certified-complete lists, and an exact independent check of the certificate. |
+| G1 and G2 pass, G3 fails | A certified sparse graph exists, but BetaTour is not a better proposer than simple rankings. |
+| G2 fails | The root LP certificate alone is too weak; stronger proofs are needed, such as the local elimination of Cook, Helsgaun, Hougardy and Schroeder (arXiv:2307.07054). |
+| G1 fails | The meaning of the `-z` dump must be resolved first. |
+
+## Running
+
+1. Build the notebook: `python experiments/certified_pilot/build_colab_notebook.py`. This writes
+   `notebooks/32_Certified_candidate_graph_pilot.ipynb`.
+2. Open the notebook in Colab with an L4 GPU and High RAM (12 vCPUs).
+3. Run all cells. The first cell mounts Google Drive, and results go to `MyDrive/BetaTour/certpilot1`. If the session
+   drops, run the notebook again; finished steps are skipped.
+
+Estimated time on 12 vCPUs:
+
+| Step | Time |
+|---|---|
+| Set-up | 5–8 min |
+| Self-check | 1–2 min |
+| LKH | 2–4 min |
+| BetaTour | about 1 min |
+| Concorde | 30–60 min |
+| Analysis | 2–4 min |
+
+**Outputs** (on Drive):
+
+- `selfcheck/selfcheck.json`;
+- `instances/<name>/` with `lkh.npz`, `model.npz`, `concorde_root.json`, `rc_keep.npz`, `concorde_full.json`,
+  `opt_tour.npz` and `analysis.json`;
+- `logs/`, including Concorde's output and help text;
+- `summary/summary.json` and `summary/instances.csv`.
+
+## Tests
+
+```
+python experiments/certified_pilot/tests/test_certificates.py --src src
+python experiments/certified_pilot/tests/run_notebook_locally.py --repo . --lkh /path/to/LKH-3.0.14/LKH
+```
+
+The first test checks C1 against brute force on 8-node instances. It checks the 1-tree, every α-value and the
+elimination rule over all tours, with penalties large enough to make transformed costs negative. It also checks C2
+with the exact subtour LP of 9-node instances.
+
+The second test runs the whole notebook in its test mode with small instances. Concorde is replaced by
+`tests/fake_concorde.py`, a stand-in that solves the subtour LP and the exact problem with HiGHS. It is not Concorde.

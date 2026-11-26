@@ -62,7 +62,8 @@ Runs v1, v2, v4, v8, v12, v21, v23 and v25 to v29 used an NVIDIA L4 GPU and runs
 
 ```
 notebooks/    the Colab notebooks of the runs; notebooks 01 to 13 as they were run (with their outputs), notebooks 23
-              to 31 (runs v21 to v29) without outputs (their reports are in the result ZIPs)
+              to 31 (runs v21 to v29) without outputs (their reports are in the result ZIPs); notebook 32 is the
+              pilot of a follow-up project (certified candidate graphs; not a run of the study)
 src/          tsplab.py (instances, LKH-3 control, tour ensembles, coverage) and tsp_model.py (the BetaTour model)
 experiments/  code of the later runs: LKH-3 hooks and their builds (livehook/, v10_repair/, v11_candidate/), live-pilot and
               policy code (v9_live/, policy/), the run-v11r2 pipeline, the run-v12 diagnosis (v12_self_correction/),
@@ -71,8 +72,9 @@ experiments/  code of the later runs: LKH-3 hooks and their builds (livehook/, v
               and its confirmation run (v26_recombination_confirmation/), the pilot on exact merging on the union
               graph (v27_union_exact/), the pilot on staged merging (v28_staged_merging/) and its confirmation run
               (v29_staged_confirmation/), their tests, the protocols of runs v12 and v21 to v29
-              (PROTOCOL_v12_v13.md, PROTOCOL_v21.md to PROTOCOL_v29.md) and notes on technical checks that are not
-              runs (technical_checks/)
+              (PROTOCOL_v12_v13.md, PROTOCOL_v21.md to PROTOCOL_v29.md), notes on technical checks that are not
+              runs (technical_checks/) and the pilot of a follow-up project on certified candidate graphs
+              (certified_pilot/; not a run of the study)
 analysis/     scripts that recompute the statistics of the paper from results/
 results/      outputs of runs v1-v4 (reports, tables, traces) and the result ZIPs of runs v5-v12, v21-v23 and
               v25-v29 (see results/README.md)
