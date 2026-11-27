@@ -1,7 +1,8 @@
 # Certified candidate graphs: decision pilot
 
-This folder holds a pilot for a follow-up project. It is **not a run of the BetaTour study**, and its results are not
-part of the manuscript.
+This folder holds a pilot for a follow-up project. It is **not a run of the BetaTour study**. The manuscript uses its
+proven optima and its coverage counts together with run v30 (Sections 4.17 and 5.12, Appendix A.16); its main
+question was answered negatively (see the result below).
 
 ## Question
 
@@ -133,7 +134,7 @@ Mean solve times and branch-and-bound nodes:
 |---|---|---|
 | uniform, 1,000 nodes | 184 s | 32 |
 | clustered, 1,000 nodes | 120 s | 25 |
-| uniform, 2,000 nodes (three solved) | 2,326 s | 163 |
+| uniform, 2,000 nodes (three solved) | 2,077 s | 163 |
 | clustered, 2,000 nodes | 1,258 s | 143 |
 
 Gaps of the bounds to the optimum (in % of the optimum, by group):
@@ -179,5 +180,13 @@ Per instance, BetaTour's top five missed fewer optimal edges than:
 | α-5 | 20 / 0 / 1 | p < 0.001 |
 | POPMUSIC-5 | 21 / 0 / 0 | p < 0.001 |
 
-These comparisons were not hypotheses of the pilot. They motivated run v30 (`../PROTOCOL_v30.md`), which tests
-whether such lists let LKH-3 reach the proven optimum sooner.
+These comparisons were not hypotheses of the pilot. They motivated run v30 (`../PROTOCOL_v30.md`), which tested
+whether such lists let LKH-3 reach the proven optimum sooner; they did (`../v30_time_to_optimum/README.md`).
+
+The per-instance table that the notebook wrote (`summary/instances.csv`) is in `results/certified_pilot/`, and
+`python analysis/certified_pilot_coverage.py results/certified_pilot/instances.csv` recomputes the two coverage
+tables above from it.
+
+**Correction (26 November 2026, after run v30).** The mean solve time of the three solved uniform 2,000-node
+instances was first given as 2,326 s, which is the mean over all five instances with the two unfinished ones at
+their 2,700 s limit. The mean over the three solved instances is 2,077 s.

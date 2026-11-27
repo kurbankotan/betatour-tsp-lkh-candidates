@@ -106,6 +106,81 @@ inference on its CPU. Times are in seconds and include the pause.
 
 Two instances say nothing about the tests; the run decides.
 
+## Result (26 November 2026)
+
+The notebook ran once, in one Colab session, on a Tesla T4 runtime with 8 vCPUs (Intel Xeon at 2.00 GHz, 51 GB of
+RAM; four LKH-3 processes at a time). It found the protocol and itself on GitHub as built (commit `06a8dac`) at
+15:14:21 UTC, and the 1,554 runs finished between 15:17 and 18:20 UTC (3.1 h). The result ZIP is
+`results/v30/v30_tto37_results.zip`; `analysis/v30_time_to_optimum.py` recomputes every number below from it.
+
+**Checks.** Every LKH-3 process ended normally, and every run that reached the optimum had its length; no tour was
+shorter than the optimum. On rl1323 the first trial of seed 201 already reached the optimum, so that seed's
+restarted arms took its CPU time (0.62 s). The pause of the restarted arms averaged 0.64–0.76 s at 1,000 nodes,
+1.38–1.86 s at 2,000 nodes and 0.94–1.08 s on TSPLIB; most of it was the longest first trial, and BetaTour's
+inference took 0.10–0.18 s on the GPU.
+
+**Tests** (PAR10 over the 37 instances; beta lower / tied / higher; ties within 1% of the cap; ratio = geometric
+mean of beta's PAR10 over the other arm's, with the notebook's 95% bootstrap interval):
+
+| Test | Lower / tied / higher | p | Holm p | PAR10 ratio (95% CI) | Outcome |
+|---|---|---|---|---|---|
+| H1: `beta` < `pop` | 29 / 5 / 3 | 2.6 × 10⁻⁶ | 5.1 × 10⁻⁶ | 0.37 (0.23–0.63) | supported |
+| H2: `beta` < `alpha` | 25 / 2 / 10 | 0.017 | 0.017 | 0.40 (0.18–0.87) | supported |
+| secondary: `beta` < `count` | 22 / 11 / 4 | 0.00053 | – | 0.55 (0.36–0.85) | `beta` lower |
+
+**Decision.** By the rule of the protocol, H1 and H2 are supported: with BetaTour's lists, LKH-3 reached the proven
+optima of these instances sooner than with its own lists. Because `beta` also beat `count`, the gain is credited to
+the learned ranking. Without the tie rule (not in the protocol), the counts were 31/1/5 (p = 1.3 × 10⁻⁵), 27/0/10
+(p = 0.0076) and 28/1/8 (p = 0.0012).
+
+**By subset** (descriptive; lower / tied / higher, PAR10 ratio):
+
+| Pair | Synthetic (18) | TSPLIB (19) |
+|---|---|---|
+| `beta` / `pop` | 14/2/2, p = 0.0042, 0.34 | 15/3/1, p = 0.0005, 0.40 |
+| `beta` / `alpha` | 14/1/3, p = 0.013, 0.24 | 11/1/7, p = 0.48, 0.64 (0.21–1.97) |
+| `beta` / `count` | 10/6/2, p = 0.039, 0.38 | 12/5/2, p = 0.013, 0.79 |
+| `beta` / `pop_r` | 12/3/3, p = 0.035, 0.44 | 14/2/3, p = 0.013, 0.25 |
+
+On the TSPLIB instances alone, `beta` was not significantly faster than `alpha`. On u2319, `alpha` reached the
+optimum with all six seeds (5.8 s on average) and no other arm reached it with any seed.
+
+**Reaching the optimum** (% of runs) and **geometric mean of PAR10** (s):
+
+| Group | `pop` | `alpha` | `pop_r` | `beta` | `count` | `mix` | `union` |
+|---|---|---|---|---|---|---|---|
+| uniform 1,000 (5) | 83.3 | 100.0 | 93.3 | 96.7 | 93.3 | 86.7 | 100.0 |
+| clustered 1,000 (5) | 93.3 | 73.3 | 96.7 | 100.0 | 96.7 | 96.7 | 100.0 |
+| uniform 2,000 (3) | 44.4 | 44.4 | 55.6 | 72.2 | 44.4 | 55.6 | 83.3 |
+| clustered 2,000 (5) | 93.3 | 50.0 | 96.7 | 80.0 | 70.0 | 100.0 | 96.7 |
+| TSPLIB (19) | 64.9 | 71.1 | 60.5 | 76.3 | 65.8 | 71.9 | 78.1 |
+| all (37) | 73.4 | 70.3 | 74.3 | 82.4 | 72.5 | 79.7 | 86.9 |
+| PAR10, all (s) | 48.6 | 45.3 | 54.9 | 18.0 | 32.6 | 23.2 | 14.9 |
+| median time, all runs (s) | 10.5 | 11.6 | 13.1 | 4.1 | 10.1 | 5.0 | 4.7 |
+| instances with 6/6 | 18 | 19 | 16 | 23 | 20 | 23 | 27 |
+
+**Other pairs** (all 37 instances): `pop_r` / `pop` 13/7/17 (p = 0.58), so the pause and the restart alone did not
+help; `union` / `beta` 11/8/18 (p = 0.26) and `mix` / `beta` 8/10/19 (p = 0.052), so neither longer list was
+significantly better than BetaTour's top five, although `union` reached the optimum in the most runs (193 of 222).
+On `cp1_clu2k_03`, BetaTour's lists missed seven optimal edges and all six `beta` runs ended 13 units (0.00006%)
+above the optimum, whereas `pop`, `mix` and `union` reached it with all six seeds.
+
+**Coverage and success (exploratory; the 21 instances whose optimal tours the pilot saved).** The initial lists
+missed, per run, 0.60 optimal edges (`union`), 1.10 (`beta`), 2.42 (`mix`), 3.00 (`count`), 5.00 (`alpha`) and
+8.21 (`pop`, `pop_r`). Runs whose lists missed no optimal edge reached the optimum in 99.1% of cases (225 runs);
+with 1–2, 3–5, 6–10 and more than 10 missed edges, in 93.0%, 84.2%, 73.6% and 65.9%. These pooled shares mix
+instances with lists: across the 21 instances, the mean number of missed edges and the share of successful runs had
+a Spearman correlation of −0.78. Within instances, the correlation between missed edges and success was negative on
+12 of the 14 instances on which both varied (median −0.19). Across arms the relation was not monotone: `pop` and
+`pop_r` reached the optimum more often on these instances than `count` and `alpha`. This is an association, not a
+causal estimate.
+
+**Limits.** One machine type, one cap (0.05 s per node), one LKH-3 version and 1,000–2,392 nodes. Times are LKH-3's
+CPU times plus the wall time of inference and list building. The 18 synthetic instances motivated the run (their
+coverage in the pilot), which is why the TSPLIB results are also given separately.
+
+The manuscript reports this run in Sections 4.17 and 5.12 (Tables 14 and 15) and Appendix A.16.
+
 ## Deviations from the protocol
 
-None so far.
+None. The protocol prefers 12 vCPUs and accepts 8; the run used 8 (four LKH-3 processes at a time).
