@@ -177,19 +177,24 @@ causal estimate.
 
 **Checks after the run (not in the protocol; 27 November 2026).** `analysis/v30_time_to_optimum.py` prints both.
 
-1. *Overhead.* BetaTour's inference took 0.10–0.18 s on the T4; on the two-core CPU of the development machine it
-   took about 0.55 s at 1,000 nodes (technical checks above). With a fixed number of seconds added to every `beta`
+1. *Overhead.* BetaTour's inference took 0.10–0.18 s on the T4. On the two-core CPU of the development machine,
+   measured after the run on random uniform instances (`time_cpu_inference.py`), it took 0.74 s at 1,000 nodes with
+   one PyTorch thread and 0.48 s with two (1.44 s and 0.86 s at 2,000 nodes); building the graph took under 0.02 s
+   of this. The notebook sets `OMP_NUM_THREADS=1` before it imports PyTorch, so a CPU run of the notebook would use
+   one thread. With a fixed number of seconds added to every `beta`
    run (a run that then exceeds the cap counts as missed):
 
    | Added | `beta` < `pop` | `beta` < `alpha` | `beta` < `count` |
    |---|---|---|---|
    | 0 s (protocol) | 29/5/3, p = 2.6 × 10⁻⁶ | 25/2/10, p = 0.017 | 22/11/4, p = 0.00053 |
+   | 0.1 s | 27/7/3, p = 8.4 × 10⁻⁶ | 23/3/11, p = 0.058 | 22/11/4, p = 0.00053 |
    | 0.25 s | 27/7/3, p = 8.4 × 10⁻⁶ | 22/4/11, p = 0.08 | 21/11/5, p = 0.0025 |
    | 0.5 s | 26/7/4, p = 5.9 × 10⁻⁵ | 21/5/11, p = 0.11 | 20/9/8, p = 0.036 |
    | 1 s | 25/5/7, p = 0.0021 | 21/3/13, p = 0.23 | 19/6/12, p = 0.28 |
    | 2 s | 24/3/10, p = 0.024 | 19/2/16, p = 0.74 | 18/3/16, p = 0.86 |
 
-   H1 holds with 2 s added; H2 and the credit to the learned ranking do not hold with 0.5 s and 1 s added.
+   H1 holds with 2 s added; H2 does not hold with 0.1 s added, and the credit to the learned ranking does not hold
+   with 1 s added.
 2. *Six processes in parallel.* PAR10 describes single processes. Taking for each arm and instance the time at
    which the first of its six seeds reached the optimum (10 × the cap if none did), `beta` did not differ from
    `pop` (13/18/6, p = 0.17; geometric means 3.5 s and 3.4 s; 35 instances solved by each) but was faster than
@@ -197,7 +202,8 @@ causal estimate.
    `pop` (8/19/10).
 
 3. *Speed of the search.* In runs of at least 5 s, `beta` completed a median of 24% fewer trials per CPU second
-   than `pop_r`, `union` 61% fewer and `count` about as many (ratios 0.76, 0.39 and 0.97).
+   than `pop_r`, `union` 61% fewer and `count` 3% fewer (ratios 0.76, 0.39 and 0.97). With runs of at least 1 s
+   or 10 s, or only the runs that reached the cap, the shares were 20–22%, 61–63% and 5–20%.
 
 So the advantage over `pop` holds per process but not for six processes in parallel at these sizes, and the
 advantages over `alpha` and `count` depend on fast inference.

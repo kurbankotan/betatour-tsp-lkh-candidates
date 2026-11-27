@@ -218,7 +218,7 @@ def main(path: str) -> None:
     print("\nExploratory checks after the run (not in the protocol)")
     print("  1. Overhead: seconds added to every beta run (for example, inference on a CPU instead of the GPU); a run "
           "that then exceeds the cap counts as missed")
-    for extra in (0.25, 0.5, 1.0, 2.0):
+    for extra in (0.1, 0.25, 0.5, 1.0, 2.0):
         shifted = {n: dict(par[n]) for n in names}
         for n in names:
             ts = [tto[(n, "beta", s)] + extra for s in range(201, 207)]
@@ -237,16 +237,23 @@ def main(path: str) -> None:
     for k, (a, b) in enumerate([("beta", "pop"), ("beta", "alpha"), ("beta", "count"), ("union", "beta"),
                                 ("union", "pop"), ("alpha", "pop")]):
         print(f"    {a + ' / ' + b:15s} {text(compare(six, caps, names, a, b, TIE_FRACTION, 20261400 + k))}")
-    print("  3. Speed of the search: trials per CPU second of LKH-3 relative to pop_r (runs of at least 5 s; median over "
-          "the instances on which both arms had such runs)")
-    rates = {}
-    for r in runs:
-        if not r.get("first_found") and r["time_total"] >= 5 and r.get("trials"):
-            rates.setdefault((r["instance"], r["arm"]), []).append(r["trials"] / r["time_total"])
-    mean_rate = {k: float(np.mean(v)) for k, v in rates.items()}
-    print("    " + ", ".join(
-        f"{a} {np.median([mean_rate[(n, a)] / mean_rate[(n, 'pop_r')] for n in names if (n, a) in mean_rate and (n, 'pop_r') in mean_rate]):.2f}"
-        for a in ARMS))
+    print("  3. Speed of the search: trials per CPU second of LKH-3 relative to pop_r (median over the instances on which "
+          "both arms had runs of the selection)")
+    for label, keep in [("runs of at least 5 s", lambda r: r["time_total"] >= 5),
+                        ("runs of at least 1 s", lambda r: r["time_total"] >= 1),
+                        ("runs of at least 10 s", lambda r: r["time_total"] >= 10),
+                        ("runs that reached the cap", lambda r: not r["found"])]:
+        rates = {}
+        for r in runs:
+            if not r.get("first_found") and r.get("trials") and keep(r):
+                rates.setdefault((r["instance"], r["arm"]), []).append(r["trials"] / r["time_total"])
+        mean_rate = {k: float(np.mean(v)) for k, v in rates.items()}
+        cells = []
+        for a in ARMS:
+            ratios = [mean_rate[(n, a)] / mean_rate[(n, "pop_r")] for n in names
+                      if (n, a) in mean_rate and (n, "pop_r") in mean_rate]
+            cells.append(f"{a} {np.median(ratios):.2f}")
+        print(f"    {label:27s}" + ", ".join(cells))
 
 
 if __name__ == "__main__":
