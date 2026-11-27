@@ -14,7 +14,9 @@ two values within 1% of the instance's cap count as a tie and ties are excluded;
 hypothesis is supported if beta is lower on more instances than it is higher and its Holm-adjusted p is below 0.05.
 Counts are instances on which the first arm was lower / tied / higher. Ratio = geometric mean over instances of the
 first arm's PAR10 divided by the second's, with a 95% percentile interval from 20,000 bootstrap resamples of instances
-(the notebook drew 5,000, so the last digit can differ). Everything else is descriptive.
+(the notebook drew 5,000, so the last digit can differ). Everything else is descriptive. The last block prints two
+checks that the protocol did not specify (manuscript, Section 5.12): the tests with a fixed number of seconds
+added to every beta run, and the time until the first of the six seeds of an arm reaches the optimum.
 """
 
 from __future__ import annotations
@@ -49,6 +51,24 @@ def holm(pvalues: list) -> list:
         running = max(running, min(1.0, (len(pvalues) - rank) * pvalues[i]))
         adjusted[i] = running
     return adjusted
+
+
+def average_ranks(x) -> np.ndarray:
+    x = np.asarray(x, dtype=float)
+    order = np.argsort(x, kind="mergesort")
+    ranks = np.empty(len(x))
+    i = 0
+    while i < len(x):
+        j = i
+        while j + 1 < len(x) and x[order[j + 1]] == x[order[i]]:
+            j += 1
+        ranks[order[i:j + 1]] = (i + j) / 2 + 1
+        i = j + 1
+    return ranks
+
+
+def spearman(x, y) -> float:
+    return float(np.corrcoef(average_ranks(x), average_ranks(y))[0, 1])
 
 
 def time_to_optimum(r: dict) -> float:
@@ -184,6 +204,39 @@ def main(path: str) -> None:
         rows = [c for c in cov if low <= c[3] <= high]
         print(f"  lists that missed {label:>4s} optimal edges: {len(rows):3d} runs, "
               f"{100 * np.mean([c[4] for c in rows]):.1f}% reached the optimum")
+    by_instance = {}
+    for n, a, s, missed, ok in cov:
+        by_instance.setdefault(n, []).append((missed, ok))
+    means = np.array([[np.mean([m for m, _ in v]), np.mean([o for _, o in v])] for v in by_instance.values()])
+    print(f"  Spearman correlation over instances between mean missed edges and share of successful runs: "
+          f"{spearman(means[:, 0], means[:, 1]):.2f}")
+    within = [spearman([m for m, _ in v], [o for _, o in v]) for v in by_instance.values()
+              if len({m for m, _ in v}) > 1 and len({o for _, o in v}) > 1]
+    print(f"  within instances (where both vary): negative on {sum(r < 0 for r in within)} of {len(within)}, "
+          f"median {np.median(within):.2f}")
+
+    print("\nExploratory checks after the run (not in the protocol)")
+    print("  1. Overhead: seconds added to every beta run (for example, inference on a CPU instead of the GPU); a run "
+          "that then exceeds the cap counts as missed")
+    for extra in (0.25, 0.5, 1.0, 2.0):
+        shifted = {n: dict(par[n]) for n in names}
+        for n in names:
+            ts = [tto[(n, "beta", s)] + extra for s in range(201, 207)]
+            shifted[n]["beta"] = float(np.mean([t if t <= caps[n] + 1e-9 else PAR_FACTOR * caps[n] for t in ts]))
+        line = "; ".join(f"{a + ' < ' + b}: {text(compare(shifted, caps, names, a, b, TIE_FRACTION, 20261300 + k))}"
+                         for k, (a, b) in enumerate([("beta", "pop"), ("beta", "alpha"), ("beta", "count")]))
+        print(f"    +{extra:.2f} s  {line}")
+    print("  2. Six processes in parallel: time until the first of the six seeds of an arm reaches the optimum "
+          "(10 x the cap if none does)")
+    first = {n: {a: min(tto[(n, a, s)] for s in range(201, 207)) for a in ARMS} for n in names}
+    six = {n: {a: (t if np.isfinite(t) else PAR_FACTOR * caps[n]) for a, t in first[n].items()} for n in names}
+    print("    instances solved by the six processes: "
+          + ", ".join(f"{a} {sum(np.isfinite(first[n][a]) for n in names)}" for a in ARMS))
+    print("    geometric mean (s): "
+          + ", ".join(f"{a} {np.exp(np.mean([np.log(six[n][a]) for n in names])):.2f}" for a in ARMS))
+    for k, (a, b) in enumerate([("beta", "pop"), ("beta", "alpha"), ("beta", "count"), ("union", "beta"),
+                                ("union", "pop"), ("alpha", "pop")]):
+        print(f"    {a + ' / ' + b:15s} {text(compare(six, caps, names, a, b, TIE_FRACTION, 20261400 + k))}")
 
 
 if __name__ == "__main__":

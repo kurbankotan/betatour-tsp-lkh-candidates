@@ -128,8 +128,8 @@ mean of beta's PAR10 over the other arm's, with the notebook's 95% bootstrap int
 | H2: `beta` < `alpha` | 25 / 2 / 10 | 0.017 | 0.017 | 0.40 (0.18–0.87) | supported |
 | secondary: `beta` < `count` | 22 / 11 / 4 | 0.00053 | – | 0.55 (0.36–0.85) | `beta` lower |
 
-**Decision.** By the rule of the protocol, H1 and H2 are supported: with BetaTour's lists, LKH-3 reached the proven
-optima of these instances sooner than with its own lists. Because `beta` also beat `count`, the gain is credited to
+**Decision.** By the rule of the protocol, H1 and H2 are supported: with BetaTour's lists, single LKH-3 processes
+reached the proven optima of these instances sooner than with LKH-3's own lists. Because `beta` also beat `count`, the gain is credited to
 the learned ranking. Without the tie rule (not in the protocol), the counts were 31/1/5 (p = 1.3 × 10⁻⁵), 27/0/10
 (p = 0.0076) and 28/1/8 (p = 0.0012).
 
@@ -174,6 +174,30 @@ a Spearman correlation of −0.78. Within instances, the correlation between mis
 12 of the 14 instances on which both varied (median −0.19). Across arms the relation was not monotone: `pop` and
 `pop_r` reached the optimum more often on these instances than `count` and `alpha`. This is an association, not a
 causal estimate.
+
+**Checks after the run (not in the protocol; 27 November 2026).** `analysis/v30_time_to_optimum.py` prints both.
+
+1. *Overhead.* BetaTour's inference took 0.10–0.18 s on the T4; on the two-core CPU of the development machine it
+   took about 0.55 s at 1,000 nodes (technical checks above). With a fixed number of seconds added to every `beta`
+   run (a run that then exceeds the cap counts as missed):
+
+   | Added | `beta` < `pop` | `beta` < `alpha` | `beta` < `count` |
+   |---|---|---|---|
+   | 0 s (protocol) | 29/5/3, p = 2.6 × 10⁻⁶ | 25/2/10, p = 0.017 | 22/11/4, p = 0.00053 |
+   | 0.25 s | 27/7/3, p = 8.4 × 10⁻⁶ | 22/4/11, p = 0.08 | 21/11/5, p = 0.0025 |
+   | 0.5 s | 26/7/4, p = 5.9 × 10⁻⁵ | 21/5/11, p = 0.11 | 20/9/8, p = 0.036 |
+   | 1 s | 25/5/7, p = 0.0021 | 21/3/13, p = 0.23 | 19/6/12, p = 0.28 |
+   | 2 s | 24/3/10, p = 0.024 | 19/2/16, p = 0.74 | 18/3/16, p = 0.86 |
+
+   H1 holds with 2 s added; H2 and the credit to the learned ranking do not hold with 0.5 s and 1 s added.
+2. *Six processes in parallel.* PAR10 describes single processes. Taking for each arm and instance the time at
+   which the first of its six seeds reached the optimum (10 × the cap if none did), `beta` did not differ from
+   `pop` (13/18/6, p = 0.17; geometric means 3.5 s and 3.4 s; 35 instances solved by each) but was faster than
+   `alpha` (23/7/7, p = 0.0052) and `count` (14/20/3, p = 0.013). `union` did not differ from `beta` (6/22/9) or
+   `pop` (8/19/10).
+
+So the advantage over `pop` holds per process but not for six processes in parallel at these sizes, and the
+advantages over `alpha` and `count` depend on fast inference.
 
 **Limits.** One machine type, one cap (0.05 s per node), one LKH-3 version and 1,000–2,392 nodes. Times are LKH-3's
 CPU times plus the wall time of inference and list building. The 18 synthetic instances motivated the run (their
