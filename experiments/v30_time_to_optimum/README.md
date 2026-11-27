@@ -196,6 +196,9 @@ causal estimate.
    `alpha` (23/7/7, p = 0.0052) and `count` (14/20/3, p = 0.013). `union` did not differ from `beta` (6/22/9) or
    `pop` (8/19/10).
 
+3. *Speed of the search.* In runs of at least 5 s, `beta` completed a median of 24% fewer trials per CPU second
+   than `pop_r`, `union` 61% fewer and `count` about as many (ratios 0.76, 0.39 and 0.97).
+
 So the advantage over `pop` holds per process but not for six processes in parallel at these sizes, and the
 advantages over `alpha` and `count` depend on fast inference.
 

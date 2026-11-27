@@ -237,6 +237,16 @@ def main(path: str) -> None:
     for k, (a, b) in enumerate([("beta", "pop"), ("beta", "alpha"), ("beta", "count"), ("union", "beta"),
                                 ("union", "pop"), ("alpha", "pop")]):
         print(f"    {a + ' / ' + b:15s} {text(compare(six, caps, names, a, b, TIE_FRACTION, 20261400 + k))}")
+    print("  3. Speed of the search: trials per CPU second of LKH-3 relative to pop_r (runs of at least 5 s; median over "
+          "the instances on which both arms had such runs)")
+    rates = {}
+    for r in runs:
+        if not r.get("first_found") and r["time_total"] >= 5 and r.get("trials"):
+            rates.setdefault((r["instance"], r["arm"]), []).append(r["trials"] / r["time_total"])
+    mean_rate = {k: float(np.mean(v)) for k, v in rates.items()}
+    print("    " + ", ".join(
+        f"{a} {np.median([mean_rate[(n, a)] / mean_rate[(n, 'pop_r')] for n in names if (n, a) in mean_rate and (n, 'pop_r') in mean_rate]):.2f}"
+        for a in ARMS))
 
 
 if __name__ == "__main__":
